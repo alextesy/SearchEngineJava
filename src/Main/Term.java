@@ -7,7 +7,7 @@ import static Main.Indexer.currentTermDictionary;
 
 public class Term implements Serializable{
     //public static final Collection<String> termProperties = new ArrayList<>(Arrays.asList("Number", "Percentage", "Date","Dollar","Other"));
-    private Map<Document,List<Integer>> docDictionary;
+    private Map<Document,Double> docDictionary;
     private String value;
     private String kind;
 
@@ -31,36 +31,46 @@ public class Term implements Serializable{
 
     private void updatedDoc(Document document,int location){
         if(docDictionary.containsKey(document)){
-            List<Integer> termFrequency = docDictionary.remove(document);
-            termFrequency.add(location);
+            Double termFrequency = docDictionary.remove(document);
+            //think how to make the Double more valuable
+            //termFrequency.add(location);
             docDictionary.put(document,termFrequency);
         }
         else{
-            List<Integer> newList = new ArrayList<>();
-            newList.add(location);
+            double newList = 0.0;
+            //newList.add(location);
             docDictionary.put(document,newList);
         }
     }
 
-    public int getWordFrequencyAtDoc(Document document){
-        return docDictionary.get(document).size();
+    public double getWordFrequencyAtDoc(Document document){
+        return docDictionary.get(document);
     }
 
     @Override
     public String toString() {
-        return "Term{" +
-                "value='" + value + '\'' +
-                '}';
+        StringBuilder term=new StringBuilder(value+" ");
+
+        for (Map.Entry<Document,Double> e : docDictionary.entrySet()){
+            term.append(e.getKey().toString());
+            term.append(" ");
+            term.append(e.getValue());
+            term.append(" ");
+
+
+        }
+
+        return term.toString();
     }
 
     /* Serializable Implementation */
     public Term(){};
 
-    public Map<Document, List<Integer>> getDocDictionary() {
+    public Map<Document, Double> getDocDictionary() {
         return this.docDictionary;
     }
 
-    public void setDocDictionary(Map<Document, List<Integer>> docDictionary) {
+    public void setDocDictionary(Map<Document, Double> docDictionary) {
         this.docDictionary = docDictionary;
     }
 

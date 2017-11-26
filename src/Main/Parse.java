@@ -38,7 +38,7 @@ public class Parse {
             Stemmer stemmer = new Stemmer();
             stemmer.add(token.toCharArray(),token.length());
             stemmer.stem();
-            parseTokens(token,stk);
+            parseTokens(stemmer.toString(),stk);
 
         }
     }

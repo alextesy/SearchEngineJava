@@ -3,6 +3,11 @@ package Main;
 import java.io.Serializable;
 
 public class Document implements Serializable {
+    @Override
+    public String toString() {
+        return fileName+" "+docName+" "+wordsSize+" "+mostFrequentWord;
+    }
+
     String docName;
     String fileName;
     int wordsSize;

@@ -26,15 +26,17 @@ public class Indexer {
             for (File child : directoryListing) {
                 ReadFile.readTextFile(child);
                 try{
-                    FileOutputStream f = new FileOutputStream(new File("d:\\documents\\users\\talbense\\Documents\\blabla\\myText" +counter + ".txt"));
+                    PrintWriter f = new PrintWriter( "d:\\documents\\users\\kremians\\Documents\\blabla1\\myText" +counter + ".txt");
                     counter+=1;
-                    ObjectOutputStream o = new ObjectOutputStream(f);
                     for (Term term : currentTermDictionary.values()){
-                        o.writeObject(term);
+                        f.println(term.toString());
                     }
                     currentTermDictionary.clear();
                     f.close();
-                    o.close();
+                   // o.close();
+                    if(counter==100)
+                        break;
+
                 }
                 catch (Exception e){e.printStackTrace();}
 
