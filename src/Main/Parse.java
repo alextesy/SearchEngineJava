@@ -15,7 +15,7 @@ public class Parse {
 
     private static Collection<String> initStopWords() {
         try {
-            String stopWordsContent= ReadFile.getContent(new File("d:\\documents\\users\\talbense\\Documents\\stop_words.txt"));
+            String stopWordsContent= ReadFile.getContent(new File("stop_words.txt"));
             return new HashSet<>(Arrays.asList(stopWordsContent.split(" ")));
         } catch (IOException e) {
             e.printStackTrace();
