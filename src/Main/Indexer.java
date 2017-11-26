@@ -8,7 +8,6 @@ public class Indexer {
     public static final Map<String,Term> currentTermDictionary = new HashMap<>();
 
     private long indexRunningTime;
-
     private String pathToCorpus;
     private String pathToPosting;
     private int counter=0;
