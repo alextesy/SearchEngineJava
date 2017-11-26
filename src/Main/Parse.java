@@ -11,12 +11,12 @@ public class Parse {
     public String docContent;
     public Document document;
     private static final Collection<String> stopWords = initStopWords();
-    private static final Collection<String> month = new ArrayList<>(Arrays.asList("JANUARY", "FEBRUARY", "MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"));
+    //private static final Collection<String> month = new ArrayList<>(Arrays.asList("JANUARY", "FEBRUARY", "MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"));
 
     private static Collection<String> initStopWords() {
         try {
-            String stopWordsContent= ReadFile.getContent(new File("C:\\Users\\IBM_ADMIN\\Desktop\\corpus\\stop_words.txt"));
-            return Arrays.asList(stopWordsContent.split(" "));
+            String stopWordsContent= ReadFile.getContent(new File("d:\\documents\\users\\talbense\\Documents\\stop_words.txt"));
+            return new HashSet<>(Arrays.asList(stopWordsContent.split(" ")));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -38,11 +38,10 @@ public class Parse {
             Stemmer stemmer = new Stemmer();
             stemmer.add(token.toCharArray(),token.length());
             stemmer.stem();
-            parseTokens(token,stk);
+            //parseTokens(token,stk);
 
         }
         Map<String,Term> s = Term.termDictionary;
-        //exit(1);
     }
 
     private Term parseTokens(String token,StringTokenizer stk){
@@ -57,8 +56,6 @@ public class Parse {
 
 
 
-
-    private
     private boolean isNumberic(String s) {
         return s != null && s.matches("[-+]?\\d*\\.?\\d+");
     }

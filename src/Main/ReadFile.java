@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 
 public class ReadFile {
     String path;
+    int counter =0;
 
 
     public ReadFile(String path) throws IOException {
@@ -29,6 +30,10 @@ public class ReadFile {
                     Parse parser=new Parse(textCont,document);
                     parser.ParseFile();
                 }
+                counter+=1;
+                //if(counter == 50)
+                //    break;
+
             }
         }
     }

@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        ReadFile alex=new ReadFile("C:\\Users\\IBM_ADMIN\\Desktop\\corpus\\corpus");
+        ReadFile alex=new ReadFile("d:\\documents\\users\\talbense\\Documents\\corpus");
         long now=System.currentTimeMillis();
         alex.readAll();
         long then=System.currentTimeMillis();
