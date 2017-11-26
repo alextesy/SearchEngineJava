@@ -41,7 +41,6 @@ public class Parse {
             //parseTokens(token,stk);
 
         }
-        Map<String,Term> s = Term.termDictionary;
     }
 
     private Term parseTokens(String token,StringTokenizer stk){

@@ -1,10 +1,12 @@
 package Main;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Term {
-    public static final Collection<String> termProperties = new ArrayList<>(Arrays.asList("Number", "Percentage", "Date","Dollar","Other"));
-    public static final Map<String,Term> termDictionary = new HashMap<>();
+import static Main.Indexer.currentTermDictionary;
+
+public class Term implements Serializable{
+    //public static final Collection<String> termProperties = new ArrayList<>(Arrays.asList("Number", "Percentage", "Date","Dollar","Other"));
     private Map<Document,List<Integer>> docDictionary;
     private String value;
     private String kind;
@@ -16,14 +18,14 @@ public class Term {
     }
 
     public static void addTerm(String value,String kind,Document document,int location){
-        if(termDictionary.containsKey(value)){
-            Term term = termDictionary.get(value);
+        if(currentTermDictionary.containsKey(value)){
+            Term term = currentTermDictionary.get(value);
             term.updatedDoc(document,location);
         }
         else{
             Term newTerm = new Term(value,kind) ;
             newTerm.updatedDoc(document,location);
-            termDictionary.put(value,newTerm);
+            currentTermDictionary.put(value,newTerm);
         }
 
     }
@@ -45,5 +47,33 @@ public class Term {
         return docDictionary.get(document).size();
     }
 
+
+
+    /* Serializable Implementation */
+    public Term(){};
+
+    public Map<Document, List<Integer>> getDocDictionary() {
+        return this.docDictionary;
+    }
+
+    public void setDocDictionary(Map<Document, List<Integer>> docDictionary) {
+        this.docDictionary = docDictionary;
+    }
+
+    public String getValue() {
+        return this.value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public String getKind() {
+        return this.kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
 }
 

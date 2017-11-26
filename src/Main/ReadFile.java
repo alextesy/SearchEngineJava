@@ -6,37 +6,32 @@ import java.util.regex.Pattern;
 
 public class ReadFile {
     String path;
-    int counter =0;
 
 
-    public ReadFile(String path) throws IOException {
-        this.path=path;
-    }
-    public void readAll() throws IOException {
-        File dir = new File(path);
-        File[] directoryListing = dir.listFiles();
-        if (directoryListing != null) {
-            for (File child : directoryListing) {
-                File[] currentFile=child.listFiles();
-                String content=getContent(currentFile[0]);
-                Pattern pattern= Pattern.compile("<TEXT>(.*?)</TEXT>",Pattern.DOTALL);
-                Pattern patternDocN= Pattern.compile("<DOCNO>(.*?)</DOCNO>",Pattern.DOTALL);
-                Matcher m = pattern.matcher(content);
-                Matcher mDocNum=patternDocN.matcher(content);
-                while (m.find()&&mDocNum.find()) {
-                    Document document = new Document(mDocNum.group(),currentFile[0].toString());
-                    String textCont=m.group();
-                    String docNum=mDocNum.group();
-                    Parse parser=new Parse(textCont,document);
-                    parser.ParseFile();
-                }
-                counter+=1;
-                //if(counter == 50)
-                //    break;
+    private ReadFile(){}
 
-            }
+    public static void readTextFile(File currentFile) {
+        File[] myCurrentFile = currentFile.listFiles();
+        String content = null;
+        try {
+            content = getContent(myCurrentFile[0]);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        Pattern pattern = Pattern.compile("<TEXT>(.*?)</TEXT>",Pattern.DOTALL);
+         Pattern patternDocN = Pattern.compile("<DOCNO>(.*?)</DOCNO>",Pattern.DOTALL);
+         Matcher m = pattern.matcher(content);
+         Matcher mDocNum = patternDocN.matcher(content);
+         while (m.find()&& mDocNum.find()) {
+             Document document = new Document(mDocNum.group(),myCurrentFile[0].toString());
+             String textCont = m.group();
+             String docNum = mDocNum.group();
+             Parse parser = new Parse(textCont,document);
+             parser.ParseFile();
+         }
     }
+
+
 
     public static String getContent(File myFile) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(myFile));
