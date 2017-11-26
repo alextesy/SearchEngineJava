@@ -27,7 +27,6 @@ public class Term implements Serializable{
             newTerm.updatedDoc(document,location);
             currentTermDictionary.put(value,newTerm);
         }
-
     }
 
     private void updatedDoc(Document document,int location){

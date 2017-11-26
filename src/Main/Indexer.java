@@ -19,6 +19,7 @@ public class Indexer {
     }
 
     public void toIndex(){
+        int ctr=0;
         long now=System.currentTimeMillis();
         File dir = new File(this.pathToCorpus);
         File[] directoryListing = dir.listFiles();
@@ -26,7 +27,8 @@ public class Indexer {
             for (File child : directoryListing) {
                 ReadFile.readTextFile(child);
                 try{
-                    FileOutputStream f = new FileOutputStream(new File("myObjects.txt"));
+                    FileOutputStream f = new FileOutputStream(new File("d:\\documents\\users\\talbense\\Documents\\blabla\\myText" +counter + ".txt"));
+                    counter+=1;
                     ObjectOutputStream o = new ObjectOutputStream(f);
                     for (Term term : currentTermDictionary.values()){
                         o.writeObject(term);
@@ -36,21 +38,22 @@ public class Indexer {
                     o.close();
                 }
                 catch (Exception e){e.printStackTrace();}
+
                 //break; /* first posting file! */
             }
-            openFile();
+            //openFile();
         }
 
 
 
         long then=System.currentTimeMillis();
         this.indexRunningTime = then - now;
-        System.out.print(indexRunningTime);
+        System.out.print((double)indexRunningTime/1000);
     }
 
     public void openFile(){
         try{
-            FileInputStream fi = new FileInputStream(new File("d:\\documents\\users\\talbense\\Document\\MyText" + counter));
+            FileInputStream fi = new FileInputStream(new File("d:\\documents\\users\\talbense\\Document\\blabla\\MyText" + counter));
             counter+=1;
             ObjectInputStream oi = new ObjectInputStream(fi);
             Term term =null;

@@ -1,6 +1,5 @@
 package Main;
 
-import javax.print.Doc;
 import java.io.Serializable;
 
 public class Document implements Serializable {
