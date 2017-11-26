@@ -38,16 +38,19 @@ public class Parse {
             Stemmer stemmer = new Stemmer();
             stemmer.add(token.toCharArray(),token.length());
             stemmer.stem();
-            //parseTokens(token,stk);
+            parseTokens(token,stk);
 
         }
     }
 
     private Term parseTokens(String token,StringTokenizer stk){
+        /*
         if(isNumberic(token)){
             Double.parseDouble(token);
             token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
         }
+        */
+        Term.addTerm(token,"",document,0);
 
         return null;
     }

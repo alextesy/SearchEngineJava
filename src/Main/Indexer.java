@@ -11,6 +11,7 @@ public class Indexer {
 
     private String pathToCorpus;
     private String pathToPosting;
+    private int counter=0;
 
     public Indexer(String pathToCorpus, String pathToPosting) {
         this.pathToCorpus = pathToCorpus;
@@ -35,7 +36,7 @@ public class Indexer {
                     o.close();
                 }
                 catch (Exception e){e.printStackTrace();}
-                break; /* first posting file! */
+                //break; /* first posting file! */
             }
             openFile();
         }
@@ -49,15 +50,17 @@ public class Indexer {
 
     public void openFile(){
         try{
-            FileInputStream fi = new FileInputStream(new File("myObjects.txt"));
+            FileInputStream fi = new FileInputStream(new File("d:\\documents\\users\\talbense\\Document\\MyText" + counter));
+            counter+=1;
             ObjectInputStream oi = new ObjectInputStream(fi);
-            if(oi.read()!=-1){
-                Term term = (Term)oi.readObject();
-                currentTermDictionary.put(term.getValue(),term);
-            }
+            Term term =null;
+            try{
+                while((term = (Term)oi.readObject())!= null){
+                    currentTermDictionary.put(term.getValue(),term);
+                }
+            }catch (Exception e){};
         }
         catch (Exception e){e.printStackTrace(); }
-        System.out.println(currentTermDictionary);
     }
 
 }

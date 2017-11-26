@@ -47,7 +47,12 @@ public class Term implements Serializable{
         return docDictionary.get(document).size();
     }
 
-
+    @Override
+    public String toString() {
+        return "Term{" +
+                "value='" + value + '\'' +
+                '}';
+    }
 
     /* Serializable Implementation */
     public Term(){};
