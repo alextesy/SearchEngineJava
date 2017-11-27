@@ -5,9 +5,9 @@ import java.util.*;
 
 import static Main.Indexer.currentTermDictionary;
 
-public class Term implements Serializable{
+public class Term{
     //public static final Collection<String> termProperties = new ArrayList<>(Arrays.asList("Number", "Percentage", "Date","Dollar","Other"));
-    private Map<Document,Double> docDictionary;
+    private Map<Document,List<Integer>> docDictionary;
     private String value;
     private String kind;
 
@@ -31,46 +31,50 @@ public class Term implements Serializable{
 
     private void updatedDoc(Document document,int location){
         if(docDictionary.containsKey(document)){
-            Double termFrequency = docDictionary.remove(document);
-            //think how to make the Double more valuable
-            //termFrequency.add(location);
+            List<Integer> termFrequency = docDictionary.remove(document);
+            termFrequency.add(location);
             docDictionary.put(document,termFrequency);
+            if(termFrequency.size() > document.getMostFrequentWord())
+                document.setMostFrequentWord(termFrequency.size());
         }
         else{
-            double newList = 0.0;
-            //newList.add(location);
+            List<Integer> newList = new ArrayList<>();
+            newList.add(location);
             docDictionary.put(document,newList);
         }
     }
 
-    public double getWordFrequencyAtDoc(Document document){
-        return docDictionary.get(document);
+    public int getWordFrequencyAtDoc(Document document) {
+        return docDictionary.get(document).size();
+
     }
 
     @Override
     public String toString() {
         StringBuilder term=new StringBuilder(value+" ");
-
-        for (Map.Entry<Document,Double> e : docDictionary.entrySet()){
-            term.append(e.getKey().toString());
-            term.append(" ");
-            term.append(e.getValue());
-            term.append(" ");
-
-
+        for (Map.Entry<Document,List<Integer>> doc : docDictionary.entrySet()){
+            term.append(doc.getKey().getFileName()+ doc.getKey().getDocName()+  " ");
+            List<Integer> termLocations = doc.getValue();
+            for(int i=0; i<termLocations.size() && i < 100 ; i+=1){
+                term.append(termLocations.get(i));
+                term.append(" ");
+            }
+            term.append("#");
         }
-
         return term.toString();
     }
 
-    /* Serializable Implementation */
+
+
+
+    /* Serializable Implementation
     public Term(){};
 
-    public Map<Document, Double> getDocDictionary() {
+    public Map<Document, List<Integer>> getDocDictionary() {
         return this.docDictionary;
     }
 
-    public void setDocDictionary(Map<Document, Double> docDictionary) {
+    public void setDocDictionary(Map<Document, List<Integer>> docDictionary) {
         this.docDictionary = docDictionary;
     }
 
@@ -89,5 +93,7 @@ public class Term implements Serializable{
     public void setKind(String kind) {
         this.kind = kind;
     }
+
+    */
 }
 

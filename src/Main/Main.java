@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        new Indexer("d:\\documents\\users\\kremians\\Documents\\corpus","").toIndex();
+        new Indexer("d:\\documents\\users\\talbense\\Documents\\corpus","").toIndex();
         //new EngineMenu();
 
     }

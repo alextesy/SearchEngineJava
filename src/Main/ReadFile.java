@@ -30,7 +30,7 @@ public class ReadFile {
             String textCont = m.group();
             String docNum = mDocNum.group();
             String textContSub=docNum.substring(7,docNum.length()-8);
-            Document document = new Document(textContSub,fileName);
+            Document document = Document.addDocument(fileName,textContSub);
             Parse parser = new Parse(textCont,document);
             parser.ParseFile();
         }
