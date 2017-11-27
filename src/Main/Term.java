@@ -2,7 +2,9 @@ package Main;
 
 import java.io.Serializable;
 import java.util.*;
+import java.util.regex.Pattern;
 
+import static Main.Document.addDocument;
 import static Main.Indexer.currentTermDictionary;
 
 public class Term{
@@ -30,6 +32,7 @@ public class Term{
     }
 
     private void updatedDoc(Document document,int location){
+        document.setWordsSize(document.getWordsSize()+1);
         if(docDictionary.containsKey(document)){
             List<Integer> termFrequency = docDictionary.remove(document);
             termFrequency.add(location);
@@ -51,17 +54,47 @@ public class Term{
 
     @Override
     public String toString() {
-        StringBuilder term=new StringBuilder(value+" ");
+        StringBuilder term=new StringBuilder(value + ", ");
         for (Map.Entry<Document,List<Integer>> doc : docDictionary.entrySet()){
-            term.append(doc.getKey().getFileName()+ doc.getKey().getDocName()+  " ");
+            //term.append(" ");
+            term.append("FileName: " + doc.getKey().getFileName() + " ,DocName: " + doc.getKey().getDocName() +  " ,TermLocations: ");
             List<Integer> termLocations = doc.getValue();
             for(int i=0; i<termLocations.size() && i < 100 ; i+=1){
                 term.append(termLocations.get(i));
                 term.append(" ");
+
             }
-            term.append("#");
+            term.append(". ");
         }
         return term.toString();
+    }
+    public String encryptTermToStr(){
+        StringBuilder term=new StringBuilder(value);
+        for (Map.Entry<Document,List<Integer>> doc : docDictionary.entrySet()){
+            term.append("#");
+            term.append(doc.getKey().getFileName() + "&" + doc.getKey().getDocName() +  "&");
+            List<Integer> termLocations = doc.getValue();
+            for(int i=0; i<termLocations.size() && i < 100 ; i+=1){
+                term.append(termLocations.get(i));
+                term.append("^");
+            }
+        }
+        return term.toString();
+    }
+
+    public static Term decryptTermFromStr(String str){
+        String[] termData = str.split("#");
+        Term term = new Term(termData[0],"");
+        for(int i=1 ; i<termData.length; i+=1){
+            String[] docData = termData[i].split("&");
+            Document doc = addDocument(docData[0],docData[1]);
+            String[] termIndex = docData[2].split("\\^");
+            term.docDictionary.put(doc,new ArrayList<>());
+            term.docDictionary.get(doc).add(Integer.parseInt(termIndex[0]));
+            for(int j=1; j < termIndex.length; j+=1)
+                term.docDictionary.get(doc).add(Integer.parseInt(termIndex[j]));
+        }
+        return null;
     }
 
 

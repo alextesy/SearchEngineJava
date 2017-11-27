@@ -8,9 +8,12 @@ import java.util.*;
 import static java.lang.System.exit;
 
 public class Parse {
+    private static final Collection<String> stopWords = initStopWords();
+
+    private int termIndex;
+
     public String docContent;
     public Document document;
-    private static final Collection<String> stopWords = initStopWords();
     //private static final Collection<String> month = new ArrayList<>(Arrays.asList("JANUARY", "FEBRUARY", "MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"));
 
     private static Collection<String> initStopWords() {
@@ -28,6 +31,7 @@ public class Parse {
     public Parse(String content, Document document){
         this.docContent = content;
         this.document = document;
+        this.termIndex=0;
     }
     public void ParseFile(){
         StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f,.:;?![]/()<>\"");
@@ -50,7 +54,8 @@ public class Parse {
             token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
         }
         */
-        Term.addTerm(token,"",document,0);
+        Term.addTerm(token,"",document,termIndex);
+        termIndex +=1;
 
         return null;
     }

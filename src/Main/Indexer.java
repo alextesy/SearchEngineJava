@@ -18,7 +18,6 @@ public class Indexer {
     }
 
     public void toIndex(){
-        int ctr=0;
         long now=System.currentTimeMillis();
         File dir = new File(this.pathToCorpus);
         File[] directoryListing = dir.listFiles();
@@ -26,19 +25,21 @@ public class Indexer {
             for (File child : directoryListing) {
                 ReadFile.readTextFile(child);
                 try{
-                    PrintWriter f = new PrintWriter( "d:\\documents\\users\\talbense\\Documents\\blabla\\myText" +counter + ".txt");
-                    counter+=1;
+                    PrintWriter postFile = new PrintWriter( "d:\\documents\\users\\talbense\\Documents\\blabla\\myText" +counter + ".txt");
                     for (Term term : currentTermDictionary.values()){
-                        f.println(term.toString());
+                        postFile.println(term.toString());
                     }
-                    currentTermDictionary.clear();
-                    f.close();
-                    if(counter==100)
+                    //currentTermDictionary.clear();
+                    postFile.close();
+
+                    counter+=1;
+                    if(counter==10)
                         break;
 
                 }
                 catch (Exception e){e.printStackTrace();}
             }
+            writeDocumentData();
             //openFile();
         }
 
@@ -47,6 +48,18 @@ public class Indexer {
         long then=System.currentTimeMillis();
         this.indexRunningTime = then - now;
         System.out.print((double)indexRunningTime/1000);
+    }
+
+    private void writeDocumentData(){
+        HashMap<String,Document> corpusDocumentsData = Document.corpusDocuments;
+        try {
+            PrintWriter corpusDocFile = new PrintWriter("d:\\documents\\users\\talbense\\Documents\\blabla\\documentsData"+ ".txt");
+            for(Document doc : corpusDocumentsData.values()){
+                corpusDocFile.println(doc);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /*

@@ -29,7 +29,7 @@ public class ReadFile {
         while (m.find()&& mDocNum.find()) {
             String textCont = m.group();
             String docNum = mDocNum.group();
-            String textContSub=docNum.substring(7,docNum.length()-8);
+            String textContSub=docNum.substring(8,docNum.length()-9);
             Document document = Document.addDocument(fileName,textContSub);
             Parse parser = new Parse(textCont,document);
             parser.ParseFile();

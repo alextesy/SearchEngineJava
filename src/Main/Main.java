@@ -11,6 +11,11 @@ public class Main {
 
         new Indexer("d:\\documents\\users\\talbense\\Documents\\corpus","").toIndex();
         //new EngineMenu();
-
+        /*
+        for(Document doc : Document.corpusDocuments.values())
+            System.out.println(doc);
+        */
+        for(Term term : Indexer.currentTermDictionary.values())
+            System.out.println(term);
     }
 }

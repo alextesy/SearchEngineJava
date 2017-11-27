@@ -1,70 +1,65 @@
 package Main;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
-public class Document implements Serializable {
+public class Document {
 
-    private static final HashMap<String,Document> corpusDocuments = new HashMap<String, Document>();
+    public static final HashMap<String,Document> corpusDocuments = new HashMap<String, Document>();
 
-    String docName;
-    String fileName;
-    int wordsSize;
-    int mostFrequentWord;
+    private String docName;
+    private String fileName;
+    private int wordsSize;
+    private int mostFrequentWord;
 
     private Document(String fileName, String docName) {
-        this.wordsSize=0;
-        this.mostFrequentWord=0;
+        this.wordsSize = 0;
+        this.mostFrequentWord = 0;
         this.docName = docName;
         this.fileName = fileName;
     }
 
-    public static Document addDocument(String fileName,String docName){
-        Document document = new Document(docName,fileName);
-        corpusDocuments.put(fileName+docName,document);
-        return document;
-    }
-    /*
-    @Override
-    public int hashCode() {
-        return (docName+fileName).hashCode();
+    private Document(String docName, String fileName, int wordsSize, int mostFrequentWord) {
+        this.docName = docName;
+        this.fileName = fileName;
+        this.wordsSize = wordsSize;
+        this.mostFrequentWord = mostFrequentWord;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if(obj instanceof Document){
-            Document doc = (Document)obj;
-            return doc.hashCode() == this.hashCode();
+    public static Document addDocument(String fileName, String docName){
+        if(!corpusDocuments.containsKey(fileName+docName)){
+            Document document = new Document(docName,fileName);
+            corpusDocuments.put(fileName+docName,document);
+            return document;
         }
-        return false;
+        else{
+            return new Document(fileName,docName);
+        }
     }
-    */
 
     @Override
     public String toString() {
-        return fileName+" "+docName+" "+wordsSize+" "+mostFrequentWord;
+        return "FileName: " + fileName+" ,DocName: "+docName+" ,DocLength: "+wordsSize+" , MostFrequentWordAppearance: "+mostFrequentWord;
     }
 
-    /* Serializable Implementation */
-    public Document(){};
+    public String encryptingDocToStr(){
+        return fileName+"#"+docName+"#"+wordsSize+"#"+mostFrequentWord;
+    }
+
+    public static Document decryptDocFromStr(String str){
+        String[] documentData = str.split("#");
+        return new Document(documentData[0],documentData[1],Integer.parseInt(documentData[2]),Integer.parseInt(documentData[3]));
+    }
+
 
     public String getDocName() {
         return docName;
     }
 
-    public void setDocName(String docName) {
-        this.docName = docName;
-    }
 
     public String getFileName() {
         return fileName;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
 
     public int getWordsSize() {
         return wordsSize;
