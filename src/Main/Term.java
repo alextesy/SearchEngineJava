@@ -94,7 +94,7 @@ public class Term{
             for(int j=1; j < termIndex.length; j+=1)
                 term.docDictionary.get(doc).add(Integer.parseInt(termIndex[j]));
         }
-        return null;
+        return term;
     }
 
 

@@ -1,8 +1,11 @@
 package Main;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Indexer {
     public static final Map<String,Term> currentTermDictionary = new HashMap<>();
@@ -16,7 +19,10 @@ public class Indexer {
         this.pathToCorpus = pathToCorpus;
         this.pathToPosting = pathToPosting;
     }
-
+    //TODO - posted file should be sorted before merged
+    //TODO - merge files and decide num of posted file
+    //TODO - initialize for the last time our dictionary
+    //TODO - CACHE and parsing
     public void toIndex(){
         long now=System.currentTimeMillis();
         File dir = new File(this.pathToCorpus);
@@ -27,20 +33,19 @@ public class Indexer {
                 try{
                     PrintWriter postFile = new PrintWriter( "d:\\documents\\users\\talbense\\Documents\\blabla\\myText" +counter + ".txt");
                     for (Term term : currentTermDictionary.values()){
-                        postFile.println(term.toString());
+                        postFile.println(term.encryptTermToStr());
                     }
-                    //currentTermDictionary.clear();
+                    currentTermDictionary.clear();
                     postFile.close();
-
+                    /*
                     counter+=1;
                     if(counter==10)
                         break;
-
+                    */
                 }
                 catch (Exception e){e.printStackTrace();}
             }
             writeDocumentData();
-            //openFile();
         }
 
 
@@ -62,21 +67,16 @@ public class Indexer {
         }
     }
 
-    /*
-    public void openFile(){
-        try{
-            FileInputStream fi = new FileInputStream(new File("d:\\documents\\users\\talbense\\Document\\blabla\\MyText" + counter));
-            counter+=1;
-            ObjectInputStream oi = new ObjectInputStream(fi);
-            Term term =null;
-            try{
-                while((term = (Term)oi.readObject())!= null){
-                    currentTermDictionary.put(term.getValue(),term);
-                }
-            }catch (Exception e){};
+    public static Collection<Term> iterateThroughTermFile(String path, int termLine, int range){
+        List<Term> termsFileIteration = new ArrayList<>();
+        try (Stream<String> lines = Files.lines(Paths.get(path))) {
+            Collection <String> termsString = lines.skip(termLine).limit(range).collect(Collectors.toList());
+            for(String str : termsString)
+                termsFileIteration.add(Term.decryptTermFromStr(str));
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        catch (Exception e){e.printStackTrace(); }
+        return termsFileIteration;
     }
-    */
 
 }

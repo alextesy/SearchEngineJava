@@ -1,9 +1,9 @@
 package Main;
 
 
-import gui.EngineMenu;
 
 import java.io.IOException;
+import java.util.Collection;
 
 public class Main {
 
@@ -14,8 +14,12 @@ public class Main {
         /*
         for(Document doc : Document.corpusDocuments.values())
             System.out.println(doc);
-        */
-        for(Term term : Indexer.currentTermDictionary.values())
+
+        String path = "d:\\documents\\users\\talbense\\Documents\\blabla\\myText0.txt";
+        Collection<Term> terms = Indexer.iterateThroughTermFile(path,4,10);
+        for ( Term term : terms)
             System.out.println(term);
+        */
     }
+
 }
