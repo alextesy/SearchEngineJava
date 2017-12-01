@@ -8,7 +8,7 @@ public class ReadFile {
 
     private ReadFile(){}
 
-    public static void readTextFile(File currentFile) {
+    public static long readTextFile(File currentFile) {
         File[] myCurrentFile = currentFile.listFiles();
 
         String fullPath = myCurrentFile[0].toString();
@@ -34,6 +34,7 @@ public class ReadFile {
             Parse parser = new Parse(textCont,document);
             parser.ParseFile();
         }
+        return StringSizeEstimator.estimatedSizeOf(content);
     }
 
 

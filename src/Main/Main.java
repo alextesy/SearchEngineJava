@@ -2,24 +2,23 @@ package Main;
 
 
 
-import java.io.IOException;
-import java.util.Collection;
+import java.io.*;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
 
-        new Indexer("d:\\documents\\users\\talbense\\Documents\\corpus","").toIndex();
+        try {
+            Indexer indexer = new Indexer("C:\\Users\\אלי\\Desktop\\corpus","",Indexer.CORPUS_BYTE_SIZE/11);
+            indexer.toIndex();
+            System.out.println(indexer.getIndexRunningTime());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         //new EngineMenu();
-        /*
-        for(Document doc : Document.corpusDocuments.values())
-            System.out.println(doc);
 
-        String path = "d:\\documents\\users\\talbense\\Documents\\blabla\\myText0.txt";
-        Collection<Term> terms = Indexer.iterateThroughTermFile(path,4,10);
-        for ( Term term : terms)
-            System.out.println(term);
-        */
+
     }
 
 }
