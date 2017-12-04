@@ -33,7 +33,7 @@ public class Parse {
         this.termIndex = 0;
     }
     public void ParseFile(){
-        StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f.:;?!'[]/|()<#>*&+-\"");
+        StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f.:;?!'[`]/|()<#>*&+-\"");
         while(stk.hasMoreElements() ){
             String token = stk.nextToken();
             if(stopWords.contains(token))

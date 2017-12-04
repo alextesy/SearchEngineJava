@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 public class Indexer {
     public static final Map<String,Term> currentTermDictionary = new HashMap<>();
     public static final long CORPUS_BYTE_SIZE = 1578400481; // 1.47 - GB - 1.47*2^30 bytes
+    public static final Map<String,Integer> Dictionary = new HashMap<>();
 
     private double indexRunningTime;
     private String pathToCorpus;
@@ -26,7 +27,6 @@ public class Indexer {
 
     public void toIndex() throws IOException {
         long now=System.currentTimeMillis();
-
         File dir = new File(this.pathToCorpus);
         File[] directoryListing = dir.listFiles();
         List<String> tmpList = new ArrayList<>();
@@ -36,7 +36,7 @@ public class Indexer {
         try{
             if (directoryListing != null) {
                 for (File child : directoryListing) {
-                    if(counter == 1 ) break;
+                    //if(counter == 6 ) break;
                     currentSize+=ReadFile.readTextFile(child);
                         if (currentSize > readFileSize) {
                             currentSize=0;
@@ -46,7 +46,6 @@ public class Indexer {
                             postingFilesList.add(sortAndSave(tmpList,cmp));
                             tmpList.clear();
                             currentTermDictionary.clear();
-
                         }
                     }
                 }
@@ -54,10 +53,10 @@ public class Indexer {
         catch (IOException e){
             e.printStackTrace();
         }
-        mergeSortedFiles(postingFilesList,new File("C:\\Users\\אלי\\doc\\Hallelujah"),cmp);
+        mergeSortedFiles(postingFilesList,new File(pathToPosting + "Hallelujah"),cmp);
 
         long then=System.currentTimeMillis();
-        this.indexRunningTime = ((then - now)/1000)/60;
+        this.indexRunningTime = (then - now)/1000;
     }
 
     private long mergeSortedFiles(List<File> postingFilesList,File outputFile,Comparator<String> cmp) throws IOException {
@@ -77,22 +76,23 @@ public class Indexer {
         }
         return rowCounter;
     }
-    private long mergeSortedFiles(BufferedWriter fbw, Comparator<String> cmp, List<BinaryFileBuffer> buffers) throws IOException {
+    private int mergeSortedFiles(BufferedWriter fbw, Comparator<String> cmp, List<BinaryFileBuffer> buffers) throws IOException {
         PriorityQueue<BinaryFileBuffer> pq = new PriorityQueue<>(
-                11, (i, j) -> cmp.compare(i.peek(), j.peek()));
+                23, (i, j) -> cmp.compare(i.peek(), j.peek()));
         for (BinaryFileBuffer bfb : buffers) {
             if (!bfb.empty()) {
                 pq.add(bfb);
             }
         }
-        long rowCounter = 0;
+
+        int rowCounter = 0;
         try {
-            String lastLine = null;
+            Term lastTermLine = null;
+            String lastLine;
             if(pq.size() > 0) {
                 BinaryFileBuffer bfb = pq.poll();
                 lastLine = bfb.pop();
-                fbw.write(lastLine);
-                fbw.newLine();
+                lastTermLine = Term.decryptTermFromStr(lastLine);
                 ++rowCounter;
                 if (bfb.empty())
                     bfb.fbr.close();
@@ -102,17 +102,28 @@ public class Indexer {
             while (pq.size() > 0) {
                 BinaryFileBuffer bfb = pq.poll();
                 String r = bfb.pop();
-                // Skip duplicate lines
-                if  (cmp.compare(r, lastLine) != 0) {
-                    fbw.write(r);
-                    fbw.newLine();
-                    lastLine = r;
+                Term rT = Term.decryptTermFromStr(r);
+                try{
+                    if  (cmp.compare(rT.getValue(), lastTermLine.getValue()) != 0) {
+                        fbw.write(r);
+                        fbw.newLine();
+                        //TODO - ADD FIELDS IF NEEDED
+                        Dictionary.put(rT.getValue(),rT.getTermIDF() /* int[] {rT.getTermIDF(),rowCounter/* , add more fields , }*/);
+                    }
+                    else
+                        rT.termsUnion(lastTermLine);
                 }
+                catch (Exception e){
+                    System.out.println(rT);
+                    System.out.println(lastTermLine);
+                }
+                lastTermLine = rT;
                 ++rowCounter;
-                if (bfb.empty())
+                if (bfb.empty()) {
                     bfb.fbr.close();
-                 else
+                } else {
                     pq.add(bfb); // add it back
+                }
 
             }
         }
@@ -127,8 +138,8 @@ public class Indexer {
 
 
     private File sortAndSave(List<String> tmpList,Comparator<String> cmp) throws IOException {
-        File newTmpFile = new File("C:\\Users\\אלי\\doc\\DocNum" + counter + ".txt");
-        tmpList = tmpList.parallelStream().sorted(cmp).collect(Collectors.toCollection(ArrayList<String>::new));
+        File newTmpFile = new File(pathToPosting +"DocNum" + counter + ".txt");
+        tmpList = tmpList.parallelStream().sorted(cmp).collect(Collectors.toCollection(ArrayList::new));
         OutputStream out = new FileOutputStream(newTmpFile);
         BufferedWriter fbw = new BufferedWriter(new OutputStreamWriter(out));
         for (String s : tmpList) {
@@ -141,7 +152,7 @@ public class Indexer {
     private void writeDocumentData(){
         HashMap<String,Document> corpusDocumentsData = Document.corpusDocuments;
         try {
-            PrintWriter corpusDocFile = new PrintWriter("d:\\documents\\users\\talbense\\Documents\\blabla\\documentsData"+ ".txt");
+            PrintWriter corpusDocFile = new PrintWriter(pathToPosting+"documentsData"+ ".txt");
             for(Document doc : corpusDocumentsData.values()){
                 corpusDocFile.println(doc);
             }
@@ -149,7 +160,7 @@ public class Indexer {
             e.printStackTrace();
         }
     }
-    /*
+   /*
     public static Collection<Term> iterateThroughTermFile(String path, int termLine, int range){
         List<Term> termsFileIteration = new ArrayList<>();
         try (Stream<String> lines = Files.lines(Paths.get(path))) {

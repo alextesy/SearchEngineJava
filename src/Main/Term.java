@@ -1,6 +1,8 @@
 package Main;
 
 
+import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
+
 import java.util.*;
 
 import static Main.Document.addDocument;
@@ -50,6 +52,21 @@ public class Term{
         return docDictionary.get(document).size();
 
     }
+    public int getTermIDF() {
+        return this.docDictionary.size();
+    }
+
+    public String getValue(){
+        return this.value;
+    }
+
+    public Term termsUnion(Term another){
+        if(value.equals("information")){
+            System.out.println("");
+        }
+        this.docDictionary.putAll(another.docDictionary);
+        return this;
+    }
 
     @Override
     public String toString() {
@@ -80,19 +97,28 @@ public class Term{
         return term.toString();
     }
 
+
+    //TODO - FIND THE FUCKING BUG.
     public static Term decryptTermFromStr(String str){
-        String[] termData = str.split("#");
-        Term term = new Term(termData[0]);
-        for(int i=1 ; i<termData.length; i+=1){
-            String[] docData = termData[i].split("&");
-            Document doc = addDocument(docData[0],docData[1]);
-            String[] termIndex = docData[2].split("\\^");
-            term.docDictionary.put(doc,new ArrayList<>());
-            term.docDictionary.get(doc).add(Integer.parseInt(termIndex[0]));
-            for(int j=1; j < termIndex.length; j+=1)
-                term.docDictionary.get(doc).add(Integer.parseInt(termIndex[j]));
+        try {
+            String[] termData = str.split("#");
+            Term term = new Term(termData[0]);
+            for (int i = 1; i < termData.length; i += 1) {
+                String[] docData = termData[i].split("&");
+                Document doc = addDocument(docData[0], docData[1]);
+                String[] termIndex = docData[2].split("\\^");
+                term.docDictionary.put(doc, new ArrayList<>());
+                term.docDictionary.get(doc).add(Integer.parseInt(termIndex[0]));
+                for (int j = 1; j < termIndex.length; j += 1)
+                    term.docDictionary.get(doc).add(Integer.parseInt(termIndex[j]));
+            }
+            return term;
         }
-        return term;
+        catch(Exception e){
+
+        }
+        return null;
+
     }
 
     public enum Kind {
