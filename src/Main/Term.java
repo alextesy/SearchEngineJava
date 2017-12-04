@@ -13,6 +13,7 @@ public class Term{
     private Map<Document,List<Integer>> docDictionary;
     private String value;
     private Kind kind;
+    private int termTDF=0;
 
     private Term(String value /*,Kind kind*/){
         this.docDictionary = new HashMap<>();
@@ -21,15 +22,17 @@ public class Term{
     }
 
     public static void addTerm(String value/*,String kind*/,Document document,int location){
+        Term term;
         if(currentTermDictionary.containsKey(value)){
-            Term term = currentTermDictionary.get(value);
+            term = currentTermDictionary.get(value);
             term.updatedDoc(document,location);
         }
         else{
-            Term newTerm = new Term(value/*,kind*/) ;
-            newTerm.updatedDoc(document,location);
-            currentTermDictionary.put(value,newTerm);
+            term = new Term(value/*,kind*/) ;
+            term.updatedDoc(document,location);
+            currentTermDictionary.put(value,term);
         }
+        term.termTDF+=1;
     }
 
     private void updatedDoc(Document document,int location){
@@ -52,8 +55,17 @@ public class Term{
         return docDictionary.get(document).size();
 
     }
+
+
     public int getTermIDF() {
         return this.docDictionary.size();
+    }
+    public int getTermTDF(){
+        if (termTDF==0){
+            for(List<Integer> locations : this.docDictionary.values())
+                termTDF+= locations.size();
+        }
+        return termTDF;
     }
 
     public String getValue(){

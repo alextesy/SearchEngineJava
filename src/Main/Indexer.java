@@ -36,7 +36,7 @@ public class Indexer {
         try{
             if (directoryListing != null) {
                 for (File child : directoryListing) {
-                    //if(counter == 6 ) break;
+                    //if(counter == 2 ) break;
                     currentSize+=ReadFile.readTextFile(child);
                         if (currentSize > readFileSize) {
                             currentSize=0;
@@ -78,7 +78,7 @@ public class Indexer {
     }
     private int mergeSortedFiles(BufferedWriter fbw, Comparator<String> cmp, List<BinaryFileBuffer> buffers) throws IOException {
         PriorityQueue<BinaryFileBuffer> pq = new PriorityQueue<>(
-                23, (i, j) -> cmp.compare(i.peek(), j.peek()));
+                30, (i, j) -> cmp.compare(i.peek(), j.peek()));
         for (BinaryFileBuffer bfb : buffers) {
             if (!bfb.empty()) {
                 pq.add(bfb);
@@ -104,20 +104,20 @@ public class Indexer {
                 String r = bfb.pop();
                 Term rT = Term.decryptTermFromStr(r);
                 try{
-                    if  (cmp.compare(rT.getValue(), lastTermLine.getValue()) != 0) {
-                        fbw.write(r);
+                    if(cmp.compare(rT.getValue(), lastTermLine.getValue()) != 0) {
+                        fbw.write(lastTermLine.encryptTermToStr());
                         fbw.newLine();
+                        lastTermLine = rT;
                         //TODO - ADD FIELDS IF NEEDED
-                        Dictionary.put(rT.getValue(),rT.getTermIDF() /* int[] {rT.getTermIDF(),rowCounter/* , add more fields , }*/);
+                        Dictionary.put(rT.getValue(), rT.getTermTDF()/*rT.getTermIDF(),,rowCounter , add more fields ,}*/ );
                     }
                     else
-                        rT.termsUnion(lastTermLine);
+                        lastTermLine.termsUnion(rT);
                 }
                 catch (Exception e){
                     System.out.println(rT);
                     System.out.println(lastTermLine);
                 }
-                lastTermLine = rT;
                 ++rowCounter;
                 if (bfb.empty()) {
                     bfb.fbr.close();

@@ -6,6 +6,8 @@ import java.util.regex.Pattern;
 
 public class ReadFile {
 
+    public static int docNummberOfFiles=0;
+
     private ReadFile(){}
 
     public static long readTextFile(File currentFile) {
@@ -32,6 +34,7 @@ public class ReadFile {
             String textContSub=docNum.substring(8,docNum.length()-9);
             Document document = Document.addDocument(fileName,textContSub);
             Parse parser = new Parse(textCont,document);
+            docNummberOfFiles+=1;
             parser.ParseFile();
         }
         return StringSizeEstimator.estimatedSizeOf(content);
