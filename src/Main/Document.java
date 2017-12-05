@@ -27,7 +27,7 @@ public class Document {
 
     public static Document addDocument(String fileName, String docName){
         if(!corpusDocuments.containsKey(fileName+docName)){
-            Document document = new Document(docName,fileName);
+            Document document = new Document(fileName,docName);
             corpusDocuments.put(fileName+docName,document);
             return document;
         }

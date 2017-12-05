@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.*;
 
-import static java.lang.System.exit;
 
 public class Parse {
     private static final Collection<String> stopWords = initStopWords();

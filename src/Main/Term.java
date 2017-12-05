@@ -61,10 +61,10 @@ public class Term{
         return this.docDictionary.size();
     }
     public int getTermTDF(){
-        if (termTDF==0){
+        /*if (termTDF==0){
             for(List<Integer> locations : this.docDictionary.values())
                 termTDF+= locations.size();
-        }
+        }*/
         return termTDF;
     }
 
@@ -73,9 +73,6 @@ public class Term{
     }
 
     public Term termsUnion(Term another){
-        if(value.equals("information")){
-            System.out.println("");
-        }
         this.docDictionary.putAll(another.docDictionary);
         return this;
     }
@@ -101,11 +98,13 @@ public class Term{
             term.append("#");
             term.append(doc.getKey().getFileName() + "&" + doc.getKey().getDocName() +  "&");
             List<Integer> termLocations = doc.getValue();
+
             for(int i=0; i<termLocations.size() && i < 100 ; i+=1){
                 term.append(termLocations.get(i));
                 term.append("^");
             }
         }
+
         return term.toString();
     }
 

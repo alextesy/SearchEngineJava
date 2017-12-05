@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 public class Indexer {
     public static final Map<String,Term> currentTermDictionary = new HashMap<>();
     public static final long CORPUS_BYTE_SIZE = 1578400481; // 1.47 - GB - 1.47*2^30 bytes
-    public static final Map<String,Integer> Dictionary = new HashMap<>();
+    public static final Map<String,int[]> Dictionary = new HashMap<>();
 
     private double indexRunningTime;
     private String pathToCorpus;
@@ -36,7 +36,7 @@ public class Indexer {
         try{
             if (directoryListing != null) {
                 for (File child : directoryListing) {
-                    //if(counter == 2 ) break;
+                    //if(counter == 10 ) break;
                     currentSize+=ReadFile.readTextFile(child);
                         if (currentSize > readFileSize) {
                             currentSize=0;
@@ -109,12 +109,13 @@ public class Indexer {
                         fbw.newLine();
                         lastTermLine = rT;
                         //TODO - ADD FIELDS IF NEEDED
-                        Dictionary.put(rT.getValue(), rT.getTermTDF()/*rT.getTermIDF(),,rowCounter , add more fields ,}*/ );
+                        Dictionary.put(rT.getValue(),new int[]{rT.getTermTDF(),rT.getTermIDF(),rowCounter} /* add more fields ,}*/ );
                     }
                     else
                         lastTermLine.termsUnion(rT);
                 }
                 catch (Exception e){
+                    System.out.println("tal");
                     System.out.println(rT);
                     System.out.println(lastTermLine);
                 }
@@ -146,6 +147,7 @@ public class Indexer {
             fbw.write(s);
             fbw.newLine();
         }
+        fbw.flush();
         return newTmpFile;
     }
 
@@ -173,7 +175,18 @@ public class Indexer {
         return termsFileIteration;
     }
     */
+    public void printDictionary(String path){
+        FileOutputStream fout = null;
+        try {
+            fout = new FileOutputStream(path);
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            oos.writeObject(Dictionary);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+
+    }
     public double getIndexRunningTime() {
         return this.indexRunningTime;
     }
@@ -210,4 +223,5 @@ public class Indexer {
         private String cache;
 
     }
+
 }
