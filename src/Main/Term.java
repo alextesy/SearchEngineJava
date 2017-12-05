@@ -61,10 +61,10 @@ public class Term{
         return this.docDictionary.size();
     }
     public int getTermTDF(){
-        /*if (termTDF==0){
+        if (termTDF==0){
             for(List<Integer> locations : this.docDictionary.values())
                 termTDF+= locations.size();
-        }*/
+        }
         return termTDF;
     }
 

@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 public class Indexer {
     public static final Map<String,Term> currentTermDictionary = new HashMap<>();
     public static final long CORPUS_BYTE_SIZE = 1578400481; // 1.47 - GB - 1.47*2^30 bytes
-    public static final Map<String,int[]> Dictionary = new HashMap<>();
+    public static Map<String,int[]> Dictionary = new HashMap<>();
 
     private double indexRunningTime;
     private String pathToCorpus;
@@ -36,7 +36,7 @@ public class Indexer {
         try{
             if (directoryListing != null) {
                 for (File child : directoryListing) {
-                    //if(counter == 10 ) break;
+                    //if(counter == 5 ) break;
                     currentSize+=ReadFile.readTextFile(child);
                         if (currentSize > readFileSize) {
                             currentSize=0;
@@ -176,17 +176,42 @@ public class Indexer {
     }
     */
     public void printDictionary(String path){
-        FileOutputStream fout = null;
         try {
-            fout = new FileOutputStream(path);
+            FileOutputStream fout = new FileOutputStream(path + "dictionary");
             ObjectOutputStream oos = new ObjectOutputStream(fout);
             oos.writeObject(Dictionary);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
+    public static Map<String,int[]> readDictionary(String path){
+        FileInputStream fin = null;
+        try {
+            fin = new FileInputStream(path +"dictionary");
+            ObjectInputStream ois = new ObjectInputStream(fin);
+            Dictionary = (Map<String,int[]>) ois.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Dictionary;
+    }
+    public static void buildCache(Map<String,int[]> dict){
+        PriorityQueue<Map.Entry<String,int[]>> pq = new PriorityQueue<>(new Comparator<Map.Entry<String, int[]>>() {
+            @Override
+            public int compare(Map.Entry<String, int[]> o1, Map.Entry<String, int[]> o2) {
+                return o1.getValue()[1] - o2.getValue()[1];
+            }
+        });
+        for(Map.Entry<String,int[]> termData : dict.entrySet()){
+            pq.add(termData);
+        }
+        for(int i=0; i<10000; i+=1){
+            Map.Entry<String,int[]> bla = pq.poll();
+            System.out.println(bla.getKey() + " " + bla.getValue()[0]);
+        }
+    }
+
+
     public double getIndexRunningTime() {
         return this.indexRunningTime;
     }
