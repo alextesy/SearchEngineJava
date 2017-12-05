@@ -36,7 +36,7 @@ public class Indexer {
         try{
             if (directoryListing != null) {
                 for (File child : directoryListing) {
-                    //if(counter == 5 ) break;
+                    //if(counter == 3 ) break;
                     currentSize+=ReadFile.readTextFile(child);
                         if (currentSize > readFileSize) {
                             currentSize=0;
@@ -190,6 +190,7 @@ public class Indexer {
             fin = new FileInputStream(path +"dictionary");
             ObjectInputStream ois = new ObjectInputStream(fin);
             Dictionary = (Map<String,int[]>) ois.readObject();
+            System.out.println(Dictionary.get("TEXT")[1]);
         } catch (Exception e) {
             e.printStackTrace();
         }

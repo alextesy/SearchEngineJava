@@ -234,35 +234,35 @@ public class Term{
         private static final Map<String,Month> monthsMap = initMonthsMap();
         private static Map<String,Month> initMonthsMap() {
             return new HashMap<String, Month>(){{
-                put("january",January);
-                put("jan",January);
-                put("february",February);
-                put("feb",February);
-                put("march",March);
-                put("mar",March);
-                put("april",April);
-                put("apr",April);
-                put("may",May);
-                put("june",June);
-                put("jun",June);
-                put("july",July);
-                put("jul",July);
-                put("august",August);
-                put("aug",August);
-                put("september",September);
-                put("sep",September);
-                put("october",October);
-                put("oct",October);
-                put("november",November);
-                put("nov",November);
-                put("december",December);
-                put("dec",December);
+                put("January",January);
+                put("Jan",January);
+                put("February",February);
+                put("Feb",February);
+                put("March",March);
+                put("Mar",March);
+                put("April",April);
+                put("Apr",April);
+                put("May",May);
+                put("June",June);
+                put("Jun",June);
+                put("July",July);
+                put("Jul",July);
+                put("August",August);
+                put("Aug",August);
+                put("September",September);
+                put("Sep",September);
+                put("October",October);
+                put("Oct",October);
+                put("November",November);
+                put("Nov",November);
+                put("December",December);
+                put("Dec",December);
             }};
         }
         public static boolean isMonth(String str){
            return monthsMap.containsKey(str);
         }
-        public Month getMonth(String str){
+        public static Month getMonth(String str){
             return monthsMap.get(str);
         }
     }
