@@ -1,7 +1,6 @@
 package Main;
 
 
-import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
 
 import java.util.*;
 
@@ -12,16 +11,17 @@ public class Term{
 
     private Map<Document,List<Integer>> docDictionary;
     private String value;
-    private Kind kind;
-    private int termTDF=0;
+    private int termTDF;
+    /* private Kind kind; */
 
     private Term(String value /*,Kind kind*/){
         this.docDictionary = new HashMap<>();
         this.value = value;
+        this.termTDF = 0 ;
         /*this.kind = kind*/;
     }
 
-    public static void addTerm(String value/*,String kind*/,Document document,int location){
+    public static void addTerm(String value/*,Kind kind*/,Document document,int location){
         Term term;
         if(currentTermDictionary.containsKey(value)){
             term = currentTermDictionary.get(value);
@@ -61,10 +61,12 @@ public class Term{
         return this.docDictionary.size();
     }
     public int getTermTDF(){
+        /*
         if (termTDF==0){
             for(List<Integer> locations : this.docDictionary.values())
                 termTDF+= locations.size();
         }
+        */
         return termTDF;
     }
 
@@ -74,12 +76,13 @@ public class Term{
 
     public Term termsUnion(Term another){
         this.docDictionary.putAll(another.docDictionary);
+        this.termTDF+=another.termTDF;
         return this;
     }
 
     @Override
     public String toString() {
-        StringBuilder term=new StringBuilder(value + ", ");
+        StringBuilder term=new StringBuilder(value + ", TermTDF: " + termTDF);
         for (Map.Entry<Document,List<Integer>> doc : docDictionary.entrySet()){
             term.append("FileName: " + doc.getKey().getFileName() + " ,DocName: " + doc.getKey().getDocName() +  " ,TermLocations: ");
             List<Integer> termLocations = doc.getValue();
@@ -93,7 +96,7 @@ public class Term{
         return term.toString();
     }
     public String encryptTermToStr(){
-        StringBuilder term=new StringBuilder(value);
+        StringBuilder term=new StringBuilder(value + "#" + termTDF);
         for (Map.Entry<Document,List<Integer>> doc : docDictionary.entrySet()){
             term.append("#");
             term.append(doc.getKey().getFileName() + "&" + doc.getKey().getDocName() +  "&");
@@ -109,27 +112,20 @@ public class Term{
     }
 
 
-    //TODO - FIND THE FUCKING BUG.
     public static Term decryptTermFromStr(String str){
-        try {
-            String[] termData = str.split("#");
-            Term term = new Term(termData[0]);
-            for (int i = 1; i < termData.length; i += 1) {
-                String[] docData = termData[i].split("&");
-                Document doc = addDocument(docData[0], docData[1]);
-                String[] termIndex = docData[2].split("\\^");
-                term.docDictionary.put(doc, new ArrayList<>());
-                term.docDictionary.get(doc).add(Integer.parseInt(termIndex[0]));
-                for (int j = 1; j < termIndex.length; j += 1)
-                    term.docDictionary.get(doc).add(Integer.parseInt(termIndex[j]));
-            }
-            return term;
+        String[] termData = str.split("#");
+        Term term = new Term(termData[0]);
+        term.termTDF = Integer.parseInt(termData[1]);
+        for (int i = 2; i < termData.length; i += 1) {
+            String[] docData = termData[i].split("&");
+            Document doc = addDocument(docData[0], docData[1]);
+            String[] termIndex = docData[2].split("\\^");
+            term.docDictionary.put(doc, new ArrayList<>());
+            term.docDictionary.get(doc).add(Integer.parseInt(termIndex[0]));
+            for (int j = 1; j < termIndex.length; j += 1)
+                term.docDictionary.get(doc).add(Integer.parseInt(termIndex[j]));
         }
-        catch(Exception e){
-
-        }
-        return null;
-
+        return term;
     }
 
     public enum Kind {

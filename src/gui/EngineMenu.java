@@ -1,5 +1,7 @@
 package gui;
 
+import Main.Indexer;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +17,7 @@ public class EngineMenu {
     private InitializationPathTable pathsInitializing;
     private boolean performStemming;
 
+    private Indexer indexer;
 
 
     public EngineMenu(){
@@ -33,7 +36,7 @@ public class EngineMenu {
             e.printStackTrace();
         }
 
-        this.engineFrame.setVisible(false);
+        this.engineFrame.setVisible(true);
         this.engineFrame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -56,21 +59,46 @@ public class EngineMenu {
     private JMenu createFileMenu() {
         JMenu fileMenu = new JMenu("File");
 
-        JMenuItem initializationFrame = new JMenuItem("Initialize paths");
+        JMenuItem createIndexFile = new JMenuItem("Create index");
+        JMenuItem initializationFrame = new JMenuItem("Initial paths");
         JMenuItem saveCacheDictionary = new JMenuItem("Save cache/dictionary");
         JMenuItem openCacheDictionary = new JMenuItem("Open cache/dictionary");
         JMenuItem exitMenuItem = new JMenuItem("Exit");
 
+        fileMenu.add(createIndexFile);
         fileMenu.add(initializationFrame);
         fileMenu.add(saveCacheDictionary);
         fileMenu.add(openCacheDictionary);
         fileMenu.add(exitMenuItem);
 
+        saveCacheDictionary.setEnabled(false);
+        openCacheDictionary.setEnabled(false);
 
+        initializationFrame.addActionListener(e -> pathsInitializing.setVisible(true));
 
-        initializationFrame.addActionListener(e -> {
-            engineFrame.setVisible(false);
-            pathsInitializing.setVisible(true);
+        createIndexFile.addActionListener(e -> {
+            try{
+                String corpusPath = pathsInitializing.getCorpusDir();
+                String postingPath = pathsInitializing.getPostingDir();
+                indexer = new Indexer(corpusPath,postingPath,Indexer.CORPUS_BYTE_SIZE/10,performStemming);
+                new Thread(() -> {
+                    try {
+                        createIndexFile.setEnabled(false);
+                        indexer.toIndex();
+                        createIndexFile.setEnabled(true);
+                        saveCacheDictionary.setEnabled(true);
+                        openCacheDictionary.setEnabled(true);
+
+                    } catch (Exception e1) {
+                        JOptionPane.showMessageDialog(this.engineFrame,"Incorrect paths.try initial paths again.");
+                    }
+                }).start();
+
+            }
+            catch (Exception e2){
+                JOptionPane.showMessageDialog(this.engineFrame,"You should initial paths first.");
+            }
+
         });
 
         saveCacheDictionary.addActionListener(e -> {
@@ -80,9 +108,10 @@ public class EngineMenu {
             int returnVal = savingDirChooser.showSaveDialog(null);
             if(returnVal == JFileChooser.APPROVE_OPTION) {
                 File savedDirChoosed = savingDirChooser.getSelectedFile();
-                //TODO - save the cache and dictonary at the chosen path
+                indexer.writeDictionary(savedDirChoosed.getPath());
             }
         });
+
 
         openCacheDictionary.addActionListener(e -> {
             JFileChooser openingDirChooser = new JFileChooser();

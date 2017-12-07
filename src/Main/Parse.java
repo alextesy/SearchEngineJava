@@ -32,12 +32,12 @@ public class Parse {
         this.termIndex = 0;
     }
     public void ParseFile(){
-        StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:;?!'[`]/|()<#>*&+-\"");
+        StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:;?!'[`]./|()<#>*&+-\"");
+        Stemmer stemmer = new Stemmer();
         while(stk.hasMoreElements() ){
             String token = stk.nextToken();
             if(stopWords.contains(token))
                 continue;
-            Stemmer stemmer = new Stemmer();
             stemmer.add(token.toCharArray(),token.length());
             stemmer.stem();
             parseTokens(stemmer.toString(),stk);

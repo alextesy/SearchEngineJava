@@ -2,6 +2,8 @@ package gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -20,14 +22,13 @@ public class InitializationPathTable extends JDialog {
         myPanel.add(new JLabel("Path to posting directory:"));
         Button postingDirPath = new Button("Browse...");
         myPanel.add(postingDirPath);
-        JButton cancelButton = new JButton("Cancel");
-        myPanel.add(cancelButton);
         JButton okButton = new JButton("Ok");
         myPanel.add(okButton);
 
         setLocationRelativeTo(owner);
         pack();
-        this.setVisible(true);
+        this.setVisible(false);
+
 
 
 
@@ -36,7 +37,6 @@ public class InitializationPathTable extends JDialog {
             @Override
             public void windowClosing(WindowEvent e) {
                 super.windowClosing(e);
-                System.exit(0);
             }
         });
         okButton.addActionListener(e -> {
@@ -49,7 +49,7 @@ public class InitializationPathTable extends JDialog {
             postingDirPathChooser.setName("Posting Dir Path");
             int returnVal = postingDirPathChooser.showOpenDialog(null);
             if(returnVal == JFileChooser.APPROVE_OPTION) {
-                File postingDir = postingDirPathChooser.getSelectedFile();
+                this.postingDir = postingDirPathChooser.getSelectedFile();
             }
         });
         corpusDirPath.addActionListener(e -> {
@@ -58,9 +58,17 @@ public class InitializationPathTable extends JDialog {
             corpusDirPathChooser.setName("Corpus Dir Path");
             int returnVal =corpusDirPathChooser.showOpenDialog(null);
             if(returnVal == JFileChooser.APPROVE_OPTION) {
-                File corpusDir = corpusDirPathChooser.getSelectedFile();
+                this.corpusDir = corpusDirPathChooser.getSelectedFile();
             }
         });
-        cancelButton.addActionListener(e -> System.exit(1));
+
+    }
+
+    public String getCorpusDir() {
+        return corpusDir.getPath();
+    }
+
+    public String getPostingDir() {
+        return postingDir.getPath();
     }
 }

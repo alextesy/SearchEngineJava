@@ -2,58 +2,36 @@ package Main;
 
 
 
-import java.io.*;
-import java.lang.reflect.Array;
-import java.util.*;
+import gui.EngineMenu;
 
-import static javafx.application.Platform.exit;
+import java.io.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-
+/*
         try {
 
-            Indexer indexer = new Indexer("d:\\documents\\users\\kremians\\Documents\\corpus","d:\\documents\\users\\kremians\\Documents\\blabla\\",Indexer.CORPUS_BYTE_SIZE/10);
+            String corpusPath = "C:\\Users\\אלי\\Desktop\\corpus" ;
+            String docsPath = "C:\\Users\\אלי\\doc\\";
+
+            Indexer indexer = new Indexer(corpusPath,docsPath,Indexer.CORPUS_BYTE_SIZE/10);
             indexer.toIndex();
-            //indexer.printDictionary("d:\\documents\\users\\kremians\\Documents\\blabla\\");
+            indexer.writeDictionary(docsPath);
             System.out.println(indexer.getIndexRunningTime());
 
-        } catch (IOException e) {
+            Indexer.buildCache(Indexer.readDictionary(docsPath));
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        //new EngineMenu();
-
-
-        //Indexer.buildCache(Indexer.readDictionary("d:\\documents\\users\\kremians\\Documents\\blabla\\"));
-
-        /*
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\אלי\\doc\\Hallelujah"))) {
-
-            String line;
-            while ((line = br.readLine()) != null)
-                try {
-                    Term term = Term.decryptTermFromStr(line);
-                    Indexer.Dictionary.put(term.getValue(), term.getTermTDF());
-                } catch (Exception e) {
-                    System.out.println(line);
-
-
-
-                }
-
-
-        } catch (IOException e) {
-        }
+*/
+        new EngineMenu();
 
 
 
 
-       //Map<String,Integer> map = MapUtil.sortByValue(Indexer.Dictionary);
-       //System.out.println(ReadFile.docNummberOfFiles);
-
-        */
     }
 
 }
