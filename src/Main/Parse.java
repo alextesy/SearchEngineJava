@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.*;
+import java.util.concurrent.TimeoutException;
+import java.util.regex.Pattern;
 
 
 public class Parse {
@@ -12,6 +14,8 @@ public class Parse {
     private int termIndex;
     public String docContent;
     public Document document;
+    public static boolean stemming;
+    public static Pattern patternTH= Pattern.compile("([4-9]|[12][0-9]|[3][0])th");
 
     private static Collection<String> initStopWords() {
         try {
@@ -30,6 +34,8 @@ public class Parse {
         this.docContent = content;
         this.document = document;
         this.termIndex = 0;
+
+
     }
     public void ParseFile(){
         StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:;?!'[`]./|()<#>*&+-\"");
@@ -38,17 +44,22 @@ public class Parse {
             String token = stk.nextToken();
             if(stopWords.contains(token))
                 continue;
-            stemmer.add(token.toCharArray(),token.length());
-            stemmer.stem();
-            parseTokens(stemmer.toString(),stk);
+            if(stemming){
+                stemmer.add(token.toCharArray(),token.length());
+                stemmer.stem();
+                parseTokens(stemmer.toString(),stk);
+            }
+            else{
+                parseTokens(token,stk);
 
+            }
         }
     }
 
 
     private Term parseTokens(String token,StringTokenizer stk){
             token = removeComma(token);
-            if (isNumeric(token)) {
+            if (isNumeric(token)) {//if NUMBER
                 if (token.contains(".")) {
                     Double.parseDouble(token);
                     token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
@@ -67,7 +78,7 @@ public class Parse {
                     termIndex += 1;
                     parseTokens(nextTkn, stk);
                 }
-            } else if ((token.endsWith("%") || token.startsWith("$")) && token.length() > 1) {
+            } else if (token.length() > 1&&(token.endsWith("%") || token.startsWith("$")) ) {
                 if (token.endsWith("%")) {
                     token = token.substring(0, token.length() - 1);
                     if (isNumeric(token)) {
@@ -88,26 +99,52 @@ public class Parse {
 
             } else if (Term.Month.isMonth(token)) {
                 String nextTkn=stk.nextToken();
-                if (isNumeric(nextTkn)&&(nextTkn.length()==1||nextTkn.length()==2)&&!nextTkn.contains("."))
-                  ParseMonthDD(token,nextTkn, stk);
+                if (isNumeric(nextTkn)&&!nextTkn.contains(".")) {
+                    if (nextTkn.length() == 4){
+                        ParseMONTHYYYY(token,nextTkn,stk);
+                    }
+                    else if ((nextTkn.length() == 1 || nextTkn.length() == 2))
+                        ParseMonthDD(token, nextTkn, stk);
+                }
                 else{
                     Term.addTerm(token, document, termIndex);
                     termIndex += 1;
                     parseTokens(nextTkn,stk);
                 }
+            }else if(token.length()>1&&Character.isUpperCase(token.charAt(0))){//upper case words not done
+                String nextTkn=stk.nextToken();
+                if(Character.isUpperCase(nextTkn.charAt(0))){
+                    StringBuilder builder=new StringBuilder();
+                    Term.addTerm(token, document, termIndex);
+                    termIndex += 1;
+                    builder.append(token);
+                    while (Character.isUpperCase(nextTkn.charAt(0))){
+                        Term.addTerm(nextTkn, document, termIndex);
+                        termIndex += 1;
+                        builder.append(" "+nextTkn);
+                        nextTkn=stk.nextToken();
+                    }
+                    Term.addTerm(builder.toString(), document, termIndex);
+                    termIndex += 1;
+                    parseTokens(nextTkn,stk);
+                }
+                else{
+                    Term.addTerm(token, document, termIndex);
+                    termIndex += 1;
+                    parseTokens(nextTkn,stk);
+                }
+
             }
-            else if(token.length()==4&&token.charAt(token.length()-1)=='h'&&token.charAt(token.length()-2)=='t'){
-                String temp=token.substring(0,token.length()-2);
-                String next=stk.nextToken();
-                if(Term.Month.isMonth(next)&&isNumeric(temp)&&(temp.length()==1||temp.length()==2)&&!temp.contains(".")){
-                    ParseDDMONTH(temp,next,stk);
+            else if(patternTH.matcher(token).find()) {
+                String temp=stk.nextToken();
+                if(Term.Month.isMonth(temp)){
+                    ParseDDMONTH(token,temp,stk);
                 }
                 else{
                     Term.addTerm(token, document, termIndex);
                     termIndex++;
-                    parseTokens(next,stk);
+                    parseTokens(temp,stk);
                 }
-
             }
             else {
                 Term.addTerm(token, document, termIndex);
@@ -129,7 +166,7 @@ public class Parse {
         }
         termIndex +=1;
     }
-    private void ParseMonthDD(String token,String nextTkn, StringTokenizer stk){
+    private void ParseMonthDD(String token,String nextTkn, StringTokenizer stk){//token=month, nextTKN=number with 1,2 or 4 chars
         int day=Integer.parseInt(nextTkn);
         if(day>0&&day<32) {
             String nextNextoken = stk.nextToken();
@@ -146,8 +183,18 @@ public class Parse {
 
 
     }
+    private void ParseMONTHYYYY(String token,String nextTkn,StringTokenizer stk){//token=month nextTkn=YEAR
+        String year = yearCheck(nextTkn);
+        if(year!=null) {
+            Term.addTerm(Term.Month.getMonth(token) + "/" + year, document, termIndex);
+            termIndex++;
+        }
+        else {
+            Term.addTerm(token, document, termIndex);
+            termIndex++;
+            parseTokens(nextTkn,stk);
+        }
 
-    private void ParseDDTH(String token,String nextTkm,StringTokenizer stk){
 
     }
 

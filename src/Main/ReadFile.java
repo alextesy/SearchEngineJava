@@ -7,7 +7,6 @@ import java.util.regex.Pattern;
 public class ReadFile {
 
     public static int docNummberOfFiles=0;
-
     private ReadFile(){}
 
     public static long readTextFile(File currentFile) {

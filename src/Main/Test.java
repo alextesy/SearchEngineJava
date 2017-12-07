@@ -4,26 +4,55 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Test {
     public static ArrayList<String> test=new ArrayList<String>();
     private static final Collection<String> stopWords = initStopWords();
 
     public static void main(String[] args) {
-        StringTokenizer stk=new StringTokenizer("Financial stocks took the spotlight Monday, led by the 4.27 \n" +
+        StringTokenizer stk=new StringTokenizer("Financial Stocks Took the spotlight Monday, led by the 4.27 \n" +
                 "percent boom in the banking corner, as the Korea Stock Price \n" +
                 "Index (KOSPI) marched 9.45 points higher to 912.83. ", " \t\n\r\f:;?!'[`]/|()<#>*&+-\"");
-        while(stk.hasMoreElements()){
-            String token = stk.nextToken();
-            if(stopWords.contains(token))
-                continue;
-            Stemmer stemmer = new Stemmer();
-            stemmer.add(token.toCharArray(),token.length());
-            stemmer.stem();
-            parseTokens(stemmer.toString(),stk);
-        }
-        System.out.println("a");
+        String token;
+        while (stk.hasMoreElements()) {
+            token = stk.nextToken();
+            if (Character.isUpperCase(token.charAt(0))) {
+                String nextTkn = stk.nextToken();
+                if (Character.isUpperCase(nextTkn.charAt(0))) {
+                    StringBuilder builder = new StringBuilder();
+                    System.out.println(token);
+                    builder.append(token);
+                    while (Character.isUpperCase(nextTkn.charAt(0))) {
+                        System.out.println(nextTkn);
+                        builder.append(" " + nextTkn);
+                        nextTkn = stk.nextToken();
+                    }
+                    System.out.println(builder.toString());
+                    Parse(nextTkn);
+                } else {
+                    System.out.println(token);
+                    Parse(nextTkn);
+                }
 
+            }
+        }
+
+        //while(stk.hasMoreElements()){
+        //    String token = stk.nextToken();
+        //    if(stopWords.contains(token))
+        //        continue;
+        //    Stemmer stemmer = new Stemmer();
+        //    stemmer.add(token.toCharArray(),token.length());
+        //    stemmer.stem();
+        //    parseTokens(stemmer.toString(),stk);
+        //}
+        //System.out.println("a");
+
+    }
+    private static void Parse(String s){
+        System.out.println(s);
     }
     private static Collection<String> initStopWords() {
         try {

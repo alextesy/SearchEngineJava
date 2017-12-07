@@ -158,55 +158,55 @@ public class Term{
         January{
             @Override
             public String toString() {
-                return "1";
+                return "01";
             }
         },
         February{
             @Override
             public String toString() {
-                return "2";
+                return "02";
             }
         },
         March{
             @Override
             public String toString() {
-                return "3";
+                return "03";
             }
         },
         April{
             @Override
             public String toString() {
-                return "4";
+                return "04";
             }
         },
         May{
             @Override
             public String toString() {
-                return "5";
+                return "05";
             }
         },
         June{
             @Override
             public String toString() {
-                return "6";
+                return "06";
             }
         },
         July{
             @Override
             public String toString() {
-                return "7";
+                return "07";
             }
         },
         August{
             @Override
             public String toString() {
-                return "8";
+                return "08";
             }
         },
         September{
             @Override
             public String toString() {
-                return "9";
+                return "09";
             }
         },
         October{
@@ -231,28 +231,29 @@ public class Term{
         private static Map<String,Month> initMonthsMap() {
             return new HashMap<String, Month>(){{
                 put("January",January);
-                put("Jan",January);
+                put("JANUARY",January);
                 put("February",February);
-                put("Feb",February);
+                put("FEBRUARY",February);
                 put("March",March);
-                put("Mar",March);
+                put("MARCH",March);
                 put("April",April);
-                put("Apr",April);
+                put("APRIL",April);
                 put("May",May);
+                put("MAY",May);
                 put("June",June);
-                put("Jun",June);
+                put("JUNE",June);
                 put("July",July);
-                put("Jul",July);
+                put("JULY",July);
                 put("August",August);
-                put("Aug",August);
+                put("AUGUST",August);
                 put("September",September);
-                put("Sep",September);
+                put("SEPTEMBER",September);
                 put("October",October);
-                put("Oct",October);
+                put("OCTOBER",October);
                 put("November",November);
-                put("Nov",November);
+                put("NOVEMBER",November);
                 put("December",December);
-                put("Dec",December);
+                put("DECEMBER",December);
             }};
         }
         public static boolean isMonth(String str){
