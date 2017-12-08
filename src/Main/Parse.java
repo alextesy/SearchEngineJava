@@ -1,5 +1,7 @@
 package Main;
 
+import com.sun.jndi.cosnaming.CNCtx;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -78,7 +80,7 @@ public class Parse {
                     termIndex += 1;
                     parseTokens(nextTkn, stk);
                 }
-            } else if (token.length() > 1&&(token.endsWith("%") || token.startsWith("$")) ) {
+            } else if (token.length() > 1&&(token.endsWith("%") || token.startsWith("$")) ) {//percent or dollar
                 if (token.endsWith("%")) {
                     token = token.substring(0, token.length() - 1);
                     if (isNumeric(token)) {
@@ -112,28 +114,35 @@ public class Parse {
                     parseTokens(nextTkn,stk);
                 }
             }else if(token.length()>1&&Character.isUpperCase(token.charAt(0))){//upper case words not done
-                String nextTkn=stk.nextToken();
-                if(Character.isUpperCase(nextTkn.charAt(0))){
-                    StringBuilder builder=new StringBuilder();
-                    Term.addTerm(token, document, termIndex);
-                    termIndex += 1;
-                    builder.append(token);
-                    while (Character.isUpperCase(nextTkn.charAt(0))){
-                        Term.addTerm(nextTkn, document, termIndex);
+                if(stk.hasMoreElements()) {
+                    String nextTkn = stk.nextToken();
+                    token=token.toLowerCase();
+                    if (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
+                        Term.addTerm(token, document, termIndex);
+                        boolean check = true;
                         termIndex += 1;
-                        builder.append(" "+nextTkn);
-                        nextTkn=stk.nextToken();
+                        while (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
+                            String temp=nextTkn;
+                            nextTkn=removeComma(nextTkn).toLowerCase();
+                            Term.addTerm(nextTkn, document, termIndex);
+                            termIndex += 1;
+                            Term.addTerm(token+" "+nextTkn,document,termIndex);
+                            termIndex++;
+                            if (!stk.hasMoreElements()||temp.charAt(temp.length()-1)==',')break;
+                            token=nextTkn;
+                            nextTkn=stk.nextToken();
+                        }
+                    } else {
+                        Term.addTerm(token, document, termIndex);
+                        termIndex += 1;
+                        parseTokens(nextTkn, stk);
                     }
-                    Term.addTerm(builder.toString(), document, termIndex);
-                    termIndex += 1;
-                    parseTokens(nextTkn,stk);
+
                 }
-                else{
+                else {
                     Term.addTerm(token, document, termIndex);
                     termIndex += 1;
-                    parseTokens(nextTkn,stk);
                 }
-
             }
             else if(patternTH.matcher(token).find()) {
                 String temp=stk.nextToken();
@@ -217,9 +226,10 @@ public class Parse {
         return null;
     }
 
-    public static String removeComma(String s){
-        if(s.contains(",")){
-        StringBuilder str= new StringBuilder();
+    public static String removeComma(String s) {
+        if (s.contains(",")) {
+            return s.replace(",", "");
+        /*StringBuilder str= new StringBuilder();
             for(int i=0 ; i<s.length(); i++){
                 char c = s.charAt(i);
                 if(c != ','){
@@ -229,7 +239,9 @@ public class Parse {
             return str.toString();
         }
         else
-            return s;
+            return s;*/
+        }
+        return s;
     }
 
     public static boolean isNumeric(String s) {

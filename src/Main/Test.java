@@ -12,30 +12,44 @@ public class Test {
     private static final Collection<String> stopWords = initStopWords();
 
     public static void main(String[] args) {
-        StringTokenizer stk=new StringTokenizer("Financial Stocks Took the spotlight Monday, led by the 4.27 \n" +
-                "percent boom in the banking corner, as the Korea Stock Price \n" +
-                "Index (KOSPI) marched 9.45 points higher to 912.83. ", " \t\n\r\f:;?!'[`]/|()<#>*&+-\"");
+        StringTokenizer stk=new StringTokenizer("<F P=106> [Report by P Bulger] </F>\n" +
+                "  [Text] Pretoria March 29 SAPA -- The Transitional Executive \n" +
+                "Council [TEC] was looking into greater security force powers \n" +
+                "that would amount to a state of emergency being declared in \n" +
+                "Natal/kwaZulu. TEC Executive Secretary Mac Maharaj told the TEC \n" +
+                "on Tuesday [29 March] that security force action had already \n" +
+                "been stepped up in the territory as violence continued to \n" +
+                "escalate. He said the TEC's law and order sub-council was \n" +
+                "devising regulations to give security forces greater powers.", " \t\n\r\f:;?!'[`]/|()<#>*&+-\"");
         String token;
+        boolean check = true;
+
         while (stk.hasMoreElements()) {
             token = stk.nextToken();
-            if (Character.isUpperCase(token.charAt(0))) {
-                String nextTkn = stk.nextToken();
-                if (Character.isUpperCase(nextTkn.charAt(0))) {
-                    StringBuilder builder = new StringBuilder();
-                    System.out.println(token);
-                    builder.append(token);
-                    while (Character.isUpperCase(nextTkn.charAt(0))) {
-                        System.out.println(nextTkn);
-                        builder.append(" " + nextTkn);
-                        nextTkn = stk.nextToken();
-                    }
-                    System.out.println(builder.toString());
-                    Parse(nextTkn);
-                } else {
-                    System.out.println(token);
-                    Parse(nextTkn);
-                }
+            if (token.length()>1&&Character.isUpperCase(token.charAt(0))) {
+                if (stk.hasMoreElements()) {
+                    String nextTkn = stk.nextToken();
+                    if (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
+                        token=token.toLowerCase();
+                        System.out.println(token);
+                        while (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
+                            nextTkn=nextTkn.toLowerCase();
+                            System.out.println(nextTkn);
+                            System.out.println(token+" "+nextTkn);
+                            if(!stk.hasMoreElements()) break;
+                            token = nextTkn;
+                            nextTkn=stk.nextToken();
+                        }
 
+                    } else {
+                        System.out.println(token.toLowerCase());
+                        Parse(nextTkn);
+                    }
+
+                }
+            }
+            else {
+                System.out.println(token.toLowerCase());
             }
         }
 
@@ -145,9 +159,7 @@ public class Test {
         }
     }
 
-    private static void ParseDDTH(String token,String nextTkm,StringTokenizer stk){
 
-    }
 
 
 
