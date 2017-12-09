@@ -2,6 +2,7 @@ package Main;
 
 
 
+import java.io.FileWriter;
 import java.util.*;
 
 import static Main.Document.addDocument;
@@ -263,6 +264,103 @@ public class Term{
             return monthsMap.get(str);
         }
     }
+    public enum Number{
+        One{
+            @Override
+            public String toString() {
+                return "1";
+            }
 
+        },
+        Two{
+            @Override
+            public String toString() {
+                return "2";
+            }
+        },
+        Three{
+            @Override
+            public String toString() {
+                return "3";
+            }
+        },
+        Four{
+            @Override
+            public String toString() {
+                return "4";
+            }
+
+        },
+        Five{
+            @Override
+            public String toString() {
+                return "5";
+            }
+        },
+        Six{
+            @Override
+            public String toString() {
+                return "6";
+            }
+        },
+        Seven{
+            @Override
+            public String toString() {
+                return "7";
+            }
+        },
+        Eight{
+            @Override
+            public String toString() {
+                return "8";
+            }
+        },
+        Nine{
+            @Override
+            public String toString() {
+                return "9";
+            }
+        },
+        Ten{
+            @Override
+            public String toString() {
+                return "10";
+            }
+        };
+        private static final Map<String,Number> numberMap = initNumberMap();
+        private static Map<String,Number> initNumberMap() {
+            return new HashMap<String, Number>(){{
+                put("One",One);
+                put("one",One);
+                put("Two",Two);
+                put("two",Two);
+                put("Three",Three);
+                put("three",Three);
+                put("Four",Four);
+                put("four",Four);
+                put("Five", Five);
+                put("five",Five);
+                put("Six",Six);
+                put("six",Six);
+                put("Seven",Seven);
+                put("seven",Seven);
+                put("Eight",Eight);
+                put("eight",Eight);
+                put("Nine",Nine);
+                put("nine",Nine);
+                put("Ten",Ten);
+                put("ten",Ten);
+
+            }};
+        }
+        public static boolean isNumber(String str){
+            return numberMap.containsKey(str);
+        }
+        public static Number getNumber(String str){
+            return numberMap.get(str);
+        }
+
+
+    }
 }
 

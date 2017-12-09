@@ -30,7 +30,8 @@ public class ReadFile {
         while (m.find()&& mDocNum.find()) {
             String textCont = m.group();
             String docNum = mDocNum.group();
-            String textContSub=docNum.substring(8,docNum.length()-9);
+            String textContSub=docNum.substring(7,docNum.length()-8);
+            textContSub=textContSub.replace(" ","");
             Document document = Document.addDocument(fileName,textContSub);
             Parse parser = new Parse(textCont,document);
             docNummberOfFiles+=1;

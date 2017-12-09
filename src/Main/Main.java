@@ -15,8 +15,8 @@ public class Main {
 
         try {
 
-            String corpusPath = "C:\\Users\\IBM_ADMIN\\Desktop\\corpus\\corpus" ;
-            String docsPath = "C:\\Users\\IBM_ADMIN\\Documents\\blabla\\";
+            String corpusPath = "d:\\documents\\users\\kremians\\Documents\\corpus" ;
+            String docsPath = "d:\\documents\\users\\kremians\\Documents\\blabla\\";
 
             Indexer indexer = new Indexer(corpusPath,docsPath,Indexer.CORPUS_BYTE_SIZE/10,true);
             indexer.toIndex();

@@ -48,6 +48,8 @@ public class Parse {
             if(stemming){
                 stemmer.add(token.toCharArray(),token.length());
                 stemmer.stem();
+                if(stemmer.toString().equals("January/February"))
+                    System.out.println("alex");
                 parseTokens(stemmer.toString(),stk);
             }
             else{
@@ -60,10 +62,12 @@ public class Parse {
 
     private void parseTokens(String token,StringTokenizer stk){
             token = removeComma(token);
+            boolean dot=false;
             if (isNumeric(token)) {//if NUMBER
                 if (token.contains(".")) {
                     Double.parseDouble(token);
                     token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
+                    dot=true;
                 }
                 String nextTkn = removeComma(stk.nextToken());
                 String nextTknLow = nextTkn.toLowerCase();
@@ -72,7 +76,8 @@ public class Parse {
                     termIndex += 1;
                 }
                 //TODO date implementation - you better use Month enum at class Term
-                else if (Term.Month.isMonth(nextTkn)) {
+                else if (!dot&&Term.Month.isMonth(nextTkn)) {
+
                     ParseDDMONTH(token, nextTkn, stk);
                 } else { /* is simple number */
                     Term.addTerm(token, document, termIndex);
@@ -135,20 +140,27 @@ public class Parse {
                                 nextTkn=stk.nextToken();
                             }
                         } else {
-                            Term.addTerm(token, document, termIndex);
+                            if(Term.Number.isNumber(token))
+                                Term.addTerm(Term.Number.getNumber(token).toString(), document, termIndex);
+                            else
+                                Term.addTerm(token, document, termIndex);
                             termIndex += 1;
                             parseTokens(nextTkn, stk);
                         }
 
                     }
                     else {
-                        Term.addTerm(token, document, termIndex);
+                        if(Term.Number.isNumber(token))
+                            Term.addTerm(Term.Number.getNumber(token).toString(), document, termIndex);
+                        else
+                            Term.addTerm(token, document, termIndex);
                         termIndex += 1;
                     }
                 }
                 else if(patternTH.matcher(token).find()) {
                     String temp=stk.nextToken();
                     if(Term.Month.isMonth(temp)){
+                        token=token.substring(0,token.length()-2);
                         ParseDDMONTH(token,temp,stk);
                     }
                     else{
@@ -158,7 +170,11 @@ public class Parse {
                     }
                 }
                 else {
-                    Term.addTerm(token, document, termIndex);
+                    if(Term.Number.isNumber(token))
+                        Term.addTerm(Term.Number.getNumber(token).toString(), document, termIndex);
+                    else{
+                        Term.addTerm(token, document, termIndex);
+                    }
                     termIndex += 1;
                 }
             }
@@ -167,16 +183,22 @@ public class Parse {
     }
 
     private void ParseDDMONTH(String token,String nextTkn, StringTokenizer stk){
-        String nextNextoken=stk.nextToken();
-        String year=yearCheck(nextNextoken);
-        if(year!=null){//DD MONTH YY/DD MONTH YY->DD/MM/YYYY
-            Term.addTerm(token + "/" + Term.Month.getMonth(nextTkn) + "/" + year, document, termIndex);
+        int day=Integer.parseInt(token);
+        if(day>0&&day<32) {
+            String nextNextoken = stk.nextToken();
+            String year = yearCheck(nextNextoken);
+            if (year != null) {//DD MONTH YY/DD MONTH YY->DD/MM/YYYY
+                Term.addTerm(token + "/" + Term.Month.getMonth(nextTkn) + "/" + year, document, termIndex);
+            } else {//DD/Month->DD/MM
+                Term.addTerm(token + "/" + Term.Month.getMonth(nextTkn), document, termIndex);
+                parseTokens(nextNextoken, stk);
+            }
+            termIndex += 1;
         }
-        else{//DD/Month->DD/MM
-            Term.addTerm(token+"/"+Term.Month.getMonth(nextTkn),document,termIndex);
-            parseTokens(nextNextoken,stk);
+        else{
+            Term.addTerm(token, document, termIndex);
+            parseTokens(nextTkn,stk);
         }
-        termIndex +=1;
     }
     private void ParseMonthDD(String token,String nextTkn, StringTokenizer stk){//token=month, nextTKN=number with 1,2 or 4 chars
         int day=Integer.parseInt(nextTkn);
