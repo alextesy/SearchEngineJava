@@ -1,12 +1,10 @@
 package Main;
 
-import com.sun.jndi.cosnaming.CNCtx;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.*;
-import java.util.concurrent.TimeoutException;
 import java.util.regex.Pattern;
 
 
@@ -16,7 +14,7 @@ public class Parse {
     private int termIndex;
     public String docContent;
     public Document document;
-    public static boolean stemming;
+    public final static  boolean stemming = Indexer.stemming;
     public static Pattern patternTH= Pattern.compile("([4-9]|[12][0-9]|[3][0])th");
 
     private static Collection<String> initStopWords() {
@@ -40,8 +38,9 @@ public class Parse {
 
     }
     public void ParseFile(){
-        StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:;?!'[`]./|()<#>*&+-\"");
+        StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:;?!'[`]/|()<#>*&+-\"");
         Stemmer stemmer = new Stemmer();
+
         while(stk.hasMoreElements() ){
             String token = stk.nextToken();
             if(stopWords.contains(token))
@@ -59,7 +58,7 @@ public class Parse {
     }
 
 
-    private Term parseTokens(String token,StringTokenizer stk){
+    private void parseTokens(String token,StringTokenizer stk){
             token = removeComma(token);
             if (isNumeric(token)) {//if NUMBER
                 if (token.contains(".")) {
@@ -68,7 +67,7 @@ public class Parse {
                 }
                 String nextTkn = removeComma(stk.nextToken());
                 String nextTknLow = nextTkn.toLowerCase();
-                if (nextTknLow.equals("percent") || nextTknLow.equals("percentag")) {
+                if (nextTknLow.equals("percent") || nextTknLow.equals("percentage")) {
                     Term.addTerm(token + " percent", document, termIndex);
                     termIndex += 1;
                 }
@@ -80,87 +79,91 @@ public class Parse {
                     termIndex += 1;
                     parseTokens(nextTkn, stk);
                 }
-            } else if (token.length() > 1&&(token.endsWith("%") || token.startsWith("$")) ) {//percent or dollar
-                if (token.endsWith("%")) {
-                    token = token.substring(0, token.length() - 1);
-                    if (isNumeric(token)) {
-                        Double.parseDouble(token);
-                        token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
-                        Term.addTerm(token + " percent", document, termIndex);
-                        termIndex += 1;
-                    }
-                } else {
-                    token = token.substring(1, token.length());
-                    if (isNumeric(token)) {
-                        Double.parseDouble(token);
-                        token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
-                        Term.addTerm(token + " dollars", document, termIndex);
-                        termIndex += 1;
-                    }
-                }
-
-            } else if (Term.Month.isMonth(token)) {
-                String nextTkn=stk.nextToken();
-                if (isNumeric(nextTkn)&&!nextTkn.contains(".")) {
-                    if (nextTkn.length() == 4){
-                        ParseMONTHYYYY(token,nextTkn,stk);
-                    }
-                    else if ((nextTkn.length() == 1 || nextTkn.length() == 2))
-                        ParseMonthDD(token, nextTkn, stk);
-                }
-                else{
-                    Term.addTerm(token, document, termIndex);
-                    termIndex += 1;
-                    parseTokens(nextTkn,stk);
-                }
-            }else if(token.length()>1&&Character.isUpperCase(token.charAt(0))){//upper case words not done
-                if(stk.hasMoreElements()) {
-                    String nextTkn = stk.nextToken();
-                    token=token.toLowerCase();
-                    if (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
-                        Term.addTerm(token, document, termIndex);
-                        boolean check = true;
-                        termIndex += 1;
-                        while (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
-                            String temp=nextTkn;
-                            nextTkn=removeComma(nextTkn).toLowerCase();
-                            Term.addTerm(nextTkn, document, termIndex);
+            } else {
+                token=removeDot(token);
+                if (token.length() > 1&&(token.endsWith("%") || token.startsWith("$")) ) {//percent or dollar
+                    if (token.endsWith("%")) {
+                        token = token.substring(0, token.length() - 1);
+                        if (isNumeric(token)) {
+                            Double.parseDouble(token);
+                            token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
+                            Term.addTerm(token + " percent", document, termIndex);
                             termIndex += 1;
-                            Term.addTerm(token+" "+nextTkn,document,termIndex);
-                            termIndex++;
-                            if (!stk.hasMoreElements()||temp.charAt(temp.length()-1)==',')break;
-                            token=nextTkn;
-                            nextTkn=stk.nextToken();
                         }
                     } else {
-                        Term.addTerm(token, document, termIndex);
-                        termIndex += 1;
-                        parseTokens(nextTkn, stk);
+                        token = token.substring(1, token.length());
+                        if (isNumeric(token)) {
+                            Double.parseDouble(token);
+                            token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
+                            Term.addTerm(token + " dollars", document, termIndex);
+                            termIndex += 1;
+                        }
                     }
 
+                } else if (Term.Month.isMonth(token)) {
+                    String nextTkn=stk.nextToken();
+                    if (isNumeric(nextTkn)&&!nextTkn.contains(".")) {
+                        if (nextTkn.length() == 4){
+                            ParseMONTHYYYY(token,nextTkn,stk);
+                        }
+                        else if ((nextTkn.length() == 1 || nextTkn.length() == 2))
+                            ParseMonthDD(token, nextTkn, stk);
+                    }
+                    else{
+                        Term.addTerm(token, document, termIndex);
+                        termIndex += 1;
+                        parseTokens(nextTkn,stk);
+                    }
+                }else if(token.length()>1&&Character.isUpperCase(token.charAt(0))){//upper case words
+                    if(stk.hasMoreElements()) {
+                        String nextTkn = stk.nextToken();
+                        token=token.toLowerCase();
+                        if (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
+                            Term.addTerm(token, document, termIndex);
+                            boolean check = true;
+                            termIndex += 1;
+                            while (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
+                                String temp=nextTkn;
+                                nextTkn=removeComma(nextTkn).toLowerCase();
+                                nextTkn=removeDot(nextTkn);
+                                Term.addTerm(nextTkn, document, termIndex);
+                                termIndex += 1;
+                                Term.addTerm(token+" "+nextTkn,document,termIndex);
+                                termIndex++;
+                                if (!stk.hasMoreElements()||temp.charAt(temp.length()-1)==',')break;
+                                token=nextTkn;
+                                nextTkn=stk.nextToken();
+                            }
+                        } else {
+                            Term.addTerm(token, document, termIndex);
+                            termIndex += 1;
+                            parseTokens(nextTkn, stk);
+                        }
+
+                    }
+                    else {
+                        Term.addTerm(token, document, termIndex);
+                        termIndex += 1;
+                    }
+                }
+                else if(patternTH.matcher(token).find()) {
+                    String temp=stk.nextToken();
+                    if(Term.Month.isMonth(temp)){
+                        ParseDDMONTH(token,temp,stk);
+                    }
+                    else{
+                        Term.addTerm(token, document, termIndex);
+                        termIndex++;
+                        parseTokens(temp,stk);
+                    }
                 }
                 else {
                     Term.addTerm(token, document, termIndex);
                     termIndex += 1;
                 }
             }
-            else if(patternTH.matcher(token).find()) {
-                String temp=stk.nextToken();
-                if(Term.Month.isMonth(temp)){
-                    ParseDDMONTH(token,temp,stk);
-                }
-                else{
-                    Term.addTerm(token, document, termIndex);
-                    termIndex++;
-                    parseTokens(temp,stk);
-                }
-            }
-            else {
-                Term.addTerm(token, document, termIndex);
-                termIndex += 1;
-            }
 
-        return null;
+
     }
 
     private void ParseDDMONTH(String token,String nextTkn, StringTokenizer stk){
@@ -243,7 +246,11 @@ public class Parse {
         }
         return s;
     }
-
+    public static String removeDot(String s){
+        if(s.contains("."))
+            return s.replace(".","");
+        return s;
+    }
     public static boolean isNumeric(String s) {
         return s != null && s.matches("[-+]?\\d*\\.?\\d+");
     }

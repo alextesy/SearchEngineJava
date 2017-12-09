@@ -5,6 +5,8 @@ package Main;
 import gui.EngineMenu;
 
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
 
@@ -20,6 +22,7 @@ public class Main {
             indexer.toIndex();
             indexer.writeDictionary(docsPath);
             System.out.println(indexer.getIndexRunningTime());
+            //Map<String,long[]> Dictionary = (Map<String,long[]>)(new ObjectInputStream(new FileInputStream("C:\\Users\\IBM_ADMIN\\Documents\\blabla\\dictionary"))).readObject();
 
             //Indexer.buildCache(Indexer.readDictionary(docsPath));
 

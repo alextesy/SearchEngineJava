@@ -19,7 +19,7 @@ public class Indexer {
     private String pathToPosting;
     private long readFileSize;
     private int counter=0;
-    private boolean stemming;
+    public static boolean stemming;
 
     public Indexer(String pathToCorpus, String pathToPosting,long readFileSize,boolean stemming) {
         this.readFileSize = readFileSize;
@@ -40,7 +40,7 @@ public class Indexer {
         try{
             if (directoryListing != null) {
                 for (File child : directoryListing) {
-                    //if(counter == 2 ) break;
+                    if(counter == 2 ) break;
                     currentSize+=ReadFile.readTextFile(child);
                         if (currentSize > readFileSize) {
                             currentSize=0;

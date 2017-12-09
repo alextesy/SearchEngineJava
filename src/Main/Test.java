@@ -12,46 +12,33 @@ public class Test {
     private static final Collection<String> stopWords = initStopWords();
 
     public static void main(String[] args) {
-        StringTokenizer stk=new StringTokenizer("<F P=106> [Report by P Bulger] </F>\n" +
-                "  [Text] Pretoria March 29 SAPA -- The Transitional Executive \n" +
-                "Council [TEC] was looking into greater security force powers \n" +
-                "that would amount to a state of emergency being declared in \n" +
-                "Natal/kwaZulu. TEC Executive Secretary Mac Maharaj told the TEC \n" +
-                "on Tuesday [29 March] that security force action had already \n" +
-                "been stepped up in the territory as violence continued to \n" +
-                "escalate. He said the TEC's law and order sub-council was \n" +
-                "devising regulations to give security forces greater powers.", " \t\n\r\f:;?!'[`]/|()<#>*&+-\"");
+        StringTokenizer stk=new StringTokenizer("$3.1 5.98989% 0% $6.098", " \t\n\r\f:;?!'[`]/|()<#>*&+-\"");
         String token;
         boolean check = true;
-
         while (stk.hasMoreElements()) {
-            token = stk.nextToken();
-            if (token.length()>1&&Character.isUpperCase(token.charAt(0))) {
-                if (stk.hasMoreElements()) {
-                    String nextTkn = stk.nextToken();
-                    if (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
-                        token=token.toLowerCase();
-                        System.out.println(token);
-                        while (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
-                            nextTkn=nextTkn.toLowerCase();
-                            System.out.println(nextTkn);
-                            System.out.println(token+" "+nextTkn);
-                            if(!stk.hasMoreElements()) break;
-                            token = nextTkn;
-                            nextTkn=stk.nextToken();
-                        }
-
-                    } else {
-                        System.out.println(token.toLowerCase());
-                        Parse(nextTkn);
+            token=stk.nextToken();
+            token = removeComma(token);
+            if (token.length() > 1&&(token.endsWith("%") || token.startsWith("$")) ) {//percent or dollar
+                if (token.endsWith("%")) {
+                    token = token.substring(0, token.length() - 1);
+                    if (isNumeric(token)) {
+                        Double.parseDouble(token);
+                        token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
+                        System.out.println(token + " percent");
                     }
-
+                } else {
+                    token = token.substring(1, token.length());
+                    if (isNumeric(token)) {
+                        Double.parseDouble(token);
+                        token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
+                        System.out.println(token + " dollars");
+                    }
                 }
-            }
-            else {
-                System.out.println(token.toLowerCase());
+
             }
         }
+
+
 
         //while(stk.hasMoreElements()){
         //    String token = stk.nextToken();
