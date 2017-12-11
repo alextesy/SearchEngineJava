@@ -2,8 +2,9 @@ package Main;
 
 
 
-import java.io.FileWriter;
+
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static Main.Document.addDocument;
 import static Main.Indexer.currentTermDictionary;
@@ -62,12 +63,6 @@ public class Term{
         return this.docDictionary.size();
     }
     public int getTermTDF(){
-        /*
-        if (termTDF==0){
-            for(List<Integer> locations : this.docDictionary.values())
-                termTDF+= locations.size();
-        }
-        */
         return termTDF;
     }
 
@@ -80,7 +75,14 @@ public class Term{
         this.termTDF+=another.termTDF;
         return this;
     }
-
+    public Term termsSub(List<Document> popularDocuments){
+        Map<Document,List<Integer>> temp = new HashMap<>();
+        for(Document doc : popularDocuments)
+            temp.put(doc,docDictionary.get(doc));
+        docDictionary.clear();
+        docDictionary = temp;
+        return this;
+    }
     @Override
     public String toString() {
         StringBuilder term=new StringBuilder(value + ", TermTDF: " + termTDF);
@@ -128,6 +130,15 @@ public class Term{
         }
         return term;
     }
+
+    public List<Document> getPopularDocs(int numOfDocs){
+        List<Document> popularDocs = new ArrayList<Document>(docDictionary.keySet());
+        popularDocs = popularDocs.parallelStream().sorted((Comparator<Document>) (o1, o2) -> Integer.compare(docDictionary.get(o1).size(),docDictionary.get(o2).size())).collect(Collectors.toList());
+        for (int i=0; i<numOfDocs; i+=1)
+            popularDocs.add(popularDocs.get(i));
+        return popularDocs;
+    }
+
 
     public enum Kind {
         Number{

@@ -10,6 +10,7 @@ import java.io.RandomAccessFile;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Main {
 
@@ -30,6 +31,7 @@ public class Main {
             //Indexer.buildCache(Indexer.readDictionary(docsPath));
 
         } catch (Exception e) {
+
             e.printStackTrace();
         }
 

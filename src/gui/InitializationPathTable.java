@@ -31,8 +31,6 @@ public class InitializationPathTable extends JDialog {
 
 
 
-
-
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {

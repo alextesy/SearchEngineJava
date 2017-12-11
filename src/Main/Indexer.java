@@ -6,17 +6,22 @@ import java.util.stream.Collectors;
 
 
 public class Indexer {
+
     public static final Map<String,Term> currentTermDictionary = new HashMap<>();
     public static final long CORPUS_BYTE_SIZE = 1578400481; // 1.47 - GB - 1.47*2^30 bytes
-    public final Map<String,Term> cacheDictionary = new HashMap<>();
+    public final Map<String,Term> cacheTerms = new HashMap<String, Term>();
+
     public Map<String,long[]> Dictionary = new HashMap<>();
+
+    private final Set<String> cacheTermString = initCacheStrings();
     private long indexSize = 0;
+    private long cacheSize = 0;
 
     private double indexRunningTime;
     private String pathToCorpus;
     private String pathToPosting;
     private long readFileSize;
-    private int counter=0;
+    private int counter = 0;
     public boolean stemming;
 
 
@@ -25,6 +30,24 @@ public class Indexer {
         this.pathToCorpus = pathToCorpus;
         this.pathToPosting = pathToPosting;
         this.stemming=stemming;
+    }
+    public static Set<String> initCacheStrings() {
+        Set<String> termsSet = new HashSet<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(new File("cacheWords.txt")))) {
+            String term;
+            while ((term = br.readLine()) != null) {
+                termsSet.add(term);
+            }
+            return termsSet;
+        }
+
+        catch (EOFException e1){
+            // do nothing
+        }
+        catch (IOException e2){
+            e2.printStackTrace();
+        }
+        return null;
     }
 
 
@@ -39,7 +62,7 @@ public class Indexer {
         try{
             if (directoryListing != null) {
                 for (File child : directoryListing) {
-                    //if(counter == 8 ) break;
+                    if(counter == 5 ) break;
                     currentSize+=ReadFile.readTextFile(child,stemming);
                     if (currentSize > readFileSize) {
                         currentSize=0;
@@ -62,7 +85,7 @@ public class Indexer {
         this.indexRunningTime = (then - now)/1000;
 
         writeDocumentData();
-        //findCacheTerms();
+        findCacheTerms();
     }
 
     private long mergeSortedFiles(List<File> postingFilesList,File outputFile,Comparator<String> cmp) throws IOException {
@@ -114,6 +137,11 @@ public class Indexer {
                     raf.writeBytes("\n");
                     //TODO - ADD FIELDS IF NEEDED
                     Dictionary.put(lastTermLine.getValue(),new long[]{lastTermLine.getTermTDF(),lastTermLine.getTermIDF(),startPos} /* add more fields ,}*/ );
+                    if(initCacheStrings().contains(lastTermLine.getValue())){
+                        lastTermLine = lastTermLine.termsSub(lastTermLine.getPopularDocs(30));
+                        cacheTerms.put(lastTermLine.getValue(),lastTermLine);
+                    }
+
                     lastTermLine = rT;
                 }
                 else
@@ -175,7 +203,6 @@ public class Indexer {
             for(Document doc : Document.corpusDocuments.values()){
                 corpusDocFile.println(doc);
             }
-            corpusDocFile.flush();
             corpusDocFile.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -187,6 +214,7 @@ public class Indexer {
             FileOutputStream fout = new FileOutputStream(path + "\\dictionary.txt");
             ObjectOutputStream oos = new ObjectOutputStream(fout);
             oos.writeObject(dictionary);
+            oos.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -202,6 +230,13 @@ public class Indexer {
         }
         return null;
     }
+    public void setStemming(boolean stemming) {
+        this.stemming = stemming;
+    }
+
+    public long getCacheSize() {
+        return cacheSize;
+    }
 
     private void findCacheTerms(){
         PriorityQueue<Map.Entry<String,long[]>> pq = new PriorityQueue<>((o1, o2) -> Long.compare(o2.getValue()[0], o1.getValue()[0]));
@@ -215,7 +250,9 @@ public class Indexer {
                 Map.Entry<String, long[]> freTerm = pq.poll();
                 cacheFile.println(freTerm.getKey());
             }
+            cacheFile.close();
         }
+
         catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -262,7 +299,6 @@ public class Indexer {
 
     }
 
-    public void setStemming(boolean stemming) {
-        this.stemming = stemming;
-    }
+
+
 }

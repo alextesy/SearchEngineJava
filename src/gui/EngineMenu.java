@@ -3,7 +3,6 @@ package gui;
 import Main.Indexer;
 import Main.ReadFile;
 import Main.Term;
-import org.testng.annotations.Test;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -12,7 +11,6 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.util.*;
 
 public class EngineMenu {
@@ -39,49 +37,16 @@ public class EngineMenu {
 
 
     }
-    /*
-    engineFrame.remove(background);
-    BufferedImage img = ImageIO.read(new File("imgs/img.png"));
-    Graphics g = img.getGraphics();
-    g.setFont(g.getFont().deriveFont(15f));
-    g.drawString("Number of Documents: " + ReadFile.docNumberOfFiles,20,80);
-    g.drawString( "Index Size: " + indexer.getIndexSize() + " Bytes",20,105);
-    g.drawString( "Running Time: " + indexer.getIndexRunningTime() + " seconds",20,130);
-    g.dispose();
-    ImageIO.write(img,"png", new File("imgs/results.png"));
-    background = new JLabel(new ImageIcon(ImageIO.read(new File("imgs/results.png"))));
-    engineFrame.add(background);
-    engineFrame.validate();
-    engineFrame.repaint();
-
-     */
-    /*
-    Icon icon = new ImageIcon("src/path.gif");
-            try {
-        mainframe.setContentPane(new JLabel(icon));
-    } catch (Exception e) {
-    }
 
 
-
-     */
     private void initEngineMainFrame() {
         this.engineFrame = new JFrame("MyEngine");
         this.engineFrame.setResizable(false);
         this.engineFrame.setSize(OUTER_FRAME_DIMENSION);
         this.engineFrame.setJMenuBar(menuBar());
         try {
-            //this.background = new JLabel(new ImageIcon(ImageIO.read(new File("imgs/img.png"))));
-            Image icon = new ImageIcon("imgs/loading_animation.gif").getImage();
-            BufferedImage img = ImageIO.read(new File("imgs/img.png"));
-            Graphics g = img.getGraphics();
-            g.drawImage(icon,50,50,background);
-            g.dispose();
-            ImageIO.write(img,"png", new File("imgs/results.png"));
-            background = new JLabel(new ImageIcon(ImageIO.read(new File("imgs/results.png"))));
+            this.background = new JLabel(new ImageIcon(ImageIO.read(new File("imgs/img.png"))));
             this.engineFrame.add(this.background);
-            engineFrame.validate();
-            engineFrame.repaint();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -136,7 +101,7 @@ public class EngineMenu {
                         createIndexFile.setEnabled(false);
                         indexer.toIndex();
                         Dictionary = new TreeMap<>(indexer.Dictionary);
-                        cacheDictionary = new TreeMap<>(indexer.cacheDictionary);
+                        cacheDictionary = new TreeMap<>(indexer.cacheTerms);
                         createIndexFile.setEnabled(true);
                         saveCacheDictionary.setEnabled(true);
                         openCacheDictionary.setEnabled(true);
@@ -214,7 +179,8 @@ public class EngineMenu {
             g.setFont(g.getFont().deriveFont(15f));
             g.drawString("Number of Documents: " + ReadFile.docNumberOfFiles,20,80);
             g.drawString( "Index Size: " + indexer.getIndexSize() + " Bytes",20,105);
-            g.drawString( "Running Time: " + indexer.getIndexRunningTime() + " seconds",20,130);
+            g.drawString("Cache Size: " + indexer.getCacheSize() + " Bytes",20,130);
+            g.drawString( "Running Time: " + indexer.getIndexRunningTime() + " seconds",20,155);
             g.dispose();
             ImageIO.write(img,"png", new File("imgs/results.png"));
             background = new JLabel(new ImageIcon(ImageIO.read(new File("imgs/results.png"))));
