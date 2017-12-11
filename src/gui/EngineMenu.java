@@ -1,40 +1,91 @@
 package gui;
 
 import Main.Indexer;
+import Main.ReadFile;
+import Main.Term;
+import org.testng.annotations.Test;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.*;
 
 public class EngineMenu {
 
-    private static final Dimension OUTER_FRAME_DIMENSION = new Dimension(400,400);
+    private static final Dimension OUTER_FRAME_DIMENSION = new Dimension(400,380);
 
     private JFrame engineFrame;
     private InitializationPathTable pathsInitializing;
+    private DisplayDictionaryPanel dictionaryPanel;
     private boolean performStemming;
 
     private Indexer indexer;
 
+    public Map<String,Term> cacheDictionary = null;
+    public Map<String,long[]> Dictionary =  null;
+
+    JLabel background;
 
     public EngineMenu(){
         initEngineMainFrame();
+        dictionaryPanel = new DisplayDictionaryPanel(this.engineFrame,false);
         pathsInitializing = new InitializationPathTable(this.engineFrame,false);
         performStemming = true;
+
+
+    }
+    /*
+    engineFrame.remove(background);
+    BufferedImage img = ImageIO.read(new File("imgs/img.png"));
+    Graphics g = img.getGraphics();
+    g.setFont(g.getFont().deriveFont(15f));
+    g.drawString("Number of Documents: " + ReadFile.docNumberOfFiles,20,80);
+    g.drawString( "Index Size: " + indexer.getIndexSize() + " Bytes",20,105);
+    g.drawString( "Running Time: " + indexer.getIndexRunningTime() + " seconds",20,130);
+    g.dispose();
+    ImageIO.write(img,"png", new File("imgs/results.png"));
+    background = new JLabel(new ImageIcon(ImageIO.read(new File("imgs/results.png"))));
+    engineFrame.add(background);
+    engineFrame.validate();
+    engineFrame.repaint();
+
+     */
+    /*
+    Icon icon = new ImageIcon("src/path.gif");
+            try {
+        mainframe.setContentPane(new JLabel(icon));
+    } catch (Exception e) {
     }
 
+
+
+     */
     private void initEngineMainFrame() {
         this.engineFrame = new JFrame("MyEngine");
+        this.engineFrame.setResizable(false);
         this.engineFrame.setSize(OUTER_FRAME_DIMENSION);
         this.engineFrame.setJMenuBar(menuBar());
         try {
-            this.engineFrame.add(new JLabel(new ImageIcon(ImageIO.read(new File("imgs/gears.png")))));
-        } catch (IOException e) {
+            //this.background = new JLabel(new ImageIcon(ImageIO.read(new File("imgs/img.png"))));
+            Image icon = new ImageIcon("imgs/loading_animation.gif").getImage();
+            BufferedImage img = ImageIO.read(new File("imgs/img.png"));
+            Graphics g = img.getGraphics();
+            g.drawImage(icon,50,50,background);
+            g.dispose();
+            ImageIO.write(img,"png", new File("imgs/results.png"));
+            background = new JLabel(new ImageIcon(ImageIO.read(new File("imgs/results.png"))));
+            this.engineFrame.add(this.background);
+            engineFrame.validate();
+            engineFrame.repaint();
+        } catch (Exception e) {
             e.printStackTrace();
         }
+
 
         this.engineFrame.setVisible(true);
         this.engineFrame.addWindowListener(new WindowAdapter() {
@@ -71,9 +122,6 @@ public class EngineMenu {
         fileMenu.add(openCacheDictionary);
         fileMenu.add(exitMenuItem);
 
-        saveCacheDictionary.setEnabled(false);
-        openCacheDictionary.setEnabled(false);
-
         initializationFrame.addActionListener(e -> pathsInitializing.setVisible(true));
 
         createIndexFile.addActionListener(e -> {
@@ -83,14 +131,21 @@ public class EngineMenu {
                 indexer = new Indexer(corpusPath,postingPath,Indexer.CORPUS_BYTE_SIZE/10,performStemming);
                 new Thread(() -> {
                     try {
+                        saveCacheDictionary.setEnabled(false);
+                        openCacheDictionary.setEnabled(false);
                         createIndexFile.setEnabled(false);
                         indexer.toIndex();
+                        Dictionary = new TreeMap<>(indexer.Dictionary);
+                        cacheDictionary = new TreeMap<>(indexer.cacheDictionary);
                         createIndexFile.setEnabled(true);
                         saveCacheDictionary.setEnabled(true);
                         openCacheDictionary.setEnabled(true);
+                        drawIndexedEngine();
 
                     } catch (Exception e1) {
                         JOptionPane.showMessageDialog(this.engineFrame,"Incorrect paths.try initial paths again.");
+                        createIndexFile.setEnabled(true);
+
                     }
                 }).start();
 
@@ -100,15 +155,26 @@ public class EngineMenu {
             }
 
         });
-
+        //TODO - SAVE CACHE
         saveCacheDictionary.addActionListener(e -> {
-            JFileChooser savingDirChooser = new JFileChooser();
-            savingDirChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-            savingDirChooser.setName("Save cache/dictionary at");
-            int returnVal = savingDirChooser.showSaveDialog(null);
-            if(returnVal == JFileChooser.APPROVE_OPTION) {
-                File savedDirChoosed = savingDirChooser.getSelectedFile();
-                indexer.writeDictionary(savedDirChoosed.getPath());
+            try {
+                if (Dictionary == null)
+                    throw new RuntimeException();
+                JFileChooser savingDirChooser = new JFileChooser();
+                savingDirChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                savingDirChooser.setName("Save cache/dictionary at");
+                int returnVal = savingDirChooser.showSaveDialog(null);
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                    File savedDirChoosed = savingDirChooser.getSelectedFile();
+                    openCacheDictionary.setEnabled(false);
+                    new Thread(() -> Indexer.writeDictionary(savedDirChoosed.getPath(), Dictionary)).start();
+                    openCacheDictionary.setEnabled(true);
+
+
+                }
+            }
+            catch (Exception e2 ){
+                JOptionPane.showMessageDialog(engineFrame,"No dictionary or cache uploaded to RAM yet");
             }
         });
 
@@ -120,7 +186,16 @@ public class EngineMenu {
             int returnVal = openingDirChooser.showOpenDialog(null);
             if(returnVal == JFileChooser.APPROVE_OPTION) {
                 File openDirChoosed = openingDirChooser.getSelectedFile();
-                //TODO - update the new cache and dictionary location to the class path field
+                new Thread(() -> {
+                    try{
+                        saveCacheDictionary.setEnabled(false);
+                        Dictionary = new TreeMap<>(Indexer.readDictionary(openDirChoosed + "//dictionary.txt"));
+                        saveCacheDictionary.setEnabled(true);
+                    }
+                    catch (Exception e13){
+                        JOptionPane.showMessageDialog(engineFrame,"No dictionary or cache in dir");
+                    }
+                }).start();
             }
         });
 
@@ -130,7 +205,32 @@ public class EngineMenu {
         });
         return  fileMenu;
     }
+    private void drawIndexedEngine(){
 
+        try {
+            engineFrame.remove(background);
+            BufferedImage img = ImageIO.read(new File("imgs/img.png"));
+            Graphics g = img.getGraphics();
+            g.setFont(g.getFont().deriveFont(15f));
+            g.drawString("Number of Documents: " + ReadFile.docNumberOfFiles,20,80);
+            g.drawString( "Index Size: " + indexer.getIndexSize() + " Bytes",20,105);
+            g.drawString( "Running Time: " + indexer.getIndexRunningTime() + " seconds",20,130);
+            g.dispose();
+            ImageIO.write(img,"png", new File("imgs/results.png"));
+            background = new JLabel(new ImageIcon(ImageIO.read(new File("imgs/results.png"))));
+            engineFrame.add(background);
+            engineFrame.validate();
+            engineFrame.repaint();
+
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
     private JMenu createOptionsMenu(){
         JMenu optionsMenu = new JMenu("Options");
 
@@ -138,15 +238,27 @@ public class EngineMenu {
         JMenuItem displayDictionary = new JMenuItem("Display dictionary");
         JMenuItem resetEnginePosting = new JMenuItem("Reset engine");
 
-        resetEnginePosting.addActionListener(e -> {
-            //TODO - add resetEnginePosting option - ask if user is sure before reseting
-        });
 
 
         optionsMenu.add(displayCache);
         optionsMenu.add(displayDictionary);
         optionsMenu.add(resetEnginePosting);
 
+        resetEnginePosting.addActionListener(e -> {
+            //TODO - add resetEnginePosting option - ask if user is sure before reseting
+        });
+        displayDictionary.addActionListener(e -> {
+            try{
+                dictionaryPanel.redo(Dictionary);
+                dictionaryPanel.setVisible(true);
+            }catch (Exception e1) {
+                JOptionPane.showMessageDialog(this.engineFrame,"No dictionary uploaded yet.");
+            }
+
+        });
+        displayCache.addActionListener(e -> {
+
+        });
         return optionsMenu;
     }
 
@@ -156,9 +268,8 @@ public class EngineMenu {
         JCheckBoxMenuItem performStemming = new JCheckBoxMenuItem("Perform Porter Stemming" , true);
         performStemming.addActionListener(e -> {
             this.performStemming = performStemming.isSelected();
+            indexer.setStemming(this.performStemming);
         });
-
-
         preferencesMenu.add(performStemming);
         return preferencesMenu;
     }

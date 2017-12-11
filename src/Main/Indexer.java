@@ -1,11 +1,8 @@
 package Main;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 public class Indexer {
@@ -13,13 +10,15 @@ public class Indexer {
     public static final long CORPUS_BYTE_SIZE = 1578400481; // 1.47 - GB - 1.47*2^30 bytes
     public final Map<String,Term> cacheDictionary = new HashMap<>();
     public Map<String,long[]> Dictionary = new HashMap<>();
+    private long indexSize = 0;
 
     private double indexRunningTime;
     private String pathToCorpus;
     private String pathToPosting;
     private long readFileSize;
     private int counter=0;
-    public static boolean stemming;
+    public boolean stemming;
+
 
     public Indexer(String pathToCorpus, String pathToPosting,long readFileSize,boolean stemming) {
         this.readFileSize = readFileSize;
@@ -40,19 +39,19 @@ public class Indexer {
         try{
             if (directoryListing != null) {
                 for (File child : directoryListing) {
-                    //if(counter == 2 ) break;
-                    currentSize+=ReadFile.readTextFile(child);
-                        if (currentSize > readFileSize) {
-                            currentSize=0;
-                            counter += 1;
-                            for (Term term : currentTermDictionary.values())
-                                tmpList.add(term.encryptTermToStr());
-                            postingFilesList.add(sortAndSave(tmpList,cmp));
-                            tmpList.clear();
-                            currentTermDictionary.clear();
-                        }
+                    //if(counter == 8 ) break;
+                    currentSize+=ReadFile.readTextFile(child,stemming);
+                    if (currentSize > readFileSize) {
+                        currentSize=0;
+                        counter += 1;
+                        for (Term term : currentTermDictionary.values())
+                            tmpList.add(term.encryptTermToStr());
+                        postingFilesList.add(sortAndSave(tmpList,cmp));
+                        tmpList.clear();
+                        currentTermDictionary.clear();
                     }
                 }
+            }
         }
         catch (IOException e){
             e.printStackTrace();
@@ -62,6 +61,7 @@ public class Indexer {
         long then=System.currentTimeMillis();
         this.indexRunningTime = (then - now)/1000;
 
+        writeDocumentData();
         //findCacheTerms();
     }
 
@@ -117,7 +117,7 @@ public class Indexer {
                     lastTermLine = rT;
                 }
                 else
-                     lastTermLine.termsUnion(rT);
+                    lastTermLine.termsUnion(rT);
 
                 ++rowCounter;
                 if (bfb.empty()) {
@@ -127,6 +127,7 @@ public class Indexer {
                 }
 
             }
+            indexSize = raf.getFilePointer();
         }
         finally {
             raf.close();
@@ -137,21 +138,23 @@ public class Indexer {
         return  rowCounter;
     }
 
-    /*
+/*
     private void check (){
+
+        long start = System.currentTimeMillis();
         try {
             RandomAccessFile raf = new RandomAccessFile(new File("C:\\Users\\אלי\\doc\\Hallelujah.txt"),"r");
-
             raf.seek(Dictionary.get("zoo")[2]);
-            String str = raf.readLine();
             Term term = Term.decryptTermFromStr(raf.readLine());
-
+            System.out.println(term);
         }
         catch (Exception e) {
             e.printStackTrace();
         }
+        long finish = System.currentTimeMillis();
+        System.out.println(finish - start);
     }
-    */
+*/
 
     private File sortAndSave(List<String> tmpList,Comparator<String> cmp) throws IOException {
         File newTmpFile = new File(pathToPosting +"\\DocNum" + counter + ".txt");
@@ -172,32 +175,34 @@ public class Indexer {
             for(Document doc : Document.corpusDocuments.values()){
                 corpusDocFile.println(doc);
             }
+            corpusDocFile.flush();
+            corpusDocFile.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void writeDictionary(String path){
+    public static void writeDictionary(String path,Map<String,long[]> dictionary){
         try {
-            FileOutputStream fout = new FileOutputStream(path + "\\dictionary");
+            FileOutputStream fout = new FileOutputStream(path + "\\dictionary.txt");
             ObjectOutputStream oos = new ObjectOutputStream(fout);
-            oos.writeObject(Dictionary);
+            oos.writeObject(dictionary);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    /*
-    public Map<String,int[]> readDictionary(String path){
-        try {
-            FileInputStream fin = new FileInputStream(path +"\\dictionary");
+
+    public static Map<String,long[]> readDictionary(String path){
+        try{
+            FileInputStream fin = new FileInputStream(path );
             ObjectInputStream ois = new ObjectInputStream(fin);
-            Dictionary = (Map<String,int[]>) ois.readObject();
-        } catch (Exception e) {
+            return  (Map<String,long[]>)ois.readObject();
+        }catch (Exception e){
             e.printStackTrace();
         }
-        return Dictionary;
+        return null;
     }
-    */
+
     private void findCacheTerms(){
         PriorityQueue<Map.Entry<String,long[]>> pq = new PriorityQueue<>((o1, o2) -> Long.compare(o2.getValue()[0], o1.getValue()[0]));
         for(Map.Entry<String,long[]> termData : Dictionary.entrySet()){
@@ -218,6 +223,10 @@ public class Indexer {
 
     public double getIndexRunningTime() {
         return this.indexRunningTime;
+    }
+
+    public long getIndexSize() {
+        return indexSize;
     }
 
     final class BinaryFileBuffer {
@@ -253,4 +262,7 @@ public class Indexer {
 
     }
 
+    public void setStemming(boolean stemming) {
+        this.stemming = stemming;
+    }
 }

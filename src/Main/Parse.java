@@ -14,7 +14,7 @@ public class Parse {
     private int termIndex;
     public String docContent;
     public Document document;
-    public final static  boolean stemming = Indexer.stemming;
+    public boolean stemming;
     public static Pattern patternTH= Pattern.compile("([4-9]|[12][0-9]|[3][0])th");
 
     private static Collection<String> initStopWords() {
@@ -29,11 +29,12 @@ public class Parse {
 
 
 
-    public Parse(String content, Document document){
+    public Parse(String content, Document document,boolean stemming){
 
         this.docContent = content;
         this.document = document;
         this.termIndex = 0;
+        this.stemming=stemming;
 
 
     }
@@ -48,8 +49,6 @@ public class Parse {
             if(stemming){
                 stemmer.add(token.toCharArray(),token.length());
                 stemmer.stem();
-                if(stemmer.toString().equals("January/February"))
-                    System.out.println("alex");
                 parseTokens(stemmer.toString(),stk);
             }
             else{
@@ -119,7 +118,7 @@ public class Parse {
                         termIndex += 1;
                         parseTokens(nextTkn,stk);
                     }
-                }else if(token.length()>1&&Character.isUpperCase(token.charAt(0))){//upper case words
+                }else if(token.length()>1 && Character.isUpperCase(token.charAt(0))){//upper case words
                     if(stk.hasMoreElements()) {
                         String nextTkn = stk.nextToken();
                         token=token.toLowerCase();
@@ -252,26 +251,10 @@ public class Parse {
     }
 
     public static String removeComma(String s) {
-        if (s.contains(",")) {
             return s.replace(",", "");
-        /*StringBuilder str= new StringBuilder();
-            for(int i=0 ; i<s.length(); i++){
-                char c = s.charAt(i);
-                if(c != ','){
-                    str.append(c);
-                }
-            }
-            return str.toString();
-        }
-        else
-            return s;*/
-        }
-        return s;
     }
     public static String removeDot(String s){
-        if(s.contains("."))
-            return s.replace(".","");
-        return s;
+        return s.replace(".","");
     }
     public static boolean isNumeric(String s) {
         return s != null && s.matches("[-+]?\\d*\\.?\\d+");

@@ -32,14 +32,15 @@ public class Document {
             return document;
         }
         else{
-            return new Document(fileName,docName);
+            return corpusDocuments.get(fileName+docName);
         }
     }
 
     @Override
     public String toString() {
-        return "FileName: " + fileName+" ,DocName: "+docName+" ,DocLength: "+wordsSize+" , MostFrequentWordAppearance: "+mostFrequentWord;
+        return "FileName: " + fileName+" ,DocName: "+docName+" ,DocLength: "+wordsSize+" ,MostFrequentWordAppearance: "+mostFrequentWord;
     }
+
 
     public String encryptingDocToStr(){
         return fileName+"#"+docName+"#"+wordsSize+"#"+mostFrequentWord;
@@ -49,6 +50,7 @@ public class Document {
         String[] documentData = str.split("#");
         return new Document(documentData[0],documentData[1],Integer.parseInt(documentData[2]),Integer.parseInt(documentData[3]));
     }
+
 
 
     public String getDocName() {
@@ -75,5 +77,20 @@ public class Document {
 
     public void setMostFrequentWord(int mostFrequentWord) {
         this.mostFrequentWord = mostFrequentWord;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Document document = (Document) o;
+
+        return this.fileName.equals(document.fileName) && this.docName.equals(document.docName);
+    }
+
+    @Override
+    public int hashCode() {
+        return (fileName + docName).hashCode();
     }
 }

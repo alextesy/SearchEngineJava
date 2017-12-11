@@ -6,10 +6,10 @@ import java.util.regex.Pattern;
 
 public class ReadFile {
 
-    public static int docNummberOfFiles=0;
+    public static int docNumberOfFiles=0;
     private ReadFile(){}
 
-    public static long readTextFile(File currentFile) {
+    public static long readTextFile(File currentFile,boolean stemming) {
         File[] myCurrentFile = currentFile.listFiles();
 
         String fullPath = myCurrentFile[0].toString();
@@ -33,8 +33,8 @@ public class ReadFile {
             String textContSub=docNum.substring(7,docNum.length()-8);
             textContSub=textContSub.replace(" ","");
             Document document = Document.addDocument(fileName,textContSub);
-            Parse parser = new Parse(textCont,document);
-            docNummberOfFiles+=1;
+            Parse parser = new Parse(textCont,document,stemming);
+            docNumberOfFiles+=1;
             parser.ParseFile();
         }
         return StringSizeEstimator.estimatedSizeOf(content);
