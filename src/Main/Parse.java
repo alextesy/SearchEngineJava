@@ -39,7 +39,7 @@ public class Parse {
 
     }
     public void ParseFile(){
-        StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:;?!'[`]/|()<#>*&+-\"");
+        StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:{};?!'[`]/|()<#>*&+-\"");
         Stemmer stemmer = new Stemmer();
 
         while(stk.hasMoreElements() ){
@@ -126,14 +126,20 @@ public class Parse {
                         String nextTkn = stk.nextToken();
                         token=token.toLowerCase();
                         if (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
-                            Term.addTerm(token, document, termIndex);
+                            if(Term.Number.isNumber(token))
+                                Term.addTerm(Term.Number.getNumber(token).toString(),document,termIndex);
+                            else
+                                Term.addTerm(token, document, termIndex);
                             boolean check = true;
                             termIndex += 1;
                             while (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
                                 String temp=nextTkn;
                                 nextTkn=removeComma(nextTkn).toLowerCase();
                                 nextTkn=removeDot(nextTkn);
-                                Term.addTerm(nextTkn, document, termIndex);
+                                if(Term.Number.isNumber(nextTkn))
+                                    Term.addTerm(Term.Number.getNumber(nextTkn).toString(),document,termIndex);
+                                else
+                                    Term.addTerm(nextTkn, document, termIndex);
                                 termIndex += 1;
                                 Term.addTerm(token+" "+nextTkn,document,termIndex);
                                 termIndex++;
