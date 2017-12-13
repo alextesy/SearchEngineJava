@@ -14,13 +14,14 @@ public class Term{
     private Map<Document,List<Integer>> docDictionary;
     private String value;
     private int termTDF;
+    private long pointer;
     /* private Kind kind; */
 
     private Term(String value /*,Kind kind*/){
         this.docDictionary = new HashMap<>();
         this.value = value;
         this.termTDF = 0 ;
-        /*this.kind = kind*/;
+        /*this.kind = kind;*/
     }
 
     public static void addTerm(String value/*,Kind kind*/,Document document,int location){
@@ -79,9 +80,9 @@ public class Term{
         Map<Document,List<Integer>> temp = new HashMap<>();
         for(Document doc : popularDocuments)
             temp.put(doc,docDictionary.get(doc));
-        docDictionary.clear();
         docDictionary = temp;
         return this;
+
     }
     @Override
     public String toString() {
@@ -131,14 +132,36 @@ public class Term{
         return term;
     }
 
-    public List<Document> getPopularDocs(int numOfDocs){
+    public long getPointer() {
+        return pointer;
+    }
+
+    public void setPointer(long pointer) {
+        this.pointer = pointer;
+    }
+
+    public List<Document> getPopularDocs(){
+        /*
+        long s = System.currentTimeMillis();
         List<Document> popularDocs = new ArrayList<Document>(docDictionary.keySet());
         popularDocs = popularDocs.parallelStream().sorted((Comparator<Document>) (o1, o2) -> Integer.compare(docDictionary.get(o1).size(),docDictionary.get(o2).size())).collect(Collectors.toList());
         for (int i=0; i<numOfDocs; i+=1)
             popularDocs.add(popularDocs.get(i));
+        System.out.println("sorting: " + (System.currentTimeMillis()-s));
+        return popularDocs;
+        */
+        List<Document> popularDocs = new ArrayList<>();
+        PriorityQueue<Document> pq = new PriorityQueue<Document>(new Comparator<Document>() {
+            @Override
+            public int compare(Document o1, Document o2) {
+                return Integer.compare(docDictionary.get(o2).size(),docDictionary.get(o1).size());
+            }
+        });
+        pq.addAll(docDictionary.keySet());
+        for (int i=0; i<pq.size()/3 ; i+=1)
+            popularDocs.add(pq.poll());
         return popularDocs;
     }
-
 
     public enum Kind {
         Number{

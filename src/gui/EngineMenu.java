@@ -11,8 +11,11 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Executable;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
-
+import gui.DisplayScrollPanel.*;
 public class EngineMenu {
 
     private static final Dimension OUTER_FRAME_DIMENSION = new Dimension(400,380);
@@ -20,22 +23,22 @@ public class EngineMenu {
     private JFrame engineFrame;
     private InitializationPathTable pathsInitializing;
     private DisplayDictionaryPanel dictionaryPanel;
+    private DisplayCachePanel cachePanel;
     private boolean performStemming;
 
     private Indexer indexer;
 
-    public Map<String,Term> cacheDictionary = null;
-    public Map<String,long[]> Dictionary =  null;
+    public Map<String,Term> cache = null;
+    public Map<String,Object[]> dictionary =  null;
 
     JLabel background;
 
     public EngineMenu(){
         initEngineMainFrame();
-        dictionaryPanel = new DisplayDictionaryPanel(this.engineFrame,false);
+        dictionaryPanel = new DisplayDictionaryPanel(this.engineFrame,false,null);
+        cachePanel = new DisplayCachePanel(this.engineFrame,false,null);
         pathsInitializing = new InitializationPathTable(this.engineFrame,false);
         performStemming = true;
-
-
     }
 
 
@@ -79,12 +82,14 @@ public class EngineMenu {
         JMenuItem initializationFrame = new JMenuItem("Initial paths");
         JMenuItem saveCacheDictionary = new JMenuItem("Save cache/dictionary");
         JMenuItem openCacheDictionary = new JMenuItem("Open cache/dictionary");
+        JMenuItem resetEnginePosting = new JMenuItem("Reset engine");
         JMenuItem exitMenuItem = new JMenuItem("Exit");
 
         fileMenu.add(createIndexFile);
         fileMenu.add(initializationFrame);
         fileMenu.add(saveCacheDictionary);
         fileMenu.add(openCacheDictionary);
+        fileMenu.add(resetEnginePosting);
         fileMenu.add(exitMenuItem);
 
         initializationFrame.addActionListener(e -> pathsInitializing.setVisible(true));
@@ -99,12 +104,14 @@ public class EngineMenu {
                         saveCacheDictionary.setEnabled(false);
                         openCacheDictionary.setEnabled(false);
                         createIndexFile.setEnabled(false);
+                        resetEnginePosting.setEnabled(false);
                         indexer.toIndex();
-                        Dictionary = new TreeMap<>(indexer.Dictionary);
-                        cacheDictionary = new TreeMap<>(indexer.cacheTerms);
+                        dictionary = new TreeMap<>(indexer.Dictionary);
+                        cache = new TreeMap<>(indexer.cacheTerms);
                         createIndexFile.setEnabled(true);
                         saveCacheDictionary.setEnabled(true);
                         openCacheDictionary.setEnabled(true);
+                        resetEnginePosting.setEnabled(true);
                         drawIndexedEngine();
 
                     } catch (Exception e1) {
@@ -120,27 +127,32 @@ public class EngineMenu {
             }
 
         });
-        //TODO - SAVE CACHE
         saveCacheDictionary.addActionListener(e -> {
-            try {
-                if (Dictionary == null)
-                    throw new RuntimeException();
-                JFileChooser savingDirChooser = new JFileChooser();
-                savingDirChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                savingDirChooser.setName("Save cache/dictionary at");
-                int returnVal = savingDirChooser.showSaveDialog(null);
-                if (returnVal == JFileChooser.APPROVE_OPTION) {
-                    File savedDirChoosed = savingDirChooser.getSelectedFile();
-                    openCacheDictionary.setEnabled(false);
-                    new Thread(() -> Indexer.writeDictionary(savedDirChoosed.getPath(), Dictionary)).start();
-                    openCacheDictionary.setEnabled(true);
-
-
+            new Thread(() -> {
+                try {
+                    if (dictionary == null || cache ==null)
+                        throw new RuntimeException();
+                    JFileChooser savingDirChooser = new JFileChooser();
+                    savingDirChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                    savingDirChooser.setName("Save cache/dictionary at");
+                    int returnVal = savingDirChooser.showSaveDialog(null);
+                    if (returnVal == JFileChooser.APPROVE_OPTION) {
+                        File savedDirChoosed = savingDirChooser.getSelectedFile();
+                        openCacheDictionary.setEnabled(false);
+                        Thread t1 = new Thread(() -> Indexer.writeDictionary(savedDirChoosed.getPath(), dictionary));
+                        Thread t2 = new Thread(() -> Indexer.writeCache(savedDirChoosed.getPath(), cache));
+                        t1.start();
+                        t2.start();
+                        t1.join();
+                        t2.join();
+                        openCacheDictionary.setEnabled(true);
+                    }
                 }
-            }
-            catch (Exception e2 ){
-                JOptionPane.showMessageDialog(engineFrame,"No dictionary or cache uploaded to RAM yet");
-            }
+                catch (Exception e2 ){
+                    JOptionPane.showMessageDialog(engineFrame,"No dictionary or cache uploaded to RAM yet.");
+                }
+            }).start();
+
         });
 
 
@@ -154,20 +166,58 @@ public class EngineMenu {
                 new Thread(() -> {
                     try{
                         saveCacheDictionary.setEnabled(false);
-                        Dictionary = new TreeMap<>(Indexer.readDictionary(openDirChoosed + "//dictionary.txt"));
+
+                        Thread t1 =new Thread(() -> {
+                            try {
+                                dictionary = new TreeMap<>(Indexer.readDictionary(openDirChoosed + "//dictionary.txt"));
+                            } catch (Exception e1) {
+                                JOptionPane.showMessageDialog(engineFrame,"Non exist dictionary in dir");
+                            }
+                        });
+                        Thread t2 =new Thread(() -> {
+                            try {
+                                cache = new TreeMap<>(Indexer.readCache(openDirChoosed + "//cache.txt"));
+                            } catch (Exception e1) {
+                                JOptionPane.showMessageDialog(engineFrame,"Non exist cache in dir");
+                            }
+                        });
+
+                        t1.start(); t2.start();
+                        t1.join(); t2.join();
+
+
                         saveCacheDictionary.setEnabled(true);
                     }
                     catch (Exception e13){
-                        JOptionPane.showMessageDialog(engineFrame,"No dictionary or cache in dir");
+                        e13.printStackTrace();
                     }
                 }).start();
             }
         });
 
 
-        exitMenuItem.addActionListener(e -> {
-            System.exit(0);
+        resetEnginePosting.addActionListener(e -> {
+            cache = null;
+            dictionary = null;
+            if(indexer !=null)
+                indexer.clear();
+            try{
+                String path = pathsInitializing.getPostingDir()+ "//Hallelujah.txt";
+                if(new File(path).isFile()) {
+                    try {
+                        Files.delete(Paths.get(path));
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            }
+            catch (Exception e1 )
+            {
+                JOptionPane.showMessageDialog(engineFrame,"Need a path to posting dir.");
+            }
+
         });
+        exitMenuItem.addActionListener(e -> System.exit(0));
         return  fileMenu;
     }
     private void drawIndexedEngine(){
@@ -202,29 +252,32 @@ public class EngineMenu {
 
         JMenuItem displayCache = new JMenuItem("Display cache");
         JMenuItem displayDictionary = new JMenuItem("Display dictionary");
-        JMenuItem resetEnginePosting = new JMenuItem("Reset engine");
 
 
 
         optionsMenu.add(displayCache);
         optionsMenu.add(displayDictionary);
-        optionsMenu.add(resetEnginePosting);
 
-        resetEnginePosting.addActionListener(e -> {
-            //TODO - add resetEnginePosting option - ask if user is sure before reseting
-        });
-        displayDictionary.addActionListener(e -> {
+        displayDictionary.addActionListener(e -> new Thread(() -> {
+            dictionaryPanel.setDictionary(dictionary);
             try{
-                dictionaryPanel.redo(Dictionary);
+                dictionaryPanel.redo();
                 dictionaryPanel.setVisible(true);
             }catch (Exception e1) {
                 JOptionPane.showMessageDialog(this.engineFrame,"No dictionary uploaded yet.");
             }
+        }).start());
 
-        });
-        displayCache.addActionListener(e -> {
+        displayCache.addActionListener(e -> new Thread(() -> {
+            cachePanel.setCache(cache);
+            try{
+                cachePanel.redo();
+                cachePanel.setVisible(true);
+            }catch (Exception e1) {
+                JOptionPane.showMessageDialog(this.engineFrame,"No cache uploaded yet.");
+            }
+        }).start());
 
-        });
         return optionsMenu;
     }
 
@@ -234,7 +287,6 @@ public class EngineMenu {
         JCheckBoxMenuItem performStemming = new JCheckBoxMenuItem("Perform Porter Stemming" , true);
         performStemming.addActionListener(e -> {
             this.performStemming = performStemming.isSelected();
-            indexer.setStemming(this.performStemming);
         });
         preferencesMenu.add(performStemming);
         return preferencesMenu;

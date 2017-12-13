@@ -11,7 +11,7 @@ public class Indexer {
     public static final long CORPUS_BYTE_SIZE = 1578400481; // 1.47 - GB - 1.47*2^30 bytes
     public final Map<String,Term> cacheTerms = new HashMap<String, Term>();
 
-    public Map<String,long[]> Dictionary = new HashMap<>();
+    public Map<String,Object[]> Dictionary = new HashMap<>();
 
     private final Set<String> cacheTermString = initCacheStrings();
     private long indexSize = 0;
@@ -62,7 +62,7 @@ public class Indexer {
         try{
             if (directoryListing != null) {
                 for (File child : directoryListing) {
-                    if(counter == 5 ) break;
+                    //if(counter == 10 ) break;
                     currentSize+=ReadFile.readTextFile(child,stemming);
                     if (currentSize > readFileSize) {
                         currentSize=0;
@@ -85,8 +85,10 @@ public class Indexer {
         this.indexRunningTime = (then - now)/1000;
 
         writeDocumentData();
-        findCacheTerms();
+        //findCacheTerms();
     }
+
+
 
     private long mergeSortedFiles(List<File> postingFilesList,File outputFile,Comparator<String> cmp) throws IOException {
         ArrayList<BinaryFileBuffer> bfbs = new ArrayList<>();
@@ -112,7 +114,6 @@ public class Indexer {
                 pq.add(bfb);
             }
         }
-
         int rowCounter = 0;
         try {
             Term lastTermLine = null;
@@ -136,12 +137,16 @@ public class Indexer {
                     raf.writeBytes(lastTermLine.encryptTermToStr());
                     raf.writeBytes("\n");
                     //TODO - ADD FIELDS IF NEEDED
-                    Dictionary.put(lastTermLine.getValue(),new long[]{lastTermLine.getTermTDF(),lastTermLine.getTermIDF(),startPos} /* add more fields ,}*/ );
-                    if(initCacheStrings().contains(lastTermLine.getValue())){
-                        lastTermLine = lastTermLine.termsSub(lastTermLine.getPopularDocs(30));
+                    if(cacheTermString.contains(lastTermLine.getValue())){
+                        cacheSize += (raf.getFilePointer() - startPos)/3;
+                        lastTermLine = lastTermLine.termsSub(lastTermLine.getPopularDocs());
+                        lastTermLine.setPointer(startPos);
                         cacheTerms.put(lastTermLine.getValue(),lastTermLine);
+                        Dictionary.put(lastTermLine.getValue(),new Object[]{lastTermLine.getTermTDF(),lastTermLine.getTermIDF(),+'C'} /* add more fields ,}*/ );
                     }
-
+                    else{
+                        Dictionary.put(lastTermLine.getValue(),new Object[]{lastTermLine.getTermTDF(),lastTermLine.getTermIDF(),+'P'+Long.toString(startPos)} /* add more fields ,}*/ );
+                    }
                     lastTermLine = rT;
                 }
                 else
@@ -172,7 +177,7 @@ public class Indexer {
         long start = System.currentTimeMillis();
         try {
             RandomAccessFile raf = new RandomAccessFile(new File("C:\\Users\\אלי\\doc\\Hallelujah.txt"),"r");
-            raf.seek(Dictionary.get("zoo")[2]);
+            raf.seek(dictionary.get("zoo")[2]);
             Term term = Term.decryptTermFromStr(raf.readLine());
             System.out.println(term);
         }
@@ -199,7 +204,7 @@ public class Indexer {
 
     private void writeDocumentData(){
         try {
-            PrintWriter corpusDocFile = new PrintWriter(pathToPosting+"\\documentsData"+ ".txt");
+            PrintWriter corpusDocFile = new PrintWriter("documentsData.txt");
             for(Document doc : Document.corpusDocuments.values()){
                 corpusDocFile.println(doc);
             }
@@ -209,7 +214,7 @@ public class Indexer {
         }
     }
 
-    public static void writeDictionary(String path,Map<String,long[]> dictionary){
+    public static void writeDictionary(String path,Map<String,Object[]> dictionary){
         try {
             FileOutputStream fout = new FileOutputStream(path + "\\dictionary.txt");
             ObjectOutputStream oos = new ObjectOutputStream(fout);
@@ -219,35 +224,52 @@ public class Indexer {
             e.printStackTrace();
         }
     }
-
-    public static Map<String,long[]> readDictionary(String path){
-        try{
-            FileInputStream fin = new FileInputStream(path );
-            ObjectInputStream ois = new ObjectInputStream(fin);
-            return  (Map<String,long[]>)ois.readObject();
-        }catch (Exception e){
+    public static void writeCache(String path, Map<String,Term> cacheTerms) {
+        try {
+            PrintWriter cacheFiles = new PrintWriter(path+"\\cache"+ ".txt");
+            for(Term term : cacheTerms.values()){
+                cacheFiles.println(term.encryptTermToStr());
+            }
+            cacheFiles.close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+
     }
-    public void setStemming(boolean stemming) {
-        this.stemming = stemming;
+
+    public static Map<String,Object[]> readDictionary(String path) throws Exception{
+        FileInputStream fin = new FileInputStream(path);
+        ObjectInputStream ois = new ObjectInputStream(fin);
+        return  (Map<String,Object[]>)ois.readObject();
     }
+    public static Map<String,Term> readCache(String path) throws Exception{
+        Map<String,Term> cache = new HashMap<String,Term>();
+        BufferedReader br = new BufferedReader(new FileReader(path));
+        String line = br.readLine();
+        while (line != null) {
+            Term term = Term.decryptTermFromStr(line);
+            cache.put(term.getValue(),term);
+            line = br.readLine();
+        }
+        return cache;
+     }
+
+
 
     public long getCacheSize() {
         return cacheSize;
     }
 
     private void findCacheTerms(){
-        PriorityQueue<Map.Entry<String,long[]>> pq = new PriorityQueue<>((o1, o2) -> Long.compare(o2.getValue()[0], o1.getValue()[0]));
-        for(Map.Entry<String,long[]> termData : Dictionary.entrySet()){
+        PriorityQueue<Map.Entry<String,Object[]>> pq = new PriorityQueue<>((o1, o2) -> Long.compare((long)o2.getValue()[0], (long)o1.getValue()[0]));
+        for(Map.Entry<String,Object[]> termData : Dictionary.entrySet()){
             pq.add(termData);
         }
         try {
             PrintWriter cacheFile = new PrintWriter("cacheWords.txt");
 
             for (int i = 0; i < 10000; i += 1) {
-                Map.Entry<String, long[]> freTerm = pq.poll();
+                Map.Entry<String, Object[]> freTerm = pq.poll();
                 cacheFile.println(freTerm.getKey());
             }
             cacheFile.close();
@@ -256,6 +278,12 @@ public class Indexer {
         catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+    public void clear(){
+        this.currentTermDictionary.clear();
+        cacheTerms.clear();
+        Dictionary.clear();
+        cacheTermString.clear();
     }
 
     public double getIndexRunningTime() {
@@ -298,7 +326,4 @@ public class Indexer {
         private String cache;
 
     }
-
-
-
 }
