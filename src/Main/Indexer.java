@@ -62,7 +62,7 @@ public class Indexer {
         try{
             if (directoryListing != null) {
                 for (File child : directoryListing) {
-                    //if(counter == 10 ) break;
+                    if(counter == 4) break;
                     currentSize+=ReadFile.readTextFile(child,stemming);
                     if (currentSize > readFileSize) {
                         currentSize=0;

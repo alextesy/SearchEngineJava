@@ -60,6 +60,7 @@ public class Parse {
 
 
     private void parseTokens(String token,StringTokenizer stk){
+
             token = removeComma(token);
             boolean dot=false;
             if (isNumeric(token)) {//if NUMBER
@@ -114,7 +115,9 @@ public class Parse {
                             ParseMonthDD(token, nextTkn, stk);
                     }
                     else{
-                        Term.addTerm(token, document, termIndex);
+                        if(token.equals(""))
+                            return;
+                        Term.addTerm(token.toLowerCase(), document, termIndex);
                         termIndex += 1;
                         parseTokens(nextTkn,stk);
                     }
@@ -142,17 +145,18 @@ public class Parse {
                             if(Term.Number.isNumber(token))
                                 Term.addTerm(Term.Number.getNumber(token).toString(), document, termIndex);
                             else
-                                Term.addTerm(token, document, termIndex);
+                                Term.addTerm(token.toLowerCase(), document, termIndex);
                             termIndex += 1;
                             parseTokens(nextTkn, stk);
                         }
-
                     }
                     else {
+                        if(token.equals(""))
+                            return;
                         if(Term.Number.isNumber(token))
                             Term.addTerm(Term.Number.getNumber(token).toString(), document, termIndex);
                         else
-                            Term.addTerm(token, document, termIndex);
+                            Term.addTerm(token.toLowerCase(), document, termIndex);
                         termIndex += 1;
                     }
                 }
@@ -169,10 +173,12 @@ public class Parse {
                     }
                 }
                 else {
+                    if(token.equals(""))
+                        return;
                     if(Term.Number.isNumber(token))
                         Term.addTerm(Term.Number.getNumber(token).toString(), document, termIndex);
                     else{
-                        Term.addTerm(token, document, termIndex);
+                        Term.addTerm(token.toLowerCase(), document, termIndex);
                     }
                     termIndex += 1;
                 }
@@ -188,14 +194,17 @@ public class Parse {
             String year = yearCheck(nextNextoken);
             if (year != null) {//DD MONTH YY/DD MONTH YY->DD/MM/YYYY
                 Term.addTerm(token + "/" + Term.Month.getMonth(nextTkn) + "/" + year, document, termIndex);
+                termIndex += 1;
             } else {//DD/Month->DD/MM
                 Term.addTerm(token + "/" + Term.Month.getMonth(nextTkn), document, termIndex);
+                termIndex += 1;
                 parseTokens(nextNextoken, stk);
             }
-            termIndex += 1;
         }
         else{
+
             Term.addTerm(token, document, termIndex);
+            termIndex++;
             parseTokens(nextTkn,stk);
         }
     }
@@ -213,7 +222,11 @@ public class Parse {
                 parseTokens(nextNextoken,stk);
             }
         }
-
+        else{
+            Term.addTerm(token.toLowerCase(), document, termIndex);
+            termIndex++;
+            parseTokens(nextTkn,stk);
+        }
 
     }
     private void ParseMONTHYYYY(String token,String nextTkn,StringTokenizer stk){//token=month nextTkn=YEAR
@@ -223,7 +236,7 @@ public class Parse {
             termIndex++;
         }
         else {
-            Term.addTerm(token, document, termIndex);
+            Term.addTerm(token.toLowerCase(), document, termIndex);
             termIndex++;
             parseTokens(nextTkn,stk);
         }
