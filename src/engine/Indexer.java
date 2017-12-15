@@ -66,7 +66,11 @@ public class Indexer {
         try{
             if (directoryListing != null) {
                 for (File child : directoryListing) {
+<<<<<<< HEAD:src/engine/Indexer.java
                     //if(counter == 2 ) break;
+=======
+                    if(counter == 4) break;
+>>>>>>> 55fb7d0bd821e6a1670d65d53d5a06b22797a41b:src/Main/Indexer.java
                     currentSize+=ReadFile.readTextFile(child,stemming);
                     if (currentSize > readFileSize) {
                         currentSize=0;

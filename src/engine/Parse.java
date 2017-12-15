@@ -42,7 +42,13 @@ public class Parse {
 
     }
     public void ParseFile(){
+<<<<<<< HEAD:src/engine/Parse.java
         StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:;?!'[`]/|()<#>*&+-\"");
+=======
+        StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:{};?!'[`]/|()<#>*&+-\"");
+        Stemmer stemmer = new Stemmer();
+
+>>>>>>> 55fb7d0bd821e6a1670d65d53d5a06b22797a41b:src/Main/Parse.java
         while(stk.hasMoreElements() ){
             String token = stk.nextToken();
             if(stopWords.contains(token))
@@ -61,6 +67,7 @@ public class Parse {
 
 
     private void parseTokens(String token,StringTokenizer stk){
+
             token = removeComma(token);
             boolean dot=false;
             if (isNumeric(token)) {//if NUMBER
@@ -114,7 +121,9 @@ public class Parse {
                             ParseMonthDD(token, nextTkn, stk);
                     }
                     else{
-                        Term.addTerm(token, document, termIndex);
+                        if(token.equals(""))
+                            return;
+                        Term.addTerm(token.toLowerCase(), document, termIndex);
                         termIndex += 1;
                         parseTokens(nextTkn,stk);
                     }
@@ -125,14 +134,20 @@ public class Parse {
                         String nextTkn = stk.nextToken();
                         token=token.toLowerCase();
                         if (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
-                            Term.addTerm(token, document, termIndex);
+                            if(Term.Number.isNumber(token))
+                                Term.addTerm(Term.Number.getNumber(token).toString(),document,termIndex);
+                            else
+                                Term.addTerm(token, document, termIndex);
                             boolean check = true;
                             termIndex += 1;
                             while (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
                                 String temp=nextTkn;
                                 nextTkn=removeComma(nextTkn).toLowerCase();
                                 nextTkn=removeDot(nextTkn);
-                                Term.addTerm(nextTkn, document, termIndex);
+                                if(Term.Number.isNumber(nextTkn))
+                                    Term.addTerm(Term.Number.getNumber(nextTkn).toString(),document,termIndex);
+                                else
+                                    Term.addTerm(nextTkn, document, termIndex);
                                 termIndex += 1;
                                 Term.addTerm(token+" "+nextTkn,document,termIndex);
                                 termIndex++;
@@ -144,17 +159,18 @@ public class Parse {
                             if(Term.Number.isNumber(token))
                                 Term.addTerm(Term.Number.getNumber(token).toString(), document, termIndex);
                             else
-                                Term.addTerm(token, document, termIndex);
+                                Term.addTerm(token.toLowerCase(), document, termIndex);
                             termIndex += 1;
                             parseTokens(nextTkn, stk);
                         }
-
                     }
                     else {
+                        if(token.equals(""))
+                            return;
                         if(Term.Number.isNumber(token))
                             Term.addTerm(Term.Number.getNumber(token).toString(), document, termIndex);
                         else
-                            Term.addTerm(token, document, termIndex);
+                            Term.addTerm(token.toLowerCase(), document, termIndex);
                         termIndex += 1;
                     }
                 }
@@ -171,10 +187,12 @@ public class Parse {
                     }
                 }
                 else {
+                    if(token.equals(""))
+                        return;
                     if(Term.Number.isNumber(token))
                         Term.addTerm(Term.Number.getNumber(token).toString(), document, termIndex);
                     else{
-                        Term.addTerm(token, document, termIndex);
+                        Term.addTerm(token.toLowerCase(), document, termIndex);
                     }
                     termIndex += 1;
                 }
@@ -190,14 +208,17 @@ public class Parse {
             String year = yearCheck(nextNextoken);
             if (year != null) {//DD MONTH YY/DD MONTH YY->DD/MM/YYYY
                 Term.addTerm(token + "/" + Term.Month.getMonth(nextTkn) + "/" + year, document, termIndex);
+                termIndex += 1;
             } else {//DD/Month->DD/MM
                 Term.addTerm(token + "/" + Term.Month.getMonth(nextTkn), document, termIndex);
+                termIndex += 1;
                 parseTokens(nextNextoken, stk);
             }
-            termIndex += 1;
         }
         else{
+
             Term.addTerm(token, document, termIndex);
+            termIndex++;
             parseTokens(nextTkn,stk);
         }
     }
@@ -215,7 +236,11 @@ public class Parse {
                 parseTokens(nextNextoken,stk);
             }
         }
-
+        else{
+            Term.addTerm(token.toLowerCase(), document, termIndex);
+            termIndex++;
+            parseTokens(nextTkn,stk);
+        }
 
     }
     private void ParseMONTHYYYY(String token,String nextTkn,StringTokenizer stk){//token=month nextTkn=YEAR
@@ -225,7 +250,7 @@ public class Parse {
             termIndex++;
         }
         else {
-            Term.addTerm(token, document, termIndex);
+            Term.addTerm(token.toLowerCase(), document, termIndex);
             termIndex++;
             parseTokens(nextTkn,stk);
         }

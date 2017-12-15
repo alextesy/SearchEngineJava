@@ -293,6 +293,11 @@ public class Term{
         }
     }
     public enum Number{
+        Zero{
+            @Override
+            public String toString(){return "0";}
+            },
+
         One{
             @Override
             public String toString() {
@@ -354,10 +359,22 @@ public class Term{
             public String toString() {
                 return "10";
             }
-        };
+        },
+        Eleven{
+            @Override
+            public String toString(){return "11";}
+        } ,
+        Twelve{
+            @Override
+            public String toString(){return "12";}
+        }
+        ;
+
         private static final Map<String,Number> numberMap = initNumberMap();
         private static Map<String,Number> initNumberMap() {
             return new HashMap<String, Number>(){{
+                put("Zero",Zero);
+                put("zero",Zero);
                 put("One",One);
                 put("one",One);
                 put("Two",Two);
@@ -378,6 +395,12 @@ public class Term{
                 put("nine",Nine);
                 put("Ten",Ten);
                 put("ten",Ten);
+                put("Eleven",Eleven);
+                put("eleven",Eleven);
+                put("Dozen",Twelve);
+                put("Twelve",Twelve);
+                put("twelve",Twelve);
+
 
             }};
         }
