@@ -12,29 +12,32 @@ public class Indexer {
 
     public Map<String,Object[]> Dictionary = new HashMap<>();
 
-    public final Map<String,Term> cacheTerms = initCacheStrings();
+    public static Map<String,Term> cacheTerms;
     private long indexSize = 0;
     private long cacheSize = 0;
 
     private double indexRunningTime;
-    private String pathToCorpus;
-    private String pathToPosting;
+    public static String pathToCorpus;
+    public static String pathToPosting;
     private long readFileSize;
     private int counter = 0;
-    public boolean stemming;
-    private String stemString;
+    public static boolean stemming;
+    private static String stemString;
 
 
-    public Indexer(String pathToCorpus, String pathToPosting,long readFileSize,boolean stemming) {
+    public Indexer(String pathToCorpus, String pathToPosting,long readFileSize) {
         this.readFileSize = readFileSize;
         this.pathToCorpus = pathToCorpus;
         this.pathToPosting = pathToPosting;
-        this.stemming=stemming;
-        this.stemString = stemming==true ? "Stem" :"";
+    }
+
+    public static void setStemming(boolean toStem){
+        stemming = toStem;
+        stemString = stemming==true ? "Stem" : "";
     }
     public static Map<String,Term> initCacheStrings() {
         Map<String,Term> termsSet = new HashMap<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(new File("cacheWords.txt")))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(new File("cacheWords"+ stemString +".txt")))) {
             String term;
             while ((term = br.readLine()) != null) {
                 termsSet.put(term,null);
@@ -66,20 +69,18 @@ public class Indexer {
         try{
             if (directoryListing != null) {
                 for (File child : directoryListing) {
-<<<<<<< HEAD:src/engine/Indexer.java
-                    //if(counter == 2 ) break;
-=======
-                    if(counter == 4) break;
->>>>>>> 55fb7d0bd821e6a1670d65d53d5a06b22797a41b:src/Main/Indexer.java
-                    currentSize+=ReadFile.readTextFile(child,stemming);
-                    if (currentSize > readFileSize) {
-                        currentSize=0;
-                        counter += 1;
-                        for (Term term : currentTermDictionary.values())
-                            tmpList.add(term.encryptTermToStr());
-                        postingFilesList.add(sortAndSave(tmpList,cmp));
-                        tmpList.clear();
-                        currentTermDictionary.clear();
+                    if(!child.getName().equals("stop_words.txt")){
+                        if(counter == 1 ) break;
+                        currentSize+=ReadFile.readTextFile(child,stemming);
+                        if (currentSize > readFileSize) {
+                            currentSize=0;
+                            counter += 1;
+                            for (Term term : currentTermDictionary.values())
+                                tmpList.add(term.encryptTermToStr());
+                            postingFilesList.add(sortAndSave(tmpList,cmp));
+                            tmpList.clear();
+                            currentTermDictionary.clear();
+                        }
                     }
                 }
             }
@@ -97,7 +98,8 @@ public class Indexer {
         long then=System.currentTimeMillis();
         this.indexRunningTime = (then - now)/1000;
 
-        //findCacheTerms();
+        findCacheTerms();
+
     }
 
     public void myHelperShityFunction(){
@@ -170,14 +172,16 @@ public class Indexer {
                         raf.writeBytes("\n");
                         if(cacheTerms.containsKey(lastTermLine.getValue())){
                             cacheSize += (raf.getFilePointer() - startPos)/4;
-                            Dictionary.put(lastTermLine.getValue(),new Object[]{lastTermLine.getTermTDF(),lastTermLine.getTermIDF(),+'C'} /* add more fields ,}*/ );
+                            Dictionary.put(lastTermLine.getValue(),new Object[]{lastTermLine.getTermTDF(),lastTermLine.getTermIDF(),'C'+Long.toString(startPos)} /* add more fields ,}*/ );
                             lastTermLine = lastTermLine.termsSub(lastTermLine.getPopularDocs());
-                            lastTermLine.setPointer(startPos);
                             cacheTerms.put(lastTermLine.getValue(),lastTermLine);
+
                         }
                         else{
-                            Dictionary.put(lastTermLine.getValue(),new Object[]{lastTermLine.getTermTDF(),lastTermLine.getTermIDF(),+'P'+Long.toString(startPos)} /* add more fields ,}*/ );
+                            Dictionary.put(lastTermLine.getValue(),new Object[]{lastTermLine.getTermTDF(),lastTermLine.getTermIDF(),'P'+Long.toString(startPos)} /* add more fields ,}*/ );
                         }
+                        ++rowCounter;
+
                     }
 
                     lastTermLine = rT;
@@ -185,7 +189,6 @@ public class Indexer {
                 else
                     lastTermLine.termsUnion(rT);
 
-                ++rowCounter;
                 if (bfb.empty()) {
                     bfb.fbr.close();
                 } else {
@@ -201,6 +204,8 @@ public class Indexer {
                 bfb.close();
             }
         }
+        System.out.println(stemming + ": " +rowCounter);
+        System.out.println(stemming + ": "+ Parse.numOfNumbers);
         return  rowCounter;
     }
 
@@ -299,7 +304,7 @@ public class Indexer {
             pq.add(termData);
         }
         try {
-            PrintWriter cacheFile = new PrintWriter("cacheWords" +stemString +" .txt");
+            PrintWriter cacheFile = new PrintWriter("cacheWords" +stemString +".txt");
 
             for (int i = 0; i < 10000; i += 1) {
                 Map.Entry<String, Object[]> freTerm = pq.poll();

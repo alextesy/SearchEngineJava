@@ -97,7 +97,9 @@ public class EngineMenu {
             try{
                 String corpusPath = pathsInitializing.getCorpusDir();
                 String postingPath = pathsInitializing.getPostingDir();
-                indexer = new Indexer(corpusPath,postingPath,Indexer.CORPUS_BYTE_SIZE/10,performStemming);
+                indexer = new Indexer(corpusPath,postingPath,Indexer.CORPUS_BYTE_SIZE/10);
+                Indexer.setStemming(performStemming);
+                Indexer.cacheTerms =Indexer.initCacheStrings();
                 new Thread(() -> {
                     try {
                         saveCacheDictionary.setEnabled(false);
@@ -117,7 +119,7 @@ public class EngineMenu {
                         JOptionPane.showMessageDialog(this.engineFrame,"Incorrect paths.try initial paths again.");
                         createIndexFile.setEnabled(true);
 
-                    }
+                   }
                 }).start();
 
             }

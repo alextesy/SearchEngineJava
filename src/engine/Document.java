@@ -8,11 +8,11 @@ public class Document {
 
     private String docName;
     private String fileName;
-    private int wordsSize;
+    private int docLength;
     private int mostFrequentWord;
 
     private Document(String fileName, String docName) {
-        this.wordsSize = 0;
+        this.docLength = 0;
         this.mostFrequentWord = 0;
         this.docName = docName;
         this.fileName = fileName;
@@ -21,7 +21,7 @@ public class Document {
     private Document(String docName, String fileName, int wordsSize, int mostFrequentWord) {
         this.docName = docName;
         this.fileName = fileName;
-        this.wordsSize = wordsSize;
+        this.docLength = wordsSize;
         this.mostFrequentWord = mostFrequentWord;
     }
 
@@ -38,12 +38,12 @@ public class Document {
 
     @Override
     public String toString() {
-        return "FileName: " + fileName+" ,DocName: "+docName+" ,DocLength: "+wordsSize+" ,MostFrequentWordAppearance: "+mostFrequentWord;
+        return "FileName: " + fileName+" ,DocName: "+docName+" ,DocLength: "+ docLength +" ,MostFrequentWordAppearance: "+mostFrequentWord;
     }
 
 
     public String encryptingDocToStr(){
-        return fileName+"#"+docName+"#"+wordsSize+"#"+mostFrequentWord;
+        return fileName+"#"+docName+"#"+ docLength +"#"+mostFrequentWord;
     }
 
     public static Document decryptDocFromStr(String str){
@@ -63,12 +63,12 @@ public class Document {
     }
 
 
-    public int getWordsSize() {
-        return wordsSize;
+    public int getDocLength() {
+        return docLength;
     }
 
-    public void setWordsSize(int wordsSize) {
-        this.wordsSize = wordsSize;
+    public void setDocLength(int docLength) {
+        this.docLength = docLength;
     }
 
     public int getMostFrequentWord() {

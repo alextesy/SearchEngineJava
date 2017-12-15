@@ -12,8 +12,7 @@ public class Term{
 
     private Map<Document,List<Integer>> docDictionary;
     private String value;
-    private int termTDF;
-    private long pointer;
+    private long termTDF;
     /* private Kind kind; */
 
     private Term(String value /*,Kind kind*/){
@@ -38,7 +37,7 @@ public class Term{
     }
 
     private void updatedDoc(Document document,int location){
-        document.setWordsSize(document.getWordsSize()+1);
+        document.setDocLength(document.getDocLength()+1);
         if(docDictionary.containsKey(document)){
             List<Integer> termFrequency = docDictionary.remove(document);
             termFrequency.add(location);
@@ -62,7 +61,7 @@ public class Term{
     public int getTermIDF() {
         return this.docDictionary.size();
     }
-    public int getTermTDF(){
+    public long getTermTDF(){
         return termTDF;
     }
 
@@ -131,13 +130,6 @@ public class Term{
         return term;
     }
 
-    public long getPointer() {
-        return pointer;
-    }
-
-    public void setPointer(long pointer) {
-        this.pointer = pointer;
-    }
 
     public List<Document> getPopularDocs(){
         /*

@@ -9,6 +9,9 @@ import java.util.regex.Pattern;
 
 
 public class Parse {
+
+    public static long numOfNumbers=0;
+
     private static final Collection<String> stopWords = initStopWords();
 
     private int termIndex;
@@ -21,7 +24,7 @@ public class Parse {
     private static Collection<String> initStopWords() {
 
         try {
-            String stopWordsContent= ReadFile.getContent(new File("stop_words.txt"));
+            String stopWordsContent= ReadFile.getContent(new File(Indexer.pathToCorpus +  "/stop_words.txt"));
             return new HashSet<>(Arrays.asList(stopWordsContent.split(" ")));
         } catch (IOException e) {
             e.printStackTrace();
@@ -42,13 +45,9 @@ public class Parse {
 
     }
     public void ParseFile(){
-<<<<<<< HEAD:src/engine/Parse.java
-        StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:;?!'[`]/|()<#>*&+-\"");
-=======
         StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:{};?!'[`]/|()<#>*&+-\"");
         Stemmer stemmer = new Stemmer();
 
->>>>>>> 55fb7d0bd821e6a1670d65d53d5a06b22797a41b:src/Main/Parse.java
         while(stk.hasMoreElements() ){
             String token = stk.nextToken();
             if(stopWords.contains(token))
@@ -151,7 +150,7 @@ public class Parse {
                                 termIndex += 1;
                                 Term.addTerm(token+" "+nextTkn,document,termIndex);
                                 termIndex++;
-                                if (!stk.hasMoreElements()||temp.charAt(temp.length()-1)==',')break;
+                                if (!stk.hasMoreElements()||temp.charAt(temp.length()-1)==','||temp.charAt(temp.length()-1)=='.')break;
                                 token=nextTkn;
                                 nextTkn=stk.nextToken();
                             }
