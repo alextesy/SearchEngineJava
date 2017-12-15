@@ -1,8 +1,8 @@
 package gui;
 
-import Main.Indexer;
-import Main.ReadFile;
-import Main.Term;
+import engine.Indexer;
+import engine.ReadFile;
+import engine.Term;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -11,7 +11,6 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Executable;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -139,8 +138,9 @@ public class EngineMenu {
                     if (returnVal == JFileChooser.APPROVE_OPTION) {
                         File savedDirChoosed = savingDirChooser.getSelectedFile();
                         openCacheDictionary.setEnabled(false);
-                        Thread t1 = new Thread(() -> Indexer.writeDictionary(savedDirChoosed.getPath(), dictionary));
-                        Thread t2 = new Thread(() -> Indexer.writeCache(savedDirChoosed.getPath(), cache));
+                        String pathStemming = performStemming ==true ? "Stem" : "";
+                        Thread t1 = new Thread(() -> Indexer.writeDictionary(savedDirChoosed.getPath() + "/dictionary" + pathStemming  +  ".txt", dictionary));
+                        Thread t2 = new Thread(() -> Indexer.writeCache(savedDirChoosed.getPath()+"/cache" + pathStemming  +  ".txt", cache));
                         t1.start();
                         t2.start();
                         t1.join();
@@ -166,17 +166,17 @@ public class EngineMenu {
                 new Thread(() -> {
                     try{
                         saveCacheDictionary.setEnabled(false);
-
+                        String pathStemming = performStemming ==true ? "Stem" : "";
                         Thread t1 =new Thread(() -> {
                             try {
-                                dictionary = new TreeMap<>(Indexer.readDictionary(openDirChoosed + "//dictionary.txt"));
+                                dictionary = new TreeMap<>(Indexer.readDictionary(openDirChoosed + "//dictionary" + pathStemming + ".txt"));
                             } catch (Exception e1) {
                                 JOptionPane.showMessageDialog(engineFrame,"Non exist dictionary in dir");
                             }
                         });
                         Thread t2 =new Thread(() -> {
                             try {
-                                cache = new TreeMap<>(Indexer.readCache(openDirChoosed + "//cache.txt"));
+                                cache = new TreeMap<>(Indexer.readCache(openDirChoosed + "//cache" + pathStemming + ".txt"));
                             } catch (Exception e1) {
                                 JOptionPane.showMessageDialog(engineFrame,"Non exist cache in dir");
                             }
