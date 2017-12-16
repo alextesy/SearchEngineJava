@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 public class Parse {
 
-    public static long numOfNumbers=0;
+    //public static long numOfNumbers=0;
 
     private static final Collection<String> stopWords = initStopWords();
 
@@ -32,7 +32,14 @@ public class Parse {
         return null;
     }
 
-
+    private String stem(String token){
+        if(stemming) {
+            stemmer.add(token.toCharArray(), token.length());
+            stemmer.stem();
+            return stemmer.toString();
+        }
+        return token;
+    }
 
     public Parse(String content, Document document,boolean stemming){
 
@@ -46,21 +53,11 @@ public class Parse {
     }
     public void ParseFile(){
         StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:{};?!'[`]/|()<#>*&+-\"");
-        Stemmer stemmer = new Stemmer();
-
         while(stk.hasMoreElements() ){
             String token = stk.nextToken();
-            if(stopWords.contains(token))
+            if(stopWords.contains(token.toLowerCase()))
                 continue;
-            if(stemming){
-                stemmer.add(token.toCharArray(),token.length());
-                stemmer.stem();
-                parseTokens(stemmer.toString(),stk);
-            }
-            else{
-                parseTokens(token,stk);
-
-            }
+            parseTokens(stem(token),stk);
         }
     }
 
@@ -95,16 +92,20 @@ public class Parse {
                     if (token.endsWith("%")) {
                         token = token.substring(0, token.length() - 1);
                         if (isNumeric(token)) {
-                            Double.parseDouble(token);
-                            token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
+                            if(token.contains(".")) {
+                                Double.parseDouble(token);
+                                token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
+                            }
                             Term.addTerm(token + " percent", document, termIndex);
                             termIndex += 1;
                         }
                     } else {
                         token = token.substring(1, token.length());
                         if (isNumeric(token)) {
-                            Double.parseDouble(token);
-                            token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
+                            if(token.contains(".")) {
+                                Double.parseDouble(token);
+                                token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
+                            }
                             Term.addTerm(token + " dollars", document, termIndex);
                             termIndex += 1;
                         }
@@ -146,9 +147,9 @@ public class Parse {
                                 if(Term.Number.isNumber(nextTkn))
                                     Term.addTerm(Term.Number.getNumber(nextTkn).toString(),document,termIndex);
                                 else
-                                    Term.addTerm(nextTkn, document, termIndex);
+                                    Term.addTerm(stem(nextTkn), document, termIndex);
                                 termIndex += 1;
-                                Term.addTerm(token+" "+nextTkn,document,termIndex);
+                                Term.addTerm(token+" "+stem(nextTkn),document,termIndex);
                                 termIndex++;
                                 if (!stk.hasMoreElements()||temp.charAt(temp.length()-1)==','||temp.charAt(temp.length()-1)=='.')break;
                                 token=nextTkn;
@@ -256,8 +257,6 @@ public class Parse {
 
 
     }
-
-
 
     private String yearCheck(String s) {
         if (isNumeric(s)) {

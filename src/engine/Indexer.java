@@ -1,5 +1,6 @@
 package engine;
 
+import java.beans.ParameterDescriptor;
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -15,7 +16,7 @@ public class Indexer {
     public static Map<String,Term> cacheTerms;
     private long indexSize = 0;
     private long cacheSize = 0;
-
+    public static int numOfNumbers=0;
     private double indexRunningTime;
     public static String pathToCorpus;
     public static String pathToPosting;
@@ -97,7 +98,6 @@ public class Indexer {
 
         long then=System.currentTimeMillis();
         this.indexRunningTime = (then - now)/1000;
-
         findCacheTerms();
 
     }
@@ -155,6 +155,8 @@ public class Indexer {
                 BinaryFileBuffer bfb = pq.poll();
                 lastLine = bfb.pop();
                 lastTermLine = Term.decryptTermFromStr(lastLine);
+                if(Parse.isNumeric(lastTermLine.getValue()))
+                    numOfNumbers++;
                 ++rowCounter;
                 if (bfb.empty())
                     bfb.fbr.close();
@@ -180,6 +182,8 @@ public class Indexer {
                         else{
                             Dictionary.put(lastTermLine.getValue(),new Object[]{lastTermLine.getTermTDF(),lastTermLine.getTermIDF(),'P'+Long.toString(startPos)} /* add more fields ,}*/ );
                         }
+                        if(Parse.isNumeric(lastTermLine.getValue()))
+                            numOfNumbers++;
                         ++rowCounter;
 
                     }
@@ -205,7 +209,7 @@ public class Indexer {
             }
         }
         System.out.println(stemming + ": " +rowCounter);
-        System.out.println(stemming + ": "+ Parse.numOfNumbers);
+        System.out.println(stemming + ": "+ numOfNumbers);
         return  rowCounter;
     }
 

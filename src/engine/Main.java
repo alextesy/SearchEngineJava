@@ -3,10 +3,17 @@ package engine;
 
 
 import gui.EngineMenu;
+import javafx.util.Pair;
+
+import java.util.Map;
+import java.util.Objects;
+import java.util.PriorityQueue;
+
+import static engine.Indexer.readDictionary;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
     /*
         try {
@@ -44,6 +51,21 @@ public class Main {
         new EngineMenu();
     }
 */
+
+       // Map<String,Object[]> alex=(Map<String, Object[]>) readDictionary("d:\\documents\\users\\kremians\\Documents\\blabla\\dictionaryStem.txt");
+       // PriorityQueue<Map.Entry<String,Object[]>> pq = new PriorityQueue<>((o1, o2) -> Long.compare((long)o2.getValue()[0], (long)o1.getValue()[0]));
+       // for(Map.Entry<String,Object[]> termData : alex.entrySet()){
+       //     pq.add(termData);
+       // }
+       // for (int i = 0; i < 10; i += 1) {
+       //     Map.Entry<String, Object[]> freTerm = pq.poll();
+       //     System.out.println(freTerm.getKey());
+       // }
+//
+        //Map<String,Object[]> tal=(Map<String, Object[]>) readDictionary("d:\\documents\\users\\kremians\\Documents\\blabla\\dictionary.txt");
+        //System.out.println(tal.size());
+
+
         new EngineMenu();
 
     }
