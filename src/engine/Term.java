@@ -7,14 +7,15 @@ import java.util.*;
 
 import static engine.Document.addDocument;
 import static engine.Indexer.currentTermDictionary;
+import static engine.Indexer.stemming;
 
 public class Term{
 
     private Map<Document,List<Integer>> docDictionary;
     private String value;
     private long termTDF;
-    /* private Kind kind; */
 
+    /* private Kind kind; */
     private Term(String value /*,Kind kind*/){
         this.docDictionary = new HashMap<>();
         this.value = value;
@@ -23,17 +24,17 @@ public class Term{
     }
 
     public static void addTerm(String value/*,Kind kind*/,Document document,int location){
-        Term term;
-        if(currentTermDictionary.containsKey(value)){
-            term = currentTermDictionary.get(value);
-            term.updatedDoc(document,location);
-        }
-        else{
-            term = new Term(value/*,kind*/) ;
-            term.updatedDoc(document,location);
-            currentTermDictionary.put(value,term);
-        }
-        term.termTDF+=1;
+            Term term;
+            if (currentTermDictionary.containsKey(value)) {
+                term = currentTermDictionary.get(value);
+                term.updatedDoc(document, location);
+            } else {
+                term = new Term(value/*,kind*/);
+                term.updatedDoc(document, location);
+                currentTermDictionary.put(value, term);
+            }
+            term.termTDF += 1;
+
     }
 
     private void updatedDoc(Document document,int location){

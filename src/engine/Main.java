@@ -51,22 +51,33 @@ public class Main {
         new EngineMenu();
     }
 */
+            Map<String, Object[]> alex = (Map<String, Object[]>) readDictionary("d:\\documents\\users\\kremians\\Documents\\nostem\\dictionary.txt");
+            PriorityQueue<Map.Entry<String, Object[]>> tf = new PriorityQueue<>((o1, o2) -> Long.compare((long) o2.getValue()[0], (long) o1.getValue()[0]));
+            PriorityQueue<Map.Entry<String, Object[]>> df = new PriorityQueue<>((o1, o2) -> (Integer) o2.getValue()[1] - (Integer) o1.getValue()[1]);
 
-       // Map<String,Object[]> alex=(Map<String, Object[]>) readDictionary("d:\\documents\\users\\kremians\\Documents\\blabla\\dictionaryStem.txt");
-       // PriorityQueue<Map.Entry<String,Object[]>> pq = new PriorityQueue<>((o1, o2) -> Long.compare((long)o2.getValue()[0], (long)o1.getValue()[0]));
-       // for(Map.Entry<String,Object[]> termData : alex.entrySet()){
-       //     pq.add(termData);
-       // }
-       // for (int i = 0; i < 10; i += 1) {
-       //     Map.Entry<String, Object[]> freTerm = pq.poll();
-       //     System.out.println(freTerm.getKey());
-       // }
+            for (Map.Entry<String, Object[]> termData : alex.entrySet()) {
+                tf.add(termData);
+                df.add(termData);
+            }
+            System.out.println("Total Tf");
+            for (int i = 0; i < 10; i += 1) {
+                Map.Entry<String, Object[]> ttf = tf.poll();
+                System.out.println(ttf.getKey() + " " + ttf.getValue()[0]);
+            }
+            System.out.println();
+            System.out.println("Total DF");
+            for (int i = 0; i < 10; i++) {
+                Map.Entry<String, Object[]> tdf = df.poll();
+                System.out.println(tdf.getKey() + " " + tdf.getValue()[1]);
+            }
 //
+        //}
         //Map<String,Object[]> tal=(Map<String, Object[]>) readDictionary("d:\\documents\\users\\kremians\\Documents\\blabla\\dictionary.txt");
         //System.out.println(tal.size());
 
 
-        new EngineMenu();
-
+        //new EngineMenu();
     }
+
+
 }

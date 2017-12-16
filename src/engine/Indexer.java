@@ -71,7 +71,7 @@ public class Indexer {
             if (directoryListing != null) {
                 for (File child : directoryListing) {
                     if(!child.getName().equals("stop_words.txt")){
-                        if(counter == 1 ) break;
+                        //if(counter == 1 ) break;
                         currentSize+=ReadFile.readTextFile(child,stemming);
                         if (currentSize > readFileSize) {
                             currentSize=0;

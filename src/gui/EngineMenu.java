@@ -116,6 +116,7 @@ public class EngineMenu {
                         drawIndexedEngine();
 
                     } catch (Exception e1) {
+                        e1.getMessage();
                         JOptionPane.showMessageDialog(this.engineFrame,"Incorrect paths.try initial paths again.");
                         createIndexFile.setEnabled(true);
 
@@ -142,11 +143,11 @@ public class EngineMenu {
                         openCacheDictionary.setEnabled(false);
                         String pathStemming = performStemming ==true ? "Stem" : "";
                         Thread t1 = new Thread(() -> Indexer.writeDictionary(savedDirChoosed.getPath() + "/dictionary" + pathStemming  +  ".txt", dictionary));
-                        Thread t2 = new Thread(() -> Indexer.writeCache(savedDirChoosed.getPath()+"/cache" + pathStemming  +  ".txt", cache));
+                        //Thread t2 = new Thread(() -> Indexer.writeCache(savedDirChoosed.getPath()+"/cache" + pathStemming  +  ".txt", cache));
                         t1.start();
-                        t2.start();
+                        //t2.start();
                         t1.join();
-                        t2.join();
+                        //t2.join();
                         openCacheDictionary.setEnabled(true);
                     }
                 }
