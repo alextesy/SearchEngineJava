@@ -7,7 +7,9 @@ import java.text.DecimalFormat;
 import java.util.*;
 import java.util.regex.Pattern;
 
-
+/**
+ *  Parser class used to parse document's content
+ */
 public class Parse {
 
     //public static long numOfNumbers=0;
@@ -27,12 +29,14 @@ public class Parse {
             String stopWordsContent= ReadFile.getContent(new File(Indexer.pathToCorpus +  "/stop_words.txt"));
             return new HashSet<>(Arrays.asList(stopWordsContent.split(" ")));
         } catch (IOException e) {
-            e.printStackTrace();
         }
         return null;
     }
 
     public static String stem(String token){
+        /**
+         *  Performs Stemming if needed
+         */
         if(stemming) {
             stemmer.add(token.toCharArray(), token.length());
             stemmer.stem();
@@ -52,6 +56,9 @@ public class Parse {
 
     }
     public void ParseFile(){
+        /**
+         *  Iteration over words and creating Terms out of them
+         */
         StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:{};?!'[`]/|()<#>*&+-\"");
         while(stk.hasMoreElements() ){
             String token =stk.nextToken();
@@ -277,18 +284,30 @@ public class Parse {
         return null;
     }
     public void stemStop(String value,Document document,int termIndex){
+        /**
+         * Last step in parser, after the parser we eliminate stopwords and perform stepping if needed
+         */
         if(!stopWords.contains(value)) {
             Term.addTerm(stem(value),document,termIndex);
         }
     }
 
     public static String removeComma(String s) {
+        /**
+         * Last step in parser, after the parser we eliminate stopwords and perform stepping if needed
+         */
             return s.replace(",", "");
     }
     public static String removeDot(String s){
+        /**
+         * @return true if the String is a number, false otherwise
+         */
         return s.replace(".","");
     }
     public static boolean isNumeric(String s) {
+        /**
+         * @return true if the String is a number, false otherwise
+         */
         return s != null && s.matches("[-+]?\\d*\\.?\\d+");
     }
 

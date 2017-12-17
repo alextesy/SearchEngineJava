@@ -25,7 +25,8 @@ public class EngineMenu {
     private DisplayCachePanel cachePanel;
     private boolean performStemming;
 
-    private Indexer indexer;
+    private Indexer indexer=null;
+    private File cacheDictionaryLastPath;
 
     public Map<String,Term> cache = null;
     public Map<String,Object[]> dictionary =  null;
@@ -97,11 +98,23 @@ public class EngineMenu {
             try{
                 String corpusPath = pathsInitializing.getCorpusDir();
                 String postingPath = pathsInitializing.getPostingDir();
+                if(indexer!=null)
+                    indexer.clear();
                 indexer = new Indexer(corpusPath,postingPath,Indexer.CORPUS_BYTE_SIZE/10);
                 Indexer.setStemming(performStemming);
                 Indexer.cacheTerms =Indexer.initCacheStrings();
                 new Thread(() -> {
                     try {
+
+                        try{
+                            if(!new File(pathsInitializing.getCorpusDir()+ "/stop_words.txt").exists())
+                                throw new Exception();
+                        }
+                        catch (Exception e1){
+                            JOptionPane.showMessageDialog(this.engineFrame,"Need 'stop_words' txt file at corpus dir");
+                        }
+
+
                         saveCacheDictionary.setEnabled(false);
                         openCacheDictionary.setEnabled(false);
                         createIndexFile.setEnabled(false);
@@ -117,7 +130,7 @@ public class EngineMenu {
 
                     } catch (Exception e1) {
                         e1.getMessage();
-                        JOptionPane.showMessageDialog(this.engineFrame,"Incorrect paths.try initial paths again.");
+                        JOptionPane.showMessageDialog(this.engineFrame,"Incorrect paths.try initial paths again or 'stop_words' file doesn't exist.");
                         createIndexFile.setEnabled(true);
 
                    }
@@ -174,20 +187,20 @@ public class EngineMenu {
                             try {
                                 dictionary = new TreeMap<>(Indexer.readDictionary(openDirChoosed + "//dictionary" + pathStemming + ".txt"));
                             } catch (Exception e1) {
-                                JOptionPane.showMessageDialog(engineFrame,"Non exist dictionary in dir");
+                                JOptionPane.showMessageDialog(engineFrame,"Non exist dictionary in dir (notice stemming label)");
                             }
                         });
                         Thread t2 =new Thread(() -> {
                             try {
                                 cache = new TreeMap<>(Indexer.readCache(openDirChoosed + "//cache" + pathStemming + ".txt"));
                             } catch (Exception e1) {
-                                JOptionPane.showMessageDialog(engineFrame,"Non exist cache in dir");
+                                JOptionPane.showMessageDialog(engineFrame,"Non exist cache in dir (notice stemming label)");
                             }
                         });
 
                         t1.start(); t2.start();
                         t1.join(); t2.join();
-
+                        this.cacheDictionaryLastPath = openDirChoosed;
 
                         saveCacheDictionary.setEnabled(true);
                     }
@@ -205,12 +218,44 @@ public class EngineMenu {
             if(indexer !=null)
                 indexer.clear();
             try{
-                String path = pathsInitializing.getPostingDir()+ "//Hallelujah.txt";
-                if(new File(path).isFile()) {
+                String postingFilePath = pathsInitializing.getPostingDir();
+                if(new File(postingFilePath +  "//Hallelujah.txt").isFile()) {
                     try {
-                        Files.delete(Paths.get(path));
+                        Files.delete(Paths.get(postingFilePath +  "//Hallelujah.txt"));
                     } catch (IOException e1) {
-                        e1.printStackTrace();
+                    }
+                }
+                if(new File(postingFilePath +  "//HallelujahStem.txt").isFile()) {
+                    try {
+                        Files.delete(Paths.get(postingFilePath +  "//HallelujahStem.txt"));
+                    } catch (IOException e1) {
+                    }
+                }
+                if(this.cacheDictionaryLastPath!=null){
+                    String cacheDictionaryFilesPath = cacheDictionaryLastPath.getPath();
+                    if(new File(cacheDictionaryFilesPath +  "//cache.txt").isFile()) {
+                        try {
+                            Files.delete(Paths.get(cacheDictionaryFilesPath +  "//cache.txt"));
+                        } catch (IOException e1) {
+                        }
+                    }
+                    if(new File(cacheDictionaryFilesPath +  "//cacheStem.txt").isFile()) {
+                        try {
+                            Files.delete(Paths.get(cacheDictionaryFilesPath +  "//cacheStem.txt"));
+                        } catch (IOException e1) {
+                        }
+                    }
+                    if(new File(cacheDictionaryFilesPath +  "//dictionary.txt").isFile()) {
+                        try {
+                            Files.delete(Paths.get(cacheDictionaryFilesPath +  "//dictionary.txt"));
+                        } catch (IOException e1) {
+                        }
+                    }
+                    if(new File(cacheDictionaryFilesPath +  "//dictionaryStem.txt").isFile()) {
+                        try {
+                            Files.delete(Paths.get(cacheDictionaryFilesPath +  "//dictionaryStem.txt"));
+                        } catch (IOException e1) {
+                        }
                     }
                 }
             }

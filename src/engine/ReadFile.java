@@ -3,13 +3,19 @@ package engine;
 import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * The class represents a static object that basically divides the File int Documents and send them to parser
+ */
 public class ReadFile {
 
     public static int docNumberOfFiles=0;
     private ReadFile(){}
 
+
     public static long readTextFile(File currentFile,boolean stemming) {
+        /**
+         * divides the File into Documents and send them to parser
+         */
         File[] myCurrentFile = currentFile.listFiles();
 
         String fullPath = myCurrentFile[0].toString();
@@ -41,7 +47,12 @@ public class ReadFile {
     }
 
 
+
     public static String getContent(File myFile) throws IOException {
+        /**
+         * Reads the File
+         * @return the content of the file as a String
+         */
         BufferedReader br = new BufferedReader(new FileReader(myFile));
         try {
             StringBuilder sb = new StringBuilder();

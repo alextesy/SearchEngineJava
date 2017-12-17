@@ -8,15 +8,17 @@ import java.util.*;
 import static engine.Document.addDocument;
 import static engine.Indexer.currentTermDictionary;
 import static engine.Indexer.stemming;
-
+/**
+ *Object of Term that holds its value, TDF and Map of all the documents that the term appears in and its location in it.
+ */
 public class Term{
 
     private static final int numOfDocs = 468370;
     private Map<Document,List<Integer>> docDictionary;
     private String value;
     private long termTDF;
-
     /* private Kind kind; */
+
     private Term(String value /*,Kind kind*/){
         this.docDictionary = new HashMap<>();
         this.value = value;
@@ -25,20 +27,26 @@ public class Term{
     }
 
     public static void addTerm(String value/*,Kind kind*/,Document document,int location){
-            Term term;
-            if (currentTermDictionary.containsKey(value)) {
-                term = currentTermDictionary.get(value);
-                term.updatedDoc(document, location);
-            } else {
-                term = new Term(value/*,kind*/);
-                term.updatedDoc(document, location);
-                currentTermDictionary.put(value, term);
-            }
-            term.termTDF += 1;
+        /**
+         * Creates Term if its not already exists and add it to currentTermDictionary
+         */
+        Term term;
+        if (currentTermDictionary.containsKey(value)) {
+            term = currentTermDictionary.get(value);
+            term.updatedDoc(document, location);
+        } else {
+            term = new Term(value/*,kind*/);
+            term.updatedDoc(document, location);
+            currentTermDictionary.put(value, term);
+        }
+        term.termTDF += 1;
 
     }
 
     private void updatedDoc(Document document,int location){
+        /**
+         * Creates Document if its not already exists and add it to docDictionary
+         */
         document.setDocLength(document.getDocLength()+1);
         if(docDictionary.containsKey(document)){
             List<Integer> termFrequency = docDictionary.remove(document);
@@ -64,7 +72,7 @@ public class Term{
         return this.docDictionary.size();
     }
     public double getTermIDF(){
-        return Math.log(numOfDocs /(Math.log(getTermDF()) / Math.log(2)));
+        return Math.log( (Math.log(numOfDocs/getTermDF()) / Math.log(2)));
     }
     public long getTermTDF(){
         return termTDF;
@@ -75,11 +83,17 @@ public class Term{
     }
 
     public Term termsUnion(Term another){
+        /**
+         * Unites the data of two terms with the same value - used in merging
+         */
         this.docDictionary.putAll(another.docDictionary);
         this.termTDF+=another.termTDF;
         return this;
     }
     public Term termsSub(List<Document> popularDocuments){
+        /**
+         * divides the data of term - used in creating Cache
+         */
         Term term = new Term(this.value);
         term.termTDF = this.termTDF;
         for(Document doc : popularDocuments)
@@ -103,6 +117,9 @@ public class Term{
         return term.toString();
     }
     public String encryptTermToStr(){
+        /**
+         * @return String that represents the Term
+         */
         StringBuilder term=new StringBuilder(value + "#" + termTDF);
         for (Map.Entry<Document,List<Integer>> doc : docDictionary.entrySet()){
             term.append("#");
@@ -120,6 +137,9 @@ public class Term{
 
 
     public static Term decryptTermFromStr(String str){
+        /**
+         * @return Term that decrypts from the given String
+         */
         String[] termData = str.split("#");
         Term term = new Term(termData[0]);
         term.termTDF = Integer.parseInt(termData[1]);
@@ -137,6 +157,10 @@ public class Term{
 
 
     public List<Document> getPopularDocs(){
+        /**
+         * @return 25% of the most popular docs of the term
+         */
+
         /*
         long s = System.currentTimeMillis();
         List<Document> popularDocs = new ArrayList<Document>(docDictionary.keySet());
@@ -149,8 +173,14 @@ public class Term{
         List<Document> popularDocs = new ArrayList<>();
         PriorityQueue<Document> pq = new PriorityQueue<Document>((Comparator<Document>) (o1, o2) -> Integer.compare(docDictionary.get(o2).size(),docDictionary.get(o1).size()));
         pq.addAll(docDictionary.keySet());
-        for (int i=0; i<pq.size()/4 ; i+=1)
-            popularDocs.add(pq.poll());
+        if(pq.size()<4){
+            for (int i=0; i<pq.size() ; i+=1)
+                popularDocs.add(pq.poll());
+        }
+        else{
+            for (int i=0; i<pq.size()/4 ; i+=1)
+                popularDocs.add(pq.poll());
+        }
         return popularDocs;
     }
 

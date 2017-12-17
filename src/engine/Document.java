@@ -2,6 +2,9 @@ package engine;
 
 import java.util.HashMap;
 
+/**
+ * The class represents a Document object
+ */
 public class Document {
 
     public static final HashMap<String,Document> corpusDocuments = new HashMap<String, Document>();
@@ -26,6 +29,9 @@ public class Document {
     }
 
     public static Document addDocument(String fileName, String docName){
+        /**
+         * Creates Document if its not already exists and add it to docDictionary
+         */
         if(!corpusDocuments.containsKey(fileName+docName)){
             Document document = new Document(fileName,docName);
             corpusDocuments.put(fileName+docName,document);

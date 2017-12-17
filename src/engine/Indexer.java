@@ -1,11 +1,12 @@
 package engine;
 
-import java.beans.ParameterDescriptor;
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
+/**
+ * The most significant class of the project that operates over the whole thing.
+ */
 public class Indexer {
 
     public static final Map<String,Term> currentTermDictionary = new HashMap<>();
@@ -16,7 +17,6 @@ public class Indexer {
     public static Map<String,Term> cacheTerms;
     private long indexSize = 0;
     private long cacheSize = 0;
-    public static int numOfNumbers=0;
     private double indexRunningTime;
     public static String pathToCorpus;
     public static String pathToPosting;
@@ -58,6 +58,9 @@ public class Indexer {
 
 
     public void toIndex() throws IOException {
+        /**
+         * The Function iterates over the files in corpus and creates temporary posting files, after this it merges the temporary posting files into a Final posting file and creates dictionary and cache
+         */
         //myHelperShityFunction();
 
         long now=System.currentTimeMillis();
@@ -102,25 +105,6 @@ public class Indexer {
 
     }
 
-    public void myHelperShityFunction(){
-        List<File> tmpList = new ArrayList<>();
-        try {
-            for (int i = 1; i < 20; i++) {
-                File f = new File(pathToPosting + "\\DocNum" + i + ".txt");
-                tmpList.add(f);
-            }
-            mergeSortedFiles(tmpList, new File(pathToPosting + "\\Hallelujah" + stemString +".txt"), String::compareTo);
-        }
-        catch (Exception e){
-
-        }
-
-
-
-
-
-    }
-
 
 
     private long mergeSortedFiles(List<File> postingFilesList,File outputFile,Comparator<String> cmp) throws IOException {
@@ -155,8 +139,6 @@ public class Indexer {
                 BinaryFileBuffer bfb = pq.poll();
                 lastLine = bfb.pop();
                 lastTermLine = Term.decryptTermFromStr(lastLine);
-                if(Parse.isNumeric(lastTermLine.getValue()))
-                    numOfNumbers++;
                 ++rowCounter;
                 if (bfb.empty())
                     bfb.fbr.close();
@@ -182,8 +164,7 @@ public class Indexer {
                         else{
                             Dictionary.put(lastTermLine.getValue(),new Object[]{lastTermLine.getTermTDF(),lastTermLine.getTermIDF(),'P'+Long.toString(startPos)} /* add more fields ,}*/ );
                         }
-                        if(Parse.isNumeric(lastTermLine.getValue()))
-                            numOfNumbers++;
+
                         ++rowCounter;
 
                     }
@@ -208,8 +189,6 @@ public class Indexer {
                 bfb.close();
             }
         }
-        System.out.println(stemming + ": " +rowCounter);
-        System.out.println(stemming + ": "+ numOfNumbers);
         return  rowCounter;
     }
 
@@ -282,7 +261,9 @@ public class Indexer {
     public static Map<String,Object[]> readDictionary(String path) throws Exception{
         FileInputStream fin = new FileInputStream(path);
         ObjectInputStream ois = new ObjectInputStream(fin);
-        return  (Map<String,Object[]>)ois.readObject();
+        Map<String,Object[]> map =  (Map<String,Object[]>)ois.readObject();
+        fin.close();
+        return map;
     }
     public static Map<String,Term> readCache(String path) throws Exception{
         Map<String,Term> cache = new HashMap<String,Term>();
@@ -293,6 +274,7 @@ public class Indexer {
             cache.put(term.getValue(),term);
             line = br.readLine();
         }
+        br.close();
         return cache;
      }
 

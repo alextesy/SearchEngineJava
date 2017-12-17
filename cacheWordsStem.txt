@@ -1,10000 +1,10000 @@
 text
-state
-govern
-articl
-peopl
-countri
-1
-type
 year
-parti
-minist
-nation
-languag
-article typ
-p=105
-text languag
-develop
+1
+cellrul
+mr
+tablecel
 2
-type bfn
-bfn
-presid
-foreign
-econom
-polit
+cent
+govern
+state
+compani
+market
+pound
 time
+peopl
+cellrule cellrul
+3
+countri
+nation
 work
-unit
+bank
+group
+develop
+make
+cellrule tablecel
+tablecell cellrul
+parti
+presid
+dollar
+chj=
+cvj=
+tablecell chj=
+minist
 report
-forc
-russian
+industri
+econom
+share
+trade
+price
+dai
 gener
+product
+increas
+month
+foreign
 issu
+rate
+4
+polit
+plan
+busi
+includ
+end
+oper
+made
+citi
+manag
+week
+interest
+system
+forc
+5
 meet
 intern
-secur
-system
-make
-militari
-import
-product
-problem
-china
-market
-industri
-russia
-agreement
-organ
-3
-made
-situat
-talk
-p=106
-committe
-bfn text
-polici
-support
-member
-elect
-region
-increas
-trade
-plan
+unit
 offici
-peac
-power
-ministri
-relat
-area
-council
-law
-english
-continu
-reform
-cooper
-oper
-includ
-million
-todai
-united st
-enterpris
-nuclear
-end
 world
-posit
-group
-leader
-interest
-part
-p=105 english
-h5
-offic
-social
-result
-republ
-dai
-public
-call
-defens
-mr
-japan
-discuss
-activ
-level
-deputi
-bank
-economi
-order
-process
-visit
-number
-establish
 point
-compani
-servic
-good
-decis
-prime
-central
-north
-question
-measur
-democrat
-side
-inform
-control
-major
-open
-present
 invest
-negoti
-program
-case
-tax
-arm
-armi
-union
-feder
-billion
 high
-chines
-south
-repres
-place
-implement
-base
-carri
-war
-price
-respons
-fact
-set
-author
-al
-sign
-effort
-administr
-propos
-special
-citi
-european
-4
-project
-great
-condit
-view
-technolog
-demand
-person
-commun
-right
-secretari
-chang
-korea
-head
-long
-statement
-begin
-effect
-futur
-arab
-1993
-total
-build
-protect
-ad
-receiv
-recent
-chairman
-manag
-month
-creat
-achiev
-5
-local
-command
-territori
-depart
-held
-institut
-weapon
-sourc
-fund
-action
-reach
-term
-construct
-rate
-form
-larg
-commiss
-improv
-confer
-sector
-concern
-affair
-exchang
-polic
-mean
-particip
-provid
-agricultur
-put
-current
-remain
-hong
-korean
-palestinian
+servic
+call
+public
 expect
-constitut
-live
-thing
-export
-kong
-reason
-budget
-research
-hong kong
-note
-give
-involv
-vote
-past
-busi
-air
-start
-privat
-10
-agre
-express
-financi
-lead
-hope
-hand
-matter
-main
-word
-capit
-bosnia
-chief
-prepar
-japanes
-principl
-press
-complet
-structur
-joint
-ukrain
-center
-financ
-show
-requir
-provinc
-moscow
-drug
-passag
-promot
-rule
-materi
-close
-step
-human
-attack
-return
-line
-deleg
-opinion
-period
-director
-accept
-fire
-announc
-direct
-worker
-act
-record
-move
-parliament
-land
-border
-hous
-natur
-exist
-german
-decid
-role
-resolut
-produc
-adopt
-addit
-independ
-understand
-take
-troop
-omit
-basic
-congress
-prime minist
-initi
-document
-told
-stabil
-equip
-studi
-1992
-movement
-nato
-isra
-week
-maintain
-clear
-session
-agenc
-6
-ask
-europ
-practic
-task
-turn
-1994
-hold
-march
-plant
-serb
-stand
-conduct
-accord
-new
-monei
-israel
-amount
-energi
-stress
-back
-opposit
-progress
-socialist
-basi
-account
-left
-respect
-beij
-legal
-idea
-kim
+problem
+member
+tax
+good
+offic
+import
+part
 yesterdai
-strengthen
-investig
-regul
-solut
-societi
-american
-leadership
-cost
-resourc
-deal
-success
-conflict
-pai
-final
-feb
-liber
-educ
-charg
-spanish
-north korea
-figur
-candid
-interview
-7
-train
-french
-find
-li
-labor
-approv
-life
-ensur
-free
-correspond
-aid
-possibl
-face
-declar
-difficult
-growth
-aim
-citizen
-suppli
-prevent
-object
-determin
-islam
-guarante
-pressur
-east
-foreign minist
-british
-field
-small
-full
-popul
-observ
-reduc
-transport
-stage
-vice
-speak
-washington
-assembl
-rais
-experi
-crisi
-front
-percent
-oil
-station
-water
-execut
-share
-firm
-legisl
-found
-resolv
-kind
-date
-cultur
-attempt
-post
-crime
-specif
-draft
-bring
-inspect
-commit
-court
-western
-real
-mass
-ago
-missil
-muslim
-plai
-contact
-associ
-offer
-individu
-regard
-critic
-incom
-fight
-germani
-target
-treati
-contribut
-rural
-radio
-eu
-soviet
-domest
-coordin
-diplomat
-run
-hour
-yuan
-assist
-staff
-claim
-opportun
-strike
-democraci
-comrad
-consider
-design
-arrest
-communist
-due
-join
-cso
-type cso
-security council
-strong
-technic
-method
-personnel
-event
-limit
-coalit
-februari
-happen
-west
-job
-solv
-collect
-india
-seek
-favor
-publish
-explain
-electr
-attent
-franc
-refer
-crimin
-aircraft
-leav
-connect
-expert
-advanc
-violat
-presidenti
-district
-cabinet
-20
-sarajevo
-earli
-excerpt
-differ
-clinton
-ukrainian
-standard
-kill
-civil
-combat
-televis
-test
-link
-round
-8
-zone
-health
-properti
-list
-launch
-serv
-campaign
-bodi
-withdraw
-facil
-struggl
-enemi
-stop
-readi
-taiwan
-settlement
-integr
-emerg
-comment
-confirm
-danger
-environ
-engin
-consult
-russian feder
-soldier
-space
-bill
-bosnian
-herzegovina
-suprem
-request
-arriv
-function
-provinci
-scienc
-de
-pakistan
-entir
-media
-common
-subject
-modern
-purpos
-dr
-mission
-occupi
-allianc
-attend
-15
-bilater
-home
-commerci
-vehicl
-higher
-feel
-bosnia herzegovina
-half
-cut
-dialogu
-famili
-consid
-ground
-januari
-morn
-contract
-capabl
-p=106 articl
-ambassador
-factor
-duti
-compar
-uniti
-perform
-appli
-met
-answer
-goal
-fail
-singl
-letter
-p=105 spanish
-mention
-manufactur
-believ
-threat
-accus
-depend
-benefit
-pass
-mechan
-p=105 russian
-detail
-conclud
-resid
-expand
-newspap
-obtain
-enter
-releas
-hosokawa
-led
-framework
-low
-united n
-caus
-scientif
-iraq
-man
-incid
-previou
-realiz
-statu
-transfer
-promis
-dollar
-tass
-elector
-team
-wage
-30
-vietnam
-town
-competit
-reject
-lack
-demonstr
-greater
-univers
-affect
-czech
-began
-allow
-defend
-9
-appear
-board
-sale
-fuel
-paper
-signific
-true
-road
-hard
-freedom
-approach
-foreign ministri
-croatian
-debt
-94
-appoint
-suggest
-forward
-speech
-municip
-cover
-influenc
-scale
-governor
-lower
-intend
-longer
-intellig
-men
-12
-credit
-ga
-stock
-extrem
-mutual
-warn
-address
-asia
-sea
-difficulti
-armed forc
-schedul
-kei
-premier
-branch
-traffick
-network
-parliamentari
-iran
-environment
-mondai
-exercis
-separ
-massacr
-divis
-corpor
-xinhua
-short
-peasant
-qualiti
-ti
-grow
-airport
-rank
-rise
-light
-learn
+support
+continu
+secur
+polici
+long
 profit
-rang
-grant
-tokyo
-yeltsin
-top
-loan
-spokesman
-sanction
-mar
-ideolog
-bureau
-european union
-effici
-school
-justic
-journalist
-mind
-transit
-invit
-loss
-confid
-similar
-tuesdai
-element
-regim
-strateg
-earlier
-slovak
-complex
-artilleri
-reserv
-examin
-wast
-partner
-p=105 arab
-impos
-intent
-data
-democratic parti
-oblast
-attitud
-100
-remark
-purchas
-chemic
-politician
-histori
-conclus
-normal
-civilian
-balanc
-yugoslavia
-introduc
-central committe
-northern
-mark
-equal
-terrorist
-refus
-1991
-big
-submit
-oppos
-need
-distribut
-indistinct
-remov
-gain
-fridai
-procedur
-shanghai
-encourag
-advantag
-handl
-revolut
-brought
-custom
-bomb
-assess
-provis
-popular
-yen
-ship
-comprehens
-prioriti
-fulli
-abroad
-immedi
-editori
-villag
-turkei
-revenu
-britain
-wednesdai
-thursdai
-grain
-potenti
-cadr
-locat
-senior
-inflat
-currenc
-moment
-annual
-strategi
-applic
-food
-output
-engag
-suffer
-ton
-avoid
-capac
-paid
-secret
-poll
-gmt
-minor
-occur
-own
-african
-histor
-urg
-messag
-heavi
-p=106 report
-sens
-consist
-averag
-disput
-sell
-presenc
-declin
-aspect
-spirit
-illeg
-payment
-battalion
-night
-employ
-farm
-tradit
-duma
-children
-dprk
-estim
-daili
-realiti
-origin
-reduct
-concept
-cpc
-concentr
-thought
-confront
-care
-desir
-elimin
-fulfil
-serbian
-format
-speed
-come
-evid
-damag
-consum
-middl
-arrang
-1990
-fear
-replac
-wai
-pyongyang
-revolutionari
-destroi
-corrupt
-indian
-resist
-prove
-instal
-monitor
-extend
-car
-awar
-telephon
-correct
-model
-emphas
-prison
-kashmir
-threaten
-plo
-fundament
-reflect
-review
-debat
-croatia
-anti
-regist
-late
-turkish
-transform
-relationship
-violenc
-decemb
-sphere
-fall
-want
-latest
-anc
-packag
-hungarian
-essenti
-senat
-partnership
-restor
-iaea
-precis
-break
-doubt
-death
-11
-send
-drop
-combin
-think
-cuba
-asset
-volum
-employe
-manner
-south korea
-risk
-assum
-student
-amend
-select
-deni
-access
-lift
-save
-appeal
-sentenc
-north korean
-plane
-croat
-women
-consequ
-mobil
-southern
-arafat
-hebron
-heard
-size
-strength
-16
-circumst
-settl
-creation
-eastern
-directli
-convent
-guard
-h3
-thousand
-itar tass
-itar
-25
-victori
-ag
-path
-seiz
-50
-item
-simpli
-safeti
-imposs
-section
-site
-convers
-ci
-foundat
-africa
-italian
-jan
-chamber
-protest
-gave
-insist
-deng
-characterist
-km
-neighbor
-explos
-reveal
-la
-thai
-mine
-electron
-perman
-help
-belong
-cross
-voter
-tank
-tabl
-greek
-embassi
-expenditur
-flight
-win
-restrict
-summit
-faction
-seat
-deliv
-chong
-april
-battl
-respond
-gradual
-envoi
-delai
-prosecutor
-terror
-read
-18
-interior
-follow
-trend
-advis
-judg
-wing
-decre
-wait
-enabl
-numer
-young
-content
-mainland
-prospect
-approxim
-convinc
-failur
-reaction
-extent
-tonn
-gatt
-poland
-highli
-counti
-orient
-commod
-altern
-satellit
-thailand
-brother
-24
-ethnic
-oblig
-investor
-expens
-lost
-neg
-even
-phase
-black
-medic
-gun
-river
-comput
-acceler
-white
-name
-iraqi
-minut
-america
-georgia
-largest
-relev
-polish
-bear
-vladimir
-el
-fiscal
-40
-membership
-permit
-alleg
-chanc
-draw
-deficit
-circl
-built
-cairo
-analysi
-14
-theori
-absolut
-cuban
-bfn excerpt
-degre
-christian
-instruct
-resum
-admit
-preserv
-guid
-ahead
-medium
-jiang
-worth
-rest
-sundai
-trillion
-farmer
-recogn
-supervis
-stai
-lot
-kazakhstan
-enforc
-trust
-p=105 chines
-rok
-kg
-prosper
-centuri
-instanc
-patriot
-un secur
-defin
-profession
-seri
-check
-sovereignti
-bui
-statist
-survei
-indic
-conserv
-xiaop
-page
-wide
-leagu
-mexico
-spend
-peninsula
-pursu
-port
-wound
-ecolog
-occas
-appar
-lose
-consumpt
-broadcast
-afternoon
-specialist
-afp
-headquart
-pollut
-block
-embargo
-atom
-machin
-channel
-settler
-seoul
-poor
-voic
-class
-insur
-1995
-enhanc
-aggress
-travel
-god
-agenda
-cite
-suffici
-factori
-propaganda
-street
-fourth
-adjust
-npc
-monetari
-friend
-meter
-itali
-alloc
-atmospher
-azerbaijan
-saturdai
-egypt
-resign
-renew
-won
-choic
-crimea
-romania
-infrastructur
-defenc
-13
-assign
-burden
-jordan
-wang
-repli
-gen
-zhirinovskii
-mayor
-util
-ban
-syria
-asian
-hospit
-religi
-south korean
-pacif
-surpris
-refuge
-destruct
-rapid
-17
-condemn
-decreas
-king
-solidar
-hear
-overcom
-moral
-don
-programm
-fair
-push
-global
-bori
-stabl
-truth
-intens
-spread
-recommend
-vietnames
-shown
-unemploy
-treatment
-rabin
-salari
-autonom
-state council
-identifi
-add
-kim chong
-actual
-iranian
-search
-expans
-subsidi
-brussel
-repeat
-text beij
-businessmen
-fix
-compens
-octob
-consolid
-forum
-mosqu
-primarili
-impact
-evalu
-speaker
-attract
-gaza
-enjoi
-offens
-concret
-p=106 interview
-georgian
-recal
-challeng
-compet
-abil
-bad
-yong
-quickli
-paragraph
-hundr
-cppcc
-colonel
-deng xiaop
-proceed
-flow
-ventur
-friendli
-steel
-attach
-insid
-bid
-soviet union
-agent
-divid
-2000
-safeguard
-armenian
-22
-notic
-macedonia
-geneva
-oversea
-pari
-shell
-gather
-formul
-honor
-substanti
-trial
-tension
-reactor
-21
-1989
-accomplish
-spring
-submarin
-murder
-200
-sum
-bond
-calcul
-urgent
-drive
-topic
-accompani
-suspect
-batteri
-extens
-island
-friendship
-brazil
-estonia
-slovakia
-keep
-ceas
-surfac
-tomorrow
-strive
-communist parti
-assur
-compromis
-deploi
-fish
-revis
-begun
-extern
-compon
-jerusalem
-unifi
-tactic
-baltic
-rose
-foreign affair
-diseas
-spoke
-tariff
-obstacl
-1000
-youth
-deep
-brazilian
-yugoslav
-punish
-defense ministri
-p=105 french
-trip
-urban
-telecommun
-focu
-quarter
-kozyrev
-coal
-zionist
-knowledg
-regular
-radic
-novemb
-rice
-peacekeep
-navi
-occup
-judici
-emploi
-imag
-acquir
-excel
-romanian
-impress
-alli
-undertak
-motor
-maximum
-assert
-minimum
-rubl
-harm
-broad
-lebanon
-taxat
-stanc
-23
-60
-kyodo
-predict
-satisfi
-camp
-h6
-commerc
-exclus
-metal
-option
-portugues
-earn
-il
-mistak
-vital
-quot
-bloc
-humanitarian
-concess
-ceremoni
-cold
-worri
-abd
-corp
-argument
-ali
-mediat
-sustain
-27
-bosnian serb
-constitu
-fleet
-possess
-referendum
-highest
-cent
-south africa
-rout
-rocket
-primari
-national assembl
-latvia
-fine
-book
-bonn
-sold
-disciplin
-procur
-firmli
-unabl
-door
-stipul
-carlo
-heat
-greec
-wish
-sound
-sino
-hungari
-p=105 german
-june
-excess
-albanian
-state duma
-proport
-shift
-file
-treat
-ultimatum
-contain
-introduct
-chen
-di
-doubl
-victim
-collaps
-sever
-weak
-septemb
-complic
-red
-deepen
-ussr
-wrong
-write
-unidentifi
-township
-finland
-featur
-formal
-prefer
-restructur
-unattribut
-experienc
-colombian
-circul
-decad
-jordanian
-style
-kim yong
-isol
-sort
-peng
-fighter
-signal
-ey
-contrari
-middle east
-suspend
-contradict
-28
-organis
-surplu
-19
-homeland
-analyz
-ralli
-store
-devic
-jose
-welfar
-dismiss
-ownership
-standing committe
-guidelin
-300
-preliminari
-amnesti
-interpret
-lao
-wit
-deposit
-guidanc
-huge
-ldp
-listen
-raw
-cpc central
-shortag
-heart
-czech republ
-p=106 unattribut
-displai
-belgrad
-liu
-dear
-room
-colombia
-valu
-substanc
-professor
-easi
-ii
-pledg
-maneuv
-behalf
-squar
-instrument
-forest
-plenari
-deliber
-yi
-strongli
-serbia
-radar
-entri
-bulgarian
-increasingli
-reliabl
-green
-syrian
-shape
-accid
-intervent
-root
-academi
-social democrat
-written
-defeat
-hit
-temperatur
-suppos
-aviat
-consensu
-yemeni
-san
-scientist
-surviv
-context
-york
-sweden
-born
-berlusconi
-kim il
-supreme council
-egyptian
-spent
-armenia
-quantiti
-pension
-saudi
-lieuten
-clash
-moslem
-entitl
-karabakh
-advoc
-abu
-balkan
-defense minist
-son
-van
-text tokyo
-laboratori
-vigor
-closer
-unprofor
-blame
-welcom
-1980
-gulf
-radioact
-interfer
-zhang
-reorgan
-inter
-cambodia
-film
-happi
-han
-viktor
-intensifi
-count
-proce
-kcna
-bill clinton
-zhu
-obviou
-except
-attornei
-drawn
-moder
-belaru
-previous
-focus
-simultan
-prevail
-smuggl
-counterpart
-code
-tour
-successfulli
-helicopt
-shot
-reinforc
-subsequ
-exploit
-tv
-prior
-retir
-li peng
-subunit
-reiter
-air forc
-christoph
-estonian
-intellectu
-eighth
-boris yeltsin
-postpon
-serbo
-kravchuk
-physic
-yield
-blood
-colleagu
-licens
-amp
-justifi
-scene
-poverti
-bridg
-simpl
-track
-lithuania
-zemin
-adher
-earth
-serbo croatian
-watch
-26
-proper
-blockad
-reli
-brief
-rapidli
-macroeconom
-definit
-communiqu
-the unit
-discov
-mexican
-wave
-temporari
-truck
-london
-1997
-abandon
-cocain
-lebanes
-president kim
-organiz
-autonomi
-pact
-austria
-devot
-reportedli
-halt
-bulgaria
-liquid
-aleksandr
-93
-gross
-categori
-inevit
-clarifi
-deadlin
-secretary gener
-game
-motiv
-recoveri
-rich
-aris
-scope
-tourism
-princip
-500
-kiev
-greatest
-deliveri
-august
-jiang zemin
-frequent
-rel
-lai
-owner
-virtual
-ration
-attain
-prefectur
-80
-automobil
-lithuanian
-fate
-sincer
-supreme soviet
-preced
-reconcili
-boost
-jointli
-card
-fig
-domin
-comrade kim
-crimean
-ident
-guest
-guangdong
-traffic
-entiti
-extremist
-greatli
-fly
-surround
-clean
-latvian
-iron
-pace
-facilit
-behavior
-sole
-secretariat
-fill
-weight
-felt
-cast
-atomic energi
-touch
-argu
-mid
-exert
-household
-unif
-faith
-last
-commission
-rumor
-persist
-rememb
-explan
-strict
-reunif
-art
-us govern
-pro
-palestin
-detect
-strip
-narcot
-latin
-constant
-husayn
-deploy
-10 percent
-church
-strictli
-safe
-juli
-norwai
-sit
-legitim
-50 percent
-acknowledg
-crop
-pere
-spain
-version
-nationalist
-text moscow
-hostil
-indonesia
-nomin
-piec
-servicemen
-new york
-dispos
-south african
-70
-resort
-explor
-specul
-tehran
-us presid
-mandat
-disclos
-logic
-realist
-constantli
-centr
-outcom
-rebel
-pictur
-patient
-radiat
-newli
-spiritu
-mainten
-prompt
-p=105 serbo
-president clinton
-counter
-biggest
-partial
-railwai
-mountain
-hotel
-miner
-p=105 portugues
-sought
-editor
-medicin
-charact
-muhammad
-assassin
-fast
-compris
-flexibl
-affirm
-pure
-andrei
-guerrilla
-petroleum
-quota
-commentari
-laid
-climat
-confeder
-exclud
-20 percent
-host
-republican
-machineri
-solid
-unita
-jericho
-jewish
-pilot
-national congress
-text articl
-chernomyrdin
-passeng
-sa
-reviv
-yang
-confus
-controversi
-treasuri
-troubl
-ec
-meciar
-transact
-ratio
-ignor
-rayon
-envisag
-depth
-react
-scheme
-criteria
-p=105 japanes
-forecast
-split
-deterior
-storag
-choos
-argentina
-automat
-national peopl
-spd
-warhead
-diet
-distanc
-yurii
-31
-blow
-sensit
-kilomet
-tajikistan
-convict
-wind
-singapor
-composit
-1988
-finish
-slow
-interfax
-optim
-abus
-chuch
-eventu
-provoc
-dump
-malaysia
-hectar
-percentag
-compil
-ozawa
-rifl
-kingdom
-ordinari
-expos
-skill
-tackl
-moldova
-swedish
-outlin
-fruit
-healthi
-formula
-tool
-wu
-sergei
-auto
-spot
-0
-ammunit
-soil
-captur
-fee
-14th
-christian democrat
-exce
-video
-conting
-tibet
-afghanistan
-klau
-coup
-understood
-love
-human right
-ibrahimi
-absenc
-suit
-aspir
-the russian
-estat
-coca
-registr
-shenzhen
-convei
-injur
-hall
-10000
-diplomaci
-gap
-song
-valid
-era
-recognit
-anniversari
-dead
-ow
-calm
-central bank
-patent
-repeatedli
-protocol
-termin
-belarusian
-uruguai
-qian
-neutral
-text pyongyang
-pose
-subordin
-dismantl
-carrier
-convert
-president bil
-milit
-certif
-lui
-properli
-30 percent
-pragu
-promin
-disappear
-background
-naval
-the u
-csce
-cypru
-inhabit
-viewpoint
-southeast
-assault
-shock
-mao
-imagin
-29
-holi
-repair
-bound
-net
-shimbun
-upper
-exceed
-fell
-le
-platform
-cancel
-appreci
-kohl
-prais
-stori
-socialist parti
-airlin
-outstand
-dozen
-reconstruct
-sharp
-mortar
-forget
-remind
-emphasi
-90
-highwai
-pkk
-philippin
-reshuffl
-doctor
-credibl
-norm
-belief
-mm
-palac
-anim
-ma
-asean
-ill
-memorandum
-amman
-ifp
-heroin
-infect
-macao
-bureaucrat
-tendenc
-john
-accumul
-tourist
-mix
-compart
-jean
-escal
-breakthrough
-reconnaiss
-teacher
-wors
-leas
-slogan
-innov
-ivan
-jurisdict
-complaint
-oppon
-ballot
-abolish
-mofert
-yasir
-meant
-uranium
-rio
-summer
-ratifi
-zagreb
-detain
-textil
-easili
-father
-crucial
-lawyer
-extraordinari
-optimist
-liberal democrat
-azerbaijani
-japan u
-map
-miss
-patrol
-surrend
-enorm
-celebr
-charter
-burn
-load
-describ
-chancellor
-kinkel
-pull
-disast
-resumpt
-panel
-cell
-gang
-ultim
-panama
-netherland
-super
-unilater
-tough
-cambodian
-morihiro
-hata
-phone
-albania
-ibrahimi mosqu
-eas
-400
-angola
-st
-attribut
-energy ag
-bn
-discharg
-bophuthatswana
-fals
-sponsor
-dynam
-undermin
-pain
-editorial report
-canada
-plot
-permiss
-wall
-fellow
-grave
-butru
-retain
-entrepreneur
-international atom
-morihiro hosokawa
-upgrad
-krai
-laser
-slovak republ
-recov
-puppet
-vienna
-labour
-club
-stimul
-pakistani
-perfect
-dealt
-krajina
-shop
-weaken
-yemen
-disturb
-strait
-wife
-prc
-religion
-imf
-cargo
-festiv
-peru
-finance minist
-atlant
-ion
-economist
-general staff
-crew
-adequ
-suitabl
-translat
-genuin
-vast
-asad
-algeria
-uphold
-takemura
-hebrew
-succe
-stronger
-35
-brigad
-afraid
-cash
-regret
-ideal
-larger
-shoot
-admir
-superior
-grasp
-infantri
-gold
-vi
-necess
-prohibit
-raid
-australia
-150
-minister morihiro
-arena
-policemen
-master
-proof
-chosen
-symbol
-interrupt
-phenomenon
-summari
-experiment
-compli
-fairli
-finance ministri
-column
-core
-1.5
-abkhazia
-perpetr
-pan
-uniform
-character
-weekend
-escap
-anticip
-newscast
-tianjin
-cultiv
-undoubtedli
-40 percent
-unknown
-sovereign
-toler
-tragedi
-openli
-cartel
-theoret
-succeed
-1996
-score
-print
-norwegian
-underground
-workers parti
-adapt
-yasir arafat
-collabor
-enlarg
-disarma
-hanoi
-essenc
-leon
-commonwealth
-black sea
-shortli
-zhou
-afghan
-conform
-petersburg
-alarm
-denounc
-multilater
-berlin
-box
-grand
-wake
-majesti
-internation
-walk
-chinese govern
-conven
-karadz
-manifest
-motion
-leonid
-monopoli
-chiapa
-inspector
-tuzla
-courag
-asia pacif
-sugar
-yu
-santa
-kurdish
-emiss
-grachev
-broken
-klerk
-cloth
-comrade deng
-miti
-mandarin
-nationwid
-smooth
-pattern
-coastal
-peter
-apart
-blue
-massiv
-recess
-monthli
-african n
-index
-departur
-mubarak
-cso text
-somalia
-kuwait
-45
-suspicion
-franco
-warsaw
-candidaci
-depriv
-rome
-prolifer
-comparison
-national committe
-edict
-sharehold
-shipment
-dispatch
-smaller
-confisc
-pound
-immigr
-disrupt
-bfn editori
-chapter
-world bank
-satisfact
-scandal
-crack
-cotton
-macedonian
-barrier
-cool
-cold war
-allegedli
-patten
-delhi
-chair
-margin
-costa
-weekli
-tree
-russian foreign
-addict
-complain
-uniqu
-render
-martyr
-carefulli
-incorpor
-havana
-coincid
-ahmad
-graduat
-armor
-sake
-mount
-violent
-interven
-affili
-exempt
-switch
-ministeri
-veget
-yonhap
-vice presid
-optic
-contrast
-pd
-copi
-willing
-readjust
-analyst
-bit
-mafia
-harvest
-mp
-mother
-seminar
-knew
-bai
-secondari
-xinjiang
-ctk
-jail
-au
-deepli
-civic
-xu
-vision
-ankara
-exampl
-relief
-persuad
-libya
-color
-citizenship
-skopj
-sdpj
-digniti
-divers
-armament
-endors
-abid
-sir
-regiment
-chile
-peruvian
-unanim
-team spirit
-publicli
-conscienti
-donat
-afrikan
-wider
-user
-distort
-1987
-white hous
-easier
-premier li
-chairmen
-park
-1/03
-grade
-extract
-northeast
-gazeta
-layer
-interim
-hzd
-apparatu
-jew
-dramat
-colleg
-inaugur
-fertil
-narrow
-encount
-dutch
-suppress
-elabor
-balladur
-withdrawn
-plutonium
-techniqu
-sudan
-activist
-aggressor
-antonio
-pretext
-paulo
-qualifi
-innoc
-catastroph
-scenario
-p=105 hebrew
-baghdad
-honest
-belgian
-transmit
-zedong
-mao zedong
-doctrin
-national secur
-basic law
-state depart
-izetbegov
-mandela
-sapa
-ev
-aerospac
-spare
-award
-revers
-meshkov
-lesson
-libyan
-bossi
-fresh
-equival
-writer
-warrant
-varieti
-reaffirm
-militia
-dictat
-jupp
-coupl
-cdu
-suspens
-fernando
-servant
-pp
-finnish
-titl
-significantli
-broke
-nigeria
-imperialist
-persian
-sha
-north south
-vessel
-creativ
-ongo
-portion
-bhutto
-kilogram
-gaviria
-sun
-madrid
-pt
-tatarstan
-deregul
-provok
-stick
-ms
-imprison
-vallei
-tell
-appropri
-spite
-visa
-mu
-parallel
-conceal
-race
-transmiss
-rodriguez
-unaccept
-switzerland
-mozambiqu
-enact
-rescu
-magazin
-slate
-pump
-executive committe
-recruit
-argentin
-pertain
-mental
-churkin
-unpreced
-algerian
-ho
-president bori
-orbit
-precondit
-3000
-ratif
-union eu
-await
-unfair
-inquiri
-length
-arabia
-repress
-austrian
-ocean
-psycholog
-government
-saudi arabia
-unemploi
-biolog
-signatur
-recept
-curb
-p=105 korean
-birth
-foster
-hide
-p=106 editori
-retail
-height
-incident
-remot
-coast
-teach
-marin
-1986
-mig
-1985
-disagr
-distinguish
-flag
-worst
-1970
-slightli
-correctli
-japanese govern
-pipelin
-captain
-sharpli
-80 percent
-sao
-mena
-ghali
-juan
-fold
-100000
-sixth
-voluntari
-memori
-sport
-represent
-italia
-600
-70 percent
-vice premi
-disappoint
-stem
-statut
-meat
-railroad
-benefici
-dec
-fit
-tudjman
-suddenli
-maritim
-hama
-fabric
-anatolii
-proclaim
-traitor
-defense forc
-majl
-preferenti
-dual
-sacrific
-coloni
-semiconductor
-upcom
-andrey kozyrev
-undertaken
-evacu
-drastic
-gonzalez
-oa
-protection forc
-vari
-premis
-jiangsu
-hot
-launcher
-deputy prim
-bratislava
-detent
-dealer
-cia
-sino british
-pleas
-banner
-azeri
-belgium
-plenary sess
-boycott
-dream
-johannesburg
-ezln
-catch
-hurt
-tunnel
-chi
-shevardnadz
-nonetheless
-refrain
-research institut
-undergo
-see
-incent
-venezuela
-perspect
-endeavor
-levi
-erad
-gaza strip
-sampl
-cope
-800
-claus
-uruguay round
-interior ministri
-60 percent
-gaydar
-veteran
-enrich
-huang
-tanjug
-hiv
-arab leagu
-floor
-national defens
-rao
-nonprolifer
-matur
-enthusiasm
-exhaust
-implic
-guangzhou
-butrus ghali
-damascu
-meantim
-royal
-gdp
-shoulder
-venezuelan
-accommod
-forza
-alert
-guatemalan
-disarm
-afford
-lobbi
-grew
-fewer
-forestri
-idf
-wrote
-5000
-lie
-rare
-tajik
-insuffici
-somali
-backward
-prosecut
-accur
-pavel
-fascist
-pre
-uzbekistan
-adam
-pawlak
-dimens
-burma
-stood
-su
-hasan
-edit
-capita
-advers
-32
-seed
-strang
-fujimori
-guilti
-exhibit
-roll
-familiar
-p=105 mandarin
-promulg
-freeli
-foremost
-casualti
-forza italia
-inherit
-woman
-screen
-aliyev
-distinct
-oslo
-jihad
-cardoso
-120
-tuni
-renamo
-geograph
-5 percent
-harmoni
-supplement
-extra
-15/03
-21/03
-david
-boundari
-standpoint
-trade union
-kosova
-shine
-rongji
-hill
-sld
-p=105 ukrainian
-driver
-hire
-wealth
-princ
-dissid
-profound
-compound
-absorb
-proven
-cypriot
-political bureau
-multi
-agrarian
-advic
-contin
-roberto
-zhu rongji
-milan
-contamin
-applaus
-hesit
-salih
-slovenia
-maker
-world war
-lima
-echelon
-attorney gener
-convoi
-grown
-sieg
-latin american
-feasibl
-artifici
-bolivia
-stake
-systemat
-ef
-compatriot
-ireland
-west bank
-surveil
-indirect
-ye
-25/02
-sao paulo
-legislatur
-confin
-budapest
-kwazulu
-bar
-16/03
-sichuan
-10/03
-relax
-die
-kashmiri
-3/02
-hijack
-provision
-tremend
-academ
-danish
-pick
-chao
-categor
-17/03
-widespread
-lieutenant gener
-fyrom
-mode
-holidai
-evil
-boat
-contest
-liter
-national parti
-11/03
-grass
-wei
-countrysid
-drink
-supplier
-gear
-entrust
-state committe
-consent
-verifi
-logist
-volunt
-expir
-granic
-rival
-fatah
-warm
-devalu
-rubric
-15 percent
-retali
-=
-steadi
-fatherland
-shinseito
-guatemala
-islamic republ
-bogota
-kovac
-rent
-merg
-caught
-motherland
-acut
-scrap
-obstruct
-privileg
-garcia
-mile
-seal
-jorg
-warren
-supreme court
-excus
-bolivian
-national liber
-legitimaci
-fujian
-democratic union
-bangkok
-mere
-quick
-glass
-look
-iliescu
-the chines
-presidium
-federal assembl
-nikolai
-28/02
-nazarbayev
-prosecutor gener
-der
-tec
-borrow
-subsidiari
-buthelezi
-complianc
-301
-winter
-cubic
-crowd
-baku
-bought
-necessarili
-wise
-apec
-mikhail
-indonesian
-socioeconom
-bu
-st petersburg
-hardwar
-valuabl
-fiber
-terribl
-22/03
-empti
-ambit
-disintegr
-fortun
-hu
-khmer
-great britain
-stone
-manuel
-emigr
-impli
-kidnap
-laender
-worldwid
-colosio
-robert
-cabl
-renov
-thermal
-strain
-mexico c
-favour
-saddam
+6
+fund
+power
+back
+hous
+result
+rowrul
+million
+sale
+cost
+european
+base
+elect
+area
+bfn
+open
+10
+set
+recent
+talk
+russian
+council
+close
+todai
+tablerow
+number
+show
+level
+director
 uk
-moham
-aggrav
-worship
-influenti
-frequenc
-latin america
-perez
-salvador
-steadili
-forthcom
-endang
-mongolia
-goodwil
-hidden
-star
-lu
-rear
-pri
-famou
-vitalii
-interior minist
-nigerian
-agency iaea
-90 percent
-sofia
-recycl
-cycl
-milk
-9/03
-shi
-3/03
-worsen
-milosev
-partli
-36
-satisfactori
-tbilisi
-paz
-liberal parti
-apprais
-athen
-abkhazian
-warren christoph
-gasolin
-interact
-amid
-digit
-mfn
-deem
-simul
-reader
-rid
-sdp
-fisheri
-islamabad
-8/03
-emot
-probabl
-legislative council
-temporarili
-child
-deserv
-highlight
-theme
-usual
-33
-am
-forg
-sejm
-discrimin
-coverag
-cholera
-48
-nagorno karabakh
-nagorno
-yitzhaq
-error
-comfort
-dedic
-carbon
-manipul
-coexist
-sight
-francoi
-santo
-mostar
-news ag
-congratul
-sea fleet
-haitian
-dare
-desert
-oxid
-tighten
-2.5
-kazakh
-aforement
-zulu
-inspir
-taipei
-deputy foreign
-opium
-faster
-ten
-timber
-del
-angl
-lectur
-advertis
-3 percent
-drag
-instabl
-kantor
-russian presid
-1500
-veto
-emancip
-lend
-martin
-turnov
-typic
-major gener
-dissolv
-text seoul
-liabil
-15/02
-bitter
-bribe
-national bank
-shaykh
-pend
-unlik
-foreign trad
-natal
-down
-neglect
-malaysian
-bloodi
-walesa
-embark
-chinese peopl
-4/02
-entail
-bin
-sure
-castro
-crystal
-deriv
-spy
-montenegro
-25 percent
-oppress
-perceiv
-gnp
-hinder
-chain
-tragic
-multipl
-softwar
-maria
-denmark
-lt
-king husayn
-passport
-fought
-foot
-sudanes
-season
-abdallah
-routin
-beam
-plastic
-petit
-economic cooper
-talent
-myanmar
-parliamentarian
-tens
-leftist
-ring
-reput
-receipt
-mario
-inclin
-client
-21st
-rush
-nafta
-unchang
-na
-canadian
-deadlock
-match
-feed
-imperi
-us administr
-34
-the nat
-congress npc
-crude
-unoffici
-headlin
-deed
-kurdistan
-salim
-administ
-pave
-liaison
-arous
-1/02
-interrog
-tech
-destin
-inflict
-subsid
-18/03
-disadvantag
-exagger
-inkatha
-edg
-compos
-bless
-phenomena
-livestock
-id=jpr
-barrel
-fundamentalist
-bundeswehr
-fig id=jpr
-breakdown
-manpow
-jump
-airplan
-migrat
-wholesal
-fini
-qichen
-yitzhaq rabin
-ethic
-benazir
-7/03
-federation council
-fierc
-mir
-parent
-confess
-sinn
-bottom
-fallen
-ruler
-roug
-bishop
-menem
-smoothli
-weather
-east europ
-technician
-bullet
-hint
-asylum
-fein
-zhao
-successor
-cautiou
-fashion
-swiss
-toxic
-fratern
-khmer roug
-audienc
-acquisit
-sinn fein
-lake
-dp
-fe
-regrett
-broaden
-qian qichen
-third
-retreat
-throw
-cali
-chilean
-20000
-silenc
-liberation armi
-hurd
-journal
-yugoslav republ
-counterintellig
-detach
-dissemin
-visibl
-loyalti
-conspiraci
-seventh
-sabotag
-14/03
-peso
-esteem
-georg
-destabil
-elit
-vladivostok
-viktor chernomyrdin
-transpar
-career
-minim
-250
-dpa
-paul
-pak
-demirel
-subvers
-densiti
-judgment
-gift
-grenad
-eduardo
-cement
-indispens
-2/03
-lord
-caucasu
-24/03
-hainan
-foodstuff
-ceasefir
-penetr
-p=105 italian
-unusu
-chri
-mood
-flood
-srpska
-inject
-imam
-israeli govern
-wear
-tape
-immun
-hero
-kurd
-momentum
-silent
-helmet
-dam
-dictatorship
-divert
-tend
-notabl
-tribun
-minister andrei
-fry
-ciller
-tire
-spoken
-paus
-australian
-bucharest
-guangxi
-21/02
-compel
-ha
-countrymen
-federal govern
-expedit
-european commun
-exil
-political consult
-pravda
-anticorrupt
-injuri
-hike
-paramet
-uncertainti
-contend
-leonid kravchuk
-outlook
-shining path
-mongolian
-23/03
-penalti
-frank
-input
-prestig
-terrain
-fluctuat
-rehabilit
-chip
-9/02
-east european
-lin
-invas
-merger
-delic
-internal affair
-prolong
-55
-shut
-third plenari
-pretoria
-yunnan
-platoon
-consultative confer
-harsh
-overwhelm
-vaccin
-european parlia
-37
-photograph
-marco
-frg
-cameroon
-reopen
-conveni
-cathol
-musa
-utmost
-bankruptci
-p=105 polish
-basin
-speci
-np
-william
-disagre
-alberto
-these
-expel
-admiss
-24/02
-chavez
-arsen
-timet
-navig
-russian govern
-nicaraguan
-advisori
-relai
-widen
-cppcc nation
-qiao
-prayer
-p=106 commentari
-conscious
-promptli
-1.2
-align
-bundestag
-22/02
-summon
-bueno
-alter
-kw
-segni
-dniester
-robaina
-birthdai
-2 percent
-disregard
-circular
-rai
-capitalist
-nearbi
-risen
-viljoen
-1200
-consortium
-conscienc
-sri
-1984
-pole
-residenti
-reliev
-friction
-international trad
-1/01
-inadequ
-bolivar
-neighbour
-buenos air
-10/02
-pastrana
-riga
-fdp
-vacat
-38
-angolan
-fujii
-1st
-michael
-prerequisit
-illustr
-irregular
-zhejiang
-nordic
-spring festiv
-separatist
-tallinn
-issuanc
-pharmaceut
-ira
-altitud
-converg
-poison
-4/03
-cesar
-7 percent
-sloven
-warfar
-second sess
-shadow
-8/02
-iii
-tone
-explod
-occhetto
-tonight
-leak
-gentlemen
-greet
-irrespons
-slowli
-benazir bhutto
-cheap
-hostag
-hizballah
-destini
-dinar
-jacqu
-text cairo
-altogeth
-tight
-compulsori
-sanchez
-acid
-andr
-23/02
-silva
-perri
-singh
-95
-founder
-defect
-loyal
-pac
-wire
-pioneer
-sinmun
-bureaucraci
-davo
-dprk u
-bright
-aboard
-squad
-preparatori
-p=105 turkish
-boss
-decisionmak
-profess
-vacuum
-moravcik
-eager
-freight
-viru
-portug
-budgetari
-us secretari
-khan
-row
-repatri
-intimid
-pool
-silajdz
-electoral commiss
-jammu
-absurd
-santa f
-epidem
-exact
-forgotten
-ceil
-decentr
-brigadi
-minister hosokawa
-regain
-corridor
-wood
-75
-shakhrai
-storm
-multin
-liaon
-federal republ
-nan
-scholar
-north atlant
-consul
-shandong
-judiciari
-differenti
-31/01
-pride
-annex
-50000
-rybkin
-gestur
-novosti
-visitor
-national front
-circuit
-log
-state warren
-fi
-conduc
-enthusiast
-ladi
-nguyen
-imbal
-british govern
-anger
-hamper
-haiti
-bush
-2/02
-pdsr
-16/02
-santiago
-92
-aristid
-chernobyl
-freez
-infring
-illus
-papoulia
-eighth nat
-the ministri
-taxpay
-ribao
-42
-imper
-brutal
-pavel grachev
-countermeasur
-minsk
-modifi
+run
+major
+agreement
+law
+union
+articl
+control
+term
+build
+start
+move
+case
+plai
+region
+financi
+offer
+posit
+china
+commun
+committe
+place
+lead
+chang
+cut
+leader
+order
+home
+propos
+larg
+remain
+economi
+monei
+decis
+total
+put
+south
+stock
+chairman
+militari
+relat
+project
+activ
+type
+local
+pai
+feder
+provid
+organ
+school
+american
+futur
+capit
+north
+sector
+7
+8
+head
+reform
+russia
+author
+question
+inform
+loss
+deal
+effect
+central
+account
+execut
+improv
+japan
+program
+ad
+depart
+produc
+present
+person
+past
+demand
+announc
+privat
+sign
+europ
+return
+rise
+british
+process
+social
+growth
+charg
+situat
+respons
+live
+line
+give
+half
+receiv
+game
+exchang
+repres
+hold
+counti
+measur
+thing
+london
+democrat
+institut
+commiss
+record
+vote
+financ
+languag
+hope
+life
+court
+chief
+war
+ministri
+establish
+rule
+side
+prime
+figur
+turn
+peac
+concern
+job
+ago
+rais
+enterpris
+polic
+view
+small
+administr
+great
+involv
+team
+requir
+discuss
+negoti
+fall
+begin
+perform
+left
+car
+form
+hand
+final
+export
+effort
+take
+reach
+agre
+german
+face
+budget
+earli
+deputi
+board
+nuclear
+technolog
+don
+visit
+period
+united st
+find
+held
+20
+creat
+carri
+current
+investor
+fact
+main
+big
+sell
+reduc
+1993
+defens
+properti
+action
+amp
+contract
+special
+condit
+republ
 angel
-intermedi
-text presid
-trigger
-sar
-salvat
-p=105 persian
-window
-war ii
-reluct
-janeiro
-wonder
-southeast asia
-weigh
-doesn
-baykonur
-demarc
-reciproc
-tatar
-eduard
-ruin
-bulletin
-merit
-frustrat
-national council
-testimoni
-expertis
-fidel
-sabah
-drill
-brand
-superpow
-restraint
-bloodsh
-heavili
-president yeltsin
-npt
-deterr
-brasilia
-earnestli
-17/02
-wisdom
-sentiment
-labor parti
-clae
-percept
-deport
-dark
-besieg
-200000
-marriag
-insult
-regularli
-forese
-lag
-infiltr
-da
-penal
-irish
-sewag
-29/03
-diesel
-4000
-mankind
-artist
-tel
-surpass
-director gener
-botha
-concert
-misunderstand
-ramo
-councillor
-camacho
-eat
-lowest
-proud
-uncov
-quiet
-shortcom
-gate
-airborn
-ibrahim
-130
-unreason
-classifi
-hunt
-fault
-100 percent
-unnecessari
-caribbean
-sympathi
-physician
-inclus
-bind
-underwai
-underlin
-npc stand
-pedro
-particl
-bare
-perfectli
-modif
-frankli
-1960
-incur
-fraud
-p=105 greek
-supplementari
-psl
-dawn
-ecuador
-rf
-dunkel
-denkta
-rights commiss
-havel
-ramadan
-tong
-substitut
-700
-airfield
-rsk
-valerii
-embrac
-frontier
-deviat
-general secretari
-panamanian
-boom
-broader
-1979
-nicaragua
-ve
-sandinist
-39
-guzman
-empir
-sophist
-rail
-allevi
-jakarta
-audit
-devis
-sacr
-izvestiya
-strongest
-unrest
-breed
-winner
-freedom parti
-variant
-ticket
-kremlin
-blind
-cape
-band
-deduct
-1982
-updat
-riot
-bigger
-invalid
-launder
-rutskoi
-arrog
-anhui
-nativ
-sooner
-vladimir zhirinovskii
-unionist
-golan
-endur
-kgb
-whatsoev
-assumpt
-vladimir meciar
-solar
-driven
-national union
-7/02
-leotard
-refut
-rs
-similarli
-unfavor
-justif
-oleg
-carl
-id
-magistr
-1983
-thin
-straight
-canton
-almati
-congression
-aviv
-clarif
-invent
-bargain
-displac
-breach
-tangibl
-subscrib
-tobacco
-embodi
-tear
-confidenti
-mangop
-smoke
-marxism
-shim
-nikkei
-summar
-prof
-dispers
-camera
-compat
-ba
-moldovan
-tender
-maglaj
-11/02
-sakigak
-the stat
-72
-brown
-literatur
-weaponri
-geopolit
-sad
-russian ministri
-secreci
-refin
-shake
-avail
-shout
-energet
-charl
-autom
-scharp
-12/03
-pipe
-helmut
-25/03
-frankfurt
-greiff
-marshal
-47
-wpk
-vaticano
-vilniu
-behav
-cellular
-minh
-hafiz
-henriqu
-igor
-giant
-powder
-colonel gener
-femal
-earmark
-eastern europ
-affairs committe
-peacefulli
-oxygen
-alain
-prescrib
-semi
-hole
-soar
-gorbachev
-liberation front
-1 percent
-supervisori
-lawmak
-ran
-xiamen
-pmdb
-badli
-30000
-caution
-studio
-kaliningrad
-alloi
-lula
-komsomolet
-affairs minist
-his majesti
-strata
-vaclav
-maastricht
-corner
-livelihood
-lusaka
-miguel
-brotherhood
-acquaint
-nobl
-signatori
-anonym
-condol
-pillar
-democratic peopl
-27/03
-new delhi
-buri
-crush
-5/02
-profil
-mandatori
-indiffer
-18/02
-humili
-lire
-snegur
-fedorov
-executive council
-burmes
-medellin
-pursuit
-qualit
-sow
-dissatisfact
-ic
-roman
-irrig
-motorola
-competitor
-tirana
-pronounc
-inventori
-buse
-col
-testifi
-opt
-46
-petrochem
-shed
-sick
-harbor
-know
-outbreak
-diversifi
-vigil
-notifi
-defense council
-invad
-beat
-qualif
-martinazzoli
-52
-segment
-4 percent
-contractor
-text bonn
-cordial
-propel
-12 percent
-cliqu
-ysp
-fled
-trilater
-drew
-virtu
-diminish
-sam
-tibetan
-impetu
-ll
-far east
-theater
-sheet
-passiv
-csu
-macro
-patriarch
-noon
-samper
-sudden
-functionari
-autumn
-battlefield
-gaza jericho
-beirut
-philosophi
-el salvador
-sharif
-presidential council
-seizur
-restrain
-nelson
-electric pow
-reassur
-thank
-elig
-peak
-brave
-stimulu
-unequivoc
-likewis
-bed
-rock
-ossetia
-repel
-holder
-alcohol
-chi minh
-or
-reveng
-marijuana
-tortur
-unclear
-freedom alli
-lenin
-overlook
-russian armi
-unexpect
-ho chi
-p=105 czech
-theft
-apolog
-slight
-beauti
-player
-the japanes
-auction
-cattl
-neighborhood
-diamet
-richard
-sanaa
-chetnik
-stamp
-impass
-alien
-blast
-tiempo
-morocco
-rebuild
-cheng
-rectifi
+research
+west
+30
+san
+higher
+secretari
+oil
+p=105
+arm
+water
+bui
+article typ
+east
+complet
+found
+text bfn
+earn
+incom
+cooper
+quarter
+bfn text
+rowrule rowrul
+center
+japanes
+reason
+text languag
+1992
+right
+protect
+air
+told
+construct
+bill
+p=106
 lo
-minister yitzhaq
-plantat
-quotat
-northwest
-rafael
-firearm
-metric
-durat
-echo
-president carlo
-renounc
-hurri
-postal
-heighten
-zhongguo
-the british
-shanxi
-label
-daniel
-44
-irradi
-raul
-detriment
-gao
-president jiang
-repay
-usa
-feet
-pl
-new year
-threshold
-cruis
-dinner
-inkatha freedom
-congressmen
-thrown
-european commiss
-20/03
-sl
-pragmat
-sidelin
-rain
-twenti
-dm
-vesti
-crise
-cohes
-19/03
-lengthi
-closur
-cetin
-un secretari
-indigen
-overnight
-reprocess
-reactionari
-urv
-trace
-1981
-kyrgyzstan
-public secur
-stolen
-demobil
-frozen
-robot
-plate
-komeito
-constitutional court
-didn
-1978
-float
-frame
-coat
-nihon
-kilometr
-alia
-unjust
-brilliant
-text washington
-brain
-upris
-ceram
-reward
-us stat
-pardon
-saddam husayn
-mill
-frighten
-un protect
-salvadoran
-persecut
-northern ireland
-28/03
-tel aviv
-chose
-simplifi
-arduou
-hatr
-regulatori
-zheng
-gram
-1800
-bta
-itamar
-koran
-h5 articl
-300000
-akashi
-patienc
-shore
-jet
-modest
-43
-nonproliferation treati
-wen
-offend
-yerevan
-spectrum
-nodong
-avert
-contemporari
-boi
-abolit
-vulner
-kwasniewski
-aziz
-ping
-fatal
-garrison
-national polic
-gore
-anxieti
-abund
-joint declar
-phrase
-volkstaat
-immin
-keizai
-stir
-conservative parti
-tranquil
-dry
-elev
-gloriou
-sen
-discredit
-aluminum
-mr major
-domain
-fan
-jst
-predecessor
-p=105 romanian
-65
-banker
-detaine
-notion
-1.3
-thick
-bangladesh
-rafsanjani
-angri
-trader
-shumeyko
-analys
-farmland
-desper
-bread
-dep
-statehood
-older
-5th
-aliv
-ja
-roughli
-chuan
-equiti
-forev
-rukh
-49
-rican
-national alli
-john major
-anc african
-freed
-autonomous region
-sdl
-nuclear pow
-intercept
-bosnian muslim
-worthi
-hayah
-8 percent
-ross
-uncertain
-turkmenistan
-entranc
-identif
-733
-propag
-pla
-du
-vat
-costa rican
-interst
-sanitari
-injustic
-kono
-pocket
-yevgenii
-al hayah
-polar
-prototyp
-fbi
-breath
-everydai
-jin
-evolut
-vicin
-pao
-orthodox
-slip
-palestinian isra
-basket
-spiegel
-chris patten
-upset
-neighborli
-poppi
-fsln
-verif
-pm
-daughter
-bihac
-crown
-mitterrand
-blackmail
-gratitud
-nois
-trap
-migrant
-fragment
-orderli
-sn
-intelligence servic
-majesty k
-voluntarili
-disabl
-fernando henriqu
-axi
-discount
-younger
-shame
-inch
-stall
-zapatist
-concurr
-leg
-merci
-steam
-euro
-ramirez
-85
-buyer
-1998
-conceiv
-golden
-id=jprs jst
-dan
-barrack
-41
-culprit
-scatter
-marxist
-ostankino
-soul
-classic
-helmut kohl
-dougla
-jozef
-cours
-hazard
-serious
-zamora
-indirectli
-general butru
-mk
-ambigu
-renminbi
-distant
-industrialist
-counterattack
-ata
-shelter
-ortega
-crash
-sung
-aa
-hashemi
-evad
-silicon
-soli
-us embassi
-moscow februari
-immens
-businessman
-general agr
-democracy parti
-900
-deceiv
-realis
-reconsid
-owen
-central asia
-1300
-suburb
-paraguai
-psdb
-andreatta
-trick
-tertiari
-h5 h5
-pack
-antitank
-geolog
-magnet
-rica
-hunan
-mof
-wheel
-68
-knesset
-jeopard
-costa rica
-martic
-3.5
-thrust
-wheat
-salt
-democratic left
-truce
-vertic
-cossack
-free trad
-tu
-cristob
-mahathir
-verdict
-michel
-lei
-nixon
-lopez
-smuggler
-victor
-enclav
-united kingdom
-custodi
-defici
-abstract
-horn
-teng
-warehous
-adult
-submiss
-keen
-hagu
-batch
-wild
-14/02
-majid
-ballist
-liberia
-accuraci
-copper
-modul
-peacemak
-conjunct
-text pragu
-epidemiolog
-idl
-nam
-quit
-the european
-espionag
-skeptic
-ben
-rong
-den
-sister
-second
-closest
-mozambican
-macedonia fyrom
-tian
-atroc
-ilbo
-relianc
-irna
-din
-lock
-ciampi
-embarrass
-multiparti
-discoveri
-cancer
-snow
-central militari
-kang
-indign
-oversight
-francisco
-mdf
-sic
-tap
-weu
-aros
-soft
-lieutenant colonel
-evolv
-20/02
-reloc
-tradition
-maj
-wipe
-caldera
-yun
-plasma
-kuwaiti
-escobar
-lage
-sd
-martinez
-ernesto
-portfolio
-honesti
-nihon keizai
-liberti
-54
-san cristob
-enlist
-hydrogen
-disband
-diamond
-habit
-mr mandela
-0.5
-1.4
-the isra
-red cross
-ridicul
-kilowatt
-copyright
-authorit
-checkpoint
-180
-el tiempo
-tube
-flee
-contradictori
-keizai shimbun
-intoler
-england
-roc
-yuriy meshkov
-turabi
-paint
-underscor
-1400
-sino u
-mitsubishi
-gdr
-hardlin
-rapproch
-radovan
-niehau
-prematur
-1100
-bankrupt
-merchant
-6000
-bao
-western europ
-vocat
-demilitar
-repai
-prd
-symposium
-democratic mov
-reservoir
-26/02
-spark
-cigarett
-ly
-banquet
-caraca
-gligorov
-hang
-nicola
-papandr
-heroic
-p=105 slovak
-ciskei
-arbitrari
-ta
-hamburg
-edouard
-expedi
-28/01
-comrade xiaop
-the german
-calib
-cleans
-gu
-metropolitan
-kosovo
-1950
-mortal
-utter
-husbandri
-6 percent
-imposit
-1.6
-mar xinhua
-offset
-husband
-81
-invigor
-mate
-mohammad
-henan
-minu
-irrit
-president hafiz
-munich
-rotat
-35 percent
-istanbul
-2d
-durabl
-kyrgyz
-64
-spell
-telecom
-ancient
-photo
-lean
-tide
-sweep
-avf
-congress anc
-hunger
-hebei
-suspici
-cabinet secretari
-dirti
-preciou
-1.1
-9 percent
-qiao shi
-western european
-refineri
-erupt
-13 percent
-cherish
-indefinit
-75 percent
-1975
-moscow march
-foreign secretari
-year plan
-saxoni
-boe
-13/03
-stretch
-la paz
-skrunda
-unstabl
-descript
-state plan
-nezavisimaya
-datuk
-jurid
-cp
-tse
-pentagon
-volga
-exacerb
-revolutionary parti
-bold
-turbin
-zeroual
-jungl
-steadfast
-ldpr
-south asia
-1 dollar
-avenu
-cruz
-naiv
-bag
-salina
-350
-isn
-surg
-canal
-frelimo
-cd
-kiet
-feng
-instig
-taiwanes
-ni
-combust
-incit
-extradit
-southwest
-minister han
-guarantor
-legco
-20th
-szdsz
-kyodo japan
-free democrat
-prize
-56
-cloud
-gutierrez
-discontinu
-russian defens
-gustavo
-tsutomu
-odd
-3d
-plain
-briefli
-wan
-arbitr
-heilongjiang
-entourag
-turk
-taught
-si
-environmental protect
-alain jupp
-cpc committe
-suicid
-lodg
-aden
-evas
-manila
-57
-cave
-mercosur
-intermediari
-brazauska
-military commiss
-vo
-mock
-velayati
-sequenc
-unhcr
-nezavisimaya gazeta
-ineffici
-imped
-unfortun
-rightist
-envis
-klaus kinkel
-chief cabinet
-leap
-lech
-40000
-egg
-intergovernment
-ion iliescu
-the foreign
-dissolut
-zimbabw
-zvezda
-the american
-bomber
-incap
-overthrow
-distress
-defer
-awb
-heed
-nov
-taxi
-music
-reconcil
-der spiegel
-casa
-escort
-unavoid
-development bank
-110
-norodom
-british hong
-tea
-mr adam
-clandestin
-eduard shevardnadz
-conference cppcc
-bolster
-abort
-xiao
-text belgrad
-costli
-embezzl
-cosmodrom
-thoma
-ah
-repercuss
-camacho soli
-obsolet
-filatov
-alongsid
-edouard balladur
-coffe
-tripartit
-phnom
-white pap
-equat
-esa
-mti
-penh
-rigid
-cheaper
-social democraci
-broker
-butrus butru
-urgenc
-stagnat
-former yugoslav
-islamist
-airspac
-council resolut
-luxuri
-zyuganov
-oath
-barrag
-pleasur
-1967
-murayama
-15000
-grower
-creditor
-setback
-entertain
-fishermen
-sef
-53
-afterward
-earnest
-mo
-phnom penh
-his excel
-radovan karadz
-mercenari
-loui
-devast
-jian
-arat
-midnight
-vyacheslav
-donaldo
-antenna
-adversari
-inabl
-lanq
-viabl
-special administr
-till
-reap
-reestablish
-slump
-tsutomu hata
-160
-hail
-turkish cypriot
-tang
-southeastern
-smile
-aleksei
-department
-plagu
-fluid
-sr
-ud
-incomplet
-renewal parti
-stanislav
-excit
-chisinau
-li lanq
-kabul
-pierr
-sultan
-power pl
-nairobi
-5/03
-literari
-briberi
-outlai
-occasion
-82
-disord
-betrai
-verbal
-quicken
-minh citi
-jaim
-agro
-luis donaldo
-tie
-zou
-clock
-chairmanship
-spur
-flew
-ambiti
-kliridhi
-pour
-robberi
-democratic alli
-proxim
-arisen
-delor
-interf
-rueh
-frei
-rebellion
-allot
-steer
-sap
-tractor
-conced
-punjab
-thirti
-shuttl
-triumph
-vagu
-databas
-ecuadoran
-rhetor
-pesticid
-wash
-minister shim
-4th
-the palestinian
-climb
-consecut
-62
-marri
-mediterranean
-socio
-hryb
-state secur
-security law
-text brussel
-ascertain
-nelson mandela
-fax
-the govern
-hvo
-panic
-academician
-51
-krasnaya
-commend
-burundi
-israel defens
-abstain
-1.8
-pudong
-imparti
-criterion
-deeper
-bone
-dissatisfi
-tune
-sensat
-bombard
-killer
-zhuhai
-leaflet
-ahm
-centrist
-planning commiss
-authent
-chang jiang
-dc
-ter
-ural
-urdu
-ivanov
-zealand
-potato
-adjac
-1373
-watanab
-dilemma
-up
-administrative region
-sensor
-emphat
-bulk
-gennadii
-like
-bosnian croat
-cameroonian
-chinese communist
-clark
-reproduc
-uou
-automak
-slander
-party ldp
-foreign econom
-inflationari
-vest
-honestli
-prensa
-cure
-feb xinhua
-aerial
-agit
-oau
-the south
-total independ
-huallaga
-26/03
-xinhua chines
-panama c
-movi
-overse
-interwork
-chiefli
-javier
-nikolayevich
-ugli
-chinese vic
-dhlakama
-ae
-seeker
-uzbek
-clinic
-remaind
-coupon
-nuclear nonprolifer
-lofti
-flat
-resistance mov
-transitional execut
-pistol
-ball
-airbu
-cna
-jeszenszki
-shushkevich
-paradox
-belt
-decept
-cali cartel
-dimension
-husni
-ji
-minister klau
-mail
-zhelev
-donaldo colosio
-vitaliy churkin
-notimex
-presum
-29/01
-haven
-stream
-duc
-craft
-girl
-masayoshi
-israeli armi
-fu
-postur
-ps
-fmln
-corros
-27/02
-inconsist
-puls
-grassroot
-miracl
-weiss
-suharto
-republican parti
-fledg
-itamar franco
-sp
-borowski
-ambush
-genocid
-zlenko
-exit
-17 percent
-lech walesa
-commemor
-elderli
-grid
-secretli
-trade repres
-struck
-hardship
-albeit
-henrique cardoso
-lunar
-reformist
-max
-tunisia
-reactiv
-11 percent
-premier zhu
-po
-southeast asian
-recognis
-siemen
-neglig
-president ali
-impoverish
-useless
-us congress
-hawk
-ekeu
-kong govern
-jnp
-ntt
-peculiar
-sez
-en
-outlet
-slaughter
-fidesz
-rebeld
-micro
-text foreign
-intifadah
-manual
-cesar gaviria
-minister viktor
-president leonid
-ensu
-deton
-dy
-tip
-togoles
-the centr
-mar mena
-li teng
-tent
-configur
-1948
-willi
-6/03
-krasnaya zvezda
-policeman
-ordin
-cry
-aerospatial
-sin
-paralyz
-president mubarak
-probe
-unjustifi
-central elector
-rexrodt
-bandit
-harder
-p=105 dutch
-algier
-hui
-minister fernando
-ina
-applianc
-steal
-supposedli
-boast
-waldemar
-retaliatori
-slav
-depress
-tiger
-viewer
-helsinki
-induc
-hashemi rafsanjani
-140
-mmabatho
-partit
-tanker
-elementari
-thwart
-500000
-let
-nabil
-de leon
-66
-ammar
-obei
-plenti
-defence minist
-1700
-payload
-varga
-opec
-denuclear
-subcommitte
-aeronaut
-epa
-outlaw
-unrealist
-masayoshi takemura
-calderon
-un human
-pc
-the council
-ss
-dong
-vers
-irrespect
-hai
-jam
-nurtur
-jame
-novgorod
-58
-reynold
-nurs
-pablo
-furnac
-oscar
-compact
-wholli
-joseph
-1600
-uncondit
-stockpil
-electoral district
-international airport
-central europ
-prostitut
-ear
-ramon
-toppl
-gpc
-manifesto
-min
-repeal
+manufactur
+john
+plant
+full
+direct
+success
+famili
+billion
+9
+low
+act
+confer
+drug
+real
+free
+new
+design
+claim
+achiev
+strong
+15
+germani
+french
+bond
+compar
+lower
+note
+clear
+agenc
+land
+competit
+decid
+top
+type bfn
+night
+tablerow rowrul
+tablerow cellrul
+cellrule tablerow
+rowrule tablerow
+los angel
+mean
+worker
+12
+statement
+firm
+accept
+hour
+sourc
+independ
+franc
+rose
+h5
+man
+exist
+gain
+street
+season
+addit
+studi
+press
+role
+suggest
+averag
+limit
+initi
+ask
+insur
+pressur
+mark
+prepar
+corpor
+approv
+train
+soviet
+step
+armi
+leav
+amount
+chines
+short
+fire
+benefit
+earlier
+suppli
+march
+investig
+bring
+lot
+spend
+debt
+district
+educ
+associ
+implement
+custom
+late
+declin
+structur
+word
+joint
+campaign
+feel
+aid
+win
+regul
+critic
+standard
+practic
+natur
+matter
+legal
+food
+grow
+attempt
+engin
+post
+due
+credit
+stand
+york
+health
+net
+hit
+societi
+list
+annual
+field
+won
+staff
+attack
+express
+loan
+1991
+singl
+western
+fridai
+al
+commerci
+domest
+equip
+pass
+particip
+1990
+save
 california
-affairs ministri
-van kiet
-hors
-poorli
-explicitli
-arab isra
-plenum
-uncontrol
-valv
-aidid
-analog
-resettl
-economic rel
-usurp
-flower
-toll
-degrad
-withdrew
-pyong
-uganda
-disastr
-p=105 urdu
-%
-general assembl
-vo van
-prai
-vatican
-passion
-monument
-husni mubarak
-guizhou
-smash
-addi
-downing street
-dioxid
-defence ministri
-awaken
-dmitrii
-dress
-inappropri
-pope
-realign
-bosna
-district no
-voltag
-army gener
-450
-jovanov
-outskirt
-downtown
-kilo
-maroni
-the anc
-central european
-eu european
-valentin
-taiwan strait
-patrick
-ruiz
-nitrogen
-lisbon
-the eu
-83
-democratic slovakia
-julio
-pb
-venu
-finger
-hydroelectr
-selected work
-contempl
-siberia
-alija
-speedi
-amorim
-outrag
-khasbulatov
-aleksand
-encompass
-14 percent
-michal
-stricken
-procurator
-tran
-18 percent
-76
-central american
-flank
-hubei
-honduran
-oecd
-p=106 announc
-diaz
-militarili
-politburo
-invinc
-reintegr
-slorc
-antiaircraft
-distrust
-00
-russian st
-pin
-ansa
-kazan
-xie
-prudent
-saburov
-iv
-91
-waldemar pawlak
-thesi
-dea
-sexual
-kumagai
-guo
-joi
-shenyang
-guangdong provinc
-baudi
-procuratori
-chechen
-general peopl
-appendix
-6/02
-donor
-p=106 statement
-hasti
-metallurg
-television network
-mislead
-8000
-west european
-turnout
-favorit
-idf israel
-cm
-p=105 thai
-garden
-spontan
-rapporteur
-harass
-prophet
-mi
-ding
-tribal
-1974
-qaddumi
-greek cypriot
-plural
-narasimha
-shokhin
-beef
-ecu
-16 percent
-boross
-disclosur
-rossiyskaya
-noteworthi
-complement
-nursultan
-88
-rubber
-guinea
-11th
-reinstat
-plung
-xinhua china
-dublin
-the armi
-tier
-pacific econom
-mistaken
-rehn
-substant
-persian gulf
-1.7
-revit
-secular
-slightest
-disposit
-streamlin
-rob
-amaz
-the french
-ichiro
-durban
-paraguayan
-central asian
-humberto
-rp
-induct
-narasimha rao
-apprehens
-antinarcot
-champion
-0900
-soskovet
-cfd
-trademark
-expuls
-vaclav klau
-amir
-revolv
-constraint
-georgii
-mask
-mari
-visegrad
-malaria
-mysteri
-ultra
-qatar
-shield
-nec
-nose
-president yasir
-workshop
-crimean tatar
-variat
-runwai
-exposur
-shoe
-akbar
-19/02
-augment
-miami
-wildlif
-rosati
-luanda
-russo
-nazi
-auspic
-ineffect
-upheld
-viciou
-unsuccess
-resembl
-ep
-ig
-86
-quantit
-genet
-meaning
-nongovernment
-vall
-junior
-rift
-adn
-rossiyskaya gazeta
-auxiliari
-luzhkov
-lunch
-popular front
-mashokw
-petr
-tower
-berisha
-unpredict
-signifi
-desk
-male
-manh
-100 dollar
-moroccan
-erect
-kenya
-2.3
-tori
-kwh
-brink
-kolkhoz
-text rom
-vow
-45 percent
-rahman
-occurr
-hondura
-annihil
-verg
-brittan
-yellow
-beg
-earliest
-grate
-encroach
-disciplinari
-manageri
-sex
-sadf
-eighth npc
-p=105 hungarian
-hr
-empow
-simon
-leningrad
-unveil
-dock
-dose
-vientian
-eighti
-mr presid
-corn
-nanj
-graviti
-text bratislava
-sevastopol
-barbar
-president cesar
-curtail
-solana
-pit
-sulfur
-flare
-ju
-president itamar
-paramilitari
-liang
-irrevers
-inher
-kebich
-10 dollar
-disgrac
-forbid
-jiangxi
-bet
-domingo
-loos
-foil
-research cent
-state properti
-indiscrimin
-filter
-fever
-flourish
-guardian
-1945
-defus
-focal
-2500
-gomez
-nippon
-harmon
-59
-secess
-abkhaz
-novini
-fernandez
-curfew
-400000
-camouflag
-4.5
-seima
-comrade mao
-molecul
-evok
-bernard
-zair
-insignific
-unpleas
-alija izetbegov
-henri
-15 dollar
-knin
-de greiff
-analyt
-text hanoi
-turmoil
-bottleneck
-deplor
-banco
-emir
-ppi
-ford
-ski
-12/02
-nonalign
-unarm
-grip
-jilin
-ozon
-solicit
-goldstein
-miller
-world trad
-residu
-censu
-mahmud
-unhappi
-eros
-etat
-7000
-national democrat
-independent st
-lumpur
-scarc
-vain
-privatis
-olechowski
-carpio
-21/03/1994
-inland
-cardena
-muoi
-emin
-blade
-chart
-kuala
-advisor
-84
-pretend
-telegram
-27/01
-us trad
-fifti
-gunmen
-totalitarian
-terreblanch
-deputy chairman
-12/1993
-shipbuild
-150000
-albert
-cap
-2300
-60000
-revok
-continent
-renmin
-pet
-ria
-importantli
-swift
-brigadier gener
-incorrect
-justice minist
-pursuant
-absent
-wafer
-premium
-asahi
-pressler
-attest
-kuala lumpur
-guess
-portrai
-materiel
-1.0
-random
-rugova
-cfa
-dsp
-lpdr
-un chart
-qasim
-pailin
-drain
-fenc
-nomenklatura
-us north
-secretary masayoshi
-pu
-kommers
-silvio
-horizon
-sleep
-wasmosi
-unfound
-yakovlev
-30/03
-rage
-forint
-lesser
-volksfront
-us japan
-cam
-dog
-kooijman
-abnorm
-703
-stern
-military region
-slobodan
-munit
-remedi
-quarrel
-bother
-saito
-barter
-placement
-blueprint
-guillermo
-scare
-belov
-lago
-sakhalin
-flore
-electrod
-lt gen
-diffus
-gazprom
-warsaw pact
-indict
-stumbl
-chemistri
-ichiro ozawa
-ulimo
-de klerk
-mircea
-adventur
-certainti
-prasong
-luxembourg
-the feder
-sat
-vna
-hierarchi
-outset
-vranitzki
-shaanxi
-thawrah
-emphasis
-khartoum
-reuter
-accredit
-pessimist
-torn
-yearli
-unsc
-majali
-oman
-broek
-mr clinton
-darawshah
-builder
-north american
-accustom
-umbrella
-sympath
-collus
-minister qian
-nonferr
-gase
-mustafa
-tribe
-discord
-third world
-bundesbank
-pale
-withhold
-stronghold
-kronor
-threw
-sul
-vol
-yan
-awac
-nursultan nazarbayev
-okinawa
-minister dr
-andrzej
-heritag
-fraction
-hasten
-ninth
-fur
-dwell
-nice
-groundless
-feb mena
-deter
-entrench
-nodong sinmun
-rossiya
-fang
-gorg
-siberian
-antidrug
-geydar
-gansu
-fidel castro
-salvation front
-superintend
-iec
-lever
-mortgag
-luka
-restaur
-hashish
-sacrif
-requisit
-subsist
-cordon
-osaka
-addition
-han sung
-aerodynam
-annul
-monopol
-1977
-notori
-natural resourc
-repetit
-gui
-strife
-pol
-arrow
-refriger
-22 percent
-glad
-63
-cherepkov
-coeffici
-ghawshah
-melt
-faruq
-president li
-beaten
-douglas hurd
-hitherto
-howitz
-panmunjom
-procuraci
-president tudjman
-disburs
-undesir
-renmin ribao
-ricardo
-etern
-nizhnii
-weld
-neo
-dairi
-undergon
-uae
-blown
-rigor
-daya
-popular parti
-12000
-geydar aliyev
-dushanb
-unwil
-conscript
-prerog
-midst
-nacion
-aggreg
-p=105 bulgarian
-2010
-bjp
-beer
-discourag
-leon carpio
-stock exchang
-rupe
-chancellor helmut
-nonpay
-67
-ge
-mourn
-commenc
-joke
-ocalan
-kakh
-mt
-shortfal
-dilig
-laar
-doom
-mangosuthu
-recipi
-influx
-preclud
-racial
-tropic
-polym
-acan
-be
-south china
-pdp
-chechnya
-wrap
-mixtur
-shar
-consign
-new zealand
-santa cruz
-text prim
-unload
-ra
-hwang
-alfredo
-committee polit
-1972
-bias
-relinquish
-plenipotentiari
-authoritarian
-mszp
-scientific research
-ride
-discard
-knock
-optimum
-montenegrin
-plo execut
-israeli prim
-pfp
-61
-arba
-partisan
-yard
-fare
-facto
-proclam
-anxiou
-minister tsutomu
-northwestern
-1949
-comrade jiang
-symptom
-sagawa
-dust
-supreme peopl
-23 percent
-voucher
-duran
-lien
-cook
-fusion
-planet
-qinghai
-merchandis
-pastor
-p=106 new
-recreat
-episod
-lefortovo
-cessat
-mon
-sky
-laugh
-endless
-swing
-demograph
-glori
-reelect
-philosoph
-choe
-ruptur
-crackdown
-forefront
-sergio
-mangosuthu buthelezi
-twist
-arrear
-discont
-lukin
-amr
-bbc
-ali abdallah
-chronic
-decent
-sep
-therapi
-fc
-telegraph
-trade minist
-denunci
-qadhdhafi
-vice chairman
-87
-89
-qiryat
-chan
-ramiro
-ganic
-supercomput
-bull
-visual
-clearer
-japan renew
-hegemoni
-underestim
-chavarria
-swallow
-hiroshi
-economic plan
-pnc
-warship
-stifl
-hindu
-remuner
-counselor
-palestinian presid
-10th
-liberalis
-managua
-enriqu
-ruben
-choson
-consciou
-decor
-brake
-fuzhou
-daya bai
-enshrin
-the serb
-pulp
-indo
-25/01
-saeima
-mickei
-catalyst
-nakamura
-lee
-magnitud
-21 percent
-calmli
-repent
-cheat
-trench
-zhen
-forcibl
-abdullah
-plebiscit
-yegor
-federation govern
-unresolv
-amazon
-ala
-bow
-in januari
-workplac
-loot
-garment
-herzegovina armi
-qiryat arba
-depict
-nhk
-mahdi
-ram
-peri
-shorten
-auster
-text tehran
-megawatt
-conspicu
-cannon
-diagnosi
-al thawrah
-text yesterdai
-moratorium
-francois mitterrand
-monetary fund
-insecur
-veng
-russian academi
-superson
-stoltenberg
-sheng
-sheep
-redistribut
-conquer
-2.4
-forbidden
-banja
-hanoi vna
-miyazawa
-depreci
-erron
-abdallah salih
-rod
-snark
-mouth
-subcommand
-setup
-banja luka
-andrea
-military district
-indebted
-conceptu
-chad
-illicit
-rand
-honour
-william perri
-expend
-2.2
-bsp
-roof
-guatemala c
-thatcher
-hydropow
-well
-wuhan
-etch
-waigel
-luca
-fa
-improp
-muslim brotherhood
-danc
-hybrid
-77
-josef
-juri
-biotechnolog
-staffer
-meteorolog
-indulg
-northeastern
-correl
-bottl
-sociopolit
-minister chuan
-rough
-krasnoyarsk
-fed
-upward
-unlaw
-ido
-samsung
-chirac
-oda
-pflp
-explicit
-discriminatori
-greenpeac
-intransig
-incred
-brig
-divorc
-faculti
-mainland china
-radetskyi
-withstand
-high commission
-aftermath
-apartheid
-hoc
-unleash
-huang ju
-evan
-rig
-felip
-automot
-ayatollah
-71
-oust
-insert
-mn
-huaq
-mainichi
-methodolog
-1976
-discret
-leva
-resent
-chiang
-slovak n
-0.1
-herceg
-torr
-herceg bosna
-paz zamora
-horizont
-fugit
-liu huaq
-diverg
-banana
-zholdak
-drama
-olymp
-yisra
-quito
-chaotic
-reckless
-inmat
-law no
-text todai
-nonnuclear
-aho
-librari
-napl
-incompet
-13/02
-kai
-procrastin
-luo
-mac
-umar
-stadium
-fragil
-villa
-sand
-19 percent
-fake
-northern leagu
-unfold
-synthet
-french foreign
-20/03/1995
-asyut
-czechoslovak
-stuck
-ivan rybkin
-19th
-rangoon
-counterfeit
-national resist
-extort
-development
-state administr
-czechoslovakia
-cot
-complementari
-incompat
-bern
-nowadai
-blank
-5.5
-upsurg
-fool
-rpr
-poster
-nizhniy novgorod
-tenth
-intrigu
-classif
-kong speci
-chin
-abu ammar
-veil
-east asia
-persuas
-30/01
-hammer
-rial
-acced
-minister vo
-strategist
-sociolog
-text taipei
-ward
-vice minist
-taba
-cc
-deputy minist
-diphtheria
-affairs offic
-tantamount
-maastricht treati
-interpol
-trail
-trait
-dispel
-shrine
-journei
-gaug
-federation ministri
-yasushi
-projectil
-purg
-pertin
-hatch
-ebrd
-mirag
-gonzalo
-likphai
-bypass
-forti
-archiv
-tella
-commando
-the hagu
-assistant secretari
-quo
-ampl
-mathemat
-triangl
-revolt
-unhealthi
-shinseito japan
-japanese prim
-islamic resist
-eyadema
-disapprov
-karbovantsi
-sharq
-samuel
-furnitur
-cpsu
-0.3
-temelin
-cpc nation
-cpi
-al sharq
-goh
-mvd
-jiahua
-mr rao
-sail
-sorrow
-molecular
-von
-kick
-dialect
-michal kovac
-bentsen
-proliferation treati
-courtesi
-ahtisaari
-hepat
-woyciechowski
-discrep
-kommersant daili
-28 percent
-mate gran
-transnat
-nonsens
-hernandez
-legaci
-18/01
-outdat
-exception
-foreign polici
-footnot
-interparliamentari
-di tella
-depot
-funer
-croatian armi
-80000
-protein
-yag
-fade
-president aristid
-nicosia
-kanther
-nawaz
-criticis
-shanghai municip
-futil
-2 dollar
-west europ
-enlighten
-ossetian
-slovak govern
-pretti
-chinese academi
-kamal
-savag
-satisfactorili
-meyer
-spi
-defense secretari
-denial
-accident
-greek govern
-od
-12th
-torpedo
-rudolf
-clariti
-spoil
-furnish
-party committe
-ruihuan
-international monetari
-treason
-johnson
-likelihood
-0.2
-chu
-us ambassador
-denni
-deutsch
-emul
-foreign rel
-stride
-rostov
-kolodziejczyk
-7.5
-renegoti
-cutback
-string
-neutron
-warplan
-95 percent
-husayni
-samaria
-croatian defens
-quercia
-micrograv
-drought
-chuan likphai
-96
-bakassi
-honorari
-chlorin
-salah
-krasnodar
-segodnya
-racist
-minister pavel
-al awsat
-p=106 telephon
-sword
-spokesmen
-minister alain
+difficult
+stage
+basi
+largest
+idea
+fell
+english
+white
+materi
+led
+own
+hard
+park
+rang
+appear
+consum
+11
+cover
+univers
+inflat
+divis
+comput
+labour
+parliament
+maintain
+asset
+test
+fail
+opposit
+index
+emerg
+senior
+constitut
+affair
+serv
+promot
+korea
+seek
+estim
+children
+allow
+mondai
+round
+publish
+individu
+televis
+tuesdai
+believ
+black
+contribut
+programm
+book
+energi
+lost
+britain
+commit
+1994
+stop
+launch
+weapon
+student
+agricultur
+help
+write
+currenc
+thursdai
+june
+join
+electr
+kind
+transport
+wednesdai
+fight
+paper
+women
+trust
+road
+comment
+drop
+aim
+link
+legisl
+new york
+april
+hong
+revenu
+network
+cash
+employ
+station
+art
+human
+understand
+advanc
+experi
+event
+washington
+kong
+ahead
+men
+retail
+assist
+risk
+congress
+ga
+candid
+basic
+kill
+began
+hong kong
+territori
+command
+young
+warn
+determin
+paid
+movement
+thought
+50
+previou
+purchas
+analyst
+opportun
+common
+employe
+border
+document
+potenti
+25
+target
+bodi
+date
+de
+consult
+front
+page
+ground
+possibl
+pre
+progress
+appoint
+turnov
+moscow
+qualiti
+resid
+liber
+resourc
+16
+care
+player
+releas
+confid
+balanc
+adopt
+opinion
+collect
+ec
+happen
+conduct
+reflect
+interview
+fear
+prevent
+payment
+sharehold
+longer
+palestinian
+bid
+popul
+leagu
+facil
+ve
+arab
+approach
+signific
+conserv
+session
+vice
+ag
+attract
+la
+sold
+drive
+principl
+seri
+partner
+40
+detail
+januari
+respect
+light
+sundai
+18
+america
+reserv
+kei
+volum
+need
+minut
+object
+1989
+beach
+differ
+consider
+task
+town
+14
+provinc
+review
+suffer
+name
+ensur
+equiti
+strike
+origin
+southern
+speak
+israel
+encourag
 dividend
-breakup
-awsat
-bosniak
-ochirbat
-feb afp
-msi
-nsp
-li ruihuan
-stockholm
-shen
-taxabl
-burst
-sober
-dispar
-petrov
-protract
-aqabah
-democratic front
-forgiv
-duplic
-president ion
-zou jiahua
-museum
-sharq al
-can
-undecid
-institution
-templ
-nickel
-33 percent
-lcd
-cn
-pfl
-ppp
-predomin
-chase
-bonu
-russia text
-profoundli
-flame
-flaw
-okrug
-raphel
-petrosyan
-maj gen
-perpetu
-poltoranin
-mold
-sworn
-birkav
-afforest
-interethn
-assimil
-pair
-northern front
-undersecretari
-lan
-cdu csu
-8th
-24 percent
-boil
-inferior
-joao
-kogyo
-stupid
-turbul
-p=105 vietnames
-contractu
-extinguish
-emperor
-vanc
-irrat
-dram
-hemispher
-sabha
-disguis
-kroon
-pangalo
-north america
-minister yi
-angola unita
-hari
-rivalri
-mickey kantor
-tempt
-spectacular
-pen
-outfit
-deplet
-infant
-abduct
-600000
-text pari
-south north
-grab
-boldli
-goldston
-interlocutor
-yusuf
-the north
-beilin
-kazannik
-rape
-rectif
-security servic
-170
-bka
-bodyguard
-metallurgi
-ca
-50th
-luck
-creep
-french govern
-hyundai
-utd
-unauthor
-multipli
-reign
-takeov
-abacha
-text h5
-backbon
-figaro
-armiya
-insurg
-1971
-1999
-notif
-paldiski
-seventi
-berov
-manuel camacho
-president husni
-xinwen
-runoff
-baht
-baltic sea
-0.6
-stalin
-bia
-rivera
-wholeheartedli
-german govern
-horribl
-south ossetia
-concili
-konstantin
-lebanese forc
-junsheng
-appl
-vadim
-stepanakert
-sino japanes
-makwetu
-bore
-ulster
-tenur
-treacher
-buildup
-implant
-meri
-breakfast
-balladar
-peasant parti
-va
-sobchak
-zapatist n
-ter petrosyan
-provincial peopl
-cardin
-seemingli
-text tallinn
-infecti
-25000
-silvio berlusconi
-weaker
-underli
-ukrainian presid
-intact
-special commiss
-british joint
-marketplac
-urng
-force unprofor
-vacaroiu
-realm
-anglo
-mr buthelezi
-chengdu
-incumb
-plyushch
-abstent
-shrink
-christian soci
-strasbourg
-inact
-fujitsu
-spacecraft
-abyan
-quietli
-stubborn
-francois leotard
-accomplic
-niger
-p=105 swedish
-nucleu
-retrain
-tan
-mar ef
-felcn
-asif
-sing
-repubblica
-alexand
-piti
-chissano
-collegium
-problemat
-zinc
-diagram
-spill
-xian
-outgo
-punit
-social union
-adamishin
-intensif
-notwithstand
-extric
-cuban govern
-27 percent
-lab
-illumin
-tail
-gigant
-aquat
-khomeyni
-keidanren
-74
-pariti
-salman
-la repubblica
-president saddam
-stoppag
-inviol
-panorama
-purif
-helpless
-transvaal
-spokeswoman
-slovakia hzd
-ali salim
-ddp
-dig
-unawar
-gratifi
-kolesnikov
-anlung
-newsmen
-bo
-tast
-plead
-defense ag
-krajisnik
-harbing
-unitari
-le figaro
-afrikaan
-motorized rifl
-figuer
-culmin
-sihanouk
-refuel
-ballen
-repris
-credenti
-mpla
-intelligentsia
-precipit
-soften
-shaken
-the czech
-mr li
-hate
-chinese foreign
-longuet
-ichikawa
-inner mongolia
-upheav
-jesu
-multimedia
-warmli
-rampant
-jozef moravcik
-omar
-roberto robaina
-73
-in decemb
-yasin
-text johannesburg
-�m
-text announc
-15th
-1940
-kyrgyz republ
-heavy industri
-russian arm
-text kiev
-edibl
-text warsaw
-khamen
-alvarez
-0.4
-revel
-northeast asia
-swiftli
-audio
-graphic
-fortress
-wine
-anlung veng
-raf
-trim
-toyota
-felix
-marek
-farc
-franjo
-sixti
-jamahiriyah
-sangyo
-text riga
-reproduct
-rostrum
-hangzhou
-mini
-vojvodina
-srebrenica
-salam
-85 percent
-text ankara
-amr musa
-maputo
-counterintelligence servic
-high command
-reproach
-specimen
-3.0
-executive branch
-perez balladar
-bi
-allegi
-robin
-spokesperson
-inhuman
-superfici
-wool
-zwelithini
-69
-zhongguo xinwen
-24/01
-flash
-pandit
-nineti
-north ossetia
-rabbi
-sovetskaya
-motorcycl
-ingush
-shelv
-prejudic
-janata
-lira
-uneasi
-nabil sha
-interfac
-togo
-lu p
-novi
-tansu
-koruna
-dash
-79
-pile
-sochi
-nk
-zieleniec
-reckon
-compress
-gambl
-juan carlo
-excis
-0.8
-radio fre
-minister benazir
-240
-yegor gaydar
-exemplari
-japanese u
-p=105 finnish
-computer
-portabl
-alarcon
-chapar
-rok govern
-ruslan
-refug
-the islam
-petti
-redman
-stringent
-10/1993
-markedli
-1900
-1973
-atlantic treati
-novosibirsk
-rein
+similar
+biggest
+organis
+declar
+want
+cultur
+korean
+13
+civil
+assembl
+letter
+environment
+sir
+promis
+tabl
+room
+schedul
+greater
+explain
+ukrain
+100
+crisi
+replac
+store
+guarante
+prospect
+subject
+music
+evid
+affect
+lack
+deleg
+1988
+hotel
+troop
+coach
+score
+depend
+break
+judg
+worth
+citizen
+recoveri
+saturdai
+histori
+morn
+scheme
+brought
+observ
+pension
+1980
+latest
+wide
+arriv
+goal
+death
+yield
+juli
+travel
+stake
+stress
+specif
+read
+newspap
+forecast
+decemb
+factor
+leadership
+victori
+environ
+david
+arrest
+vehicl
+packag
+owner
+radio
+expens
+centr
+septemb
+data
+film
+expand
+come
+isra
+damag
+answer
+chanc
+ventur
+tradit
+option
+size
+strengthen
+crime
+lose
+caus
+site
+stori
+appli
+attent
+combin
+conflict
+solut
+hill
+grant
+attend
+race
+stabil
+recess
+refer
+prove
+space
+separ
+tonn
+technic
 orang
-economic affair
-cow
-slobodan milosev
-alfonso
-popov
-rabbuh
-ren
-clerk
-broadcasting corpor
-tansu cil
-minister vladimir
-despair
-fahd
-michael ros
-lower saxoni
-feudal
-reschedul
-haavisto
-reina
-mw
-straighten
-rifkind
-ddp adn
-ya
-0600
-pradesh
-intak
-stalem
-protector
-ripe
-khalid
-malici
-pasqua
-ponder
-aka
-seller
-eco
-left alli
-cereal
-heir
-ak
-crvenkovski
-bubbl
-par
-rmb
-surgeri
-sack
-guilt
-fabio
-linkag
-overlap
-garbag
-dens
-tunisian
-hugo
-harden
-belga
-fanat
-medellin cartel
-almighti
-eslami
-great hal
-text russia
-inquir
-serb krajina
-swear
-vitez
-dispens
-dignifi
-counsel
-caspian
-lome
-turan
-veloc
-assail
-offshor
-jun
-underw
-infrar
-tamara
-mircea snegur
-amin
-udc
-26/01
-silo
-sink
-mojahedin
-landscap
-chicken
-lozada
-meaningless
-certifi
-flown
-communist renew
-lucki
-serbian krajina
-hygien
-suffic
-invari
-squeez
-minister roberto
-mogadishu
-lessen
-bildt
-anwar
-hartzenberg
-2.1
-schill
-hdz
-fascism
-lubric
-rpt
-p=105 georgian
-tin
-cynic
-78
-silk
-chariti
-latino
-metr
-1968
-unsatisfactori
-serial
-hydraul
-precinct
-tijuana
-obligatori
-chung
-treasur
-overh
-foreign offic
-franjo tudjman
-2200
-nikolayev
-booster
-colonialist
-arrieta
-nawaz sharif
-federation presid
-trade gatt
-vii
-cater
-sluggish
-marti
-mercuri
-vietnamese govern
-ir
-abd rabbuh
-mr hurd
-customari
-samara
-mg
-anarchi
-regroup
-coher
-700000
-industry m
-zionism
-walter
-insight
-foreign invest
-vice foreign
-cprf
-farewel
-markka
-donetsk
-protection
-curs
-unexpectedli
-blaauw
-emit
-loophol
-abba
-70000
-tripl
-ai
-satur
-security forc
-public health
-gerashchenko
-ki
-packet
-ulaanbaatar
-ljubljana
+doubl
+introduc
+media
+aircraft
+deficit
+northern
+middl
+class
+eastern
+consid
+clinton
+transfer
+enter
+rest
+challeng
+strategi
+heavi
+seat
+learn
+chemic
+accord
+socialist
+rank
+bad
+friend
+17
+sea
+refus
+advis
+coalit
+stai
+distribut
+hospit
+gave
+santa
+danger
+communist
+treati
+forward
+argu
+struggl
+vallei
+anti
+bosnia
+mind
+met
+fourth
+draft
+0
+confirm
+colleg
+passag
+diego
+summer
+intend
+integr
+telephon
+hear
+minor
+survei
+defend
+club
+didn
+bush
+centuri
+mine
+built
+appeal
+readi
+san diego
+sens
+reject
+expert
+airlin
+popular
+februari
+recommend
+privatis
+debat
+labor
+wage
+spokesman
+cabinet
+wait
+remov
+treasuri
+electron
+medic
+eu
+poor
+capac
+nato
+block
+decad
+24
+scale
+airport
+serb
+ft
+regard
+poll
+shot
+shop
+reduct
+resolut
+beij
+finish
+accus
+dr
+prime minist
+connect
+handl
+arrang
+alleg
+avoid
+select
+michael
+fuel
+yard
+robert
+parent
+threat
+complex
+mass
+contact
+push
+modern
+equal
+advantag
+monetari
+substanti
+octob
+wall
+settlement
+doubt
+request
+applic
+ship
+itali
+surpris
+novemb
+provis
+impact
+demonstr
+difficulti
+indic
+add
+output
+mile
+governor
+true
+cross
+duti
+red
+method
+influenc
+1987
+crimin
+choic
+resolv
+address
+access
+li
+presidenti
+green
+extend
+delai
+watch
+scienc
+concentr
+senat
+diplomat
+p=105 english
+violat
+zone
+steel
+60
+st
+sound
+defenc
+pm
+style
+oppos
+resign
+farm
+margin
+smith
+democraci
+channel
+william
+gold
+restrict
+purpos
+weak
+trend
+21
+tokyo
+love
+allianc
+effici
+worri
+appar
+simpli
+file
+agent
+statu
+pacif
+africa
+model
+justic
+moment
+battl
+disput
+king
+ti
+brother
+wast
+spanish
+impos
+threaten
+spent
+star
+acquir
+italian
+entir
+mechan
+retir
+lift
+mid
+thousand
+mission
+deni
+prison
+island
+machin
+politician
+daili
+islam
+fine
+section
+pick
+omit
+attornei
+england
+voter
+extrem
+favor
+obtain
+north korea
+restructur
+trial
+kim
+iraq
+speech
+19
+personnel
+ll
+predict
+profession
+respond
+22
+fee
+borrow
+august
+subsidiari
+withdraw
+asia
+protest
+weekend
+safeti
+altern
+insist
+conclud
+acquisit
+wai
+function
+compet
+india
+speed
+fair
+brown
+pari
+mexico
+locat
+relationship
+prefer
+miss
+unemploy
+sport
+suprem
+remark
+examin
+strength
+draw
+fix
+troubl
+percent
+peter
+spring
+slow
+think
+histor
+track
+jame
+global
+failur
+motor
+corp
+african
+georg
+highli
+hall
+ban
+guard
+correspond
+heart
+assess
+oversea
+walk
+metal
+fulli
+branch
+insid
+quickli
+intent
+solv
+procedur
+consist
+expans
+missil
+admit
+inspect
+send
+award
+coal
+tv
+estat
+voic
+exercis
+suit
+richard
+invit
+item
+coordin
+taiwan
+wife
+incid
+dealer
+son
+featur
+mention
+freedom
+messag
+urg
+check
+23
+bought
+occur
+element
+maker
+royal
+match
+immedi
+domin
+advertis
+favour
+follow
+boost
+rural
+parliamentari
+orange counti
+fish
+fiscal
+treatment
+smaller
+tablecell tablecel
+di
+capabl
+spread
+strateg
+prioriti
+coupl
+regist
+normal
+heard
+flight
+imag
+1986
+pictur
+bear
+villag
+enjoi
+tour
+sharp
+teacher
+soldier
+count
+resist
+card
+deliv
+ey
+collaps
+blue
+door
+abil
+valu
+adjust
+31
+woman
+degre
+client
+increasingli
+traffic
+convent
+specul
+easi
+identifi
+instal
+settl
+yeltsin
+permit
+el
+career
+piec
+mayor
+artist
+squar
+mother
+restor
+illeg
+russian feder
+elector
+summit
+sort
+indian
+interim
+transit
+26
+sanction
+reveal
+afternoon
+1995
+assum
+realiz
+shift
+28
+27
+river
+broadcast
+abroad
+ukrainian
+father
+lawyer
+uniti
+occupi
+sentenc
+doesn
+attitud
+flow
+enabl
+regim
+farmer
+essenti
+wrong
+statist
+impress
+canada
+foot
+chancellor
+foreign minist
+directli
+mutual
+enforc
+van
+soviet union
+fast
+republican
+monitor
+lord
+awar
+scientif
+iran
+coast
+felt
+fill
+christian
+yuan
+focu
+elimin
+violenc
+sit
+huge
+correct
+eventu
+200
+port
+secret
+broker
+foundat
+hundr
+turkei
+search
+yen
+premier
+trip
+desir
+church
+surviv
+murder
+slightli
+jan
+roll
+written
+discount
+partnership
+medium
+victim
+corrupt
+2000
+titl
+even
+defeat
+ball
+90
+bomb
+93
+telecommun
+in
+convinc
+fundament
+scene
+controversi
+suspect
+economist
+garden
+sever
+gui
+se
+amend
+united n
+mp
+emploi
+ralli
+truck
+eas
+municip
+combat
+provinci
+sterl
+quot
+extra
+pull
+formal
+specialist
+presenc
+factori
+70
+chamber
+restaur
+treat
+bilater
+rout
+compens
+mix
+argument
+previous
+camp
+94
+mr john
+highest
+child
+spain
+skill
+framework
+dispos
+submit
+bosnian
+intellig
+conclus
+spirit
+paul
+pro
+buyer
+assur
+intens
+security council
+mobil
+shown
+muslim
+except
+liquid
+80
+jump
+realiti
+lloyd
+brussel
+35
+extens
+concept
+cso
+confront
+blame
+recov
+perman
+sharpli
+enemi
+expenditur
+rival
+paint
+wing
+merger
+feet
+alli
+renew
+dialogu
+box
+creation
+deposit
+larger
+clean
+util
+asian
+journalist
+tough
+vietnam
+1000
+instanc
+deep
+phase
+virtual
+mortgag
+touch
+destroi
+johnson
+membership
+regular
+gross
+signal
+spite
+aggress
+ambassador
+princip
+passeng
+recal
+aspect
+minimum
+south africa
+engag
+convers
+guid
+boi
+oblig
+offens
+movi
+patient
+bar
+czech
+salari
+compon
+transform
+band
+video
+rich
+preserv
+reaction
+beat
+shoot
+commod
+gather
+bureau
+floor
+cabl
+neg
+grand
+premium
+wit
+rememb
+fresh
+1985
+cite
+spot
+disappoint
+32
+excess
+partli
+bit
+civilian
+gun
+extent
+consolid
+anim
+comprehens
+trader
+cast
+precis
+charact
+european union
+circumst
+heat
+prompt
+ireland
+australia
+davi
+29
+lend
+shape
+happi
+sustain
+audienc
+version
+clark
+accid
+rock
+keep
+plane
+kid
+poland
+pursu
+ft se
+pollut
+transact
+leas
+hire
+doctor
+born
+fly
+neighbor
+notic
+imposs
+supplier
+excerpt
+format
+acknowledg
+comrad
+headquart
+repeat
+divid
+simpl
+convert
+proport
+celebr
+youth
+ownership
+tomorrow
+relief
+banker
+consequ
+content
+retain
+complaint
+suffici
+radic
+contrast
+softwar
+revolut
+tass
+ms
+user
+subsidi
+worst
+core
+burden
+iraqi
+cloth
+knew
+ethnic
+sum
+orient
+pakistan
+wine
+girl
+mountain
+enhanc
+jordan
+weight
+phone
+explor
+gradual
+analysi
+45
+cup
+broad
+crowd
+sponsor
+infrastructur
+unabl
+discov
+begun
+satellit
+danc
+chain
+mike
+dozen
+writer
+calcul
+pitch
+urban
+professor
+physic
+excel
+sought
+host
+commission
+memori
+dead
+safe
+footbal
+brand
+throw
+fashion
+cold
+displai
+complain
+proce
+rent
+consumpt
+compromis
+moral
+hollywood
+prosecutor
+primari
+wave
+feb
+rapid
+driver
+exclud
+absolut
+acceler
+francisco
+editori
+tariff
+tori
+commerc
+gatt
+ton
+mexican
+licens
+ill
+grade
+pace
+accompani
+grain
+convict
+fit
+wound
+dismiss
+revis
+fallen
+edg
+500
+drink
+screen
+tree
+switch
+museum
+ticket
+portfolio
+refuge
+defin
+split
+focus
+belong
+abandon
+peak
+alloc
+holidai
+print
+strongli
+jone
+canadian
+instrument
+mar
+festiv
+path
+colleagu
+brazil
+manner
+gulf
+bundesbank
+code
+tank
+martin
+rel
+cook
+thoma
+surplu
+interior
+bai
+explos
+choos
+ideolog
+terrorist
+counter
+fulfil
+latin
+diseas
+oppon
+composit
+1970
+circl
+athlet
+satisfi
+frequent
+seiz
+look
+exhibit
+agenda
+contain
+gang
+rail
+speaker
+turkish
+wors
+winner
+faction
+gilt
+surround
+song
+greek
+resum
+household
+listen
+panel
+fleet
+burn
+dramat
+wear
+p=106 articl
+ordinari
+percentag
+assn
+suspend
+hot
+bridg
+sun
+ii
+mistak
+surfac
+blood
+stabl
+democratic parti
+qualifi
+shell
+300
+god
+knowledg
+afford
+traffick
+%
+heavili
+shortag
+jail
+drawn
+depress
+foreign ministri
+gen
+varieti
+maximum
+magazin
+ford
+suppos
+charter
+sensit
+deliveri
+broke
+maastricht
+supervis
+rare
+pc
+meant
+instruct
+yugoslavia
+persuad
+tom
+honor
+san francisco
+abus
+south korea
+sweden
+navi
+pain
+pool
+nomin
+theori
+wasn
+anc
+acr
+easili
+takeov
+grew
+entertain
+revers
+forest
+carrier
+injuri
+plo
+recogn
+ran
+irvin
+closer
+truth
+polish
+irish
+lake
+peasant
+advic
+monthli
+referendum
+reviv
+iron
+vital
+flexibl
+junior
+imagin
+occas
+comfort
+bottom
+rapidli
+pledg
+row
+wind
+reli
+entri
+occup
+chicago
+cdollar
+shanghai
+husband
+adollar
+reuter
+slip
+distanc
+outcom
+giant
+chip
+narrow
+introduct
+color
+1984
+pilot
+australian
+herzegovina
+cuba
+basebal
+root
+oblast
+opera
+lai
+graduat
+wrote
+ballot
+revolutionari
+experienc
+recruit
+decre
+obviou
+religi
+exclus
+swiss
+theatr
+bob
+duma
+inquiri
+tell
+hors
+numer
+xinhua
+charl
+guest
+dutch
+intervent
+window
+saudi
+apart
+hungarian
+indistinct
+typic
+relev
+tension
+friendli
+atmospher
+unchang
+fruit
+isn
+justifi
+auction
+primarili
+repli
+catch
+marin
+unusu
+proceed
+daughter
+actual
+gap
+wilson
+inevit
+competitor
+equival
+master
+interpret
+ultim
+dream
+wood
+armed forc
+jim
+unifi
+newli
+embassi
+immigr
+subsequ
+scottish
+ride
+assign
+boat
+meter
+caught
+frank
+glass
+complic
+disclos
+mount
+strip
+tourist
+confus
+businessmen
+background
+reput
+stronger
+overcom
+shock
+continent
+fan
+crop
+classic
+evalu
+rice
+easier
+moder
+pretti
+forum
+reactor
+extern
+gear
+advoc
+uncertainti
+motiv
+prosper
+sarajevo
+rebel
+termin
+wall street
+middle east
+describ
+southern california
+scientist
+possess
+1996
+bosnia herzegovina
+modest
+pyongyang
+temporari
+worldwid
+rush
+avenu
+attach
+gaza
+miner
+earth
+qtr
+welcom
+tend
+greatest
+fraud
+characterist
+city council
+thailand
+bori
+slovak
+concert
+ordin
+editor
+egypt
+escap
+bat
+flat
+ratio
+winter
+categori
+teach
+tool
+devic
+gdp
+terror
+hurt
+preliminari
+pattern
+resort
+railwai
+emphas
+400
+highwai
+chair
+moslem
+sheet
+disciplin
+deriv
+mail
+arafat
+croatian
+ci
+text mr
+textil
+risen
+detect
+matur
+outstand
+sugar
+era
+white hous
+hungari
+tackl
+aerospac
+scotland
+theater
+anticip
+central committe
+grown
+concess
+neighborhood
+exploit
+singapor
+approxim
+repair
+morgan
+incent
+pharmaceut
+visitor
+sphere
+christoph
+championship
+extraordinari
+fewer
+dprk
+climb
+ceremoni
+mr major
+concret
+hostil
+raw
+injur
+tactic
+liabil
+cuban
+fortun
+hosokawa
+float
+optimist
+abort
+croatia
+midland
+cadr
+jack
+dump
+struck
+halt
+significantli
+solid
+ident
+tournament
+beauti
+constitu
+cancel
+superior
+33
+copi
+attribut
+dress
+circul
+perfect
+kuwait
+entitl
+ceas
+autumn
+blow
+crew
+merchant
+weather
+serbian
+wonder
 babi
-ignit
-clan
-surmount
-tass russian
-wouldn
-dezhan
-worshipp
-israeli foreign
-2.0
-jiangsu provinc
-dlp
-3.2
-neck
-alema
+destruct
+sixth
+p=106 report
+jose
+mainland
+crucial
+liberal democrat
+ibm
+chri
+scott
+toni
+dec
+shortli
+creditor
+monopoli
+endors
+weaken
+techniqu
+thai
+seoul
+telecom
 supervisor
-gao dezhan
-ac
-pgr
-14/01
-lvov
-the defens
-shatter
-vanguard
-defi
-thai govern
-priest
-robinson
-paramount
-immort
-swap
-un gener
-pleasant
-president suharto
-misfortun
-romero
-108
-ash
-further
-daewoo
-volodymyr
-120000
-text hong
-sayyidat
-engel
-bangguo
-propuls
-p=105 belarusian
-tal
-karolos papoulia
-red armi
-blindli
-sergey shakhrai
-treaty npt
-judaea
-feissel
-30th
-wreck
-radio rebeld
-sniper
-parad
-nations secur
-democratic republ
-tashkent
-mozambique n
-tongxun
-karolo
-instructor
-temptat
-void
-astronaut
-premedit
-commonli
-invok
-stricter
-width
-1.9
-delta
-nikkei sangyo
-applaud
-poorest
-appeas
-superconduct
-renown
-6th
-pig
-amur
-islamic group
-populac
-chadian
-gortari
-combined arm
-tishrin
-variabl
-enrol
-miseri
-kokoshin
-qi
-p=105 albanian
-annoi
-first deputi
-licenc
-realism
-mainstream
-syndic
-overli
-reexamin
-vladislav
-minister waldemar
-meticul
-ivanovich
-vasilii
-kuchma
-roubl
-ramaphosa
-plunder
-tiraspol
-grievanc
+assert
+consensu
+ecolog
+steadi
+ventura
+bare
+fellow
+welfar
+bell
+broken
+rescu
+accomplish
+disast
+vision
+digit
+definit
+chosen
+decreas
+cal
+quick
+36
+lobbi
+mainten
+spoke
+harri
+carlo
+absenc
+75
+wish
+scandal
+cap
+obstacl
+promin
+eat
+georgia
+punish
+isol
+consecut
+greec
+understood
+devalu
+stood
+dog
+lowest
+outlook
+behalf
+automat
+european commun
+postpon
+sentiment
+succe
+photograph
+helicopt
+south african
+audit
+syria
+undermin
+devot
+load
+upper
+basketbal
+ignor
+contend
+stanc
+34
+disappear
+partial
+fed
+proper
+jean
+fighter
+urgent
+studio
+champion
+veteran
+remind
+10000
+88
+scope
+reinforc
+realis
+geneva
+harm
+stone
+smoke
+crash
+second
+excit
+guidelin
+motion
+contest
+penalti
+undertak
+unlik
+vietnames
+iranian
+ow
+malaysia
+condemn
+atlant
+1997
+seed
+bound
+petroleum
+cycl
+swedish
+fairli
+underli
+sovereignti
+theme
+beer
+tight
+plastic
+faith
+bu
+departur
+le
+itar
+texa
+itar tass
+innov
+hang
+academ
+recognis
+argentina
+lee
+pose
+couldn
+golden
+deadlin
+gmt
+emphasi
+aviat
+inch
+bed
+driven
+canyon
+closur
+academi
+massiv
+sole
+cairo
+38
+healthi
+emot
+assault
+patriot
+talent
+familiar
+barrier
+actor
+imf
+climat
+pact
+bloc
+ldp
+amid
+older
+olymp
+ocean
+christma
+topic
+wake
+bigger
+lebanon
+iaea
+taylor
+wale
+donat
+steve
+regulatori
+appreci
+taxat
+symbol
+nearbi
+prosecut
+counterpart
+juri
+notabl
 ana
-nagoya
-hast
-nerv
-president alberto
-methanol
-prm
-pwc
-superimpos
-boris nikolayevich
-36 percent
-henceforth
-capitul
-sang
-karimov
-patriotic war
-danub
-elder
-azhar
-trade commiss
-1/07
-banco latino
-wu bangguo
-us sen
-rio grand
-hastili
-zeitung
-underdevelop
-russian embassi
-nidal
-federal counterintellig
-earner
-114
-state bord
-bean
-andean
-craxi
-interv
-hdtv
-pacific fleet
-scourg
-campanilla
-conglomer
-repaid
-magic
-gen viljoen
-solemn
+intellectu
+1.5
+straight
+fate
+hole
+famou
+bankruptci
+expos
+vladimir
+bargain
+atom
+cheap
+ab
+boom
+preced
+1983
+bowl
+inspir
+mari
+credibl
+judgment
+roger
+auto
+dinner
+pure
+stick
+captur
+croat
+quota
+netherland
+enorm
+stem
+medicin
+laboratori
+kohl
+offset
+belief
+contractor
+mill
+tape
+warm
+ladi
+deterior
+long beach
+freewai
+successfulli
+stretch
+costa
+gorbachev
+shadow
+world bank
+frustrat
+dougla
+error
+north korean
+aris
+highlight
+react
+persist
+dark
+temperatur
+corner
+miller
+pan
+48
+recycl
+alan
+see
+consortium
+deliber
+haven
+berlin
+37
+42
+55
+peninsula
+mental
+widespread
+certif
+label
+firmli
+nationwid
+recognit
+150
+bonn
+faster
+tourism
+vast
+hunt
+exempt
+relax
+indonesia
+super
+adult
+tender
+safeguard
+reluct
+bill clinton
+judici
+philip
+km
+solidar
+gate
+azerbaijan
+adam
+newport
+switzerland
+joe
+ring
+jackson
+1982
+last
+1960
+marri
+nice
+reader
+cocain
+andrew
+length
+cpc
+nationalist
+guilti
+soft
+optim
+bbc
+tast
+wouldn
+surg
+65
+ideal
+trigger
+social democrat
+founder
+laid
+multi
+communist parti
+erm
+prohibit
+substanc
+cancer
+accommod
+embargo
+yemeni
+finland
+vari
+jewish
+upgrad
+logic
+adequ
+ski
+outlin
+await
+rain
+wider
+brazilian
+reagan
+south korean
+clash
+santa ana
+admir
+brian
+fl
+ic
+coloni
+alcohol
+norwai
+inspector
+belgium
+high school
+map
+residenti
+patrol
+eighth
+rebound
+prais
+stock exchang
+workforc
+formula
+publicli
+tonight
+weekli
+flag
+activist
+deng
+tighten
+reliabl
+pack
+stimul
+usual
+belgian
+comparison
+taxpay
+uruguai
+89
+edward
+chapter
+vigor
+licenc
+austria
+prior
+sister
+kazakhstan
+trail
+aug
+levi
+yemen
+100000
+cool
+rai
+coffe
+poverti
+princ
+inter
+gift
+forget
+type cso
+jerusalem
+fals
+uniqu
+romania
+del
+warrant
+tone
+ucla
+meat
+badli
+lab
+10 percent
+exposur
+edit
+rabin
+ali
+mood
+sight
+milk
+flood
+prize
+lesson
+syndic
+flower
+height
+third
+euro
+registr
+fare
+boston
+desert
+friendship
+kg
+carefulli
+pf
+golf
+cell
+95
+tower
+context
+3000
+anniversari
+portion
+exce
+armenian
+leg
+2.5
+foster
+oct
+implic
+bird
+john major
+touchdown
+contrari
+p=105 russian
+mr david
+lawsuit
+39
+wild
+allegedli
+baltic
+cautiou
+distinct
+explan
+downtown
+crimea
+machineri
+queen
+robinson
+reward
+keen
+mr michael
+na
+autonom
+jr
+barrel
+compos
+il
+jet
+properli
+volunt
+column
+formul
+44
+barbara
+nov
+seventh
+artilleri
+realist
+fernando
+curb
+battalion
+clinic
+bet
+divers
+massacr
+translat
+odd
+constant
+monica
+stadium
+redund
+87
+intensifi
+die
+quiet
+genuin
+underwrit
+creativ
+pleas
+baker
+librari
+european commiss
+crack
+trillion
+henri
+apr
+veget
+deregul
+adapt
+permiss
+compris
+strive
+suspicion
+suddenli
+bt
+reconstruct
+dry
+tie
+liberalis
+mr clinton
+swing
+norman
+galleri
+1981
+fullerton
+harbor
+zealand
+1bn
+vessel
+merg
+mandat
+proposit
+colour
+un secur
+depth
+jiang
+westminst
+incorpor
+drew
+howard
+legitim
+prevail
+propaganda
+peacekeep
+down
+shoulder
+800
+rocket
+philippin
+air forc
+plot
+lewi
+hata
+daniel
+quantiti
+patent
+tobacco
+profil
+affili
+92
+denmark
+male
+oak
+plenti
+contradict
+shed
+feed
+lane
+angeles counti
+anaheim
+upset
+strain
+jointli
+mediat
+diet
+bottl
+repeatedli
+sophist
+coverag
+serbia
+usdollar
+franchis
+plate
+1m
+49
+5000
+boulevard
+rep
+exceed
+colombia
+43
+reportedli
+widen
+birth
+pit
+slovakia
+sheriff
+luxuri
+berlusconi
+deepen
+latino
+northern ireland
+procur
+alarm
+47
+boris yeltsin
+1979
+secondari
+occasion
+walker
+strict
+bureaucrat
+text sir
+enthusiasm
+sen
+femal
+younger
+submarin
+soil
+appl
+egyptian
+entrepreneur
+national assembl
+greatli
+pair
+51
+discrimin
+compil
+pitcher
+leisur
+neighbour
+bfn excerpt
+41
+storag
+criteria
+yugoslav
+sex
+absorb
+singer
+sept
+copper
+mesa
+cambodia
+dan
+wholesal
+dow
+shut
+interfer
+supreme court
+automobil
+ration
+lock
+humanitarian
+fun
+syrian
+dynam
+congression
+legislatur
+succeed
+bright
+guidanc
+46
+thin
+patrick
+guerrilla
+empir
+squeez
+nurs
+psycholog
+disrupt
+ethic
+underground
+contemporari
+overnight
+mandela
+sampl
+maxwel
+santa monica
+nativ
+orchestra
+ram
+stephen
+hair
+pipelin
+disnei
+arena
+unif
+voluntari
+abu
+successor
+text cso
+behavior
+deploi
+cheaper
+platform
+palac
+1 dollar
+rubl
+danish
+aluminium
+afp
+chile
+criticis
+dealt
+tradition
+sing
+52
+crude
+uniform
+arabia
+bosnian serb
+pop
+empti
+abs ncols=
+wdm= ab
+ncols=
+rowrule t
+cwl=
+wdm=
+table cwl=
+estonia
+lt
+holder
+calm
+coincid
+tel
+visibl
+20 percent
+brief
+camera
+georgian
+bag
+ussr
+violent
+wang
+nikkei
+tire
+simon
+deserv
+silver
+albanian
+barclai
+50 percent
+valuabl
+laguna
+tunnel
+volatil
+testifi
+ambit
+sexual
+storm
+tendenc
+abolish
+slowli
+milan
+seal
+homeless
+necessarili
+simultan
+accumul
+frankfurt
+compli
+cathol
+suitabl
+servant
+bitter
+kick
+vat
+hint
+naval
+envoi
+han
+inject
+routin
+emiss
+constantli
+lunch
+wealth
+dear
+dodger
+shoe
+saudi arabia
+florida
+rental
+cb
+confeder
+illustr
+ambiti
+chong
+loui
+anglo
+disturb
+rome
+cope
+knock
+pump
+multipl
+afraid
+quarterback
+deepli
+world war
+sweep
+flotat
+stipul
+collabor
+unknown
+coup
+latin america
+state duma
+refin
+portug
+retreat
+tech
+tenant
+homeland
+rio
+ross
+xiaop
+600
+p=105 spanish
+spare
+embarrass
+sa
+egg
+fabric
+raid
+subscrib
+alter
+hkdollar
+christian democrat
+impli
+kiev
+cotton
+mr peter
+tini
+shake
+remot
+unemploi
+innoc
+gari
+underlin
+harvest
+encount
+entiti
+architectur
+bulk
+favorit
+hero
+kashmir
+strictli
+pend
+swap
+neutral
+strang
+township
+incur
+100m
+jordanian
+caution
+new zealand
+colombian
+vulner
+slump
+provok
+smile
+tripl
+patten
+kingdom
+journal
+slide
+jericho
+joseph
+civic
+headlin
+thatcher
+chase
+dedic
+architect
+valid
+fierc
+zhirinovskii
+ceil
+guess
+boss
+ira
+uc
+macedonia
+breach
+lamont
+tip
+opt
+abd
+freez
+nelson
+desper
+laugh
+250
+truste
+autonomi
+plung
+portugues
+suspens
+drama
+20000
+shipment
+toler
+conced
+aspir
+claus
+smuggl
+warner
+carter
+smooth
+enthusiast
+fought
+circuit
+sino
+189in
+belaru
+wash
+lithuania
+p=106 interview
+proof
+contin
+unfair
+counsel
+colonel
+moor
+deutsch
+compound
+ed
+extract
+unanim
+testimoni
+drag
+teen
+coastal
+dish
+jun
+envisag
+leon
+ron
+state council
+anger
+upward
+rumor
+expir
+marriag
+1st
+wheel
+bulgaria
+ba
+soar
+panama
+chariti
+drove
+tim
+playoff
+madrid
+beverli
+huntington
+reliev
+anderson
+shelter
 mirror
-cane
-chiao
-throat
-zloti
-memoir
-ferri
-the iaea
-drift
-text shanghai
-zhou nan
-leaf
-xitong
-barricad
-26 percent
-chubai
-swim
-text amman
-necessit
-rossii
-ziyang
-hun
-zhongguo tongxun
-korean presid
-overhaul
-mia
-us defens
-commissar
-luiz
-pirat
-tae
-jean loui
-udf
-the plo
-postwar
-mach
-kahana
-social secur
-consol
-cluster
-colon
-mirzayanov
-cape town
-constand
-martial
-elucid
-carlos menem
-zhao ziyang
-herrera
-radiu
-0.0
-foolish
-deputy secretari
-misus
-cbm
-ali akbar
-courier
-delight
-hou
-headwai
-shorter
-saint
-politic
-samdech
-league secretari
-standstil
-the presid
-liabl
+surrend
+shirt
+sure
+54
+coat
+aren
+adher
+latvia
+ann
+spark
+string
+the tim
+advisori
+campu
+inflationari
+interven
+roughli
+disabl
+warehous
+tenni
+seller
+cypru
+parallel
+spill
+rok
+reiter
+unidentifi
+album
+enlarg
+accur
+kenneth
+warsaw
+batteri
+marshal
+pioneer
+natwest
+allen
+analyz
+narcot
+uruguay round
+armenia
+salt
+frame
+lebanes
+crown
+recept
+president bush
+romanian
+president bil
+0.5
+lie
+chicken
+weigh
+bradlei
+semiconductor
+infect
+well
+harder
+attain
+lender
+wise
+hitter
+3.5
+conglomer
+hugh
+grave
+radiat
+offshor
+manchest
+veto
+imperi
+dip
+gm
+kevin
+the unit
+clarifi
+birmingham
+lui
+1950
+hide
+kennedi
+usc
+profess
+rumour
+comedi
+yong
+tremend
+tap
+breakthrough
+regret
+gonzalez
+ici
+milit
+pasadena
+diamond
+sleep
+kravchuk
+czech republ
+gordon
+slight
+drill
+escal
+53
+transmiss
+distributor
+text beij
+foreign affair
+represent
+kozyrev
+stuff
+fault
+vienna
+trap
+deng xiaop
+wire
+tear
+85
+councilman
+admiss
+anthoni
+ounc
+distort
+inherit
+layer
+grass
+steadili
+willing
+elig
+southeast
+thompson
+norm
+nois
+stream
+bull
+jew
+invas
+exampl
+supermarket
+dictat
+blockad
+1500
+north american
+spiritu
+reunif
+palestin
+radioact
+joke
+furnitur
+cours
+leak
+perceiv
+petit
+destin
+viktor
+ian
+expertis
+56
+warburg
+juan
+mere
+cigarett
+eurotrack
+distinguish
+uncertain
+assassin
+momentum
+facilit
+nbc
+federal reserv
+conting
+gambl
+stanlei
+outlet
+like
+overwhelm
+latin american
+pragu
+sceptic
+angri
+percept
+signatur
+inhabit
+50000
+diversifi
+unpreced
+emphasis
+se eurotrack
+roof
+denni
+receipt
+1978
+hazard
+nonetheless
+religion
+reorgan
+north america
+exhaust
+spokeswoman
+belgrad
+ratifi
+contamin
 earthquak
-afrikaner volksfront
-overdu
-marxism lenin
-the arab
-oleg soskovet
-chen xitong
-substrat
-presuppos
-state presid
-akayev
-230
-55 percent
-beet
+av
+chart
+padr
+edinburgh
+commonwealth
+grove
+jurisdict
+internation
+mysteri
+recreat
+barri
+kim il
+morri
+toll
+disclosur
+pocket
+broader
+advers
+courag
+hunter
+sudden
+p=105 arab
+larri
+jeff
+perspect
+elabor
+peru
+breath
+tune
+atti
+120
+reconcili
+kitchen
+heritag
+defense ministri
+aliv
+forg
+notion
+landscap
+ministeri
+ninth
+communiqu
+passion
+jacqu
+supreme soviet
+exert
+snow
+cambodian
+central bank
+radar
+automot
+ballet
+cream
+15m
+cal stat
+sincer
+runner
+oecd
+karabakh
+inadequ
+atlanta
+capitalis
+30 percent
+fax
+paragraph
+unveil
+affirm
+terribl
+invent
+evan
+grai
+sat
+regularli
+swim
+crimean
+specialis
+magic
+visa
+mercuri
+stamp
+cement
+pride
+convei
+but mr
+terri
+protocol
+maneuv
+minim
+miami
+surgeri
+pat
+bread
+builder
+assumpt
+57
+echo
+decor
+sick
+fat
+black sea
+spd
+91
+clock
+chen
+predecessor
+thrown
+multilater
+discoveri
+chose
+austrian
+optic
+lieuten
+cargo
+supreme council
+yellow
+nervou
+stir
+owen
+quit
+reorganis
+similarli
+sand
+privileg
+british ga
+bruce
+toxic
+stabilis
+depriv
+balladur
+addict
+sq
+meantim
+slogan
+houston
+tent
+oliv
+willi
+yi
+repay
+enact
+unexpect
+knee
+h3
+toronto
+cruis
+tehran
+plead
+phillip
+scrap
+chernomyrdin
+fox
+dismantl
+merit
+rifl
+62
+2m
+spell
+seattl
+auditor
+58
+500000
+starter
+businessman
+tragedi
+excus
+3rd
+rover
+72
+downturn
+abc
+commentari
+railroad
+the u
+delor
+boe
+jazz
+seminar
+deploy
+metropolitan
+geograph
+newport beach
+secretariat
+hostag
+delight
+hectar
+nissan
+norwegian
+strongest
+ev
+sprai
+segment
+warren
+threw
+tea
+plain
+cheer
+meal
+franco
+fbi
+bail
+jerri
+sacrific
+brain
+kyodo
+hidden
+treasur
+honest
+premis
+regain
+lectur
+setback
+satisfact
+substitut
+soccer
+dave
+fold
+captain
+iii
+freight
+financial tim
+extremist
+carbon
+antonio
+cellular
+1.2
+scenario
+steven
+hanson
+vacat
+bp
+hasn
+racial
+5 percent
+alexand
+quarterli
+volvo
+heseltin
+donald
+donor
+catastroph
+ipound
+phrase
+murrai
+boundari
+shore
+sweet
+costli
+10m
+administ
+michel
+bishop
+saddam
+proud
+ranch
+experiment
+ear
+inaugur
+buse
+forthcom
+artifici
+president kim
+casualti
+settler
+influenti
+weaker
+undergo
+pour
+coca
+phenomenon
+glendal
+graham
+bulgarian
+wheat
+robin
+4.5
+gorazd
+stolen
+unilater
+alert
+walter
+viewer
+grasp
+silenc
+hardwar
+carl
+pere
+200000
+afghanistan
+liter
+interrupt
+macroeconom
+kidnap
+theft
+156in
+basket
+lean
+86
+character
+sam
+withdrawn
+multin
+anxiou
+semi
+heroin
+laser
+pipe
+bedroom
+lotteri
+muhammad
+detroit
+conveni
+elderli
+30000
+64
+algeria
+paramount
+bass
+rod
+40 percent
+confin
+openli
+twin
+bangkok
+helmut
+sergei
+kcna
+kim chong
+discharg
+renov
+boot
+worsen
+overse
+deduct
+prolifer
+tale
+inv
+unaccept
+state depart
+yorkshir
+alongsid
+caribbean
+bone
+interact
+andrei
+mitterrand
+undoubtedli
+temporarili
+unattribut
+feasibl
+inland
+roman
+embrac
+lithuanian
+speci
+huntington beach
+rebuild
+desk
+sauc
+cloud
+immun
+stall
+balkan
+philosophi
+rayon
+necess
+drastic
+strait
+proclaim
+beef
+airwai
+greg
+fluctuat
+greet
+columbia
+defense minist
+arthur
+ward
+eric
+alien
+habit
+baghdad
+let
+evacu
+unionist
+homeown
+appropri
+campbel
+indict
+lincoln
+sacramento
+subordin
+su
+4000
+amnesti
+war ii
+bench
+dick
+soul
+ronald
+mixtur
+cultiv
+wayn
+mitsubishi
+hate
+ceasefir
+mikhail
+husayn
+mosqu
+tougher
+disagr
+beverly hil
+neil
+59
+brook
+peng
+skin
+raider
+prefectur
+socialist parti
+estonian
+rationalis
+dublin
+ivan
+president clinton
+eager
+dispatch
+supplement
+reassur
+sack
+1.3
+defect
+wholli
+finger
+benchmark
+peso
+hebron
+kim yong
+laker
+west bank
+ind
+arizona
+san fernando
+96
+lao
+lopez
+provision
+perez
+jersei
+manipul
+pole
+plutonium
+fenc
+broadli
+symphoni
+buri
+cd
+capita
+gasolin
+cater
+hama
+1.4
+elementari
+reynold
+bullet
+incumb
+render
+fiat
+provoc
+edict
+organiz
+wright
+ncaa
+taught
+blast
+know
+neglect
+loos
+oakland
+lion
+timet
+fertil
+detain
+nafta
+klerk
+66
+sad
+toyota
+verdict
+venezuela
+ammunit
+superior court
+undertaken
+liu
+roug
+1.6
+castro
+trace
+goldman
+aleksandr
+palm
+sky
+fig
+frozen
+coupon
+journei
+marco
+p=106 unattribut
+tribun
+25m
+3m
+hurd
+rwanda
+complianc
+nigeria
+grip
+malaysian
+ken
+transpar
+vista
+oxford
+custodi
+slice
+converg
+craft
+20th
+steal
+batter
+reed
+offend
+brigad
+gai
+chao
+latvian
+rodriguez
+dare
+holi
+fatal
+rob
+acut
+philadelphia
+sail
+suppress
+atomic energi
+timber
+cartel
+khmer
+healthcar
+compel
+conceal
+1975
+ancient
+consent
+costa mesa
+physician
+photo
+200m
+vega
+68
+garcia
+pleasur
+ratif
+2.3
+dual
+albania
+insuffici
+bureaucraci
+lucki
+cleveland
+steer
+disadvantag
+reloc
+plenari
+63
+subunit
+brave
+altogeth
+essenc
+pave
+drain
+merced
+dean
+ub
+14th
+johannesburg
+diminish
+endang
+virginia
+hussein
+discourag
+mouth
+61
+dm
+acid
+asia pacif
+proven
+blind
+thick
+rear
+disagre
+luxembourg
+visual
+stockbrok
+unclear
+trim
+goodwil
+25 percent
+rough
+british co
+defer
+diesel
+rid
+rehabilit
+exit
+md
+2nd
+adventur
+5.5
+viewpoint
+lawmak
+breed
+folk
+autom
+crystal
+conform
+theoret
+6000
+ferri
+hike
+700
+albert
+pp
+satisfactori
+0.2
+grace
+memorandum
+aboard
+0.3
+bonu
+interfax
+ma
+guangdong
+prof
+secretary gener
+divorc
+episod
+conspiraci
+1974
+prolong
+klau
+lex
+upturn
+ongo
+exagger
+the russian
+toi
+hedg
+liberti
+delic
+hesit
+bidder
+birthdai
+gestur
+67
+embark
+riversid
+leonid
+vi
+pep
+forestri
+stewart
+petersburg
+eagl
+national bank
+pepper
+2.2
+2 dollar
+spur
+streak
+kurdish
+steam
+the uk
+santiago
+par
+president bori
+refineri
+cry
+trick
+rancho
+santa barbara
+deukmejian
+text moscow
+statut
+manhattan
+out
+ruin
+brewer
+surprisingli
+bolster
+fred
+sovereign
+conven
+renault
+10 dollar
+maria
+commut
+harmoni
+endur
+50m
+zhang
+northwest
+denounc
+perfectli
+descript
+shout
+vice presid
+restrain
+us presid
+4th
+text tokyo
+angola
+updat
+h6
+chairmen
+diplomaci
+virgin
+crush
+213
+valuat
+outrag
+uranium
+benefici
+fidel
+mr robert
+bernard
+sake
+magistr
+penetr
+debut
+silent
+prop
+boycott
+restraint
+uphold
+riot
+19th
+unita
+finnish
+bother
+gaza strip
+zionist
+libya
+breakfast
+qualif
+robberi
+devis
+argentin
+pedro
+enrol
+musician
+dalla
+differenti
+wu
+sophomor
+tec
+leap
+lawrenc
+lynch
+dancer
+15 percent
+gallon
+apprais
+20m
+steep
+francoi
+5m
+fled
+broaden
+gene
+100 dollar
+fort
+curv
+nose
+pete
+khmer roug
+databas
+compulsori
+northridg
+chees
+tier
+poison
+henderson
+1976
+overlook
+confisc
+mini
+nixon
+tiger
+1.1
+tajikistan
+devast
+mitchel
+thrift
+divert
+summari
+reopen
+1.7
+mr yeltsin
+sidelin
+lodg
+national congress
+inclin
+mall
+upcom
+government
+haiti
+probabl
+frequenc
+modifi
+scarc
+victor
+samuel
+lag
+1.8
+noon
+spoken
+halv
+cat
+300000
+fame
+loyalti
+li peng
+endow
+margaret
+suicid
+ecu
+usa
+graphic
+cpc central
+drift
+frontier
+honda
+briefli
+69
+csce
+medical cent
+entranc
+deem
+500m
+dilut
+banner
+intermedi
+loser
+repai
+potato
+freeli
+pile
+anonym
+ben
+dissid
+bless
+postal
+inventori
+midnight
+servicemen
+tall
+math
+keith
+lb
+beaten
+horn
+martinez
+notifi
+mr richard
+dam
+evil
+0.1
+rbi
+arbitr
+however mr
+dimens
+2bn
+itv
+elit
+grab
+backward
+sooner
+shimbun
+ryan
+charm
+telegraph
+explod
+scare
+714
+burst
+bake
+bind
+99
+kent
+bath
+freshman
+viru
+fragment
+pub
+mao
+manifest
+0.4
+breakdown
+hell
+hammer
+bore
+piano
+tst
+pronounc
+andr
+rick
+confess
+modernis
+insolv
+dawn
+brent
+welsh
+hat
+rubber
+kilomet
+foul
+countrysid
+benz
+bounc
+emigr
+exact
+persian
+blair
+71
+templ
+dairi
+stuck
+plaza
+dissolv
+squad
+tumbl
+mafia
+digniti
+confidenti
+handicap
+sdpj
+loyal
+input
+100.0
+15 dollar
+north sea
+powder
+1977
+literatur
+zemin
+profound
+harsh
+fein
+nfl
+the nat
+yang
+up
+legitimaci
+preciou
+resumpt
+magnet
+kleinwort
+1200
+100 percent
+97
+belt
+80 percent
+cape
+fragil
+2.4
+wisdom
+virtu
+bristol
+policemen
+turmoil
+fade
+fastest
+applaus
+ozawa
+general motor
+cold war
+turner
+plea
+pot
+moldova
+sluggish
+bow
+wipe
+reaffirm
+mainstream
+gabriel
+weren
+exil
+rape
+linda
+mubarak
+ventura counti
+benson
+neck
+warhead
+2.6
+nichola
+west germani
+unprofor
+perri
+2.1
+avail
+pin
+sympathi
+slowdown
+wrap
+mo
+bae
+tanker
+sinn
+saint
+forgotten
+eastern europ
+majesti
+the european
+afghan
+or
+60 percent
+spectacular
+resembl
+smart
+behaviour
+immin
+muscl
+npc
+twist
+boast
+censu
+homer
+1973
+paulo
+menu
+militia
+73
+asean
+teammat
+fiber
+gec
+sinn fein
+2.8
+monument
+98
+cbi
+subsid
+elev
+zhu
+torranc
+imprison
+5 dollar
+76
+abid
+actuari
+butter
+elizabeth
+logist
+michigan
+bribe
+solo
+depreci
+jiang zemin
+brush
+redevelop
+unnecessari
+colorado
+firmer
+sach
+charger
+1998
+funni
+remaind
+paus
+lira
+130
+relai
+ten
+genet
+reinsur
+luck
+standing committe
+3 percent
+azerbaijani
+frighten
+dow jon
+hamper
+murphi
+volkswagen
+amaz
+40000
+bite
+ohio
+detent
+far east
+bloodi
+brutal
+ghali
+brokerag
+maritim
+prc
+intercept
+unhappi
+southwest
+indonesian
+yanke
+candidaci
+pentagon
+jacket
+77
+drought
+cyclic
+log
+mandatori
+favourit
+environmentalist
+transmit
+probe
+tempt
+yurii
+citizenship
+2 percent
+jimmi
+honour
+anxieti
+grower
+10th
+shuttl
+dana
+text pyongyang
+authoris
+15000
+12m
+george bush
+phoenix
+worthi
+pursuit
+wealthi
+lengthi
+knight
+interst
+wildlif
+071
+deeper
+2500
+sao
+reshuffl
+asylum
+glaxo
+tran
+instabl
+disc
+incident
+fe
+somalia
+jai
+7.5
+brilliant
+delhi
+trainer
+74
+workshop
+mr clark
+abstract
+doctrin
+havana
+corridor
+launder
+northeast
+school district
+forese
+nicaragua
+correctli
+puppet
+damascu
+portrait
+russel
+haitian
+350
+nazi
+libyan
+castl
+constraint
+downgrad
+bn
+lyon
+whip
+mad
+comrade kim
+shine
+finance ministri
+1972
+parker
+subsidis
+au
+flame
+cm
+repress
+helmut kohl
+downward
+industrialist
+keat
+conscious
+thomson
+the bank
+conceiv
+las vega
+blend
+microsoft
+comic
+petrol
+oscar
+consciou
+international monetari
+canal
+corn
+salomon
+1.9
+biolog
+pd
+p=105 chines
+preferenti
+brew
+delta
+shrink
+peer
+1930
+granada
+basin
+trash
+plagu
+rhetor
+payrol
+neglig
+stroke
+roi
+salvador
+30m
+nippon
+db
+hamilton
+portrai
+triumph
+chernobyl
+monetary fund
+indirect
+actress
+ager
+spin
+merchandis
+abbei
+mask
+fisheri
+supervisori
+dirti
+uzbekistan
+pkk
+walesa
+sudan
+siemen
+viabl
+70 percent
+miti
+bmw
+nickel
+catalogu
+budapest
+tide
+passport
+8 percent
+forev
+parad
+retali
+antiqu
+industrialis
+conductor
+quietli
+eddi
+sec
+tibet
+82
+manuel
+belarusian
+sdp
+luca
+newscast
+bold
+inmat
+fleme
+fascin
+vocal
+bours
+can
+duke
+flash
+ahmad
+chrysler
+butru
+reckon
+buck
+tube
+solicitor
+roberto
+apartheid
+czechoslovakia
+flaw
+systemat
+en
+armor
+earmark
+metr
+shenzhen
+eleg
+jam
+litig
+intimid
+athen
+inn
+78
+classroom
+killer
+0.6
+cypriot
+zurich
+ingredi
+aden
+panic
+cdu
+junk
+2.7
+funer
+1 percent
+kinkel
+sg
+banco
+moham
+glasgow
+ankara
+garden grov
+beam
+strategist
+statutori
+du
+4 percent
+classifi
+collar
+dy
+karadz
+footsi
+dine
+carolina
+sea fleet
+hiv
+derbi
+airbu
+ineffici
+crazi
+ly
+manual
+script
+banana
+wed
+suburb
+inclus
+irregular
+3.3
+grachev
+orbit
+1967
+shorter
+irrit
+lover
+energy ag
+peruvian
+tragic
+300m
+royc
+pesticid
+chilean
+st petersburg
+marina
+evolv
+25 dollar
+research institut
+longtim
+vocat
+contempl
+hook
+shortfal
+brick
+variat
+clement
+tomato
+unoffici
+revel
+hanoi
+bulletin
+br
+bean
+0.7
+merril
+medal
+kelli
+african n
+joi
+therapi
+milosev
+lifetim
+gov
+surveil
+scholarship
+poorli
+craig
+payabl
+vow
+cubic
+90 percent
+bankrupt
+west german
+amman
+3.6
+collector
+capitalist
+anchor
+leed
+distant
+mexico c
+nui
+chop
+pink
+intl
+slate
+copyright
+villa
+threshold
+hurdl
+dock
+algerian
+swept
+ceram
+closest
+dash
+oxnard
+guin
+mont
+congest
+chiapa
+qian
+vacuum
+tortur
+12.0
+coin
+dust
+dc
+shevardnadz
+behav
+apparatu
+mediterranean
+outsid
+cambridg
+sainsburi
+inflict
+ho
+asad
+fibr
+erupt
+penni
+amsterdam
+infring
+broadwai
+slower
+costum
+macao
+van nui
+us govern
+human right
+subscript
+spectrum
+us treasuri
+toro
+salina
+dti
+84
+migrat
+compat
+the french
+compact
+burbank
+ralph
+enrich
+mm
+faculti
+dilemma
+3 dollar
+cardin
+goldman sach
+petrochem
+disarma
+oslo
+aggrav
+parcel
+vw
+nick
+montreal
+technician
+der
+oust
+uncov
+international atom
+apolog
+hawk
+harvard
+sanaa
+mario
+clerk
+congratul
+prematur
+3.2
+50 dollar
+nt
+detach
+relianc
+mislead
+abolit
+mode
+dame
+baseman
+sao paulo
+kuwaiti
+sink
+summon
+ffr
+pierr
+erod
+inabl
+pet
+obscur
+liff
+firefight
+pakistani
+nobl
+81
+scatter
+police depart
+hail
+santa f
+unrest
+landfil
+salih
+leather
+opec
+airplan
+southern sect
+fascist
+taipei
+refrain
+billi
+3.4
+6.5
+kansa
+unilev
+blvd
+hung
+high court
+stanford
+mt
+outdoor
+promptli
+romant
+flew
+downing street
+25000
+portabl
+sewag
+mr bush
+tens
+thame
+mr smith
+investment trust
+deadlock
+fundamentalist
+15bn
+twenti
+21st
+juic
+foremost
+overtim
+soni
+agrarian
+remedi
+ulster
+pen
+british airwai
+gnp
+chef
+beneficiari
+disintegr
+snap
+vacanc
+180
+landmark
+freed
+scout
+gt
+tin
+pirat
+cure
+oldest
+budgetari
+notori
+deed
+carpet
+franci
+durabl
+venu
+zinc
+seemingli
+haul
+albeit
+aw
+workers parti
+cake
+2.9
+absurd
+110
+100000 dollar
+fountain
+bobbi
+juror
+4m
+83
+g7
+ultimatum
+fiction
+doug
+20 dollar
+bin
+krai
+obstruct
+calif
+wooden
+analys
+mess
+recip
+collin
+decent
+flee
+slash
+cafe
+harvei
+garag
+landlord
+cppcc
+beneath
+whitehal
+simi
+angl
+79
+0.8
+contra
+amateur
+scholar
+legaci
+rolls royc
+cincinnati
+inflow
+longest
+nec
+18th
+barn
+250000
+pomona
+verifi
+priest
+meciar
+planner
+wellcom
+900
+ridicul
+denver
+8000
+lima
+fuell
+world cup
+nerv
+malcolm
+deter
+slim
+hawaii
+vagu
+sfr
+4.2
+default
+overhead
+sear
+youngster
+indefinit
+minnesota
+boil
+readjust
+yasir
+carmak
+moon
+text presid
+harass
+induc
+poet
+pulp
+mph
+viejo
+invad
+watchdog
+spencer
+cola
+placement
+grid
+lure
+pupil
+capistrano
+sculptur
+expedit
+prudenti
+em
+simul
+navig
+unsuccess
+shade
+bubbl
+whale
+fisher
+ld
+tr
+intel
+incred
+beirut
+ge
+disastr
+lesser
+reelect
+thermal
+unwil
+thrust
+salad
+punch
+interior ministri
+col
+conscienti
+sha
+pa
+bryan
+trump
+backbench
+cattl
+von
+flourish
+3.7
+californian
+multimedia
+the british
+obsess
+lap
+nanci
+imperialist
+immens
+taxi
+dig
+pac
+heighten
+guardian
+rilei
+manila
+smoothli
+yu
+hinder
+casino
+arous
+resent
+glad
+rage
+bolivia
+150000
+east german
+refriger
+the japanes
+usm
+marijuana
+ifp
+patienc
+voucher
+fishermen
+armament
+pig
+fratern
+chi
+cleanup
+1.0
+shaw
+new year
+cia
+exxon
+erad
+menem
+breweri
+displac
+scrutini
+susan
+discontinu
+4.3
+literari
+munich
+tail
+densiti
+soup
+prescrib
+poster
+horror
+shame
+16 percent
+matthew
+mr lamont
+1000 dollar
+prestig
+duck
+lyonnai
+cynic
+herald
+humor
+span
+recipi
+outperform
+colin
+167in
+nzdollar
+off
+overturn
+shield
+salmon
+400000
+annuiti
+jane
+60000
+lu
+35m
+nba
+7000
+140
+chuch
+exacerb
+rotat
+hamburg
+simi vallei
+2.0
+hart
+probat
+stun
+kenneth clark
+depict
+convoi
+leonard
+hongkong
+lucr
+mr paul
+insult
+alaska
+40m
+nordic
+perpetr
+dive
+impetu
+mr alan
+sierra
+lone
+chest
+3.1
+prayer
+fantasi
+miracl
+160
+overhaul
+infant
+editorial report
+motorist
+booth
+horizon
+shipbuild
+gazeta
+edison
+5.4
+mortar
+sanchez
+brake
+1968
+tribut
+european parlia
+mr toni
+santo
+11th
+mr patten
+capel
+onion
+humili
+7 percent
+soften
+11m
+morocco
+bicycl
+oregon
+sr
+gaydar
+zagreb
+kleinwort benson
+aluminum
+liverpool
+finance minist
+credit lyonnai
+unfortun
+kremlin
+bonus
+manpow
+entail
+livestock
+drum
+norman lamont
+lyric
+variabl
+general agr
+pleasant
+torn
+morihiro
+abkhazia
+justif
+daimler
+mate
+grill
+expel
+moratorium
+rooki
+bzw
+strand
+hurri
+pri
+riski
+aggreg
+victoria
+creek
+outgo
+venezuelan
+shelv
+flavor
+applianc
+400m
+stern
+inland revenu
+heel
+regiment
+mission viejo
+watson
+nigel
+intrigu
+pittsburgh
+dri
+general staff
+bombai
+mcdonald
+fernando vallei
+10.5
+1969
+cinema
+con
+pt
+pillar
+lineup
+tablespoon
+morihiro hosokawa
+bcci
+sri
+sue
+oxid
+bush administr
+be
+pretext
+sep
+upris
+pessimist
+city hal
+outright
+silva
+rand
+suspici
+tustin
+oppress
+1940
+rwandan
+carson
+bomber
+103
+bossi
+repatri
+chancellor helmut
+archiv
+1971
+clai
+seizur
+swift
+impass
+descend
+lehman
+fry
+councillor
+vincent
+prescript
+italia
+gerald
+highland
+salvat
+inkatha
+3.0
+po
+guangzhou
+arsen
+feinstein
+pois
+abdallah
+escort
+ruler
+jonathan
+6 percent
+kenya
+globe
+philosoph
+mr kenneth
+yasir arafat
+connor
+newcom
+liaison
+federation council
+ac
+everydai
+rao
+krajina
+underpin
+energet
+tatarstan
+esteem
+slovenia
+grate
+streamlin
+dull
+vendor
+leverag
+rigid
+pragmat
+irrig
+500 dollar
+pine
+eurobond
+nightmar
+annex
+3bn
+diego counti
+chocol
+tag
+illus
+emu
+fujimori
+fraction
+marvel
+national secur
+casual
+kuala
+rider
+6m
+warfar
+motorwai
+batch
+align
+fi
+panamanian
+national parti
+31/03
+6.0
+shouldn
+loyola
+infantri
+ted
+catcher
+excis
+rigor
+motorcycl
+subcommitte
+camino
+bratislava
+blaze
+izetbegov
+p=105 french
+adjac
+burma
+deck
+british aerospac
+withdrew
+morgan stanlei
+mozambiqu
+ensembl
+sydnei
+mickei
+tighter
+1600
+prostitut
+3.8
+enclav
+yacht
+bueno
+teaspoon
+drunk
+interbank
+meyer
+math tablecel
+reading tablecel
+lex pag
+ion
+loom
+150m
+scream
+stockholm
+propel
+cypress
+lawn
+jobless
+jorg
+vacant
+simplifi
+3.9
+wharf
+conjunct
+slot
+processor
+likelihood
+lumpur
+cow
+mr georg
+sg warburg
+christi
+laguna beach
+identif
+wari
+sullivan
+kuala lumpur
 p=103
 p=104
-precaut
-sarkisyan
-madam
-congressman
-equit
-constand viljoen
-transmitt
-makki
-institutional revolutionari
-trud
-gunfir
-ababa
-astonish
-poorer
-defence forc
-makeup
-oana
-duran ballen
-addis ababa
-toshiba
-khabarovsk
-acan ef
-01/1994
-yasushi akashi
-news servic
-federal polic
-documentari
-oneself
-armour
-alberto fujimori
-boj
-cao
-chen yun
-preez
-enumer
-afflict
-dlouhi
-president fidel
-volgograd
-firstli
-sahhaf
-sinter
-skin
-descend
-warrant offic
-hurl
-13th
-suleyman
-rompr
-the bosnian
-recurr
-jingsheng
-deadli
-san jos
-center parti
-hyperinfl
-councilor
-adrian
-apprehend
-mistrust
-preval
-cartridg
-fuselag
-squadron
-sierra
-asuncion
-korea u
-stationari
-covert
-text brasilia
-graphit
-at
-national un
-leather
-brisk
-the armenian
-pamphlet
-sim
-ed
-heinou
-wei jingsheng
-riski
-vladimir shumeyko
-nm
-3 dollar
-tuberculosi
-political depart
-trampl
-1964
-bosnian moslem
-national salv
-freedom front
-dubiou
-great patriot
-nervou
-herald
-adriat
-hun sen
-rabbani
-minister amr
-please cal
-tougher
-yonhap south
-frontlin
-saratov
-economics minist
-aug
-worthwhil
-loud
-baraq
-ranariddh
-ipr
-joe
-yavlinskii
-narodna
-kph
-west african
-lysenko
-mad
-fore
-laughter
-mujahidin
-shin
-palestine liber
-rwanda
-broadli
-span
-dominican
-president mich
-p=105 lithuanian
-bonus
-sakigake harbing
-inflow
-slide
-37 percent
-caucasian
-subcommander marco
-seattl
-absorpt
-formid
-brazilian govern
-hubbard
-videotap
-rhine
-rene
-subdivis
-myth
-drove
-meddl
-cadet
-handicap
-puriti
-122
-125
-2.8
-alata
-para
-mai
-questionnair
-jama
-actor
-populist
-cavallo
-bohemia
-tzomet
-impun
-chamorro
-abu nid
-secretary jiang
-odessa
-greenhous
-cautious
-expound
-zedong thought
-magnific
-rashid
-dflp
-collis
-national institut
-tribut
-pv
-feb tanjug
-near east
-slash
-bird
-aichi
-reimburs
-payrol
-planck
-51 percent
-jobless
-prescript
-mainstai
-2100
-max planck
-nguyen manh
-industry minist
-imperfect
-3.3
-readili
-eman
-unlimit
-lord owen
-pressler amend
-suburban
-text geneva
-call chief
-envelop
-arrai
-najat
-xinhua new
-outsid
-interconnect
-guido
-insepar
-foreseen
-1372
-ulundi
-denomin
-layoff
-lane
-quest
-manh cam
-magalha
-9000
-sardar
-china text
-singaporean
-sanin
-kazimirov
-uncondition
-north caucasu
-coffer
-dincot
-nadk
-220
-the commiss
-power st
-outburst
-jie
-kunm
-aleksander kwasniewski
-economic zon
-inter american
-jintao
-provincial cpc
-your excel
-sovetskaya rossiya
-aren
-yao
-stockhold
-fabbri
-loser
-biologi
-gqozo
-savimbi
-hu jintao
-usher
-impuls
-african polic
-preach
-khalil
-uruguayan
-anh
-justice ministri
-dri
-impati
-health ministri
-hue
-minister john
-goncz
-general offic
-nkr
-reagan
-transcaucasu
-nort
-russian prim
-the slovak
-p=106 speech
-willy cla
-new china
-arctic
-copenhagen
-text sofia
-evict
-shortest
-yiren
-on wednesdai
-sq
-umberto
-30 dollar
-prepared
-text budapest
-philipp
-kriel
-minister ali
-mbeki
-bavarian
-cernak
-arian
-or com
-medal
-pablo escobar
-baturin
-illegitim
-2.7
-state statist
-working committe
-42 percent
-jia
-retriev
-vaclav havel
-inciner
-pnp
-macao affair
-unconstitut
-diego
-later
-parcel
-bacteria
-shan
-needless
-luncheon
-anymor
-joint stock
-grim
-japan sdpj
-pr
-jacques delor
-correa
-penaherrera
-cso editori
-cochabamba
-38 percent
-32 percent
-venizelo
-korean peopl
-ulema
-sumitomo
-lightli
-nasa
-temper
-cng
-locomot
-unprofit
-hua
-zenica
-ax
-felipe gonzalez
-space ag
-simferopol
-pot
-smith
-luik
-7th
-20 dollar
-wpk central
-lebanese armi
-rdp
-malfa
-cristiani
-manfr
-maritime krai
-president ramiro
-blatant
-trump
-international court
-legislative assembl
-cumul
-maxim
-christma
-kuomintang
-rightli
-grai
-wealthi
-mess
-se
-suleyman demirel
-buffer
-consular
-sponsorship
-tini
-lhasa
-abimael
-la malfa
-unpopular
-separat
-quarterli
-outright
-miser
-tamil
-republikan
-national guard
-press associ
-membran
-blend
-pad
-forcefulli
-schaeubl
-haris silajdz
-president gaviria
-supremaci
-chavez penaherrera
-radio network
-resin
-caucu
-fastest
-disengag
-minister edouard
-chien
-discipline inspect
-98
-chinese presid
-ri
-incomprehens
-equilibrium
-lethal
-1947
-minister rabin
-property fund
-the indian
-samir
-king fahd
-belliger
-rafael caldera
-andres pastrana
-p=106 special
-4/06
-arkhangelsk
-urdinola
-chief minist
-democratic forc
-yemeni socialist
-kerosen
-115
-glanc
-supreme command
-poultri
-shaymiyev
-cooperation council
-east china
-du preez
-munoz
-alfi
-alik
-stf
-toi
-breeder
-unambigu
-wavelength
-entrepreneuri
-im
-beneficiari
-vehement
-redund
-wartim
-0.5 percent
-p=105 cambodian
-brunei
-three gorg
-minister m
-plateau
-regener
-hydrocarbon
-plight
-berth
-raft
-text baku
-democratic socialist
-recours
-0.7
-interdepartment
-kyodo prim
-rupiah
-us forc
-joint ventur
-concord
-jen
-party ifp
-tomb
-text havana
-bourgeoi
-jobim
-text baghdad
-european council
-qol
-spiral
-thomson
-ortiz
-president arafat
-smallest
-ib
-salvag
-cauca
-independent elector
-noncommiss
-untru
-delgado
-queri
-chea
-lubber
-hokkaido
-kitchen
-african govern
-companion
-200 dollar
-datuk sri
-ilya
-500 dollar
-zhalah
-production associ
-representative mickei
-cologn
-rong yiren
-onslaught
-haul
-2.9
-taylor
-260
-crazi
-stapl
-renault
-democratic forum
-vice admir
-negat
-beijing municip
-diyarbakir
-qol yisra
-mun
-reminisc
-text vilniu
-national armi
-homeless
-yongbyon
-chant
-bertinotti
-h5 text
-ka
-herdsmen
-reassess
-34 percent
-bumper
-fuss
-vapor
-bujumbura
-binh
-postcommunist
-dominguez
-intim
-lloyd
-electoral tribun
-104
-106
-abb
-roja
-ochoa
-heavier
-3.6
-woerner
-50 dollar
-southwestern
-bent
-anani
-687
-oleksi
-distributor
-serdyukov
-65 percent
-hopeless
-qun
-caption
-plo chairman
-sol
-kostikov
-economy minist
-air defens
-mainichi shimbun
-dario
-dubinin
-zeng
-stabilis
-moreno
-tanaka
-plow
-phosphat
-sansaricq
-sk
-vega
-civic democrat
-detroit
-expresswai
-suryong
-subregion
-murmansk
-remitt
-cosponsor
-2.6
-roundtabl
-ombudsman
-lumber
-ibm
-blaze
-basil
-campo
-mou
-dr abd
-stab
-nong
-beverag
-the greek
-mikhaylov
-downward
-chairman yasir
-rebat
-peshawar
-lawsuit
-east asian
-rocard
-architectur
-grigorii
-static
-mali
-29 percent
-plea
-bombai
-queen
-19/01
-pork
-xi
-02/1994
-baseless
-betray
-guerra
-groenewald
-12/1992
-unquestion
-ingushetia
-text pretoria
-general command
-105
-achil
-russian deputi
-cea
-sergeyev
-gia
-badawi
-comprehend
-golan height
-andreas papandr
-home affair
-lev
-central america
-mpt
-31 percent
-swept
-ayitah
-the ukrainian
-president gonzalo
-contributor
-flagrant
-1/04
-arbitrarili
-islamic jihad
-97
-le duc
-tanzania
-president l
-boycot
-flour
-sinist
-1930
-electromagnet
-hirohisa
-satarov
-state commiss
-lion
-imit
-whereabout
-insul
-antimonopoli
-union cdu
-the cuban
-sergeant
-ghana
-gulf war
-anatoliy zlenko
-talli
-couldn
-party centr
-merced
-8.5
-yomiuri
-burial
-ernesto samp
-epoch
-cuban foreign
-irkutsk
-99
-planner
-graham
-pengfei
-button
-defenseless
-ming
-kindergarten
-volker
-common market
-abuja
-biya
-clue
-the west
-tripoli
-rejoin
-subwai
-yamagishi
-advent
-3.1
-khalifah
-4.2
-party secretari
-endara
-iaf
-31/12
-nyunt
-sacp
-lifestyl
-er
-sayyid
-fr
-adornato
-takeoff
-cheer
-german foreign
-versa
-versu
-spin
-nonstat
-the hong
-rok u
-transliter
-gerard
-meal
-silver
-revert
-the muslim
-san salvador
-sectarian
-norodom sihanouk
-shahaq
-brotherli
-harshli
-jurist
-replenish
-invis
-foreign exchang
-lucas mangop
-riyadh
-magyar
-135
-nano
-cyl
-beach
-csurka
-hat
-heal
-hirohisa fujii
-south america
-basqu
-erod
-junction
-skoda
-ch
-rpf
-mushroom
-inconceiv
-liberian
-arab emir
-liamin
-labor minist
-lament
-elast
-sikh
-dictatori
-president suleyman
-12/12
-100.0
-hung
-press servic
-architect
-national unif
-1920
-blue helmet
-diversif
-redress
-united arab
-talavera
-duc anh
-biqa
-duli
-wen wei
-chea sim
-franz
-liamine zerou
-litig
-western text
-defense depart
-polem
-0.9
-delet
-102
-unity parti
-scratch
-ningxia
-2400
-eta
-carlos salina
-movement parti
-elia
-heaven
-judicial polic
-lanka
-unspecifi
-oct
-kosmo
-wield
-gazett
-perm
-contraven
-anna
-the kim
-rengo
-scan
-wei po
-16000
-sidqi
-work report
-creol
-simpler
-stereotyp
-condens
-aung
-seguin
-feat
-mighti
-succumb
-karasin
-mladic
-makarovych
-pacific ocean
-dilut
-kampuchea
-un high
-sizabl
-omani
-moon
-aldrich
-la prensa
-0800
-hekmatyar
-excav
-solidifi
-sri lanka
-washington post
-social mov
-1.5 percent
-convoc
-grace
-103
-137
-25 dollar
-39 percent
-unnam
-elicit
-3.4
-bavaria
-fei
-chongwada
-gan
-intention
-ibn
-quiroga
-ngo
-honda
-raz
-hurdl
-restart
-11/1993
-leonid makarovych
-worn
-guerrero
-minister hirohisa
-thrive
-miguel angel
-loudli
-nasir
-omsk
-protectionist
-kn
-ku
-degener
-3500
-on mondai
-guarani
-japan china
-the fin
-peacetim
-gabriel
-likud
-cathedr
-state christoph
-tiananmen
-despic
-lao peopl
-hypothet
-ann
-geologi
-cmc
-default
-helm
-guyana
-islamic confer
-whip
-brilliantli
-perish
-appeal court
-shipyard
-unswervingli
-malik
-reclaim
-cling
-the dprk
-exposit
-dasa
-wang dan
-santamaria
-atta
-honv
-slap
-text china
-gradient
-air franc
-olsen
-0.01
-chongnyon
-pa
-p=105 latvian
-abrupt
-president rafael
-remnant
-ji pengfei
-20/01
-brush
-kenyan
-brass
-18th
-italian popular
-inequ
-nonexist
-cppcc committe
-buddhist
-salut
-27/04
-president geydar
-rauf
-18000
-treacheri
-punr
-monarch
-proposit
-hospodarsk
-navarro
-bosnian govern
-philip
-rumour
-agroindustri
-2005
-isdn
-graft
-ftc
-hospodarske novini
-kubo
-hell
-levon
-junctur
-lure
-sympathet
-sani
-hural
-state secretari
-wto
-maung
-the washington
-suzhou
-eyewit
-5 dollar
-decree no
-twin
-south american
-gerri
-scalfaro
-kaliningrad oblast
-text sarajevo
-mieno
-dennis ross
-inadmiss
-stagnant
-bernd
-left parti
-jiyun
-h5 box
-on tuesdai
-slope
-economic develop
-puzzl
-bahia
-decontrol
-minister anatolii
-headach
-exploratori
-discern
-ethiopian
-alawi
-minister tansu
-menac
-har
-fig fig
-meager
-antibodi
-condition
-allud
-steep
-fifteen
-clinton administr
-social sci
-cantuta
-tai
-kong branch
-ucr
-pitch
-business dai
-italian soci
-clever
-microwav
-matra
-pasok
-dialogue committe
-president nursultan
-trade associ
-fiat
-impedi
-statesmen
-expansionist
-minister karolo
-collar
-contraband
-hypocrit
-lamb
-sovkhoz
-social develop
-tian jiyun
-rsfsr
-specialti
-enliven
-frigat
-dudayev
-psoe
-parenthes
-abyss
-counteract
-scandinavian
-york tim
-hikmet
-al gor
-germany spd
-hereinaft
-abimael guzman
-the suprem
-jansa
-cho
-impair
-300 dollar
-richard nixon
-retent
-hub
-stavropol
-kdh
-ap
-japanese foreign
-kashmiri pandit
-volatil
-tyranni
-solemnli
-stroke
-geotherm
-algirda
-dagestan
-shah
-rwandan
-workforc
-globo
-kiro
-mazowiecki
-vice governor
-member st
-ethiopia
-voronin
-judgement
-secretary dougla
-anhui provinc
-marx
-shangkun
-collor
-dire
-text santa
-sporad
-zhongli
-babic
-1956
-labor ministri
-outer
-booth
-slave
-us depart
-voronezh
-dragon
-asahi shimbun
-repuls
-british foreign
-jose maria
-unian
-chunyun
-the republ
-brazilian soci
-sailor
-sanit
-congress stand
-crux
-111
-commercial bank
-un speci
-commensur
-jiang chunyun
-shook
-kobayashi
-economic research
-loom
-suzuki
-constitution
-21/01
-hao
-abet
-lei feng
-polish peas
-leninist
-farabundo marti
-av
-calam
-31/03
-800000
-eu commiss
-alpha
-plaza
-barn
-nicknam
-sandzak
-china n
-outflow
-monarchi
-worrisom
-hikmet cetin
-debtor
-chinese premi
-disk
-yang shangkun
-hinterland
-hirawi
-uproot
-bench
-farabundo
-inflex
-quorum
-myanmar burma
-hypothesi
-knot
-rescind
-swamp
-shelf
-brazilian democrat
-ayala
-nongovern
-orlando
-knife
-tyrant
-eugen
-miscalcul
-bey
-utterli
-280
-con
-12 dollar
-bend
-58 percent
-p=106 press
-hanguk
-bleed
-in februari
-kmt
-kuo
-750
-staf
-camilion
-salamah
-pdc
-pow
-soyuz
-sme
-khin
-text russian
-p=106 text
-microeconom
-croatian presid
-ecomog
-minister nguyen
-spaventa
-vacant
-dissent
-xiang
-transkei
-hull
-quasi
-impermiss
-multitud
-lama
-inconveni
-the thai
-marek borowski
-revolutionary arm
-chelyabinsk
-britto
-sir patrick
-jardin
-sichuan provinc
-special econom
-fraught
-fujian provinc
-press cent
-gene
-h6 articl
-demis
-sardar asif
-king goodwil
-social affair
-insolv
-encircl
-ari
-environment minist
-watson
-tongu
-herzegovina presid
-appal
-endow
-korean u
-policymak
-undeclar
-ab
-cooperation apec
-compassion
-moi
-tall
-text tirana
-security committe
-striker
-burelli
-sabc
-tft
-bicycl
-woe
-arizmendi
-footwear
-nuclear weapon
-cockpit
-in
-superconductor
-kr
-work committe
-mato
-judicial branch
-trade agr
-ng
-plug
-karachi
-rt
-2.5 percent
-vanish
-17th
-hiraiwa
-rightw
-sverdlovsk
-republica
-pluralist
-electrif
-colombian presid
-knee
-dogan
-fatigu
-repudi
-wu yi
-disgust
-rauf denkta
-reza
-drown
-shirt
-patriotic front
-p=105 azeri
-overturn
-ccd
-cdr
-35000
-displeasur
-kajima
-crusad
-pana
-erh
-manoeuvr
-rude
-samahah
-izz
-balloon
-crossroad
-folk
-serra
-pregnant
-slower
-npfl
-14000
-trade organ
-54 percent
-hariri
-bakassi peninsula
-xu honggang
-anew
-roadblock
-nissan
-cuito
-centimet
-armando
-slim
-golf
-marti n
-lf
-minister vaclav
-information cent
-malawi
-wang qun
-president nelson
-divulg
-government work
-1959
-1955
-poet
-valentim
-liaoning provinc
-honggang
-undertook
-la cantuta
-yaound
-public prosecutor
-machine build
-bail
-qingdao
-prefect
-117
-hair
-behaviour
-270
-cri
-dal
-commut
-commot
-pereira
-bell
-the korean
-walt
-bonn dpa
-immor
-bylaw
-president franjo
-drnovsek
-kazakhstani
-brick
-uncl
-legion
-off
-happili
-pap
-cr
-pod
-proportion
-tariq
-alvaro
-demolish
-clamor
-shallow
-barukh
-najat church
-gianfranco
-proletariat
-yin
-prestigi
-orenburg
-george bush
-jona
-ocampo
-250000
-unsuit
-harbin
-montsam
-augusto
-pe
-fininvest
-44 percent
-la republica
-indisput
-gandhi
-1969
-1966
-mayoralti
-vv
-vector
-drum
-text yerevan
-amnesty intern
-datelin
-president francoi
-fleuri
-daskalov
-predica
-tarnish
-riva
-hassan
-cinema
-112
-123
-surprisingli
-roqu
-algirdas brazauska
-curv
-president lech
-waver
-jiatun
-oldest
-kostenko
-korean govern
-wive
-rossiyskiy
-rossiyskiye vesti
-sta
-trustworthi
-popular mov
-hungri
-fm
-hamas islam
-muscl
-javier solana
-facet
-shao
-chongq
-stanislav shushkevich
-obsess
-league council
-admittedli
-british prim
-government hous
-sour
-abdul
-captiv
-bashir
-dicl
-nu
-latina
-calendar
-extinct
-1957
-pupil
-afonso
-mofa
-subtl
-unequ
-smolensk
-east west
-evapor
-precursor
-rhino
-sweet
-nearest
-scholarship
-thinker
-wreath
-pilgrimag
-126
-agrarian parti
-minister andrea
-rever
-ecosystem
-liu zhongli
-needl
-jordanian govern
-smart
-bagrov
-drafte
-defense servic
-european fre
-the world
-hungarian democrat
-syndrom
-text vienna
-childhood
-morozov
-boiler
-metro
-messr
-takeshita
-indoctrin
-israeli arab
-subscript
-49 percent
-information offic
-nuri
-starvat
-state econom
-ustr
-pemex
-uneven
-bath
-puerto
-recur
-deaf
-gerry adam
-geographi
-dread
-deputy defens
-fitr
-drawback
-stuff
-dish
-zimbabwean
-islamic salv
-jinan
-antagon
-laps
-federation st
-1965
-doboj
-senseless
-isotop
-chancellor kohl
-circumv
-0500
-47 percent
-zuma
-celso
-avion
-state councillor
-6 dollar
-china sea
-defam
-peacekeeping forc
-prensa latina
-udmr
-revamp
-perestroyka
-illog
-defianc
-delin
-chairman mao
-cda
-cnr
-indian ocean
-11000
-zhang junsheng
-320
-eec
-feb ef
-aegi
-lam
-campu
-ballast
-preliminary work
-catholic church
-nepal
-dioxin
-song jian
-08/1991
-wolf
-northward
-president ramo
-us armi
-urayqat
-hook
-roger
-diaspora
-pill
-the cpc
-nobel
-ambul
-traine
-kucan
-10/01
-predetermin
-0000
-stock compani
-1627
-foreign intellig
-bertrand
-virus
-free asia
-youngster
-btry
-mori
-racism
-helium
-yamaguchi
-quarantin
-coin
-complac
-purifi
-baja
-sarid
-mekong
-aleksandr rutskoi
-geza
-digest
-tax commiss
-disinform
-vna march
-party sdp
-presencia
-international affair
-predominantli
-anthem
-party congress
-mfa
-eighth cppcc
-17/01
-burkina
-squander
-workers union
-europol
-san martin
-johann
-piotr
-yeoryiadhi
-malta
-srv
-tao
-sato
-unsolv
-stiff
-titanium
-boer
-text san
-kiro gligorov
-criminal investig
-entireti
-scotland
-economic forum
-eastern european
-panov
-boban
-43 percent
-biodivers
-kingib
-flesh
-democratic kampuchea
-sternli
-the arm
-unsettl
-ploi
-election law
-mend
-chae
-16th
-pois
-zaveryukha
-detector
-fuse
-congo
-spiroiu
-micron
-namibia
-komi
-tilt
-aveng
-explanatori
-yosi
-joaquim
-mahathir moham
-kahana hai
-coloss
-preoccupi
-arc
-macroregul
-mitig
-bog
-selfish
-zeman
-3.8
-360
-strand
-linguist
-hog
-health minist
-chiapas st
-kroner
-world econom
-marian
-transcend
-stopov
-nsl
-introductori
-presidential palac
-the nato
-umberto bossi
-mitsui
-castl
-supreme elector
-picket
-proletarian
-komsomolskaya pravda
-chees
-ip
-ahram
-resistance renamo
-tula
-minister vitalii
-defense committe
-kc
-the soci
-countless
-sedit
-carnag
-misgiv
-horror
-the secur
-al ahram
-homogen
-famin
-chun
-poem
-central council
-dislik
-crore
-mond
-moti
-bracket
-shmarov
-paratroop
-hindranc
-trainer
-destabilis
-hitler
-pullout
-hollow
-kondratyev
-imeni
-efta
-monrovia
-oral
-les echo
-paradis
-patino
-elf
-elchibei
-fbr
-350000
-hsu
-komsomolskaya
-isa
-surplus
-conspir
-13000
-welt
-semipalatinsk
-isakov
-tyumen
-curtain
-the clinton
-backup
-dweller
-pvo
-deceas
-alma
-adjourn
-shu
-dalai
-textbook
-obscur
-41 percent
-state budget
-usag
-53 percent
-cooperation cod
-moslem croat
-nguban
-fist
-onboard
-karl
-cosmonaut
-p=105 burmes
-powerless
-inscript
-0100
-p=105 indonesian
-latvian republ
-ardent
-cordoba
-1944
-initial
-information minist
-code no
-matsushita
-curiou
-the vietnames
-travnik
-yablokov
-monopolist
-militiamen
-kuncz
-general ros
-historian
-sunni
-aguilar
-doi
-montevideo
-p=106 exclus
-fnm
-profici
-mofert cooper
-endem
-6.5
-koromah
-patholog
-ce
-marquez
-lucr
-jose lui
-tow
-rushdi
-vvd
-fw
-globe
-descent
-igadd
-amphetamin
-neoliber
-maghreb
-simic
-zambia
-statesman
-korean foreign
-kogyo shimbun
-09/1993
-motto
-the estonian
-mart
-teeth
-obedi
-sirivut
-vibrat
-honved forc
-fiction
-refund
-rn
-haider
-transpir
-cronj
-glavko
-dynamit
-minister jozef
-overestim
-ciro
-roman kovac
-peter boross
-general gustavo
-lewi
-interests sect
-skillfulli
-russian def
-harar
-afonso dhlakama
-stomach
-irrelev
-exodu
-minister pet
-state law
-international cooper
-border guard
-collective secur
-librevil
-eea
-security ministri
-acreag
-256m
-transship
-russian un
-arturo
-karim
-lip
-48 percent
-preparatory committe
-extravag
-new democraci
-wolfgang
-cu
-korea wpk
-unrel
-rep
-rim
-sna
-ouchi
-gelbard
-ronald
-slavic
-excerpt passag
-sham
-dr nabil
-krzaklewski
-p=105 sloven
-zeal
-constrain
-40 dollar
-zhan
-instil
-microphon
-athlet
-p=105 danish
-kennedi
-cesium
-petrol
-enriquez
-redeploy
-bipolar
-chok
-matrix
-tajik afghan
-minister hikmet
-army ezln
-restitut
-ulmani
-council tec
-kubota
-unthink
-giesbert
-euphoria
-liner
-turkish govern
-cosmet
-shubei
-microelectron
-governor chri
-daily report
-glavkos kliridhi
-oliveira
-gatewai
-text bucharest
-speedili
-cultural revolut
-dehaen
-creator
-vivid
-rozhok
-congratulatori
-minister carlo
-rolf
-thiev
-dub
-tang shubei
-preambl
-retract
-blanket
-mar tanjug
-wari
-nonaligned mov
-kung
-marathon
-yalta
-toro
-ordeal
-sanctiti
-8.7
-samoylov
-israeli palestinian
-okb
-will
-safir
-committee chairman
-lviv
-millimet
-lyudmila
-patron
-congoles
-scud
-in octob
-pivot
-groundwork
-dalai lama
-kyubin
-synthesi
-text tbilisi
-san juan
-arseni
-trust ag
-european bank
-vacanc
-dalian
-seced
-moskovskii
-south asian
-state univers
-peterl
-nakhichevan
-azimuth
-mamedov
-us treasuri
-chat
-1962
-patronag
-vera
-general kim
-multifacet
-carpet
-lebe
-order restor
-bust
-volker rueh
+entrust
+4.4
+cv
+perpetu
+palo
+subdu
+chinese govern
+motorola
 sheer
-sani abacha
-aylwin
-sadat
-santana
-129
-155
-bpc
-zhong
-jacket
-president 
-dlr
-bang
-sinclair
-indecis
-infidel
-transplant
-dostam
-p=105 armenian
-ferrou
-ico
-herd
-gherman
-torch
-whale
-national revolutionari
-bosnia text
-qin
-overtim
-restoration council
-sla
-tom
-sangyo shimbun
-burkina faso
-world health
-registri
-lifetim
-articul
-baja california
-lastli
-faso
-brandenburg
-the gener
-sun weiben
-cedra
-oleksandr
-microscop
-tablet
-weiben
-irina
-annual annu
-information servic
-hitachi
-president slobodan
-florida
-naumann
-gali
-sagawa kyubin
-achille occhetto
-racket
-relic
-disconnect
-kola
-national convent
-hamid
-in march
-svirin
-gaull
-aburto
-tudor
-brcko
-mr ozawa
-custodian
-shiit
-glazyev
-widow
-the constitut
-statistical offic
-118
-market economi
-ant
-serbian presid
-us interest
-210
-242
-cfc
-cha
-gosatomnadzor
-cpv
-vitaliy radetskyi
-blix
-dop
-3.7
-fat
-13/09
-ink
-commerce minist
-the fsln
-laszlo
-vincent
-retire
-obando
-russian constitut
-africanist
-transistor
-beniamino
-bacteriolog
-cohabit
-impur
-canist
-xin
-arti
-hookup
-brazzavil
-pan africanist
-elaps
-qatari
-yomiuri shimbun
-goodwill zwelithini
-unshak
-capsul
-diagnost
-sunsiri
-the turkish
-interparliamentary assembl
-butter
-aushev
-layout
-liquor
-biospher
-mild
-clearanc
-extraordinarili
-dismai
-nightmar
-spearhead
-the peopl
-kebir
-jinhua
-faysal
-militar
-ericsson
-stepashin
-european affair
-opportunist
-atlantic alli
-yongdoja
-russian navi
-fischer
-swell
-economic polici
-galina
-criminal cod
-caravan
-benjamin
-nevruz
-nail
-janez
-karayalcin
-planning ag
-cat
-gloomi
-starv
-cpp
-p=106 pool
-sermon
-economic commun
-loop
-supermarket
-horrend
-the iraqi
-johannesburg march
-research council
-sputter
-east jerusalem
-agriculture minist
-ukrainian suprem
-lat
-eras
-korean peninsula
-sowetan
-pinto
-assort
-payer
-manuscript
-ghost
-unpaid
-geza jeszenszki
-renam
-sai
-upsw
-payabl
-the ldp
-hiroshi kumagai
-nikkan
-general director
-jiao
-sofia bta
-secretary william
-yardstick
-abruptli
-aqsa
-boot
-ridden
-haikou
-viabil
-juanchaco
-surinam
-foresight
-political forc
-ching
-sketch
-power compani
-ningbo
-president mircea
-prasong sunsiri
-pf
-malvina
-te
-minister muhammad
-ifp inkatha
-timor
-shahal
-gendarmeri
-moravia
-tighter
-mosh
-taiwan hong
-president aliyev
-constituent assembl
-aleksandrov
-jeopardi
-parenthood
-malian
-121
-bmw
-bnd
-chawalit
-11/01
-graph
-deflect
-tritium
-state bank
-youngest
-farther
-lanzhou
-medina
-soccer
-abri
-environmentalist
-marcher
-acir
-zhejiang provinc
-backdrop
-fond
-glorifi
-deputy premi
-nuevo
-nakhodka
-undp
-clamp
-africanist congress
-dr mahathir
-sdf
-krajina rsk
-yakutia
-tun
-warrior
-thread
-watchdog
-aznar
-city la
-iaea board
-habyarimana
-righteou
-processor
-�
-tract
-reassert
-cleric
-compressor
-chuche idea
-president zhelev
-drzycimski
-dossier
-censorship
-chok tong
-01/1993
-miscellan
-great hur
-the brazilian
-leon brittan
-republika
-publishing hous
-caracol
-pusan
-kuznetsov
-enquiri
-prei
-juvenil
-rack
-inhibit
-rotor
-p=105 afrikaan
-feb notimex
-schmidt
-filipino
-goh chok
-levon t
-economic committe
-bali
-kuril
-113
-struggler
-token
-indivis
-jamal
-ceo
-lucena
-eng
-iceland
-4.3
-linear
-ukrainian foreign
-5.3
-hess
-650
-stefan
-withheld
-mud
-nikkan kogyo
-hing
-collectiv
-paris club
-beniamino andreatta
-conquest
-great jamahiriyah
-north rhin
-specifi
-conciliatori
-interdepend
-demetrio
-prudenc
-the hungarian
-7.5 percent
-hindi
-hotb
-petersen
-cruzeiro
-hooligan
-collater
-kh
-urumqi
-ottawa
-12/01
-redoubl
-ajello
-distract
-13 dollar
-missile forc
-the democrat
-oana montsam
-minister liu
-security treati
-egyptian govern
-american fre
-administration council
-bolshevik
-hongkong
-ancestor
-trajectori
-yo
-hometown
-infer
-text guatemala
-minister datuk
-garner
-lesotho
-prelud
-volkswagen
-palestinian arab
-bangkok bureau
-the prim
-15/01
-hanguk ilbo
-overt
-minefield
-action parti
-rapport
-jumhuriyah
-rico
-mykola
-blackout
-discua
-turkmen
-175
-190
-01
-cso summari
-nastas
-roundup
-contempt
-fse
-pretoria march
-russian american
-middai
+derek
+ap
+chequ
+bunch
+anymor
+venic
+0.9
+minu
+leftist
+islamic republ
+helmet
+sieg
+nestl
+nh
+vaccin
+issuanc
+turbul
+arrog
+13m
+hander
+illinoi
+hourli
+dose
+osaka
+roubl
+the chines
+tranch
+persian gulf
+da
+mr norman
+turbin
+imbal
+aggressor
+istanbul
+avert
+silk
+helm
+carv
+homosexu
+buenos air
+skeptic
+4.8
+lamb
+macedonian
+intermediari
+disguis
+kurd
+documentari
+yonhap
+wolf
+unpopular
+guatemala
+12000
+defici
+baltimor
+conscienc
+hadn
+tianjin
+deputy prim
+planet
+dispers
+biotechnolog
 nich
-27th
-croat muslim
-anchor
-propon
-smell
-hungarian socialist
-zedillo
-jinchi
-claud
-yegorov
-pcc
-zurich
-46 percent
-impot
-usd
-amorph
-heseltin
-fort
-comptrol
-shouldn
-al jumhuriyah
-unbear
-revolutionary mov
-buran
-treasury secretari
-phwr
-mobutu
-in japan
-strategic missil
-offenc
-russian georgian
+sponsorship
+lemon
+alik
+suburban
+metro
+jupp
+uncomfort
+ctk
+assemblyman
+instant
+surpass
+afterward
+east germani
+shortcom
+martyr
+kantor
+woo
+elder
+pierc
+gloomi
+reconnaiss
+verd
+umbrella
+reconsid
+nonprofit
+aros
+nikolai
+holland
+fdp
+standpoint
+scratch
+porter
+portland
+reap
+eng
+alex
+ultra
+arrai
+unexpectedli
+14m
+crackdown
+andi
+volleybal
+noriega
+12 percent
+liabl
+great britain
+denomin
+nomura
+shakespear
+button
+invalid
+corona
+epa
+nigerian
+random
+endeavor
+separatist
+grei
+free trad
+furnish
+plug
+robust
+groceri
+symptom
+national peopl
+lang
+nomine
+ramirez
+wool
+glori
+5.3
+worn
+hunger
+dioxid
+quebec
+jacob
+mai
+govett
+orthodox
+categor
+distress
+moodi
+dixon
+acquaint
+sir leon
+1800
+realign
+sgt
+san gabriel
+childhood
+irrespons
+formid
+5.6
+karen
+thrive
+8.5
+mfn
+dist
+elli
+iv
+nevada
+dictatorship
+1/01
+pope
+passiv
+urgenc
+simpson
+evolut
+carol
+allevi
+clearer
+16m
+singh
+ranger
+trademark
+sympathet
+eurotunnel
+likewis
+gore
+tropic
+pavel
+st loui
+bernardino
+revolv
+sequenc
+temper
+12 dollar
+pertain
+1920
+jungl
+max
+patron
+mongolia
+flour
+the german
+submiss
+slam
+audio
+golan
+red cross
+deutsche bank
+warren christoph
+equat
+disord
+russian foreign
+trafalgar
+deport
+225
+calendar
+1999
+buthelezi
+shaykh
+hydro
+instinct
+inappropri
+defi
+anatolii
+champagn
+trade union
+new jersei
+unified school
+10.3
+the american
+complement
+rig
+berkelei
+mcdonnel
+jolla
+chronic
+jakarta
+frankli
+consul
+lineback
+la jolla
+kurdistan
+extradit
+nasdaq
+hernandez
+curiou
+mr jame
+refurbish
+curriculum
+specialti
+superintend
+bund
+bhutto
+surf
+refund
+judiciari
+ozon
+rf
+pregnant
+smallest
+state committe
+10000 dollar
+fla
+precondit
+stab
+mena
+outlaw
+indiffer
 soap
-heroism
-interrel
-sergey filatov
-guilder
-al sa
-12.5
-development corpor
-his high
-african defens
-foothold
-meza
-madrid ef
-environment ministri
-text ulaanbaatar
-jordan tim
-ur
-guis
-breakawai
-direco
-presidential bulletin
-samuel ruiz
-cylind
-fpoe
-plesetsk
-al safir
-kalashnikov
-regt
-cote
-russia ukrain
-golkar
-primit
-coercion
-kyongj
-ail
-kong sar
-gu jinchi
-frantic
-furiou
-dacha
-3.9
-devoid
-tomsk
-338
-near
-kigali
-chairperson
-foe
-ecologist
-text mexico
-state own
-unification board
-indian govern
-wedg
-suleymenov
-nueva
-grief
-zahedan
-bluntli
-nova
-caspian sea
-4500
-far eastern
-delimit
-sda
-dampen
-muster
-uno
-latitud
-energiya
-hover
-premier vladimir
-cyril
-trunk
-uncompromis
-mar ina
-reorient
-canberra
-czech govern
-lebanese govern
-president kravchuk
-kb
-europe text
-impend
-0.02
-vyacheslav kebich
-afrikaner n
-ground troop
-hutu
-inalien
-rebirth
-qu
-carlos lag
-russian german
-chon
-1958
-1963
-microbiolog
-minister faruq
-arabian
-goldstar
-stalinist
-uglev
-painstak
-depositor
-text deputi
-noticia
-soybean
-ria novosti
+teeth
+west coast
+12bn
+shinseito
+absent
+fernandez
+fatherland
+kilogram
+democratic union
+ir
+sacr
+hasan
+merrill lynch
+whittier
+marketplac
 tailor
-text guangzh
-shaft
+authent
+4.7
+repo
+receivership
+halifax
+swallow
+smash
+widow
+discredit
+natal
+nicaraguan
+yearli
+mu
+statewid
+tudjman
+grape
+printer
+flore
+harold
+traitor
+ln
+insight
+125
+compatriot
+spy
+indulg
+melt
+danni
+san bernardino
+stimulu
+kentucki
+disk
+pier
+swan
+neo
+heroic
+mainfram
+vest
+macro
+rev
+tyre
+utah
+buoyant
+dirt
+charli
+friction
+malibu
+kinnock
+fm
+refinanc
+intact
+butrus ghali
+transplant
+premier li
+michael heseltin
+p=105 german
+bullish
+smell
+upheav
+nagorno
+azeri
+workplac
+east european
+cox
+brea
+murdoch
+bfn editori
+terrain
+schroder
+loud
+underscor
+abnorm
+slope
+tangibl
+third world
+silicon
+san jos
+pretoria
+destini
+idl
+myth
+mild
+hyundai
+sunset
+readili
+bout
+reservoir
+jeffrei
+york citi
+cardoso
+indoor
+rim
+nagorno karabakh
+sunni
+sabotag
+salim
+japan u
+inher
+till
+arnold
+circular
+planning commiss
+butler
+woodland
+poetri
+clarif
+myer
+outbreak
+paramet
+south coast
+promulg
+historian
+200 dollar
+orchestr
+600000
+tajik
+lip
+old
+turnout
+=
+voluntarili
+supposedli
+verbal
+18m
+fool
+zulu
+gibson
+abund
+4.6
+hockei
+heaven
+international trad
+outfield
+baku
+doom
+breast
+arab leagu
+post offic
+commemor
+justice depart
+painter
+exception
+el salvador
+chapman
+culmin
+notr
+fri
+p=102
+watt
+equit
+deterr
+kwazulu
+stiff
+auster
+disregard
+chairmanship
+pale
+juvenil
+canari
+mr jacqu
+prudent
+mr heseltin
+notre dam
+rhythm
+british rail
+sour
+comrade deng
+british industri
+envis
+amus
+ny
+afrikan
+subtl
+tuni
+indigen
+videotap
+nonsens
+daf
+bennett
+manifesto
+bike
+cruz
+erect
+lynn
+4.1
+cowboi
+raymond
+instructor
+fluid
+fatah
+handsom
+cohen
+blown
+solar
+semifin
+zedong
+5.1
+pad
+massachusett
+berri
+mao zedong
+glanc
+astonish
+indirectli
+bang
+defense forc
+vertic
+secreci
+pariti
+bucharest
+oklahoma
+warrior
+crise
+exot
+manageri
+ail
+frost
+firearm
+scharp
+johnni
+rap
+quotat
+miguel
+ambigu
+endless
+wet
+misunderstand
+robot
+social secur
+diversif
+filter
+hijack
+tenur
+finalis
+union eu
+puzzl
+capitol
+450
+jason
+duplic
+demirel
+fring
+maj
+lonrho
+1p
+johnston
+1945
+domain
+bust
+chill
+phil
+poli
+migrant
+todd
+solicit
+spiral
+va
+ortega
+wore
+eduardo
+arrear
+stumbl
+writing tablecel
+tesco
+ronald reagan
+north hollywood
+12th
+james capel
+refug
+earliest
+san clement
+ugli
+peugeot
+cosmet
+underestim
+plantat
+clever
+churchil
+wilder
+sherman
+shower
+nelson mandela
+cso text
+chuck
+condominium
+1300
+modif
+tanjug
+bailei
+hsbc
+unsettl
+mandarin
+imper
+garlic
+lasmo
+unrealist
+curtain
+pretend
+aforement
+leonid kravchuk
+cousin
+mr ian
+newman
+withhold
+60m
+5.2
+el toro
+outset
+unpredict
+helen
+intim
+nut
+sox
+survivor
+idf
+cadburi
+news ag
+paradox
+hoar
+rocki
+unreason
+joan
+ebrd
+inconsist
+alamito
+curri
+ciller
+thorn
+royalti
+hebrew
+prestigi
+certainti
+the commiss
+walt
+executive committe
+quak
+1964
+privaci
+heathrow
+petti
+sprint
+tyson
+heal
+contributor
+credenti
+ramo
+stupid
+buena
+echelon
+reschedul
+curtail
+smelter
+thrill
+powel
+thousand oak
+250m
+congressman
+vice premi
+lightli
+beverag
+poem
+distract
+accuraci
+7m
+regrett
+pork
+ef
+douglas hurd
+mercedes benz
+aftermath
+nervous
+outfit
+smithklin
+montana
+worship
+air franc
+sin
+federal assembl
+discret
+feloni
+blank
+drexel
+litr
+haunt
+17m
+linger
+easter
+jihad
+emin
+toss
+troi
+kazakh
+lme
+clip
+bradi
+superpow
+prejudic
+companion
+rpf
+reconcil
+harrison
+injunct
+17th
+text british
+sofia
+victorian
+hai
+eros
+san pedro
+fanci
+rebellion
+rebat
+aa
+bundestag
+hefti
+micro
+novel
+counselor
+myanmar
+residu
+paz
+captiv
+sung
+el camino
+cereal
+shatter
+5.8
+waterhous
+iowa
+ash
+reveng
+garbag
+walsh
+alain
+bolivian
+ala
+kgb
+nadir
+imposit
+stack
+socioeconom
+earnest
+dub
+hungri
+burton
+mock
+glove
+btr
+halftim
+h8
+choru
+titan
+lung
+parliamentarian
+stuart
+entrepreneuri
+environmental protect
+30 dollar
+north atlant
+deadli
+uc irvin
+japanese govern
+quayl
+ei
+grim
+shamir
+interrog
+serbo
+health servic
+cop
+ruth
+apec
+russian presid
+cole
+scrambl
+zhou
+11.0
+somali
+patch
+hull
+ontario
+alloi
+reprocess
+fake
+5.9
+takemura
+nurseri
+abdul
+renegoti
+median
+jewel
+kabul
+bro
+matt
+pianist
+aristid
+kai
+epidem
+foodstuff
+1965
+lesli
+richardson
+adversari
+coexist
+5.7
+coher
+tractor
+dissatisfact
+tribe
+oa
+palmer
+offenc
+bia
+elf
+foothil
+coca cola
+cleaner
+precinct
+marathon
+certifi
+randi
+freeman
+1100
+lawson
+banqu
+runwai
+pizza
+dad
+remuner
+president carlo
+merci
+rehears
+prototyp
+magnitud
+pastor
+theatric
+vigil
+appetit
+predominantli
+super bowl
+mortal
+ye
+cart
+lobbyist
+banesto
+alfr
+brittan
+101
+commend
+sudanes
+105
+prf
+outlai
+greenspan
+hardship
+fli
+punt
+sandi
+savag
+foreign offic
+tsb
+applaud
+rein
+sir john
+launcher
+carlton
+backer
+decept
+ironi
+bo
+cohes
+jesu
+president georg
+sheep
+embodi
+encompass
+fielder
+upheld
+trailer
+tex
+revolt
+mr kohl
+centralis
+slovak republ
+clue
+49er
+kamp
+drown
+1400
+internal affair
+slaughter
+uncl
+verg
+relinquish
+abb
+garment
+vintag
+midst
+euro disnei
+dispar
+particl
+barcelona
+prai
+guitar
+clipper
+nonprolifer
+50000 dollar
+marsh
+penal
+sapa
+belfast
+dale
+insert
+finest
+taiwanes
+spous
+170
+lockhe
+rowland
+reinstat
+knife
+11 percent
+bruin
+courtroom
+palos verd
+labour mp
+emir
+leaf
+copenhagen
+brink
+35 percent
+min
+dissemin
+francois mitterrand
+spectat
+jacques delor
+temptat
+comeback
+legend
+arbitrari
+gentlemen
+quo
+cricket
+tsutomu
+world seri
+griffith
+stagnat
+trauma
+preparatori
+shorten
+lisa
+mr william
+trio
+basic law
+pravda
+alberto
+poorer
+45m
+robaina
+andersen
+populist
+240
+4.9
+600m
+reciproc
+joel
+demograph
+andrea
+allot
+commonli
+magnific
+shi
+8m
+dent
+mr bill
+explicit
+poorest
+mushroom
+gloriou
+presidium
+guatemalan
+kuchma
+monk
+isl
+cardiff
+disarm
+pearson
+accustom
+lump
+cutback
+serbo croatian
+accident
+wander
+accent
+saddam hussein
+quest
+rivalri
+stride
+hardest
+gentl
+utter
+plight
+pickup
+tuc
+stark
+insul
+pistol
+turkmenistan
+brotherhood
+motherland
+national westminst
+lambert
+jeremi
+mr andrew
+blade
+rubric
+lisbon
+gilbert
+hu
+propon
+caller
+digest
+andrey kozyrev
+minister morihiro
+sichuan
+straw
+worthwhil
+mason
+laura
+interior minist
+denial
+disciplinari
+nguyen
+shy
+parol
+wei
+wallac
+newton
+zimbabw
+wreck
+price waterhous
+ensu
+evas
+spotlight
+bruis
+repaid
+4bn
+sumitomo
+national council
+unawar
+stranger
+12.5
+edouard
+plaintiff
+kansas c
+blueprint
+newcastl
+jockei
+moorpark
+dissolut
+tory mp
+rafsanjani
+depot
+manoeuvr
+9.5
+royal bank
+4 dollar
+wireless
+grenad
+clara
+turk
+p=106 editori
+4.0
+valv
+depositor
+sizeabl
+9000
+phenomena
+jiangsu
+repertori
+gram
+major gener
+cocoa
+lutheran
+microwav
+general
+importantli
+stuf
+meshkov
+arch
+khan
+oversight
+cannon
+sore
+tsutomu hata
+devil
+breeder
+hen
+coliseum
+75 percent
+gaug
+nichol
+modul
+cesar
+betrai
+cabin
+cri
+fda
+shopper
+us district
+princess
+aziz
+shrug
+tribal
+lighter
+tile
+marxist
+franklin
+viktor chernomyrdin
+swell
+torr
+crippl
+hardlin
+sino british
+thirti
+peel
+unitari
+ha
+beg
+peseta
+liquor
+political bureau
+forza
+kosova
+rica
+catalyst
+auditorium
+the citi
+chat
+text shar
+sensat
+cottag
+building societi
+monarch
+caucasu
+bloodsh
+development bank
+gaviria
+biographi
+evad
+tbilisi
+hawthorn
+10bn
+mathemat
+memo
+1966
+samsung
+american express
+cathedr
+islamabad
+stomach
+6th
+platinum
+nazarbayev
+stringent
+id
+p=105 japanes
+briberi
+liberal parti
+coleman
+utmost
+stockpil
+churkin
+renamo
+congressmen
+hzd
+altitud
+general electr
+majl
+ax
+unstabl
+united kingdom
+matsushita
+naiv
+inglewood
+protein
+arkansa
+vers
+phnom
+watanab
+6.3
+oxygen
+jaguar
+meaning
+austin
+iri
+subvers
+durat
+the treasuri
+m3
+dwell
+vatican
+reimburs
+13 percent
+traci
+detriment
+hizballah
+geolog
+kit
+john smith
+mdollar
+recit
+2p
+lei
+dampen
+tenth
+north carolina
+brace
+den
+seeker
+cluster
+5bn
+crusad
+sheffield
+huang
+static
+gomez
+foreign trad
+forza italia
+300 dollar
+shelf
+dissent
+mr jean
+throat
+penh
+lieutenant gener
+whatsoev
+tightli
+xinjiang
+karl
+national union
+racism
+tdollar
+saatchi
+mcdonnell dougla
+pinch
+nail
+precipit
+ysp
+valentin
+aerial
+garrison
+skopj
+harden
+staf
+301
+unlimit
+free democrat
+peculiar
+orderli
+skirt
+british steel
+9 percent
+thank
+bentsen
+curti
+grandfath
+sandwich
+phnom penh
+taxabl
+rip
+dei
+schneider
+spiegel
+enlist
+chiefli
+national defens
+13bn
+rafael
+aliyev
+bangladesh
+picket
+councilwoman
+reclaim
+collis
+220
+scot
+quartet
+retriev
+orlando
+nasti
+national pow
+herb
+bogota
+dp
+mr christoph
+eduard
+peat
+ashdown
+75m
+vanc
+tennesse
+aztec
+cheat
+tate
+lancast
+exchequ
+fresno
+sang
+harbour
+indispens
+rack
+fever
+puerto
+tuzla
+rothschild
+racket
+incomplet
+toshiba
+impoverish
+practition
+citibank
+costa rica
+6.2
+mr brian
+2010
+julian
+state univers
+hei
+jess
+east europ
+overdu
+gase
+besieg
+aviv
+forgiv
+president yeltsin
+flown
+nurtur
+mr chri
+packard
+queue
+persuas
+usair
+san juan
+napl
+anita
+opium
+115
+brochur
+economic cooper
+serious
+collegi
+memor
+perot
+philharmon
+bypass
+consol
+surrei
+16th
+heavyweight
+seldom
+terrac
+all shar
+fujitsu
+reign
+shortstop
+disband
+angolan
+cassett
+13th
+hardi
+havel
+chunk
+mart
+balloon
+mansion
+mr martin
+lou
+honesti
+compton
+deplet
+safer
+xu
+1948
+louisiana
+mr neil
+on tuesdai
+redondo
+liberation armi
+ghost
+geoffrei
+viciou
+bloom
+speedi
+hilton
+emi
+5.0
+levin
+microprocessor
+asbesto
+reminisc
+kilometr
+calib
+on mondai
+ibrahim
+1962
+prerequisit
+edouard balladur
+thwart
+wive
+80000
+national liber
+1700
+piti
+checkpoint
+court judg
+hillsid
+influx
+spontan
+repeal
+borough
+reformist
+mahathir
+surgeon
+entrench
+astra
+chant
+judi
+chemistri
+lombard
+ernesto
+40 dollar
+mr berlusconi
+demis
+cliff
+bleak
+countrymen
+burmes
+nearest
+dockland
+clariti
+restat
+jardin
+charit
+beecham
+christ
+splendid
+helsinki
+abkhazian
+the ft
+valencia
+np
+imam
+dax
+ponder
+hoover
+dominguez
+30/06
+cartoon
+signatori
+forbid
+dwindl
+agency iaea
+despair
+cautious
+capt
+the ministri
+1949
+cave
+sweat
+presum
+gloom
+renounc
+banquet
+intersect
+pregnanc
+overshadow
+cub
+partisan
+pak
+pearl
+north south
+debtor
+anticorrupt
+housebuild
+6.4
+bathroom
+jewelri
+unfold
+heed
+kigali
+ineffect
+protection forc
+secess
+ritual
+bi
+crumbl
+25bn
+postur
+peck
+text seoul
+hydrogen
+shrimp
+montenegro
+redempt
+ntt
+strauss
+persecut
+23m
+70000
+wade
+minsk
+incompet
+gatewai
+south america
+sober
+kiss
+regener
+mgm
+zoo
+sharif
+supplementari
+chavez
+citicorp
+est
+jeopard
+shaken
+bracket
+kyrgyzstan
+indiana
+invis
+revok
+likud
+polar
+canary wharf
+sandinista
+roster
+dens
+fraser
+mr delor
+fountain vallei
+hitler
+cunningham
+attorney gener
+mater
+shipyard
+racist
+eleph
+janeiro
+11bn
+samper
+6 dollar
+dispens
+stronghold
+spoil
+kpmg
+analog
+500000 dollar
+montgomeri
+accessori
+appal
+transatlant
+los alamito
+tract
+sensor
+roch
+slap
+heir
+conspir
+musa
+trunk
+102
+jul
+unload
+boutro
+mszp
+15th
+npt
+issuer
+sewer
+the stat
+vauxhal
+ezln
+op
+stagger
+ty
+tongu
+sailor
+dole
+jewelleri
+bug
+glenn
+overrid
+22m
+klein
+turf
+bend
+raul
+nest
+maryland
+10.0
+salomon broth
+5000 dollar
+fujian
+damn
+discont
+cs
+bizarr
+9.3
+lent
+6.9
+headach
+wto
+ignit
+24m
+chris patten
+dea
+unleash
+destabil
+concerto
+stifl
+awkward
+hip
+policeman
+mr dougla
+saddleback
+cumul
+infiltr
+hatr
+york stock
+abduct
+dot
+pie
+yell
+ss
+swiftli
+hoare govett
+arrow
+constitutional court
+ridden
+intoler
+shakhrai
+hitherto
+sib
+evok
+rectifi
+repurchas
+zhejiang
+tse
+livelihood
+pl
+commenc
+counterintellig
+unequivoc
+ivori
+girlfriend
+postwar
+tunisia
+earner
+fai
+hub
+discard
+essai
+stapl
+silvio
+treuhand
+deviat
+happili
+hay
+uci
+pant
+foil
+mig
+dismai
+ankl
+misdemeanor
+pfennig
+truce
+vitalii
+mistaken
+fltg
+8.3
+orlean
+habitat
+gretzki
+flank
+collor
+oven
+peacefulli
+tel aviv
+defus
+rope
+adrian
+gop
+injustic
+protract
+recur
+bud
+buoi
+lifestyl
+blanket
+elliott
+degrad
+shandong
+skate
+1963
+flesh
+papandr
+puls
+bradford
+145in
+lanc
+stole
+redeem
+sketch
+international airport
+crisp
+harmon
+straightforward
+south bai
+seng
+6.7
+national committe
+ink
+trumpet
+rightli
+diverg
+sejm
+mankind
+renown
+interv
+7.3
+lin
+csu
+purs
+exchange commiss
+ecuador
+holm
+buffalo
+contradictori
+invari
+culver
+woodland hil
+oleg
+variant
+conspicu
+youngest
+ampl
+department
+falter
+markedli
+178in
+ernst
+saver
+demarc
+150 dollar
+chatsworth
+collater
+fraudul
+pavilion
+chechen
+portillo
+hampshir
+jp
+uneasi
+underwai
+igor
+104
+6.1
+crest
+zhao
+alpha
+robertson
+runoff
+liner
+antelop
+illumin
+nowadai
+fr
+king husayn
+forbidden
+new delhi
+pointer
+flare
+clutch
+imped
+gerri
+versu
+york tim
+imit
+toilet
+exam
+textur
+lenin
+coast guard
+allan
+underperform
+loma
+powergen
+bbc2
+tan
+strasbourg
+morrison
+guilt
+scandinavian
+wrestl
+creatur
+secretli
+sir david
+21m
+russian govern
+central american
+lever
+emperor
+outskirt
+dinar
+airtour
+stricken
+fig id=jpr
+id=jpr
+deceiv
+marbl
+bldg
+iliescu
+irrelev
+stalin
+rei
+earl
+reced
+graffiti
+125m
+mr mandela
+vol
+15p
+tian
+envelop
+undercov
+mr hurd
+middai
+chenei
+ramon
+dislik
+monterei
+valerii
+mom
+moravcik
+benjamin
+hainan
+articul
+impend
+canton
+bent
+bolt
+obei
+utilis
+kovac
+alcatel
+time warn
+700000
+lessen
+toppl
+dolphin
+p=105 serbo
+symposium
+abstain
+essex
+the lo
+western europ
+saxoni
+matrix
+gill
+1961
+forti
+nasa
+fini
+earnestli
+compart
+spate
+loosen
+14 percent
+sultan
+sevastopol
+belov
+robbin
+wagon
+silli
+nutrit
+characteris
+paramilitari
+retrospect
+dread
+nea
+footwear
+crane
+duncan
+laps
+margaret thatch
+cu
+crow
+sld
+heath
+pill
+independent st
+betti
+ambul
+brien
+stripe
+enlighten
+mississippi
+airborn
+compass
+rybkin
+on wednesdai
+text articl
+brass
+dimension
+lufthansa
+psychologist
+bryant
+labor parti
+oft
+hudson
+salvag
+3500
+pennsylvania
+leyland
+centrist
+constrain
+ah
+commerce depart
+metric
+overcrowd
+jon
+3i
+newslett
+chevron
+stereotyp
+fletcher
+loophol
+occident
+bombard
+diego st
+boardroom
+fur
+1/04
+mourn
+nobel
+cherish
+25p
+plenary sess
+apprehens
+leaflet
+upbeat
+punit
+buyout
+dispel
+scan
+tabloid
+philipp
+imparti
+jacki
+leo
+philip morri
+incorrect
+affluent
+gpa
+arguabl
+multipli
+diamet
+lament
+mr roger
+lumber
+narrowli
+tallinn
+world trad
+3p
+camarillo
+fedorov
+ing
+motel
+platoon
+pastrana
+mozart
+mongolian
+tuna
+howel
+southland
+sander
+improp
+societ
+politburo
+35 dollar
+in januari
+distil
+cleans
+demolish
+7.2
+rhone
+trout
+unresolv
+blew
+waigel
+becker
+socker
+barrack
+rosa
+railtrack
+1900
+obsolet
+european court
+outer
+weu
+slai
+illicit
+startl
+6.6
+outflow
+sow
+spa
+halfwai
+nicola
+p=105 portugues
+cocktail
+mr brown
+rs
+pavel grachev
+playwright
+substant
+synthet
+sprawl
+assort
+westlak
+harper
+overlap
+dniester
+roller
+rader
+surveyor
+forefront
+1956
+hispan
+weiss
+sworn
+unspecifi
+oceansid
+battlefield
+800000
+afflict
+baron
+mold
+santa clara
+the soviet
+mac
+palestine liber
+oral
+cushion
+cm pf
+sean
+new england
+dominican
+reactionari
+milwauke
+carpent
+ripe
+server
+wield
+gunmen
+5p
+cliqu
+unavoid
+deputy dist
+brisk
+mca
+secular
+17 percent
+distrust
+outweigh
+starv
+renam
+lit
+conduc
+roar
+industrial averag
+gut
+overthrow
+fetch
+barr
+fire depart
+hybrid
+disgrac
+minh
+pawlak
+kosovo
+awaken
+resettl
+us embassi
+evict
+bearer
+repetit
+notebook
+martial
+national leagu
+mr stephen
+janet
+strawberri
+proxim
+hemispher
+del mar
+indebted
+tranquil
+admittedli
+plummet
+rene
+etern
+31/12
+tyne
+mmc
+overwhelmingli
+patricia
+55m
+falcon
+backdrop
+swai
+denkta
+9.0
+bronz
+19m
+legendari
+prone
+packet
+near
+tee
+sl
+gregori
+hatch
+hondura
+rue
+rug
+farmland
+unpaid
+yitzhaq
+hank
+hurrican
+wimbledon
+pasta
+jennif
+qichen
+shumeyko
+paddi
+southeast asia
+guinea
+colt
+merck
+nunn
+sharon
+alvarez
+richest
+gu
+sabah
+paraguai
+frn
+arisen
+barrag
+hang seng
+presidential council
+int
+shallow
+smuggler
+olivetti
+waiv
+dilig
+7.1
+175
+vivid
+prospectu
+satur
+obscen
+milken
+unpleas
+6.8
+void
+muster
+silberman
+abbott
+comex
+nitrogen
+14bn
+ferguson
+paradis
+gaza jericho
+250 dollar
+schmidt
+gym
+neill
+makeup
+shook
+daimler benz
+guzman
+miyazawa
+18 percent
+roast
+mazda
+arbitrag
+oriol
+federal govern
+glen
+nicknam
+president saddam
+the feder
+qian qichen
+protection
+varsiti
+tirana
+sacrif
+ta
+custodian
+vaclav
+redistribut
+sutherland
+anglia
+workstat
+interf
+mound
+stare
+george deukmejian
+ditch
+text cairo
+uncondit
+layoff
+mr balladur
+reproduct
+blunt
+us japan
+asda
+cp
+turnround
+marti
+cleric
+sting
+deer
+ping
+verif
+silvio berlusconi
+cordial
+new orlean
+claud
+trea
+panorama
+1959
+detaine
+infield
+resili
+flurri
+superb
+undergon
+choreograph
+columbu
+us secretari
+turkish cypriot
+richmond
+errat
+backup
+romanc
+serial
+salvadoran
+mercosur
+abbey n
+hover
+insecur
+downei
+wagner
+hitachi
+lyle
+furnac
+srpska
+pardon
+missouri
+hoffman
+gould
+mr justic
+clearanc
+marc
+siberia
+bay area
+usher
+the world
+undisclos
+lehman broth
+incap
+loot
+barber
+230
+leningrad
+mergers commiss
+troup
+combust
+rutskoi
+jeopardis
+renaiss
+chinese peopl
+inhibit
+dhabi
+intak
+abu dhabi
+bearish
+lillei
+mr rabin
+impati
+smithkline beecham
+criterion
+indign
+winston
+anna
+remodel
+minimis
+will
+qiao
+flyer
+carr
+caltran
+clinch
+electric pow
+rukh
+veil
+berth
+hast
+zeneca
+indemn
+roundup
+fair trad
+harmonis
+hahn
+piston
+revalu
+iceland
+dissatisfi
+warsaw pact
+800m
+underwritten
+unrel
+jones industri
+emphat
+grind
+summar
+190
+flavour
+ferruzzi
+greenpeac
+ahm
+drawback
+dubiou
+cemeteri
+xerox
+carrol
+brit
+armstrong
+herbert
+rabbi
+tucker
+authoritarian
+slack
+yitzhak
+the ec
+bump
+dunn
+cherri
+0.0
+geniu
+mr howard
+mud
+hugo
+hindu
+rugbi
+horribl
+deputy foreign
+casa
+raiser
+mr blair
+sothebi
+expuls
+gentli
+tommi
+zedillo
+ciampi
+mikhail 
+vanish
+garner
+colosio
+zair
+allei
+affairs committe
+patriarch
+lago
+toughest
+jenkin
+litter
+ami
+polym
+javier
+compaq
+strap
+thorp
+armour
+biscuit
+mccarthi
+expedi
+sussex
+archer
+cult
+h5 h5
+firework
+revamp
+tarmac
+burk
+complac
+unfavor
+newest
+outspoken
+111
+ruben
+gerard
+brad
+9m
+sir patrick
+wilshir
+270
+voyag
+triangl
+us congress
+yegor
+mg
+murayama
+invok
+sword
+angeles c
+marketmak
+procuratori
+honestli
+27m
+palmdal
+700m
+rockwel
+mir
+monster
+on fridai
+eugen
+contractu
+rtz
+vodafon
+circu
+state fullerton
+recoup
+70m
+honorari
+foolish
+flagship
+authorit
+hood
+emancip
+valdez
+skoda
+gartmor
+hamlet
+dessert
+112
+11.5
+whitbread
+salesman
+si
+withstand
+concord
+baldwin
+fertilis
+congreg
+cac
+impair
+stockhold
+toe
+unjustifi
+weld
+tenor
+syndrom
+reactiv
+hierarchi
+simpler
+thumb
+midwai
+expatri
+mater dei
+regent
+gao
+goer
+diagnos
+district judg
+fledg
+honei
+washington dc
+central america
+kirk
+protectionist
+outdat
+telekom
+roman cathol
+undecid
+lloyds bank
+sihanouk
+pr
+entourag
+spokesmen
+legislative council
+26m
+mute
+weed
+hambro
+flock
+strikeout
+precaut
+16bn
+polo
+ridg
+80m
+akashi
+106
+decisionmak
+marcu
+concurr
+aaron
+sausag
+hawkin
+szdsz
+president francoi
+ramp
+yitzhaq rabin
+invoic
+ham
+poulenc
+salli
+locker
+65m
+rpr
+cholesterol
+ernest
+dealership
+locomot
+200000 dollar
+tout
+7.6
+rabbit
+750
+mercantil
+mr charl
+statehood
+graviti
+opel
+bundeswehr
+facto
+rupert
+frederick
+instig
+nm
+tissu
+refut
+8.0
+compress
+insect
+nihon
+pest
+lech
+bate
+nam
+spice
+empow
+fifti
+izvestiya
+embezzl
+teenag
+cardena
+useless
+vancouv
+120000
+lace
+h5 articl
+eli
+counterfeit
+quinn
+divest
+scorer
+ibrahimi
+quarrel
+milton
+tertiari
+minister andrei
+escondido
+geopolit
+westwood
+108
+antelope vallei
+peterson
+os
+walt disnei
+annualis
+underw
+gabriel vallei
+butt
+webster
+disneyland
+refere
+midland bank
+avon
+laughter
+glow
+whiski
+28m
+alic
+repercuss
+fusion
+national alli
+knit
+vyacheslav
+ruiz
+arduou
+ombudsman
+barbecu
+electoral commiss
+oman
+cnn
+notwithstand
+grandmoth
+ata
+loyalist
+evapor
+outnumb
+chronicl
+mostar
+misus
+cif
+iec
+audi
+hashemi
+rifkind
+dian
+on thursdai
+frg
+resurg
+kw
+feat
+psbr
+national associ
+charlott
+7.4
+5th
+bumper
+contenti
+addition
+vain
+luncheon
+preclud
+southeastern
+clout
+nicholson
+apparel
+dial
+rat
+miniatur
+san antonio
+decentr
+us administr
+as mr
+enjoy
+disburs
+laguna hil
+smog
+central asia
+unlaw
+liberation front
+camacho
+norodom
+grader
+expiri
+suiss
+miser
+18000
+seafood
+inact
+homicid
+laender
+entrant
+st john
+bias
+oat
+coke
+peg
+farther
+sidewalk
+blackmail
+trade agr
+fractur
+glimps
+bullion
+1955
+cage
+cane
+210
+megawatt
+11000
+skip
+conquer
+7.8
+yunnan
+35000
+trench
+western european
+rib
+trevor
+katz
+14.0
+shokhin
+clan
+coven
+purpl
+token
+hafiz
+paula
+lula
+culprit
+jp morgan
+felip
+at
+genocid
+crunch
+do
+discrep
+in london
+vilniu
+flip
+turnaround
+inkatha freedom
+espionag
+usag
+mauric
+fledgl
+maastricht treati
+prep
+beautifulli
+european monetari
+rift
+partit
+wrongdo
+bibl
+surplus
+creator
+malathion
+explicitli
+liberia
+daewoo
+mr han
+rub
+de beer
+weari
+fin
+his majesti
+fortnight
+sloven
+prophet
+dehaen
+qualit
+fyrom
+greenhous
+district court
+federal republ
+moldovan
+sd
+diagnost
+american fre
+varga
+tijuana
+quicker
+sinmun
+analyt
+shave
+payout
+rhode
+kodak
+london dollar
+discriminatori
+alabama
+freedom parti
+ballist
+1/07
+insignific
+sandinist
+dire
+rongji
+sanit
+riga
+vineyard
+mof
+text britain
+blond
+team spirit
+incit
+pivot
+reinvest
+torpedo
+fidel castro
+incompat
+president mikhail
+30/09
+bd
+conservative mp
+25000 dollar
+diari
+slid
+tong
+retent
+oath
+overli
+p=106 commentari
+fond
+mira
+alia
+eras
+hop
+complementari
+unjust
+cab
+carrot
+ig
+viabil
+frenzi
+soak
+bee
+tilt
+how
+shotgun
+the centr
+redland
+sadli
+chechnya
+friedman
+shrine
+suzuki
+simmon
+everett
+blitz
+werner
+irrespect
+saab
+135
+14 dollar
+nil
+baptist
+clarita
+whistl
+asahi
+vandal
+talli
+zhu rongji
+interfac
+showcas
+gratitud
+de klerk
+robert maxwel
+farewel
+stoppag
+desktop
+stricter
+domingo
+northern california
+frei
+elbow
+13 dollar
+hewlett
+paramed
+overdraft
+oiler
+crawford
+nake
+mi
+thornton
+scar
+subwai
+umpir
+in march
+7.0
+democratic peopl
+amato
+suharto
+upsid
+baa
+gwynn
+fist
+gaidar
+8 dollar
+2001
+expo
+sb
+foe
+preach
+focal
+configur
+unfound
+steelmak
+wt
+11.3
+superfici
+irrevers
+nolan
+courtesi
+culver c
+defianc
+extort
+peril
+unavail
+20000 dollar
+accru
+novelist
+apiec
+knesset
+central asian
+millionair
+ho chi
+walnut
+acclaim
+annoi
+leigh
+vike
+comb
+graf
+potent
+ali abdallah
+cetin
+trophi
+comedian
+statistical offic
+casei
+climax
+inexpens
+thread
+griffin
+creep
+boiler
+amr
+inferior
+ghana
+meadow
+spectacl
+timothi
+county sheriff
+pepperdin
+censorship
+revert
+1958
+the bundesbank
+state warren
+photographi
+buddi
+instantli
+aesthet
+contempt
+santa cruz
+chung
+practis
+pont
+refresh
+mann
+cheapli
+coron
+chi minh
+45 percent
+dragon
+westsid
+candi
+kraft
+prod
+ambush
+agoura
+repel
+gardner
+adolesc
+mr arafat
+santa clarita
+assail
+quantit
+ls
+alfredo
+sigh
+airfield
+ricardo
+lethal
+guild
+soprano
+segundo
+rejoin
+lybrand
+11 dollar
+dane
+fugit
+paralyz
+sylmar
+unprofit
+gutierrez
+dome
+wane
+lanka
+beard
+mighti
+dismal
+edmond
+goodman
+50th
+republican parti
+shearson
+32m
+classif
+macmillan
+the south
+revit
+tick
+computeris
+pacific coast
+1947
+snack
+impuls
+rico
+mous
+mci
+richer
+prd
+outstrip
+vo
+shining path
+antenna
+consign
+abdallah salih
+municipal court
+logo
+ae
+8.8
+10.4
+chan
+poultri
+redwood
+emotion
+tibetan
+axi
+keyboard
+overh
+hing
+upsurg
+inciner
+editorial com
+preval
+conservative parti
+rivera
+inquir
+robber
+reid
+cheapest
+screw
+gov georg
+xi
+connecticut
+lofti
+herman
+habra
+standard chart
+doll
+world index
+chirac
+durham
+la habra
+yugoslav republ
+clair
+delici
+brigadi
+agit
+17bn
+reckless
+burglari
+stain
+7 dollar
+thesi
+deaf
+sakigak
+udf
+chuan
+rexrodt
+pedestrian
+new mexico
+arc
+bta
+honduran
+kono
+curat
+4p
+secessionist
+weaponri
+14000
+33m
+humbl
+8.7
+yerevan
+natwest secur
+anhui
+280
+chaotic
+steroid
+busiest
+woe
+debentur
+eighti
+stint
+macdonald
+pariba
+dpa
+ericsson
+mod
+emul
+am
+deflat
+8.2
+8.9
+all star
+fuller
+radovan
+credit suiss
+trafalgar hous
+peripher
+16 dollar
+slick
+dali
+the dow
+ina
+tow
+viacom
+moroccan
+citru
+policyhold
+zloti
+striker
+defunct
+1/03
+lech walesa
+basqu
+sri lanka
+encroach
+sprinkl
+nc
+correl
+shirlei
+rude
+wineri
+irna
+slobodan
+city manag
+nairobi
+atroc
+slave
+mitsui
+hasten
+whisper
+nationalis
+textbook
+czechoslovak
+6bn
+nhl
+briton
+hud
+22 percent
+sergeant
+buena park
+handgun
+liaon
+kio
+acoust
+neat
+warship
+predomin
+algier
+purg
+blossom
+southwestern
+17.5
+fumbl
+cling
+financial servic
+vladivostok
+molest
+balboa
+chp
+trojan
+demerg
+plural
+fsln
+114
+european bank
+cgt
+miseri
+courier
+leon brittan
+saga
+cavallo
+skier
+accredit
+repossess
+der spiegel
+bitterli
+swamp
+kashmiri
+chemist
+bophuthatswana
+heavier
+british govern
+supercomput
+00
+60 dollar
+realm
+lotu
+olympia
+818
+28 percent
+komeito
+courtauld
+encino
+poppi
+metaphor
+caraca
+dee
+kingfish
+neal
+chandler
+requisit
+rudolf
+eloqu
+disproportion
+260
+har
+directori
+sar
+minister tsutomu
+bel
+soloist
+narr
+preston
+division ii
+8.1
+keizai
+reproduc
+250000 dollar
+irv
+1957
+membran
+beethoven
+futil
+juan capistrano
+staffer
+softbal
+kaliningrad
+unsuccessfulli
+trent
+pena
+prix
+knot
+implant
+standstil
+dodg
+webb
+rattl
+learnt
+nj
+northwestern
+snake
+maximis
+devon
+macgregor
+president ali
+appel
+proprietari
+el segundo
+unsatisfactori
+surcharg
+fastbal
+herd
+claremont
+condition
+sensibl
+ossetia
+loung
+9.6
+cruel
+13000
+luther
+18 dollar
+gkn
+rank tablecel
+deton
+reserve bank
+serra
+the depart
+succumb
+norwich
+8.6
+cerrito
+2002
+proxi
+ayatollah
+alsthom
+bandit
+pla
+diaz
+mr adam
+sim
+headwai
+disapprov
+furiou
+mich
+us feder
+7.7
+rash
+benazir
+seaq
+din
+unfairli
+klm
+kidnei
+nyse
+350m
+choke
+rhone poulenc
+spawn
+lord owen
+davidson
+santa anita
+duffi
+gillespi
+hansen
+silajdz
+mismanag
+saddam husayn
+civilis
+po box
+cod
+state northridg
+1954
+belmont
+grandchildren
+dorothi
+hume
+sank
+stalem
+eccentr
+qc
+radovan karadz
+academician
+rate nt
+us stat
+salut
+33 percent
+12.3
+bakersfield
+ascertain
+calori
+pamphlet
+nottingham
+bermuda
+text japan
+lorri
+perkin
+caldera
+pond
+gem
+quasi
+siberian
+cra
+barter
+montagu
+fantast
+hercegovina
+soda
+needl
+uganda
+investment manag
+116
+mr gordon
+shutout
+democratic left
+unconstitut
+18bn
+2300
+joyc
+predat
+narrat
+strife
+clandestin
+shepherd
+nod
+vicin
+columnist
+computer
+annul
+polli
+discern
+feud
+in april
+invigor
+fatigu
+quicken
+mba
+mediev
+sap
+basement
+east asia
+mitig
+calderon
+writ
+botha
+horton
+walli
+redress
+heap
+hollow
+modestli
+booster
+fuji
+peacemak
+american leagu
+uncontrol
+unhcr
+pacific rim
+augment
+gaze
+voltag
+forcibl
+steak
+functionari
+national institut
+the hous
+wartim
+carlsbad
+doubtless
+300000 dollar
+texaco
+angeles tim
+woodrow
+countless
+bolivar
+evenli
+amstrad
+methodolog
+bacon
+buffer
+agro
+jeopardi
+materialis
+rican
+north counti
+reassess
+golden west
+clyde
+christin
+midwest
+medicar
+aria
+vanguard
+2005
+lavish
+us sen
+107
+grenfel
+sanitari
+acquit
+horizont
+abruptli
+county natwest
+jen
+len
+bait
+velayati
+luci
+toast
+hometown
+chubai
+pb
+reseda
+sfo
+leicest
+utterli
+mk
+hydrocarbon
+inconveni
+stan
+terrif
+maxim
+hasti
+21 percent
+nostalgia
+outcri
+mori
+lax
+advent
+2200
+waiver
+mr robin
+backbon
+eaten
+us depart
+unix
+9.7
+business school
+retrain
+23 percent
+memoir
+penn
+donna
+restart
+anglo american
+nearer
+national health
+red sox
+arabian
+enquiri
+golfer
+mr tim
+hoc
+9.8
+realism
+northrop
+lire
+luka
+demobil
+chapel
+playhous
+libor
+er
+m4
+infus
+gallup
+home offic
+spearhead
+roth
+sparkl
+hewlett packard
+demolit
+thiev
+aeronaut
+workout
+ojai
+monro
+plausibl
+intergovernment
+auspic
+american airlin
+chairwoman
+wisconsin
+tu
+alto
+ladbrok
+400 dollar
+bleed
+emit
+psychiatr
+sarah
+primit
+amen
+16000
+british petroleum
+mr nadir
+frantic
+rampant
+madison
+grievanc
+savoi
+bsp
+clad
+jamaica
+morgan grenfel
+billboard
+thunder
+brooklyn
+unnam
+buddhist
+storei
+extraordinarili
+the san
+un secretari
+recount
+allegi
+145
+wheelchair
+customari
+otc
+stock market
+sdollar
+ldpr
+cessat
+archbishop
+swear
+warmli
+mel
+rubbish
+downsid
+tang
+chetnik
+undercut
+newer
+usd
+pilkington
+quantum
+satir
+guarantor
+remnant
+sunshin
+mep
+solvent
+saddl
+notif
+cuisin
+romeo
+greek cypriot
+flush
+strata
+in februari
+third plenari
+8.4
+queri
+perrier
+sporad
+tuck
+icl
+tom bradlei
+slightest
+wrangl
+stein
+defraud
+brighter
+policymak
+daunt
+bacteria
+rightw
+questionnair
+occurr
+mr kim
+5/04
+landown
+entic
+disarrai
+kerri
+legco
+inequ
+shim
+comit
+2000 dollar
+totalitarian
+ps
+margarita
+cheng
+tricki
+adequaci
+ploi
+celtic
+aerospatial
+117
+text china
+75 dollar
+sip
+deplor
+president leonid
+catalina
+liver
+backlog
+fujii
+sergio
+infest
+triniti
+filipino
+wedg
+95 percent
+terrifi
+marwick
+burial
+bakeri
+pessim
+prescott
+sixti
+felix
+ural
+johann
+fininvest
+gunfir
+city councilman
+indl
+mainstai
+covent
+humphrei
+covina
+solvenc
+pyramid
+propag
+mckeon
+dna
+hal
+abat
+bash
+9.9
+chin
+husbandri
+diana
+geographi
+sdsu
+dana point
+extinguish
+mdf
+basil
+in decemb
+fairfax
+barricad
+profoundli
+bnp
+alain jupp
+9.4
+heavy industri
+southeast asian
+roosevelt
+hoechst
+montedison
+traine
+attali
+stubborn
+derail
+fowler
+mr hosokawa
+leotard
+koran
+debri
+85 percent
+peat marwick
+weekdai
+hashemi rafsanjani
+extinct
+vine
+conceptu
+rpi
+odessa
+loop
+36m
+550
+bodyguard
+covent garden
+burundi
+santand
+disposit
+rainbow
+florenc
+wrist
+bronco
+breez
+schlesing
+in jun
+washington post
+nova
+omin
+general assembl
+prei
+bilingu
+flatter
+meaningless
+central statist
+bhp
+marvin
+qatar
+julio
+withheld
+blockbust
+national front
+cheek
+metallgesellschaft
+uzbek
+revolutionary parti
+prosecutor gener
+ego
+diagnosi
+13.0
+5.25
+cranston
+rethink
+the isra
+militarili
+uc san
+newport harbor
+marxism
+daiwa
+resurrect
+grin
+enshrin
+stevenson
+taint
+misl
+patti
+nihon keizai
+sharpen
+picnic
+john wayn
+mack
+jaim
+barclays bank
+masterpiec
+dresdner
+perfum
+heron
+general secretari
+credito
+quarterfin
+amazon
+monarchi
+24 percent
+narasimha
+conrad
+steinbrenn
+arraign
+improvis
+public secur
+cc
+curs
+county jail
+epic
+wen
+wolfgang
+ibrahimi mosqu
+signifi
+sir pet
+mirag
+squabbl
+granada hil
+gummer
+intrus
+west european
+decai
+mr mark
+rever
+15.0
+smoker
+tnt
+reilli
+feather
+118
+wax
+la paz
+arts council
+15/04
+nuclear electr
+restitut
+gsm
+chamorro
+wick
+decentralis
+extravag
+itamar
+lwt
+director gener
+undervalu
+roland
+heinz
+erron
+pencil
+mr carlo
+abrupt
+west midland
+untouch
+procter
+narasimha rao
+8th
+sherman oak
+debit
+molecul
+alpin
+reel
+29m
+cossack
+bach
+refuel
+uneven
+underwat
+molecular
+clive
+113
+visegrad
+lesbian
+redondo beach
+countermeasur
+international busi
+packer
+lusaka
+109
+london stock
+nielsen
+arson
+vault
+metallurgi
+undesir
+pao
+crawl
+political consult
+suez
+mr kinnock
+tatar
+schwartz
+civil servic
+federation govern
+moot
+westinghous
+microphon
+ni
+medellin
+hagu
+majesty k
+buzz
+touche ross
+envi
+fang
+spear
+realtor
+wheeler
+cna
+socio
+fitzwat
+raft
+peanut
+beckett
+hydroelectr
+9.2
+cali
+keizai shimbun
+vernon
+tandem
+highway patrol
+the palestinian
+matern
+guitarist
+ware
+ribao
+granic
+ra
+butcher
+10p
+128
+eni
+longstand
+mob
+2003
+indianapoli
+cougar
+mr malcolm
+brasilia
+intra
+norton
+burnham
+trait
+kemp
+19 percent
+bottleneck
+franz
+hun
+sleev
+anecdot
+chess
+lady thatch
+saxon
+cylind
+clich
+president mubarak
+yaroslavski
+proprietor
+semit
+yeah
+curfew
+sulphur
+sir michael
+marriott
+sino u
+hydraul
+affairs minist
+madonna
+palestinian isra
+10.6
+stagnant
+rushdi
+catherin
+herzog
+eco
+west hollywood
+rapproch
+general manag
+asset manag
+overcapac
+strai
+vicker
+matl
+manuscript
+internet
+ladder
+spike
+humour
+bio
+coventri
+65 percent
+fison
+zhongguo
+benazir bhutto
+27/04
+publicis
+preoccupi
+autonomous region
+caucu
+holocaust
+cfc
+birdi
+kindergarten
+hastili
+disgust
+higgin
+fairi
+central europ
+klaus kinkel
+lightn
+consultative confer
+tailback
+unsecur
+mend
+moss
+unus
+auxiliari
+vet
+relish
+clae
+bland
+350000
+kang
+muse
+75000
+cheltenham
+campus
+mr bob
+scent
+vladimir zhirinovskii
+bernstein
+slobodan milosev
+kilo
+joaquin
+fokker
+aero
+ca
+hldg
+cholera
+footag
+onslaught
+unfamiliar
+wpk
+weakest
+problemat
+text stock
+cavali
+boon
+mould
+clubhous
+chongnyon
+hygien
+deterg
+the pound
+bulli
+subdivis
+menac
+otto
+fuss
+the anc
+arctic
+mofert
+towel
+royal dutch
+national guard
+dwarf
+lautro
+27 percent
+mildli
+niguel
+turtl
+perenni
+dj
+mr li
+text foreign
+floyd
+remit
+mr jim
+34m
+55 percent
+optimum
+120m
+west lo
+north west
+rhine
+excav
+kumagai
+elus
+president jiang
+miert
+jerom
+year plan
+swung
+russian ministri
+kathi
+ppi
+exodu
+minneapoli
+divin
+bog
+trek
+hess
+wilmington
+citroen
+basf
+witch
+ransom
+rightist
+psychiatrist
+se actuari
+360
+shannon
+goat
+steadfast
+p=105 hebrew
+dentist
+85m
+the presid
+vindic
+timer
+235
+angeles polic
+simplic
+city atti
+hype
+notch
+cameroon
+lancashir
+bosnia hercegovina
+moat
+jeep
+henriqu
+rode
+atop
+9.1
+buildup
+mr jack
+oz
+unravel
+31/05
+whitnei
+sanctuari
+marx
+akbar
+corros
+mr mike
+boutros ghali
+acreag
+canon
+proudli
+37m
+gangster
+recours
+gorg
+elementary school
+51 percent
+neighborli
+32 percent
+pia
+valenzuela
+4500
+mr frank
+fascism
+philli
+multiparti
+courtyard
+4/05
+alija
+tarnish
+montoya
+adjourn
+sociolog
+maverick
+30000 dollar
+blazer
+wm
+lien
+unwant
+tamil
+7.9
+subsidiar
+executive council
+shutdown
+san lui
+meticul
+standbi
+chelsea
+metallurg
+20bn
+mr simon
+duran
+dunkel
+junction
+wildli
+cape town
+fischer
+conscript
+text wal
+weav
+aberdeen
+development corpor
+fraught
+17000
+boyfriend
+outburst
+perch
+linkag
+welch
+1952
+gunman
+dawson
+absorpt
+tomkin
+trilater
+text uk
+watcher
+shrunk
+thriller
+qvc
+dong
+zambia
+jozef
+ashlei
+reson
+workload
+rag
+lasorda
+renminbi
+northeastern
+cpi
+louis
+nai
+interchang
+all american
+nephew
+gloria
+brett
+drug administr
+lord justic
+mickey kantor
+650
+scrip
+1946
+telescop
+cooki
+sulfur
+mileston
+mayor tom
+uae
+prelud
+disqualifi
+yevgenii
+foreign econom
+unbeliev
+edgar
+1939
+appointe
+waiter
+suck
+phantom
+indiscrimin
+21/03
+tripartit
+nebraska
+bihac
+bildt
+westminster bank
+farc
+development
+dr mahathir
+facad
+dye
+boyd
+courthous
+referr
+belli
+tiempo
+bayer
+gdr
+1/06
+shaki
+angrili
+segreg
+mim
+rmt
+sock
+goldberg
+sme
+peabodi
+text bonn
+booker
+almati
+grp
+mcc
+13.5
+in juli
+tempo
+kiet
+90000
+noteworthi
+south wal
+commando
+violin
+segni
+119
+misfortun
+melodi
+patronag
+14.5
+golan height
+sandra
+dazzl
+spi
+mustard
+6/04
+power pl
+descent
+kilowatt
+42m
+fitzgerald
+abiola
+upsw
+aunt
+boycot
+efta
+laden
+marilyn
+taker
+discretionari
+p=105 ukrainian
+ribbon
+rec
+shark
+federation ministri
+shun
+175m
+hogg
+gala
+party ldp
+hostel
+the eu
+stoke
+doe
+onward
+treason
+replenish
+tanzania
+medfli
+canva
+fossil
+de la
+porsch
+softer
+squadron
+05p
+10.2
+trouser
+concili
+mr nigel
+calmli
+parish
+camino r
+euphoria
+beth
+witt
+batman
+keyn
+aegi
+fork
+12/04
+750000
+fog
+vsel
+45 dollar
+2400
+clifford
+kurt
+canoga
+condom
+simmer
+stroll
+pirelli
+31m
+greed
+patriotic front
+gtd
+plumb
+115m
+mustafa
+adjoin
+nabil
+bengal
+hobbi
+42 percent
+warmth
+score tablecel
+lime
+resin
+nfc
+powai
+dell
+laurel
+mr reynold
+teller
+plateau
+vitamin
+economic rel
+jst
+bondhold
+slorc
+jefferson
+foreman
+morton
+parson
+democratic republ
+retard
+7th
+ginger
+byron
+rjr
+husni
+satan
+minh citi
+guillermo
+bavarian
+appeas
+perk
+neatli
+cajon
+san marco
+trade commiss
+bulb
+corfu
+retire
+goali
+wan
+saito
+baggag
+snyder
+hr
+mr gonzalez
+38m
+figaro
+skandia
+bark
+assimil
+mentor
+yale
+sun alli
+keeper
+cheshir
+frai
+noisi
+minister yitzhaq
+900m
+showdown
+grief
+mgn
+dobson
+prensa
+exquisit
+abraham
+genr
+redesign
+pertin
+transient
+udc
+26 percent
+hilari
+luggag
+hug
+11.8
+pal
+seismic
+inaccur
+central militari
+natural resourc
+scandinavia
+ceo
+rubin
+hut
+matador
+nuclear pow
+matra
+bbc1
+schroeder
+london met
+laguna niguel
+butterfli
+legion
+precari
+id=jprs jst
+nacion
+walton
+bskyb
+distinctli
+sympath
+dim
+beleagu
+nan
+protection ag
+intention
+west end
+romero
+dominguez hil
+steril
+superstor
+123
+south carolina
+attest
+1953
+hebei
+valeri
+mtv
+vesti
+psl
+grappl
+south american
+pinpoint
+destabilis
+isaac
+collus
+boutiqu
+payer
+newburi
+state properti
+registri
+amic
+collid
+cal lutheran
+henlei
+perestroika
