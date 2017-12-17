@@ -16,10 +16,11 @@ public abstract class DisplayScrollPanel extends JDialog{
     protected final JScrollPane scrollPane;
     private static final Dimension DICTIONARY_PANEL_DIMENSION = new Dimension(200,600);
 
-    public DisplayScrollPanel(Frame owner, boolean modal ,String title){
+    public DisplayScrollPanel(Frame owner, boolean modal ,String title, int columns){
         super(owner,modal);
         this.setTitle(title);
         this.model = new DataModel();
+        this.model.setColumnCount(columns);
         JTable table = new JTable(model);
         table.setRowHeight(20);
         this.scrollPane = new JScrollPane(table);
@@ -36,7 +37,7 @@ public abstract class DisplayScrollPanel extends JDialog{
 
     private static class DataModel extends DefaultTableModel{
         private List<Row> values;
-        private static final String[] NAMES = {"Term", "TermTDF"};
+        private static final String[] NAMES = {"Term", "TermTDF", "TermIDF"};
 
         public DataModel() { this.values = new ArrayList<>();}
         public void clear(){
@@ -49,10 +50,6 @@ public abstract class DisplayScrollPanel extends JDialog{
             return values==null ? 0 : values.size();
         }
 
-        @Override
-        public int getColumnCount() {
-            return this.NAMES.length;
-        }
 
         @Override
         public Object getValueAt(int row, int column) {
@@ -60,6 +57,8 @@ public abstract class DisplayScrollPanel extends JDialog{
                 return values.get(row).getTermValue();
             else if(column==1)
                 return values.get(row).getTermTDF();
+            else if(column==2)
+                return values.get(row).getTermIDF();
             return null;
         }
 
@@ -80,6 +79,10 @@ public abstract class DisplayScrollPanel extends JDialog{
                 currentRow.setTermTDF(aValue.toString());
                 fireTableCellUpdated(row,column);
             }
+            else if(column==2){
+                currentRow.setTermIDF(aValue.toString());
+                fireTableCellUpdated(row,column);
+            }
             else{
                 throw new RuntimeException("no such column exists");
             }
@@ -96,6 +99,7 @@ public abstract class DisplayScrollPanel extends JDialog{
     private static class Row{
         private String termValue;
         private String termTDF;
+        private String termIDF;
 
 
         public Row(){}
@@ -112,12 +116,16 @@ public abstract class DisplayScrollPanel extends JDialog{
         public void setTermTDF(String termTDF) {
             this.termTDF = termTDF;
         }
+        public String getTermIDF() {
+            return termIDF;
+        }
+        public void setTermIDF(String termIDF) {this.termIDF = termIDF;}
     }
     public static class DisplayDictionaryPanel extends DisplayScrollPanel{
         private Map<String,Object[]> dictionary;
 
-        public DisplayDictionaryPanel(Frame owner, boolean modal,Map<String,Object[]> dictionary) {
-            super(owner, modal,"Dictionary Panel");
+        public DisplayDictionaryPanel(Frame owner, boolean modal,Map<String,Object[]> dictionary, int column) {
+            super(owner, modal,"Dictionary Panel",column);
             this.dictionary = dictionary;
         }
 
@@ -141,8 +149,8 @@ public abstract class DisplayScrollPanel extends JDialog{
     public static class DisplayCachePanel extends DisplayScrollPanel{
         private Map<String, Term> cache;
 
-        public DisplayCachePanel(Frame owner, boolean modal, Map<String, Term> cache) {
-            super(owner, modal, "Cache Panel");
+        public DisplayCachePanel(Frame owner, boolean modal, Map<String, Term> cache, int column) {
+            super(owner, modal, "Cache Panel", column);
             this.cache = cache;
         }
 
@@ -153,6 +161,7 @@ public abstract class DisplayScrollPanel extends JDialog{
             for(Term term : cache.values()){
                 this.model.setValueAt(term.getValue(),currentRow,0);
                 this.model.setValueAt(term.getTermTDF(),currentRow,1);
+                this.model.setValueAt(term.getTermIDF(),currentRow,2);
                 currentRow+=1;
             }
             JScrollBar vertical = scrollPane.getVerticalScrollBar();

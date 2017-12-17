@@ -11,6 +11,7 @@ import static engine.Indexer.stemming;
 
 public class Term{
 
+    private static final int numOfDocs = 468370;
     private Map<Document,List<Integer>> docDictionary;
     private String value;
     private long termTDF;
@@ -59,8 +60,11 @@ public class Term{
     }
 
 
-    public int getTermIDF() {
+    public int getTermDF() {
         return this.docDictionary.size();
+    }
+    public double getTermIDF(){
+        return Math.log(numOfDocs /(Math.log(getTermDF()) / Math.log(2)));
     }
     public long getTermTDF(){
         return termTDF;

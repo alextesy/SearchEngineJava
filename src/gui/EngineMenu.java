@@ -34,8 +34,8 @@ public class EngineMenu {
 
     public EngineMenu(){
         initEngineMainFrame();
-        dictionaryPanel = new DisplayDictionaryPanel(this.engineFrame,false,null);
-        cachePanel = new DisplayCachePanel(this.engineFrame,false,null);
+        dictionaryPanel = new DisplayDictionaryPanel(this.engineFrame,false,null,2);
+        cachePanel = new DisplayCachePanel(this.engineFrame,false,null,3);
         pathsInitializing = new InitializationPathTable(this.engineFrame,false);
         performStemming = true;
     }
@@ -143,11 +143,11 @@ public class EngineMenu {
                         openCacheDictionary.setEnabled(false);
                         String pathStemming = performStemming ==true ? "Stem" : "";
                         Thread t1 = new Thread(() -> Indexer.writeDictionary(savedDirChoosed.getPath() + "/dictionary" + pathStemming  +  ".txt", dictionary));
-                        //Thread t2 = new Thread(() -> Indexer.writeCache(savedDirChoosed.getPath()+"/cache" + pathStemming  +  ".txt", cache));
+                        Thread t2 = new Thread(() -> Indexer.writeCache(savedDirChoosed.getPath()+"/cache" + pathStemming  +  ".txt", cache));
                         t1.start();
-                        //t2.start();
+                        t2.start();
                         t1.join();
-                        //t2.join();
+                        t2.join();
                         openCacheDictionary.setEnabled(true);
                     }
                 }

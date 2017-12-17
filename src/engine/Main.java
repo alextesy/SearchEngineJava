@@ -50,7 +50,7 @@ public class Main {
 
         new EngineMenu();
     }
-*/
+
             Map<String, Object[]> alex = (Map<String, Object[]>) readDictionary("d:\\documents\\users\\kremians\\Documents\\nostem\\dictionary.txt");
             PriorityQueue<Map.Entry<String, Object[]>> tf = new PriorityQueue<>((o1, o2) -> Long.compare((long) o2.getValue()[0], (long) o1.getValue()[0]));
             PriorityQueue<Map.Entry<String, Object[]>> df = new PriorityQueue<>((o1, o2) -> (Integer) o2.getValue()[1] - (Integer) o1.getValue()[1]);
@@ -75,8 +75,8 @@ public class Main {
         //Map<String,Object[]> tal=(Map<String, Object[]>) readDictionary("d:\\documents\\users\\kremians\\Documents\\blabla\\dictionary.txt");
         //System.out.println(tal.size());
 
-
-        //new EngineMenu();
+*/
+        new EngineMenu();
     }
 
 
