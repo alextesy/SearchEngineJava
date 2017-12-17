@@ -269,10 +269,9 @@ public class EngineMenu {
             g.drawString( "Index Size: " + indexer.getIndexSize() + " Bytes",20,105);
             g.drawString("Cache Size: " + indexer.getCacheSize() + " Bytes",20,130);
             g.drawString( "Running Time: " + indexer.getIndexRunningTime() + " seconds",20,155);
+            ReadFile.docNumberOfFiles=0;
             g.dispose();
 
-            //ImageIO.write(img,"png", new File("imgs/results.png"));
-            //background = new JLabel(new ImageIcon(ImageIO.read(getClass().getResourceAsStream("imgs/results.png"))));
             background.setIcon(new ImageIcon(img));
             engineFrame.add(background);
             engineFrame.validate();

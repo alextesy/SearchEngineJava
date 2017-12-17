@@ -10,7 +10,6 @@ public class ReadFile {
 
     public static int docNumberOfFiles=0;
     private ReadFile(){}
-    private static int counter =0;
 
     public static long readTextFile(File currentFile,boolean stemming) {
         /**
@@ -34,7 +33,6 @@ public class ReadFile {
         Matcher m = pattern.matcher(content);
         Matcher mDocNum = patternDocN.matcher(content);
         while (m.find()&& mDocNum.find()) {
-            System.out.println(counter+=1);
             String textCont = m.group();
             String docNum = mDocNum.group();
             String textContSub=docNum.substring(7,docNum.length()-8);
