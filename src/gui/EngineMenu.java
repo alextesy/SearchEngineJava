@@ -48,7 +48,7 @@ public class EngineMenu {
         this.engineFrame.setSize(OUTER_FRAME_DIMENSION);
         this.engineFrame.setJMenuBar(menuBar());
         try {
-            this.background = new JLabel(new ImageIcon(ImageIO.read(new File("imgs/img.png"))));
+            this.background = new JLabel(new ImageIcon(ImageIO.read(getClass().getResourceAsStream("imgs/img.png"))));
             this.engineFrame.add(this.background);
         } catch (Exception e) {
             e.printStackTrace();
@@ -105,16 +105,6 @@ public class EngineMenu {
                 Indexer.cacheTerms =Indexer.initCacheStrings();
                 new Thread(() -> {
                     try {
-
-                        try{
-                            if(!new File(pathsInitializing.getCorpusDir()+ "/stop_words.txt").exists())
-                                throw new Exception();
-                        }
-                        catch (Exception e1){
-                            JOptionPane.showMessageDialog(this.engineFrame,"Need 'stop_words' txt file at corpus dir");
-                        }
-
-
                         saveCacheDictionary.setEnabled(false);
                         openCacheDictionary.setEnabled(false);
                         createIndexFile.setEnabled(false);
@@ -272,7 +262,7 @@ public class EngineMenu {
 
         try {
             engineFrame.remove(background);
-            BufferedImage img = ImageIO.read(new File("imgs/img.png"));
+            BufferedImage img = ImageIO.read(getClass().getResourceAsStream("imgs/img.png"));
             Graphics g = img.getGraphics();
             g.setFont(g.getFont().deriveFont(15f));
             g.drawString("Number of Documents: " + ReadFile.docNumberOfFiles,20,80);
@@ -280,8 +270,10 @@ public class EngineMenu {
             g.drawString("Cache Size: " + indexer.getCacheSize() + " Bytes",20,130);
             g.drawString( "Running Time: " + indexer.getIndexRunningTime() + " seconds",20,155);
             g.dispose();
-            ImageIO.write(img,"png", new File("imgs/results.png"));
-            background = new JLabel(new ImageIcon(ImageIO.read(new File("imgs/results.png"))));
+
+            //ImageIO.write(img,"png", new File("imgs/results.png"));
+            //background = new JLabel(new ImageIcon(ImageIO.read(getClass().getResourceAsStream("imgs/results.png"))));
+            background.setIcon(new ImageIcon(img));
             engineFrame.add(background);
             engineFrame.validate();
             engineFrame.repaint();
@@ -292,8 +284,6 @@ public class EngineMenu {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
     private JMenu createOptionsMenu(){
         JMenu optionsMenu = new JMenu("Options");

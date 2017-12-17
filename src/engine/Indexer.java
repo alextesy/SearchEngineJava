@@ -38,7 +38,7 @@ public class Indexer {
     }
     public static Map<String,Term> initCacheStrings() {
         Map<String,Term> termsSet = new HashMap<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(new File("cacheWords"+ stemString +".txt")))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(Indexer.class.getResourceAsStream(("cacheWords"+ stemString +".txt"))))) {
             String term;
             while ((term = br.readLine()) != null) {
                 termsSet.put(term,null);
@@ -62,7 +62,6 @@ public class Indexer {
          * The Function iterates over the files in corpus and creates temporary posting files, after this it merges the temporary posting files into a Final posting file and creates dictionary and cache
          */
         //myHelperShityFunction();
-
         long now=System.currentTimeMillis();
         File dir = new File(this.pathToCorpus);
         File[] directoryListing = dir.listFiles();
@@ -74,7 +73,7 @@ public class Indexer {
             if (directoryListing != null) {
                 for (File child : directoryListing) {
                     if(!child.getName().equals("stop_words.txt")){
-                        //if(counter == 2 ) break;
+                        if(counter == 2 ) break;
                         currentSize+=ReadFile.readTextFile(child,stemming);
                         if (currentSize > readFileSize) {
                             currentSize=0;
