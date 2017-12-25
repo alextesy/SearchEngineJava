@@ -38,7 +38,7 @@ public class ReadFile {
             String textContSub=docNum.substring(7,docNum.length()-8);
             textContSub=textContSub.replace(" ","");
             Document document = Document.addDocument(fileName,textContSub);
-            Parse parser = new Parse(textCont,document,stemming);
+            Parse parser = new Parse(textCont,document,stemming, null);
             docNumberOfFiles+=1;
             parser.ParseFile();
         }

@@ -43,7 +43,11 @@ public class Term{
 
     }
 
-    private void updatedDoc(Document document,int location){
+    public Map<Document, List<Integer>> getDocDictionary() {
+        return docDictionary;
+    }
+
+    private void updatedDoc(Document document, int location){
         /**
          * Creates Document if its not already exists and add it to docDictionary
          */

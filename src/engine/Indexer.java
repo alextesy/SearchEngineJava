@@ -12,7 +12,7 @@ public class Indexer {
     public static final Map<String,Term> currentTermDictionary = new HashMap<>();
     public static final long CORPUS_BYTE_SIZE = 1578400481; // 1.47 - GB - 1.47*2^30 bytes
 
-    public Map<String,Object[]> Dictionary = new HashMap<>();
+    public static Map<String,Object[]> Dictionary = new HashMap<>();
 
     public static Map<String,Term> cacheTerms;
     private long indexSize = 0;

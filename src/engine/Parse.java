@@ -1,6 +1,8 @@
 package engine;
 
 
+import query.Searcher;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -22,6 +24,7 @@ public class Parse {
     public static boolean stemming;
     public static Stemmer stemmer;
     public static Pattern patternTH= Pattern.compile("([4-9]|[12][0-9]|[3][0])th");
+    private Searcher searcher;
 
     private static Collection<String> initStopWords() {
 
@@ -45,15 +48,14 @@ public class Parse {
         return token;
     }
 
-    public Parse(String content, Document document,boolean stemming){
+    public Parse(String content, Document document,boolean stemming,Searcher searcher){
 
         this.docContent = content;
         this.document = document;
         this.termIndex = 0;
         this.stemming=stemming;
         this.stemmer = stemming==true ? new Stemmer() : null;
-
-
+        this.searcher=searcher;
     }
     public void ParseFile(){
         /**
@@ -287,9 +289,14 @@ public class Parse {
         /**
          * Last step in parser, after the parser we eliminate stopwords and perform stepping if needed
          */
-        if(!stopWords.contains(value)) {
-            Term.addTerm(stem(value),document,termIndex);
+        if(searcher==null) {
+            if (!stopWords.contains(value)) {
+                Term.addTerm(stem(value), document, termIndex);
+            }
         }
+        else
+            searcher.addTerm(stem(value));
+
     }
 
     public static String removeComma(String s) {
