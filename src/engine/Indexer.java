@@ -1,5 +1,6 @@
 package engine;
 
+import javax.print.Doc;
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -61,7 +62,6 @@ public class Indexer {
         /**
          * The Function iterates over the files in corpus and creates temporary posting files, after this it merges the temporary posting files into a Final posting file and creates dictionary and cache
          */
-        //myHelperShityFunction();
         long now=System.currentTimeMillis();
         File dir = new File(this.pathToCorpus);
         File[] directoryListing = dir.listFiles();
@@ -73,7 +73,7 @@ public class Indexer {
             if (directoryListing != null) {
                 for (File child : directoryListing) {
                     if(!child.getName().equals("stop_words.txt")){
-                        //if(counter == 2 ) break;
+                        //if(counter == 1 ) break;
                         currentSize+=ReadFile.readTextFile(child,stemming);
                         if (currentSize > readFileSize) {
                             currentSize=0;
@@ -93,14 +93,15 @@ public class Indexer {
         }
 
 
-        writeDocumentData();
-        Document.corpusDocuments.clear();
+
 
         mergeSortedFiles(postingFilesList,new File(pathToPosting + "\\Hallelujah" +stemString+ ".txt"),cmp);
 
         long then=System.currentTimeMillis();
         this.indexRunningTime = (then - now)/1000;
         //findCacheTerms();
+        writeDocumentData();
+        Document.corpusDocuments.clear();
 
     }
 
@@ -191,24 +192,6 @@ public class Indexer {
         return  rowCounter;
     }
 
-/*
-    private void check (){
-
-        long start = System.currentTimeMillis();
-        try {
-            RandomAccessFile raf = new RandomAccessFile(new File("C:\\Users\\אלי\\doc\\Hallelujah.txt"),"r");
-            raf.seek(dictionary.get("zoo")[2]);
-            Term term = Term.decryptTermFromStr(raf.readLine());
-            System.out.println(term);
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        long finish = System.currentTimeMillis();
-        System.out.println(finish - start);
-    }
-*/
-
     private File sortAndSave(List<String> tmpList,Comparator<String> cmp) throws IOException {
         File newTmpFile = new File(pathToPosting +"\\DocNum" + counter + ".txt");
         tmpList = tmpList.parallelStream().sorted(cmp).collect(Collectors.toCollection(ArrayList::new));
@@ -226,7 +209,14 @@ public class Indexer {
         try {
             PrintWriter corpusDocFile = new PrintWriter("documentsData" + stemString+".txt");
             for(Document doc : Document.corpusDocuments.values()){
-                corpusDocFile.println(doc);
+                double weight =0;
+                for(Map.Entry<Term,Integer> terminDoc : doc.termsInDoc.entrySet()){
+                    if(Dictionary.containsKey(terminDoc.getKey().getValue())){
+                        weight += (double)Dictionary.get(terminDoc.getKey().getValue())[1] * (long)terminDoc.getValue();
+                    }
+                }
+                doc.weight = weight;
+                corpusDocFile.println(doc.encryptingDocToStr());
             }
             corpusDocFile.close();
         } catch (Exception e) {
@@ -320,6 +310,7 @@ public class Indexer {
             this.fbr = r;
             reload();
         }
+
         public void close() throws IOException {
             this.fbr.close();
         }
@@ -345,6 +336,7 @@ public class Indexer {
         public BufferedReader fbr;
 
         private String cache;
-
     }
 }
+
+

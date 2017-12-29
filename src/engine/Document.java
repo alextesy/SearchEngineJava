@@ -9,10 +9,14 @@ public class Document {
 
     public static final HashMap<String,Document> corpusDocuments = new HashMap<String, Document>();
 
+    //TODO - DELETE
+    public final HashMap<Term,Integer> termsInDoc = new HashMap<>();
+
     private String docName;
     private String fileName;
     private int docLength;
     private int mostFrequentWord;
+    public double weight;
 
     private Document(String fileName, String docName) {
         this.docLength = 0;
@@ -49,7 +53,7 @@ public class Document {
 
 
     public String encryptingDocToStr(){
-        return fileName+"#"+docName+"#"+ docLength +"#"+mostFrequentWord;
+        return fileName+"#"+docName+"#"+ docLength +"#"+mostFrequentWord+"#"+weight;
     }
 
     public static Document decryptDocFromStr(String str){
@@ -98,5 +102,20 @@ public class Document {
     @Override
     public int hashCode() {
         return (fileName + docName).hashCode();
+    }
+
+
+    //TODO - DELETE
+    public void updateTermInDoc(Term term) {
+        if(termsInDoc.containsKey(term)){
+            int frequency = termsInDoc.remove(term);
+            frequency+=1;
+            termsInDoc.put(term,frequency);
+        }
+        else{
+            termsInDoc.put(term,1);
+        }
+
+
     }
 }

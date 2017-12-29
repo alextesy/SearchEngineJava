@@ -39,6 +39,7 @@ public class Term{
             term.updatedDoc(document, location);
             currentTermDictionary.put(value, term);
         }
+        document.updateTermInDoc(term);
         term.termTDF += 1;
 
     }

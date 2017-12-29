@@ -1,12 +1,9 @@
 package query;
 
 import engine.Document;
-import engine.Indexer;
 import engine.Term;
-
-import javax.print.Doc;
 import java.util.*;
-import java.util.regex.Matcher;
+
 
 public class Ranker {
     private List<Term> queryTerm;
