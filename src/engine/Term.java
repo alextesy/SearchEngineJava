@@ -55,7 +55,7 @@ public class Term{
 
         try{document.updateDocWeight(Indexer.termsIDF.get(this.value));
         }catch (NullPointerException e){
-            /* non frequent term */
+            /* non frequent term - less then 4 instance */
         }
         document.setDocLength(document.getDocLength()+1);
         if(docDictionary.containsKey(document)){
@@ -83,7 +83,8 @@ public class Term{
         return this.docDictionary.size();
     }
     public double getTermIDF(){
-        return Math.log( (Math.log(numOfDocs/getTermDF()) / Math.log(2)));
+
+        return Math.log(numOfDocs/getTermDF()) / Math.log(2);
     }
     public long getTermTDF(){
         return termTDF;
