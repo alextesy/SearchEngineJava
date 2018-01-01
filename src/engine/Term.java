@@ -7,11 +7,11 @@ import java.util.*;
 
 import static engine.Document.addDocument;
 import static engine.Indexer.currentTermDictionary;
-import static engine.Indexer.stemming;
 /**
  *Object of Term that holds its value, TDF and Map of all the documents that the term appears in and its location in it.
  */
 public class Term{
+
 
     private static final int numOfDocs = 468370;
     private Map<Document,List<Integer>> docDictionary;
@@ -30,6 +30,7 @@ public class Term{
         /**
          * Creates Term if its not already exists and add it to currentTermDictionary
          */
+
         Term term;
         if (currentTermDictionary.containsKey(value)) {
             term = currentTermDictionary.get(value);
@@ -39,9 +40,7 @@ public class Term{
             term.updatedDoc(document, location);
             currentTermDictionary.put(value, term);
         }
-        document.updateTermInDoc(term);
         term.termTDF += 1;
-
     }
 
     public Map<Document, List<Integer>> getDocDictionary() {
@@ -52,6 +51,10 @@ public class Term{
         /**
          * Creates Document if its not already exists and add it to docDictionary
          */
+        try{document.updateDocWeight(Indexer.termsIDF.get(this.value));
+        }catch (NullPointerException e){
+            /* non frequent term */
+        }
         document.setDocLength(document.getDocLength()+1);
         if(docDictionary.containsKey(document)){
             List<Integer> termFrequency = docDictionary.remove(document);
@@ -65,6 +68,7 @@ public class Term{
             newList.add(location);
             docDictionary.put(document,newList);
         }
+
     }
 
     public int getWordFrequencyAtDoc(Document document) {
@@ -165,16 +169,6 @@ public class Term{
         /**
          * @return 25% of the most popular docs of the term
          */
-
-        /*
-        long s = System.currentTimeMillis();
-        List<Document> popularDocs = new ArrayList<Document>(docDictionary.keySet());
-        popularDocs = popularDocs.parallelStream().sorted((Comparator<Document>) (o1, o2) -> Integer.compare(docDictionary.get(o1).size(),docDictionary.get(o2).size())).collect(Collectors.toList());
-        for (int i=0; i<numOfDocs; i+=1)
-            popularDocs.add(popularDocs.get(i));
-        System.out.println("sorting: " + (System.currentTimeMillis()-s));
-        return popularDocs;
-        */
         List<Document> popularDocs = new ArrayList<>();
         PriorityQueue<Document> pq = new PriorityQueue<Document>((Comparator<Document>) (o1, o2) -> Integer.compare(docDictionary.get(o2).size(),docDictionary.get(o1).size()));
         pq.addAll(docDictionary.keySet());
@@ -189,32 +183,8 @@ public class Term{
         return popularDocs;
     }
 
-    public enum Kind {
-        Number{
-            @Override
-            public String toString() {
-                return "Number";
-            }
-        },
-        Percentage{
-            @Override
-            public String toString() {
-                return "Percentage";
-            }
-        },
-        Date{
-            @Override
-            public String toString() {
-                return "Date";
-            }
-        },
-        Dollar{
-            @Override
-            public String toString() {
-                return "Dollar";
-            }
-        }
-    }
+    /* create file - IDF value for each term in corpus */
+
     public enum Month {
         January{
             @Override

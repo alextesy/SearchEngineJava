@@ -16,7 +16,6 @@ public class ReadFile {
          * divides the File into Documents and send them to parser
          */
         File[] myCurrentFile = currentFile.listFiles();
-
         String fullPath = myCurrentFile[0].toString();
         int index = fullPath.lastIndexOf("\\");
         String fileName = fullPath.substring(index + 1);

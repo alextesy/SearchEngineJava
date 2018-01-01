@@ -1,6 +1,5 @@
 package engine;
 
-import javax.print.Doc;
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -12,6 +11,7 @@ public class Indexer {
 
     public static final Map<String,Term> currentTermDictionary = new HashMap<>();
     public static final long CORPUS_BYTE_SIZE = 1578400481; // 1.47 - GB - 1.47*2^30 bytes
+    public static Map<String,Double> termsIDF;
 
     public static Map<String,Object[]> Dictionary = new HashMap<>();
 
@@ -62,6 +62,7 @@ public class Indexer {
         /**
          * The Function iterates over the files in corpus and creates temporary posting files, after this it merges the temporary posting files into a Final posting file and creates dictionary and cache
          */
+        termsIDF = readIDFDictionaryToMem("",stemming);
         long now=System.currentTimeMillis();
         File dir = new File(this.pathToCorpus);
         File[] directoryListing = dir.listFiles();
@@ -95,16 +96,32 @@ public class Indexer {
 
 
 
+
         mergeSortedFiles(postingFilesList,new File(pathToPosting + "\\Hallelujah" +stemString+ ".txt"),cmp);
 
-        long then=System.currentTimeMillis();
-        this.indexRunningTime = (then - now)/1000;
+
         //findCacheTerms();
+        //writeDocumentIDF("",stemming,Dictionary);
         writeDocumentData();
         Document.corpusDocuments.clear();
 
+        long then=System.currentTimeMillis();
+        this.indexRunningTime = (then - now)/1000;
+
     }
 
+    private void writeDocumentData() {
+        try {
+            PrintWriter documentData = new PrintWriter("documentData" + stemString + ".txt");
+            for(Document doc : Document.corpusDocuments.values()){
+                documentData.println(doc.encryptingDocToStr());
+            }
+            documentData.close();
+        }
+        catch(IOException e){
+
+        }
+    }
 
 
     private long mergeSortedFiles(List<File> postingFilesList,File outputFile,Comparator<String> cmp) throws IOException {
@@ -154,6 +171,7 @@ public class Indexer {
                         long startPos = raf.getFilePointer();
                         raf.writeBytes(lastTermLine.encryptTermToStr());
                         raf.writeBytes("\n");
+
                         if(cacheTerms.containsKey(lastTermLine.getValue())){
                             cacheSize += (raf.getFilePointer() - startPos)/4;
                             Dictionary.put(lastTermLine.getValue(),new Object[]{lastTermLine.getTermTDF(),lastTermLine.getTermIDF(),'C'+Long.toString(startPos)} /* add more fields ,}*/ );
@@ -166,9 +184,7 @@ public class Indexer {
                         }
 
                         ++rowCounter;
-
                     }
-
                     lastTermLine = rT;
                 }
                 else
@@ -205,24 +221,7 @@ public class Indexer {
         return newTmpFile;
     }
 
-    private void writeDocumentData(){
-        try {
-            PrintWriter corpusDocFile = new PrintWriter("documentsData" + stemString+".txt");
-            for(Document doc : Document.corpusDocuments.values()){
-                double weight =0;
-                for(Map.Entry<Term,Integer> terminDoc : doc.termsInDoc.entrySet()){
-                    if(Dictionary.containsKey(terminDoc.getKey().getValue())){
-                        weight += (double)Dictionary.get(terminDoc.getKey().getValue())[1] * (long)terminDoc.getValue();
-                    }
-                }
-                doc.weight = weight;
-                corpusDocFile.println(doc.encryptingDocToStr());
-            }
-            corpusDocFile.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
 
     public static void writeDictionary(String path,Map<String,Object[]> dictionary){
         try {
@@ -255,7 +254,7 @@ public class Indexer {
         return map;
     }
     public static Map<String,Term> readCache(String path) throws Exception{
-        Map<String,Term> cache = new HashMap<String,Term>();
+        Map<String,Term> cache = new HashMap<>();
         BufferedReader br = new BufferedReader(new FileReader(path));
         String line = br.readLine();
         while (line != null) {
@@ -266,6 +265,38 @@ public class Indexer {
         br.close();
         return cache;
      }
+    public static void writeDocumentIDF(String path ,boolean stemming,Map<String,Object[]> dictionary){
+        try {
+            String stemString = stemming == true ? "Stem" : "";
+            PrintWriter pw = new PrintWriter(path + "termsIDF" + stemString+ ".txt");
+            for(Map.Entry<String,Object[]> term : dictionary.entrySet())
+                pw.println(term.getKey()+"#"+term.getValue()[1]);
+            pw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    /* read the IDF file and returns dictionary with the IDF value per term*/
+    public static Map<String,Double> readIDFDictionaryToMem(String path,boolean stemming) {
+        try {
+            Map<String, Double> idfDictionary = new HashMap<>();
+            String stemString = stemming == true ? "Stem" : "";
+            InputStream in = Indexer.class.getResourceAsStream(path + "termsIDF" + stemString + ".txt");
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+            String line = br.readLine();
+            while (line != null) {
+                String[] data = line.split("#");
+                idfDictionary.put(data[0], Double.parseDouble(data[1]));
+                line = br.readLine();
+            }
+            br.close();
+            return idfDictionary;
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
 

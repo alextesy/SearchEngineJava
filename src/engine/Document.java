@@ -7,10 +7,9 @@ import java.util.HashMap;
  */
 public class Document {
 
-    public static final HashMap<String,Document> corpusDocuments = new HashMap<String, Document>();
+    public static final HashMap<String,Document> corpusDocuments = new HashMap<>();
 
-    //TODO - DELETE
-    public final HashMap<Term,Integer> termsInDoc = new HashMap<>();
+
 
     private String docName;
     private String fileName;
@@ -61,6 +60,10 @@ public class Document {
         return new Document(documentData[0],documentData[1],Integer.parseInt(documentData[2]),Integer.parseInt(documentData[3]));
     }
 
+    public void updateDocWeight(Double termIDF) {
+       weight+= termIDF;
+    }
+
 
 
     public String getDocName() {
@@ -99,23 +102,9 @@ public class Document {
         return this.fileName.equals(document.fileName) && this.docName.equals(document.docName);
     }
 
+
     @Override
     public int hashCode() {
         return (fileName + docName).hashCode();
-    }
-
-
-    //TODO - DELETE
-    public void updateTermInDoc(Term term) {
-        if(termsInDoc.containsKey(term)){
-            int frequency = termsInDoc.remove(term);
-            frequency+=1;
-            termsInDoc.put(term,frequency);
-        }
-        else{
-            termsInDoc.put(term,1);
-        }
-
-
     }
 }

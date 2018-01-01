@@ -77,6 +77,7 @@ public class Main {
 
 */
         new EngineMenu();
+        //calculateDocData.readIDFDictionaryToMem("",true);
     }
 
 
