@@ -12,6 +12,7 @@ import static engine.Indexer.currentTermDictionary;
  */
 public class Term{
 
+    public static int counter =0;
 
     private static final int numOfDocs = 468370;
     private Map<Document,List<Integer>> docDictionary;
@@ -51,6 +52,7 @@ public class Term{
         /**
          * Creates Document if its not already exists and add it to docDictionary
          */
+
         try{document.updateDocWeight(Indexer.termsIDF.get(this.value));
         }catch (NullPointerException e){
             /* non frequent term */
