@@ -23,7 +23,7 @@ public class EngineMenu {
     private InitializationPathTable pathsInitializing;
     private DisplayDictionaryPanel dictionaryPanel;
     private DisplayCachePanel cachePanel;
-    private boolean performStemming;
+    private Stemming performStemming;
 
     private Indexer indexer=null;
     private File cacheDictionaryLastPath;
@@ -38,7 +38,7 @@ public class EngineMenu {
         dictionaryPanel = new DisplayDictionaryPanel(this.engineFrame,false,null,2);
         cachePanel = new DisplayCachePanel(this.engineFrame,false,null,3);
         pathsInitializing = new InitializationPathTable(this.engineFrame,false);
-        performStemming = true;
+        performStemming = Stemming.True;
     }
 
 
@@ -144,9 +144,8 @@ public class EngineMenu {
                     if (returnVal == JFileChooser.APPROVE_OPTION) {
                         File savedDirChoosed = savingDirChooser.getSelectedFile();
                         openCacheDictionary.setEnabled(false);
-                        String pathStemming = performStemming ==true ? "Stem" : "";
-                        Thread t1 = new Thread(() -> Indexer.writeDictionary(savedDirChoosed.getPath() + "/dictionary" + pathStemming  +  ".txt", dictionary));
-                        Thread t2 = new Thread(() -> Indexer.writeCache(savedDirChoosed.getPath()+"/cache" + pathStemming  +  ".txt", cache));
+                        Thread t1 = new Thread(() -> Indexer.writeDictionary(savedDirChoosed.getPath() + "/dictionary" + performStemming.toString()  +  ".txt", dictionary));
+                        Thread t2 = new Thread(() -> Indexer.writeCache(savedDirChoosed.getPath()+"/cache" + performStemming.toString()  +  ".txt", cache));
                         t1.start();
                         t2.start();
                         t1.join();
@@ -172,17 +171,16 @@ public class EngineMenu {
                 new Thread(() -> {
                     try{
                         saveCacheDictionary.setEnabled(false);
-                        String pathStemming = performStemming ==true ? "Stem" : "";
                         Thread t1 =new Thread(() -> {
                             try {
-                                dictionary = new TreeMap<>(Indexer.readDictionary(openDirChoosed + "//dictionary" + pathStemming + ".txt"));
+                                dictionary = new TreeMap<>(Indexer.readDictionary(openDirChoosed + "//dictionary" + performStemming.toString() + ".txt"));
                             } catch (Exception e1) {
                                 JOptionPane.showMessageDialog(engineFrame,"Non exist dictionary in dir (notice stemming label)");
                             }
                         });
                         Thread t2 =new Thread(() -> {
                             try {
-                                cache = new TreeMap<>(Indexer.readCache(openDirChoosed + "//cache" + pathStemming + ".txt"));
+                                cache = new TreeMap<>(Indexer.readCache(openDirChoosed + "//cache" + performStemming.toString() + ".txt"));
                             } catch (Exception e1) {
                                 JOptionPane.showMessageDialog(engineFrame,"Non exist cache in dir (notice stemming label)");
                             }
@@ -323,11 +321,39 @@ public class EngineMenu {
 
         JCheckBoxMenuItem performStemming = new JCheckBoxMenuItem("Perform Porter Stemming" , true);
         performStemming.addActionListener(e -> {
-            this.performStemming = performStemming.isSelected();
+            this.performStemming = performStemming.isSelected() ? Stemming.True : Stemming.False;
         });
         preferencesMenu.add(performStemming);
         return preferencesMenu;
     }
 
+    public enum Stemming{
+        True{
+            @Override
+            public String toString() {
+                return "Stem";
+            }
+
+            @Override
+            public boolean isStem() {
+                return true;
+            }
+        },
+        False{
+            @Override
+            public String toString() {
+                return "";
+            }
+
+            @Override
+            public boolean isStem() {
+                return false;
+            }
+        };
+        public abstract boolean isStem();
+
+
+
+    }
 
 }

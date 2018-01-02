@@ -1,7 +1,8 @@
 package engine;
 
 
-import query.Searcher;
+import gui.EngineMenu.Stemming;
+import query.QuerySearcher;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,10 +22,10 @@ public class Parse {
     private int termIndex;
     public String docContent;
     public Document document;
-    public static boolean stemming;
+    public static Stemming stemming;
     public static Stemmer stemmer;
     public static Pattern patternTH= Pattern.compile("([4-9]|[12][0-9]|[3][0])th");
-    private Searcher searcher;
+    private QuerySearcher querySearcher;
 
     private static Collection<String> initStopWords() {
 
@@ -40,7 +41,7 @@ public class Parse {
         /**
          *  Performs Stemming if needed
          */
-        if(stemming) {
+        if(stemming.isStem()) {
             stemmer.add(token.toCharArray(), token.length());
             stemmer.stem();
             return stemmer.toString();
@@ -48,16 +49,16 @@ public class Parse {
         return token;
     }
 
-    public Parse(String content, Document document,boolean stemming,Searcher searcher){
+    public Parse(String content, Document document, Stemming stemming, QuerySearcher querySearcher){
 
         this.docContent = content;
         this.document = document;
         this.termIndex = 0;
         this.stemming=stemming;
-        this.stemmer = stemming==true ? new Stemmer() : null;
-        this.searcher=searcher;
+        this.stemmer = stemming.isStem() ? new Stemmer() : null;
+        this.querySearcher = querySearcher;
     }
-    public void ParseFile(){
+    public void Parse(){
         /**
          *  Iteration over words and creating Terms out of them
          */
@@ -289,13 +290,13 @@ public class Parse {
         /**
          * Last step in parser, after the parser we eliminate stopwords and perform stepping if needed
          */
-        if(searcher==null) {
+        if(querySearcher ==null) {
             if (!stopWords.contains(value)) {
                 Term.addTerm(stem(value), document, termIndex);
             }
         }
         else
-            searcher.addTerm(stem(value));
+            querySearcher.addQueryTerm(stem(value));
 
     }
 

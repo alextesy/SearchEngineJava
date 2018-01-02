@@ -2,38 +2,77 @@ package query;
 
 import engine.Document;
 import engine.Term;
+import gui.EngineMenu.Stemming;
+
+import java.io.*;
 import java.util.*;
 
 
+/*
+static class represent ranker functionality,
+class usage through getRelevantDocs function, get parsed query terms and stemming checkbox value
+return list of most relevant docs by file and doc name for specific query.
+ */
+
 public class Ranker {
-    private List<Term> queryTerm;
-    private int size;
+
+    private static Map<String,Double> documentData = new HashMap<>();
+    private static Stemming lastStem = null;
 
 
-    public Ranker(List<Term> queryTerm){
-        this.queryTerm=queryTerm;
-        this.size=queryTerm.size();
+    private Ranker(){
+        throw new RuntimeException("class 'Ranker' not for initializing");
     }
 
-    public List<String> rankDocs() {
-        Map<Document,Double> docVectors=new HashMap<>();
-        List<String> rankList=new ArrayList<>();
-        double similirarity=0;
-        for (Term term: queryTerm){
-            Map<Document,List<Integer>> docDictionary=term.getDocDictionary();
-            for (Map.Entry<Document,List<Integer>> d: docDictionary.entrySet()) {
-                if(!docVectors.containsKey(d.getKey())) {
-                    double similarity = getSimilarity(d.getKey()); //only numerator
+    public static List<String> getRelevantDocs(List<Term> queryTerms, Stemming stemming) {
+        initDocumentDataMap(stemming);
+        Map<Document,Double> docWeights=new HashMap<>();
+        for (Term term: queryTerms){
+            Map<Document,List<Integer>> docDictionary = term.getDocDictionary();
+            for (Map.Entry<Document,List<Integer>> termInDoc: docDictionary.entrySet()) {
+                if(!docWeights.containsKey(termInDoc.getKey())) {
+                    double similarity = getSimilarity(termInDoc.getKey(),queryTerms); //only numerator
                     //More attributes
-                    docVectors.put(d.getKey(),similarity);
+                    docWeights.put(termInDoc.getKey(),similarity);
                 }
             }
         }
 
-        return top50(docVectors);
+        return findTop50(docWeights);
     }
 
-    private List<String> top50(Map<Document,Double> docVectors){
+
+    /*
+    initiate map of documents and their weight. the map initialized depends stem param
+     */
+    private static Map<String,Document> initDocumentDataMap(Stemming stemming){
+        if(lastStem==null || lastStem.isStem() != stemming.isStem()){
+            lastStem = stemming;
+            try{
+                documentData.clear();
+                InputStream in = Ranker.class.getResourceAsStream("..//engine//docs//documentData" +stemming.toString() + ".txt");
+                BufferedReader br = new BufferedReader(new InputStreamReader(in));
+                String line = br.readLine();
+                while (line != null) {
+                    Document doc = Document.decryptDocFromStr(line);
+                    documentData.put(doc.getFileName()+doc.getDocName(),doc.weight);
+                    line = br.readLine();
+
+                }
+            }
+            catch (IOException io){
+                io.printStackTrace();
+                lastStem =null;
+            }
+        }
+
+        return null;
+        }
+
+
+
+
+    private static List<String> findTop50(Map<Document,Double> docVectors){
         PriorityQueue<Map.Entry<Document,Double>> pq = new PriorityQueue<>((o1, o2) ->Double.compare(o2.getValue(), o1.getValue()));
         for (Map.Entry<Document,Double> d:docVectors.entrySet()){
             pq.add(d);
@@ -47,17 +86,25 @@ public class Ranker {
 
 
 
-
-    private double getSimilarity(Document document) {
-        double counter=0;
-        for (Term term:queryTerm){
-            int f = term.getDocDictionary().get(document).size();
-            double tf = f / document.getDocLength();
-            counter+= tf * term.getTermIDF();
+    /*
+     cosine implementation - term query weight - 1kg
+      */
+    private static double getSimilarity(Document document,List<Term> queryTerms) {
+        try{
+            double termWeightInDoc=0;
+            for (Term term: queryTerms){
+                int freqInDoc = term.getDocDictionary().get(document).size();
+                double tf = freqInDoc / document.getMostFrequentWord();
+                termWeightInDoc += tf * term.getTermIDF();
+            }
+            termWeightInDoc/= Math.pow(documentData.get(document.getFileName()+document.getDocName()),2)*queryTerms.size();
+            return Math.sqrt(termWeightInDoc);
         }
-        return counter;
+        //TODO there are docs with weight 0 - read file bug probably
+        catch (Exception e ){
+            return 0;
+        }
     }
-
 
 
 

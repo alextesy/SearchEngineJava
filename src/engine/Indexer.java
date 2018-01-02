@@ -1,8 +1,11 @@
 package engine;
 
+import gui.EngineMenu;
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
+import gui.EngineMenu.Stemming;
 
 /**
  * The most significant class of the project that operates over the whole thing.
@@ -23,8 +26,7 @@ public class Indexer {
     public static String pathToPosting;
     private long readFileSize;
     private int counter = 0;
-    public static boolean stemming;
-    private static String stemString;
+    public static Stemming stemming = Stemming.True;
 
 
     public Indexer(String pathToCorpus, String pathToPosting,long readFileSize) {
@@ -33,13 +35,12 @@ public class Indexer {
         this.pathToPosting = pathToPosting;
     }
 
-    public static void setStemming(boolean toStem){
+    public static void setStemming(Stemming toStem){
         stemming = toStem;
-        stemString = stemming==true ? "Stem" : "";
     }
     public static Map<String,Term> initCacheStrings() {
         Map<String,Term> termsSet = new HashMap<>();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(Indexer.class.getResourceAsStream(("cacheWords"+ stemString +".txt"))))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(Indexer.class.getResourceAsStream(("docs/cacheWords"+ stemming.toString() +".txt"))))) {
             String term;
             while ((term = br.readLine()) != null) {
                 termsSet.put(term,null);
@@ -62,7 +63,7 @@ public class Indexer {
         /**
          * The Function iterates over the files in corpus and creates temporary posting files, after this it merges the temporary posting files into a Final posting file and creates dictionary and cache
          */
-        termsIDF = readIDFDictionaryToMem("",stemming);
+        //termsIDF = readIDFDictionaryToMem("",stemming);
         long now=System.currentTimeMillis();
         File dir = new File(this.pathToCorpus);
         File[] directoryListing = dir.listFiles();
@@ -97,12 +98,12 @@ public class Indexer {
 
 
 
-        mergeSortedFiles(postingFilesList,new File(pathToPosting + "\\Hallelujah" +stemString+ ".txt"),cmp);
+        mergeSortedFiles(postingFilesList,new File(pathToPosting + "\\Hallelujah" +stemming.toString()+ ".txt"),cmp);
 
 
         //findCacheTerms();
         //writeDocumentIDF("",stemming,Dictionary);
-        writeDocumentData();
+        //writeDocumentData();
         Document.corpusDocuments.clear();
 
         long then=System.currentTimeMillis();
@@ -112,7 +113,7 @@ public class Indexer {
 
     private void writeDocumentData() {
         try {
-            PrintWriter documentData = new PrintWriter("documentData" + stemString + ".txt");
+            PrintWriter documentData = new PrintWriter("documentData" + stemming.toString() + ".txt");
             for(Document doc : Document.corpusDocuments.values()){
                 documentData.println(doc.encryptingDocToStr());
             }
@@ -281,7 +282,7 @@ public class Indexer {
         try {
             Map<String, Double> idfDictionary = new HashMap<>();
             String stemString = stemming == true ? "Stem" : "";
-            InputStream in = Indexer.class.getResourceAsStream(path + "termsIDF" + stemString + ".txt");
+            InputStream in = Indexer.class.getResourceAsStream(path + "docs/termsIDF" + stemString + ".txt");
             BufferedReader br = new BufferedReader(new InputStreamReader(in));
             String line = br.readLine();
             while (line != null) {
@@ -310,7 +311,7 @@ public class Indexer {
             pq.add(termData);
         }
         try {
-            PrintWriter cacheFile = new PrintWriter("cacheWords" +stemString +".txt");
+            PrintWriter cacheFile = new PrintWriter("cacheWords" +stemming.toString() +".txt");
 
             for (int i = 0; i < 10000; i += 1) {
                 Map.Entry<String, Object[]> freTerm = pq.poll();

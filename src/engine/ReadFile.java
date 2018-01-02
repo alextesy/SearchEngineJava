@@ -1,5 +1,7 @@
 package engine;
 
+import gui.EngineMenu.Stemming;
+
 import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -11,7 +13,7 @@ public class ReadFile {
     public static int docNumberOfFiles=0;
     private ReadFile(){}
 
-    public static long readTextFile(File currentFile,boolean stemming) {
+    public static long readTextFile(File currentFile,Stemming stemming) {
         /**
          * divides the File into Documents and send them to parser
          */
@@ -39,7 +41,7 @@ public class ReadFile {
             Document document = Document.addDocument(fileName,textContSub);
             Parse parser = new Parse(textCont,document,stemming, null);
             docNumberOfFiles+=1;
-            parser.ParseFile();
+            parser.Parse();
         }
         return StringSizeEstimator.estimatedSizeOf(content);
     }

@@ -24,11 +24,12 @@ public class Document {
         this.fileName = fileName;
     }
 
-    private Document(String docName, String fileName, int wordsSize, int mostFrequentWord) {
+    private Document(String docName, String fileName, int wordsSize, int mostFrequentWord, double weight) {
         this.docName = docName;
         this.fileName = fileName;
         this.docLength = wordsSize;
         this.mostFrequentWord = mostFrequentWord;
+        this.weight = weight;
     }
 
     public static Document addDocument(String fileName, String docName){
@@ -57,7 +58,7 @@ public class Document {
 
     public static Document decryptDocFromStr(String str){
         String[] documentData = str.split("#");
-        return new Document(documentData[0],documentData[1],Integer.parseInt(documentData[2]),Integer.parseInt(documentData[3]));
+        return new Document(documentData[0],documentData[1],Integer.parseInt(documentData[2]),Integer.parseInt(documentData[3]),Double.parseDouble(documentData[4]));
     }
 
     public void updateDocWeight(Double termIDF) {
