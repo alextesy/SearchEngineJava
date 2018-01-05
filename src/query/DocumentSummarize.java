@@ -1,19 +1,11 @@
 package query;
-
-import engine.Document;
-import engine.Indexer;
 import engine.Parse;
 import engine.ReadFile;
-import gui.EngineMenu;
 import javafx.util.Pair;
-import org.omg.PortableInterceptor.INACTIVE;
-
 import java.io.*;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import static engine.Parse.stemming;
 import static gui.EngineMenu.Stemming.False;
 
 /**
@@ -47,7 +39,7 @@ public class DocumentSummarize {
      */
     private String getDocContent(String docNum){
         String fileName="";
-        File file =new File("D:\\documents\\users\\kremians\\Documents\\GitHub\\SearchEngineJava\\src\\engine\\docs\\documentData.txt");//TODO - needs to be relative
+        File file =new File("C:\\Users\\IBM_ADMIN\\SearchEngineJava\\src\\engine\\docs\\documentData.txt");//TODO - needs to be relative
         Scanner in = null;
         try {
             in = new Scanner(file);
@@ -64,7 +56,7 @@ public class DocumentSummarize {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        File docFileDir= new File(/*Indexer.pathToCorpus*/"d:\\documents\\users\\kremians\\Documents\\corpus\\"+fileName);
+        File docFileDir= new File(/*Indexer.pathToCorpus*/"C:\\Users\\IBM_ADMIN\\Desktop\\corpus\\corpus\\"+fileName);
         File[] docFile=docFileDir.listFiles();
         String content= null;
         try {
@@ -145,7 +137,7 @@ public class DocumentSummarize {
         for (Map.Entry<String,Pair<Integer,ArrayList<String>>> terms:sentenceTerms.entrySet()) {
             ArrayList<String> termList=terms.getValue().getValue();
             for (String term:termList) {
-                weight+=getTermWeight(term);
+                weight+=getTermWeight(term)/terms.getValue().getValue().size();
             }
             sentenceRank.put(terms.getKey(),weight);
         }
