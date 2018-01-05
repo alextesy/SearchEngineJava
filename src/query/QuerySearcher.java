@@ -30,7 +30,7 @@ public class QuerySearcher {
         this.query = query;
         queryTerms = new ArrayList<>();
         stemming = Indexer.stemming;
-        new Parse(query, null, stemming, this).Parse();
+        new Parse(query, null, stemming, this,null).Parse();
 
     }
 

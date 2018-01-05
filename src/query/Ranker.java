@@ -78,8 +78,10 @@ public class Ranker {
             pq.add(d);
         }
         List<String> rankedDocs=new ArrayList<>();
-        for(int i=0;i<50;i++){
-            rankedDocs.add(pq.poll().getKey().getFileName()+" "+pq.poll().getKey().getDocName());
+        int size=pq.size();
+        for(int i=0;i<50&&i<size;i++){
+            rankedDocs.add(pq.peek().getKey().getFileName()+" "+pq.peek().getKey().getDocName());
+            pq.poll();
         }
         return rankedDocs;
     }
