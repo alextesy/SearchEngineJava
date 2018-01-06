@@ -2,6 +2,7 @@ package engine;
 
 
 import gui.EngineMenu.Stemming;
+import query.DocumentSummarize;
 import query.QuerySearcher;
 
 import java.io.File;
@@ -24,11 +25,17 @@ public class Parse {
     public static Stemmer stemmer;
     public static Pattern patternTH= Pattern.compile("([4-9]|[12][0-9]|[3][0])th");
     private QuerySearcher querySearcher;
+    private DocumentSummarize documentSummary;
+
 
     private static Collection<String> initStopWords() {
 
         try {
+<<<<<<< HEAD
             String stopWordsContent= ReadFile.getContent(new File(Indexer.pathToCorpus +  "\\stop_words.txt"));
+=======
+            String stopWordsContent= ReadFile.getContent(new File(/*Indexer.pathToCorpus +*/  "d:\\documents\\users\\kremians\\Documents\\corpus\\stop_words.txt"));//TODO - CHANGE BACK TO Indexer.pathToCorpus
+>>>>>>> 2a044e2eaa94863c8d79145cfe73c0ed6e37fe13
             return new HashSet<>(Arrays.asList(stopWordsContent.split(" ")));
         } catch (IOException e) {
         }
@@ -47,7 +54,7 @@ public class Parse {
         return token;
     }
 
-    public Parse(String content, Document document, Stemming stemming, QuerySearcher querySearcher){
+    public Parse(String content, Document document, Stemming stemming, QuerySearcher querySearcher, DocumentSummarize documentSummary){
 
         this.docContent = content;
         this.document = document;
@@ -55,6 +62,7 @@ public class Parse {
         this.stemming=stemming;
         this.stemmer = stemming.isStem() ? new Stemmer() : null;
         this.querySearcher = querySearcher;
+        this.documentSummary=documentSummary;
     }
     public void Parse(){
         /**
@@ -79,6 +87,11 @@ public class Parse {
                     token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
                     dot=true;
                 }
+                if(!stk.hasMoreElements()) {
+                    stemStop(token,document,termIndex);
+                    termIndex++;
+                    return;
+                }
                 String nextTkn = removeComma(stk.nextToken());
                 String nextTknLow = nextTkn.toLowerCase();
                 if (nextTknLow.equals("percent") || nextTknLow.equals("percentage")) {
@@ -86,7 +99,6 @@ public class Parse {
                     termIndex += 1;
                 }
                 else if (!dot&&Term.Month.isMonth(nextTkn)) {
-
                     ParseDDMONTH(token, nextTkn, stk);
                 } else { /* is simple number */
                     stemStop(token, document, termIndex);
@@ -214,6 +226,11 @@ public class Parse {
     private void ParseDDMONTH(String token,String nextTkn, StringTokenizer stk){
         int day=Integer.parseInt(token);
         if(day>0&&day<32) {
+            if(!stk.hasMoreElements()){
+                stemStop(token,document,termIndex);
+                termIndex++;
+                return;
+            }
             String nextNextoken = stk.nextToken();
             String year = yearCheck(nextNextoken);
             if (year != null) {//DD MONTH YY/DD MONTH YY->DD/MM/YYYY
@@ -289,6 +306,7 @@ public class Parse {
          * Last step in parser, after the parser we eliminate stopwords and perform stepping if needed
          */
         if (!stopWords.contains(value)) {
+<<<<<<< HEAD
 
             if (querySearcher == null) {
                 Term.addTerm(stem(value), document, termIndex);
@@ -299,6 +317,15 @@ public class Parse {
                 else{
                     querySearcher.addExtensionTerm(stem(value));
                 }
+=======
+            if (querySearcher == null&&documentSummary==null) {
+                Term.addTerm(stem(value), document, termIndex);
+            } else if(documentSummary==null) {
+                querySearcher.addQueryTerm(stem(value));
+            }
+            else{
+                documentSummary.addSentenceTerm(stem(value));
+>>>>>>> 2a044e2eaa94863c8d79145cfe73c0ed6e37fe13
             }
         }
 

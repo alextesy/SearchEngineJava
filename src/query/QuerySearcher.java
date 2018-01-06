@@ -20,6 +20,7 @@ public class QuerySearcher {
     public QuerySearcher(String query, boolean extension) {
         queryTerms = new ArrayList<>();
         stemming = Indexer.stemming;
+<<<<<<< HEAD
         extensionTerms = new HashMap<>();
         new Parse(query, null, stemming, this).Parse();
         this.extension = extension;
@@ -27,6 +28,9 @@ public class QuerySearcher {
             queryExtension(query);
 
     }
+=======
+        new Parse(query, null, stemming, this,null).Parse();
+>>>>>>> 2a044e2eaa94863c8d79145cfe73c0ed6e37fe13
 
     /** as we parse a query the Parse class uses this function **/
     public void addQueryTerm(String str) {
