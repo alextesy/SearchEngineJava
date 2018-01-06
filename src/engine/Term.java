@@ -187,7 +187,6 @@ public class Term{
     }
 
     /* create file - IDF value for each term in corpus */
-
     public enum Month {
         January{
             @Override

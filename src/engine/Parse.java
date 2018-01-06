@@ -15,8 +15,6 @@ import java.util.regex.Pattern;
  */
 public class Parse {
 
-    //public static long numOfNumbers=0;
-
     public static final Collection<String> stopWords = initStopWords();
 
     private int termIndex;
@@ -30,7 +28,7 @@ public class Parse {
     private static Collection<String> initStopWords() {
 
         try {
-            String stopWordsContent= ReadFile.getContent(new File(Indexer.pathToCorpus +  "/stop_words.txt"));
+            String stopWordsContent= ReadFile.getContent(new File(Indexer.pathToCorpus +  "\\stop_words.txt"));
             return new HashSet<>(Arrays.asList(stopWordsContent.split(" ")));
         } catch (IOException e) {
         }
@@ -290,13 +288,19 @@ public class Parse {
         /**
          * Last step in parser, after the parser we eliminate stopwords and perform stepping if needed
          */
-        if(querySearcher ==null) {
-            if (!stopWords.contains(value)) {
+        if (!stopWords.contains(value)) {
+
+            if (querySearcher == null) {
                 Term.addTerm(stem(value), document, termIndex);
+
+            } else{
+                if(!querySearcher.isExtension())
+                    querySearcher.addQueryTerm(stem(value));
+                else{
+                    querySearcher.addExtensionTerm(stem(value));
+                }
             }
         }
-        else
-            querySearcher.addQueryTerm(stem(value));
 
     }
 

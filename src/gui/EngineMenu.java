@@ -15,6 +15,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 import gui.DisplayScrollPanel.*;
+import query.QuerySearcher;
+
 public class EngineMenu {
 
     private static final Dimension OUTER_FRAME_DIMENSION = new Dimension(400,380);
@@ -33,6 +35,13 @@ public class EngineMenu {
 
     JLabel background;
 
+
+    /* Part 2 */
+    private boolean toExtend;
+    private boolean toSummary;
+
+
+
     public EngineMenu(){
         initEngineMainFrame();
         dictionaryPanel = new DisplayDictionaryPanel(this.engineFrame,false,null,2);
@@ -47,12 +56,7 @@ public class EngineMenu {
         this.engineFrame.setResizable(false);
         this.engineFrame.setSize(OUTER_FRAME_DIMENSION);
         this.engineFrame.setJMenuBar(menuBar());
-        try {
-            this.background = new JLabel(new ImageIcon(ImageIO.read(getClass().getResourceAsStream("imgs/img.png"))));
-            this.engineFrame.add(this.background);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        mainBackgroundEngine();
 
 
         this.engineFrame.setVisible(true);
@@ -96,11 +100,9 @@ public class EngineMenu {
 
         createIndexFile.addActionListener(e -> {
             try{
-                String corpusPath = pathsInitializing.getCorpusDir();
-                String postingPath = pathsInitializing.getPostingDir();
                 if(indexer!=null)
                     indexer.clear();
-                indexer = new Indexer(corpusPath,postingPath,Indexer.CORPUS_BYTE_SIZE/10);
+                indexer = new Indexer(Indexer.CORPUS_BYTE_SIZE/10);
                 Indexer.setStemming(performStemming);
                 Indexer.cacheTerms =Indexer.initCacheStrings();
                 new Thread(() -> {
@@ -132,33 +134,30 @@ public class EngineMenu {
             }
 
         });
-        saveCacheDictionary.addActionListener(e -> {
-            new Thread(() -> {
-                try {
-                    if (dictionary == null || cache ==null)
-                        throw new RuntimeException();
-                    JFileChooser savingDirChooser = new JFileChooser();
-                    savingDirChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                    savingDirChooser.setName("Save cache/dictionary at");
-                    int returnVal = savingDirChooser.showSaveDialog(null);
-                    if (returnVal == JFileChooser.APPROVE_OPTION) {
-                        File savedDirChoosed = savingDirChooser.getSelectedFile();
-                        openCacheDictionary.setEnabled(false);
-                        Thread t1 = new Thread(() -> Indexer.writeDictionary(savedDirChoosed.getPath() + "/dictionary" + performStemming.toString()  +  ".txt", dictionary));
-                        Thread t2 = new Thread(() -> Indexer.writeCache(savedDirChoosed.getPath()+"/cache" + performStemming.toString()  +  ".txt", cache));
-                        t1.start();
-                        t2.start();
-                        t1.join();
-                        t2.join();
-                        openCacheDictionary.setEnabled(true);
-                    }
+        saveCacheDictionary.addActionListener(e -> new Thread(() -> {
+            try {
+                if (dictionary == null || cache ==null)
+                    throw new RuntimeException();
+                JFileChooser savingDirChooser = new JFileChooser();
+                savingDirChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                savingDirChooser.setName("Save cache/dictionary at");
+                int returnVal = savingDirChooser.showSaveDialog(null);
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                    File savedDirChoosed = savingDirChooser.getSelectedFile();
+                    openCacheDictionary.setEnabled(false);
+                    Thread t1 = new Thread(() -> Indexer.writeDictionary(savedDirChoosed.getPath() + "/dictionary" + performStemming.toString()  +  ".txt", dictionary));
+                    Thread t2 = new Thread(() -> Indexer.writeCache(savedDirChoosed.getPath()+"/cache" + performStemming.toString()  +  ".txt", cache));
+                    t1.start();
+                    t2.start();
+                    t1.join();
+                    t2.join();
+                    openCacheDictionary.setEnabled(true);
                 }
-                catch (Exception e2 ){
-                    JOptionPane.showMessageDialog(engineFrame,"No dictionary or cache uploaded to RAM yet.");
-                }
-            }).start();
-
-        });
+            }
+            catch (Exception e2 ){
+                JOptionPane.showMessageDialog(engineFrame,"No dictionary or cache uploaded to RAM yet.");
+            }
+        }).start());
 
 
         openCacheDictionary.addActionListener(e -> {
@@ -174,6 +173,7 @@ public class EngineMenu {
                         Thread t1 =new Thread(() -> {
                             try {
                                 dictionary = new TreeMap<>(Indexer.readDictionary(openDirChoosed + "//dictionary" + performStemming.toString() + ".txt"));
+                                Indexer.Dictionary = dictionary;
                             } catch (Exception e1) {
                                 JOptionPane.showMessageDialog(engineFrame,"Non exist dictionary in dir (notice stemming label)");
                             }
@@ -181,15 +181,19 @@ public class EngineMenu {
                         Thread t2 =new Thread(() -> {
                             try {
                                 cache = new TreeMap<>(Indexer.readCache(openDirChoosed + "//cache" + performStemming.toString() + ".txt"));
+                                Indexer.cacheTerms = cache;
                             } catch (Exception e1) {
                                 JOptionPane.showMessageDialog(engineFrame,"Non exist cache in dir (notice stemming label)");
                             }
                         });
-
+                        if(cache!=null && dictionary !=null){
+                            cache.clear();
+                            dictionary.clear();
+                        }
+                        performStemming.setRamStem(performStemming.isStem());
                         t1.start(); t2.start();
                         t1.join(); t2.join();
                         this.cacheDictionaryLastPath = openDirChoosed;
-
                         saveCacheDictionary.setEnabled(true);
                     }
                     catch (Exception e13){
@@ -206,7 +210,7 @@ public class EngineMenu {
             if(indexer !=null)
                 indexer.clear();
             try{
-                String postingFilePath = pathsInitializing.getPostingDir();
+                String postingFilePath = pathsInitializing.getPostingPath();
                 if(new File(postingFilePath +  "//Hallelujah.txt").isFile()) {
                     try {
                         Files.delete(Paths.get(postingFilePath +  "//Hallelujah.txt"));
@@ -282,6 +286,91 @@ public class EngineMenu {
             e.printStackTrace();
         }
     }
+    private void mainBackgroundEngine(){
+        try {
+            this.background = new JLabel(new ImageIcon(ImageIO.read(getClass().getResourceAsStream("imgs/img.png"))));
+            this.background.setLayout(null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+            JButton runQueryButton = new JButton("Run");
+            runQueryButton.setSize(new Dimension(60,25));
+            runQueryButton.setLocation(250,70);
+            runQueryButton.setFont(new Font("Arial",Font.ITALIC,12));
+
+            JTextField queryText = new JTextField();
+            queryText.setSize(165,25);
+            queryText.setLocation(80,70);
+            runQueryButton.setFont(new Font("Arial",Font.ITALIC,12));
+
+
+
+            JCheckBox extension = new JCheckBox("Extend Query");
+            extension.setSize(100,25);
+            extension.setLocation(80,100);
+            extension.setFont(new Font("Arial", Font.ITALIC, 11));
+            extension.setForeground(Color.WHITE);
+
+            extension.setOpaque(false);
+
+            JCheckBox docSummary = new JCheckBox("Document Summary");
+            docSummary.setSize(130,25);
+            docSummary.setLocation(80,130);
+            docSummary.setFont(new Font("Arial", Font.ITALIC, 11));
+            docSummary.setForeground(Color.WHITE);
+            docSummary.setOpaque(false);
+
+
+            this.background.add(runQueryButton);
+            this.background.add(queryText);
+            this.background.add(extension);
+            this.background.add(docSummary);
+            this.engineFrame.add(this.background);
+
+
+            extension.addActionListener(e -> {
+                toExtend = extension.isSelected() ? true : false;
+                if(toExtend){
+                    toSummary = false;
+                    docSummary.setSelected(false);
+                }
+            });
+            docSummary.addActionListener(e -> {
+                toSummary = docSummary.isSelected() ? true : false;
+                if(toSummary){
+                    toExtend = false;
+                    extension.setSelected(false);
+                }
+            });
+
+            runQueryButton.addActionListener(e -> {
+                if(cache==null || dictionary==null)
+                    JOptionPane.showMessageDialog(engineFrame,"Has to upload cache/dictionary to RAM");
+                else if( cache != null && dictionary!=null && performStemming.isStem() != performStemming.getRamStem()){
+                    JOptionPane.showMessageDialog(engineFrame, "Current cache and dictionary not correlate to stem checkbox");
+                }
+                else if(pathsInitializing.getPostingDir() == null || pathsInitializing.getCorpusDir()==null)
+                    JOptionPane.showMessageDialog(engineFrame, "Has to initial posting and corpus dir");
+                else if( new File(pathsInitializing.getPostingPath()+"\\Hallelujah" + performStemming.toString() + ".txt")== null)
+                    JOptionPane.showMessageDialog(engineFrame,"Non exist posting file at posting dir");
+                else if(queryText.getText().equals(""))
+                    JOptionPane.showMessageDialog(engineFrame, "Fill the query text field first");
+                else if(queryText.getText().split(" ").length>1 && toExtend )
+                    JOptionPane.showMessageDialog(engineFrame,"Require just one word for extension");
+                else{
+                    try{
+                        new QuerySearcher(queryText.getText(),toExtend);
+                    }catch (RuntimeException e1){
+                        JOptionPane.showMessageDialog(engineFrame,"Not found result for '" + queryText.getText() + "'");
+
+                    }
+                }
+            });
+
+
+
+    }
     private JMenu createOptionsMenu(){
         JMenu optionsMenu = new JMenu("Options");
 
@@ -321,7 +410,10 @@ public class EngineMenu {
 
         JCheckBoxMenuItem performStemming = new JCheckBoxMenuItem("Perform Porter Stemming" , true);
         performStemming.addActionListener(e -> {
+            boolean ram = this.performStemming.getRamStem();
             this.performStemming = performStemming.isSelected() ? Stemming.True : Stemming.False;
+            this.performStemming.setRamStem(ram);
+            Indexer.stemming = this.performStemming;
         });
         preferencesMenu.add(performStemming);
         return preferencesMenu;
@@ -351,6 +443,10 @@ public class EngineMenu {
             }
         };
         public abstract boolean isStem();
+        public void setRamStem(boolean stem){this.ramStem = stem;}
+        public boolean getRamStem(){return this.ramStem;}
+        protected boolean ramStem=true;
+
 
 
 

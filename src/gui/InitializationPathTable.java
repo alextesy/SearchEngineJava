@@ -1,5 +1,7 @@
 package gui;
 
+import engine.Indexer;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,8 +14,11 @@ public class InitializationPathTable extends JDialog {
     private File corpusDir;
     private File postingDir;
 
+
+
     public InitializationPathTable(Frame owner, boolean modal) {
         super(owner, modal);
+        setTitle("Paths initialization:");
         JPanel myPanel = new JPanel(new GridLayout(0,1));
         this.getContentPane().add(myPanel);
         myPanel.add(new JLabel("Path to corpus directory:"));
@@ -48,6 +53,7 @@ public class InitializationPathTable extends JDialog {
             int returnVal = postingDirPathChooser.showOpenDialog(null);
             if(returnVal == JFileChooser.APPROVE_OPTION) {
                 this.postingDir = postingDirPathChooser.getSelectedFile();
+                Indexer.pathToPosting = this.postingDir.getPath();
             }
         });
         corpusDirPath.addActionListener(e -> {
@@ -57,16 +63,26 @@ public class InitializationPathTable extends JDialog {
             int returnVal =corpusDirPathChooser.showOpenDialog(null);
             if(returnVal == JFileChooser.APPROVE_OPTION) {
                 this.corpusDir = corpusDirPathChooser.getSelectedFile();
+                Indexer.pathToCorpus = this.corpusDir.getPath();
             }
         });
 
+
     }
 
-    public String getCorpusDir() {
+    public String getCorpusPath() {
         return corpusDir.getPath();
     }
 
-    public String getPostingDir() {
+    public String getPostingPath() {
         return postingDir.getPath();
+    }
+
+    public File getCorpusDir() {
+        return corpusDir;
+    }
+
+    public File getPostingDir() {
+        return postingDir;
     }
 }

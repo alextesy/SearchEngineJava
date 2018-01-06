@@ -29,10 +29,8 @@ public class Indexer {
     public static Stemming stemming = Stemming.True;
 
 
-    public Indexer(String pathToCorpus, String pathToPosting,long readFileSize) {
+    public Indexer(long readFileSize) {
         this.readFileSize = readFileSize;
-        this.pathToCorpus = pathToCorpus;
-        this.pathToPosting = pathToPosting;
     }
 
     public static void setStemming(Stemming toStem){
