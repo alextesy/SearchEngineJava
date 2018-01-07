@@ -31,11 +31,7 @@ public class Parse {
     private static Collection<String> initStopWords() {
 
         try {
-<<<<<<< HEAD
             String stopWordsContent= ReadFile.getContent(new File(Indexer.pathToCorpus +  "\\stop_words.txt"));
-=======
-            String stopWordsContent= ReadFile.getContent(new File(/*Indexer.pathToCorpus +*/  "d:\\documents\\users\\kremians\\Documents\\corpus\\stop_words.txt"));//TODO - CHANGE BACK TO Indexer.pathToCorpus
->>>>>>> 2a044e2eaa94863c8d79145cfe73c0ed6e37fe13
             return new HashSet<>(Arrays.asList(stopWordsContent.split(" ")));
         } catch (IOException e) {
         }
@@ -69,6 +65,7 @@ public class Parse {
          *  Iteration over words and creating Terms out of them
          */
         StringTokenizer stk=new StringTokenizer(docContent, " \t\n\r\f:{};?!'[`]/|()<#>*&+-\"");
+
         while(stk.hasMoreElements() ){
             String token =stk.nextToken();
 
@@ -306,27 +303,19 @@ public class Parse {
          * Last step in parser, after the parser we eliminate stopwords and perform stepping if needed
          */
         if (!stopWords.contains(value)) {
-<<<<<<< HEAD
-
-            if (querySearcher == null) {
+            if (querySearcher == null && documentSummary==null) {
                 Term.addTerm(stem(value), document, termIndex);
 
-            } else{
+            } else if (querySearcher!=null){
                 if(!querySearcher.isExtension())
                     querySearcher.addQueryTerm(stem(value));
                 else{
                     querySearcher.addExtensionTerm(stem(value));
                 }
-=======
-            if (querySearcher == null&&documentSummary==null) {
-                Term.addTerm(stem(value), document, termIndex);
-            } else if(documentSummary==null) {
-                querySearcher.addQueryTerm(stem(value));
             }
-            else{
+            else
                 documentSummary.addSentenceTerm(stem(value));
->>>>>>> 2a044e2eaa94863c8d79145cfe73c0ed6e37fe13
-            }
+
         }
 
     }

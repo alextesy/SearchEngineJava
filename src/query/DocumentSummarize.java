@@ -1,4 +1,5 @@
 package query;
+import engine.Indexer;
 import engine.Parse;
 import engine.ReadFile;
 import javafx.util.Pair;
@@ -30,6 +31,7 @@ public class DocumentSummarize {
         termsData=new HashMap<>();
         getSentences();
         setSetntenceWeight();
+
     }
 
     /**
@@ -39,7 +41,7 @@ public class DocumentSummarize {
      */
     private String getDocContent(String docNum){
         String fileName="";
-        File file =new File("C:\\Users\\IBM_ADMIN\\SearchEngineJava\\src\\engine\\docs\\documentData.txt");//TODO - needs to be relative
+        InputStream file =getClass().getResourceAsStream("..//engine//docs//documentData.txt") ;
         Scanner in = null;
         try {
             in = new Scanner(file);
@@ -52,11 +54,11 @@ public class DocumentSummarize {
                 }
             }
 
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        File docFileDir= new File(/*Indexer.pathToCorpus*/"C:\\Users\\IBM_ADMIN\\Desktop\\corpus\\corpus\\"+fileName);
+        File docFileDir= new File(Indexer.pathToCorpus+ "\\" +fileName);
         File[] docFile=docFileDir.listFiles();
         String content= null;
         try {
@@ -175,5 +177,13 @@ public class DocumentSummarize {
     }
 
 
-
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        List<Pair<String,Integer>> tal= getTop5Sentences();
+        for (Pair<String,Integer> sent:tal) {
+            str.append("Rank: "+sent.getValue()+"\n"+ sent.getKey()+"\n");
+        }
+        return str.toString();
+    }
 }

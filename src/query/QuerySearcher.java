@@ -20,17 +20,12 @@ public class QuerySearcher {
     public QuerySearcher(String query, boolean extension) {
         queryTerms = new ArrayList<>();
         stemming = Indexer.stemming;
-<<<<<<< HEAD
         extensionTerms = new HashMap<>();
-        new Parse(query, null, stemming, this).Parse();
+        new Parse(query, null, stemming, this,null).Parse();
         this.extension = extension;
         if(extension)
             queryExtension(query);
-
     }
-=======
-        new Parse(query, null, stemming, this,null).Parse();
->>>>>>> 2a044e2eaa94863c8d79145cfe73c0ed6e37fe13
 
     /** as we parse a query the Parse class uses this function **/
     public void addQueryTerm(String str) {
@@ -79,7 +74,7 @@ public class QuerySearcher {
             while (p.find())
                 wikiContent.append(p.group(1));
             in.close();
-            new Parse(wikiContent.toString(), null, stemming, this).Parse();
+            new Parse(wikiContent.toString(), null, stemming, this,null).Parse();
             sortMaxFrequentWord(extensionTerms);
 
         }

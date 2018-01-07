@@ -14,12 +14,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.List;
+
 import gui.DisplayScrollPanel.*;
+import javafx.util.Pair;
+import query.DocumentSummarize;
 import query.QuerySearcher;
 
 public class EngineMenu {
 
-    private static final Dimension OUTER_FRAME_DIMENSION = new Dimension(400,380);
+    private static final Dimension OUTER_FRAME_DIMENSION = new Dimension(400,480);
 
     private JFrame engineFrame;
     private InitializationPathTable pathsInitializing;
@@ -39,15 +43,23 @@ public class EngineMenu {
     /* Part 2 */
     private boolean toExtend;
     private boolean toSummary;
+    private JTextArea documentSummaryText;
 
 
 
     public EngineMenu(){
+
         initEngineMainFrame();
         dictionaryPanel = new DisplayDictionaryPanel(this.engineFrame,false,null,2);
         cachePanel = new DisplayCachePanel(this.engineFrame,false,null,3);
         pathsInitializing = new InitializationPathTable(this.engineFrame,false);
         performStemming = Stemming.True;
+        performStemming = Stemming.True;
+
+
+
+
+
     }
 
 
@@ -57,6 +69,20 @@ public class EngineMenu {
         this.engineFrame.setSize(OUTER_FRAME_DIMENSION);
         this.engineFrame.setJMenuBar(menuBar());
         mainBackgroundEngine();
+
+
+        JScrollPane documentScrollPane = new JScrollPane();
+        this.documentSummaryText = new JTextArea("This engine as been built by Alex Kremiansky and Tal Ben Senior as a\n" +
+                "replacement for the old and lame search engine called Google,\nif you are pleased with out work - subscribe to out channel......\n" +
+                "or..... just give us an A grade, it could be a fair trade as well! ;)");
+        this.documentSummaryText.setEditable(false);
+        documentScrollPane.setViewportView(documentSummaryText);
+        documentScrollPane.setPreferredSize(new Dimension(50,95));
+
+
+        this.engineFrame.add(documentScrollPane,BorderLayout.SOUTH);
+        this.engineFrame.revalidate();
+
 
 
         this.engineFrame.setVisible(true);
@@ -288,7 +314,8 @@ public class EngineMenu {
     }
     private void mainBackgroundEngine(){
         try {
-            this.background = new JLabel(new ImageIcon(ImageIO.read(getClass().getResourceAsStream("imgs/img.png"))));
+            JLabel img = new JLabel(new ImageIcon(ImageIO.read(getClass().getResourceAsStream("imgs/img.png"))));
+            this.background = img;
             this.background.setLayout(null);
         } catch (IOException e) {
             e.printStackTrace();
@@ -302,6 +329,7 @@ public class EngineMenu {
             JTextField queryText = new JTextField();
             queryText.setSize(165,25);
             queryText.setLocation(80,70);
+            queryText.setText("FBIS3-20471");
             runQueryButton.setFont(new Font("Arial",Font.ITALIC,12));
 
 
@@ -345,13 +373,17 @@ public class EngineMenu {
             });
 
             runQueryButton.addActionListener(e -> {
-                if(cache==null || dictionary==null)
+                if(pathsInitializing.getPostingDir() == null || pathsInitializing.getCorpusDir()==null)
+                    JOptionPane.showMessageDialog(engineFrame, "Has to initial posting and corpus dir");
+                else if(cache==null || dictionary==null)
                     JOptionPane.showMessageDialog(engineFrame,"Has to upload cache/dictionary to RAM");
+                else if(toSummary){
+                    this.documentSummaryText.setText("");
+                    this.documentSummaryText.append(new DocumentSummarize(queryText.getText()).toString());
+                }
                 else if( cache != null && dictionary!=null && performStemming.isStem() != performStemming.getRamStem()){
                     JOptionPane.showMessageDialog(engineFrame, "Current cache and dictionary not correlate to stem checkbox");
                 }
-                else if(pathsInitializing.getPostingDir() == null || pathsInitializing.getCorpusDir()==null)
-                    JOptionPane.showMessageDialog(engineFrame, "Has to initial posting and corpus dir");
                 else if( new File(pathsInitializing.getPostingPath()+"\\Hallelujah" + performStemming.toString() + ".txt")== null)
                     JOptionPane.showMessageDialog(engineFrame,"Non exist posting file at posting dir");
                 else if(queryText.getText().equals(""))
