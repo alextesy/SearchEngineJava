@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -379,7 +380,12 @@ public class EngineMenu {
                     JOptionPane.showMessageDialog(engineFrame,"Has to upload cache/dictionary to RAM");
                 else if(toSummary){
                     this.documentSummaryText.setText("");
-                    this.documentSummaryText.append(new DocumentSummarize(queryText.getText()).toString());
+                    try{
+                        this.documentSummaryText.append(new DocumentSummarize(queryText.getText()).toString());
+                    }
+                    catch (Exception e2){
+                        JOptionPane.showMessageDialog(engineFrame,"No such document exists");
+                    }
                 }
                 else if( cache != null && dictionary!=null && performStemming.isStem() != performStemming.getRamStem()){
                     JOptionPane.showMessageDialog(engineFrame, "Current cache and dictionary not correlate to stem checkbox");
@@ -392,7 +398,10 @@ public class EngineMenu {
                     JOptionPane.showMessageDialog(engineFrame,"Require just one word for extension");
                 else{
                     try{
-                        new QuerySearcher(queryText.getText(),toExtend);
+                        List<String> docs = new QuerySearcher(queryText.getText(),toExtend).rankQueryDoc();
+                        DisplayQueryPanel dqp = new DisplayQueryPanel(engineFrame,false,queryText.getText(),docs,2);
+                        dqp.redo();
+                        dqp.setVisible(true);
                     }catch (RuntimeException e1){
                         JOptionPane.showMessageDialog(engineFrame,"Not found result for '" + queryText.getText() + "'");
 

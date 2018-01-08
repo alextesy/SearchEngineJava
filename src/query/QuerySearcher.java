@@ -23,8 +23,10 @@ public class QuerySearcher {
         extensionTerms = new HashMap<>();
         new Parse(query, null, stemming, this,null).Parse();
         this.extension = extension;
-        if(extension)
-            queryExtension(query);
+        if(extension){
+            List<String> synonymTerms = queryExtension(query);
+            queryTerms.add(findTerm(synonymTerms.get(0)));
+        }
     }
 
     /** as we parse a query the Parse class uses this function **/
@@ -52,14 +54,17 @@ public class QuerySearcher {
         return null;
     }
     public List<String> rankQueryDoc(){
-        return Ranker.getRelevantDocs(queryTerms,stemming);
+        return Ranker.getRelevantDocs(queryTerms,stemming,extension);
     }
 
     public boolean isExtension() {
         return extension;
     }
 
-    public void queryExtension(String queryTerm){
+
+    /** used to extend query, get 1 word term, find its value at wiki, parse the content of the page
+     * and update the the extension class field by the most relevant synonym term **/
+    public List<String> queryExtension(String queryTerm){
         try{
             StringBuilder wikiHTTP = new StringBuilder();
             URL oracle = new URL("https://en.wikipedia.org/wiki/" + queryTerm);
@@ -75,8 +80,8 @@ public class QuerySearcher {
                 wikiContent.append(p.group(1));
             in.close();
             new Parse(wikiContent.toString(), null, stemming, this,null).Parse();
-            sortMaxFrequentWord(extensionTerms);
-
+            List<String> synonymTerms = sortMaxFrequentWord(extensionTerms);
+            return synonymTerms;
         }
         catch (FileNotFoundException e1){
             throw new RuntimeException("wiki - page not found ");
@@ -84,9 +89,11 @@ public class QuerySearcher {
         catch (IOException e){
             e.printStackTrace();
         }
+        return null;
 
     }
 
+    /** if we chose to extend the term, the Parse class using this function for add relevant terms to our extension class field**/
     public void addExtensionTerm(String term){
         if(extensionTerms.containsKey(term)){
             int tf = extensionTerms.remove(term);
@@ -96,7 +103,8 @@ public class QuerySearcher {
             extensionTerms.put(term,1);
         }
     }
-    private void sortMaxFrequentWord(Map<String,Integer> terms){
+    /** returns list of 50 resemble word to the extended term **/
+    private List<String> sortMaxFrequentWord(Map<String,Integer> terms){
         Map sortedMap = sortByValue(terms);
         Map synonymTerms = new HashMap<String,Double>();
         Term queryTerm = queryTerms.get(0);
@@ -111,18 +119,14 @@ public class QuerySearcher {
                 numOfWords+=1;
             }
         }
-        Map sorted = sortByValue(synonymTerms);
-        int counter =0;
-        sorted.remove(queryTerm);
-        for(Object synonym : sorted.keySet()){
-            if(counter<15){
-                System.out.println(synonym.toString());
-                counter+=1;
-            }
-        }
-        System.out.println();
+        Map sortedSynonymTerms = sortByValue(synonymTerms);
+        sortedSynonymTerms.remove(queryTerm);
+        List<String> ret= new ArrayList<>(sortedSynonymTerms.keySet());
+        return ret;
     }
 
+    /** get the term we wish to extend and list of his documents instance, and another term we
+     * suspect resemble to him, and calculate their similarity **/
     private double numOfCommonDocs(Term queryTerm,List<Document> queryTermDoc, Term other) {
         double counter=0;
         double counter2=0;

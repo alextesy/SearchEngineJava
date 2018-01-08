@@ -16,10 +16,10 @@ public abstract class DisplayScrollPanel extends JDialog{
     protected final JScrollPane scrollPane;
     private static final Dimension DICTIONARY_PANEL_DIMENSION = new Dimension(200,600);
 
-    public DisplayScrollPanel(Frame owner, boolean modal ,String title, int columns){
+    public DisplayScrollPanel(Frame owner, boolean modal ,String title, int columns,boolean partA){
         super(owner,modal);
         this.setTitle(title);
-        this.model = new DataModel();
+        this.model = new DataModel(partA);
         this.model.setColumnCount(columns);
         JTable table = new JTable(model);
         table.setRowHeight(20);
@@ -37,9 +37,14 @@ public abstract class DisplayScrollPanel extends JDialog{
 
     private static class DataModel extends DefaultTableModel{
         private List<Row> values;
-        private static final String[] NAMES = {"Term", "TermTDF", "TermIDF"};
+        private boolean partA;
+        private static final String[] TERMSNAMES = {"Term", "TermTDF", "TermIDF"};
+        private static final String[] DOCSNAMES = {"Rank","Document Name"};
 
-        public DataModel() { this.values = new ArrayList<>();}
+        public DataModel(boolean partA) {
+            this.values = new ArrayList<>();
+            this.partA = partA;
+        }
         public void clear(){
             this.values.clear();
             setRowCount(0);
@@ -90,10 +95,13 @@ public abstract class DisplayScrollPanel extends JDialog{
 
         @Override
         public String getColumnName(int column) {
-            if(column<NAMES.length)
-                return NAMES[column];
+            if(partA && column< TERMSNAMES.length)
+                return TERMSNAMES[column];
+            else if (!partA && column< TERMSNAMES.length)
+                return DOCSNAMES[column];
             return null;
         }
+
     }
 
     private static class Row{
@@ -125,7 +133,7 @@ public abstract class DisplayScrollPanel extends JDialog{
         private Map<String,Object[]> dictionary;
 
         public DisplayDictionaryPanel(Frame owner, boolean modal,Map<String,Object[]> dictionary, int column) {
-            super(owner, modal,"Dictionary Panel",column);
+            super(owner, modal,"Dictionary Panel",column,true);
             this.dictionary = dictionary;
         }
 
@@ -150,7 +158,7 @@ public abstract class DisplayScrollPanel extends JDialog{
         private Map<String, Term> cache;
 
         public DisplayCachePanel(Frame owner, boolean modal, Map<String, Term> cache, int column) {
-            super(owner, modal, "Cache Panel", column);
+            super(owner, modal, "Cache Panel", column,true);
             this.cache = cache;
         }
 
@@ -171,6 +179,33 @@ public abstract class DisplayScrollPanel extends JDialog{
         public void setCache(Map<String, Term> cache) {
             this.cache = cache;
         }
+    }
+
+    public static class DisplayQueryPanel extends DisplayScrollPanel{
+        private List<String> queryResult;
+
+        public DisplayQueryPanel(Frame owner, boolean modal, String title, List<String> queryResult, int columns) {
+            super(owner, modal, title, columns,false);
+            this.queryResult = queryResult;
+        }
+
+        @Override
+        public void redo() {
+            int currentRow = 0;
+            this.model.clear();
+            Integer rank =1;
+            for(String doc : queryResult){
+                this.model.setValueAt(rank.toString(),currentRow,0);
+                this.model.setValueAt(doc,currentRow, 1);
+                currentRow+=1;
+                rank+=1;
+            }
+
+            JScrollBar vertical = scrollPane.getVerticalScrollBar();
+            vertical.setValue(vertical.getMaximum());
+        }
+
+
     }
 
 }
