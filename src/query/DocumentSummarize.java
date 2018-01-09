@@ -24,7 +24,7 @@ public class DocumentSummarize {
 
     public DocumentSummarize(String docNum){
         this.docContent=getDocContent(docNum);   //getDocContent(docNum);
-        sentenceTerms=new HashMap<String,Pair<Integer, ArrayList<String>>>();
+        sentenceTerms= new HashMap<>();
         currentSentenceNum=0;
         maxWordFreq=0;
         sentenceRank=new HashMap<>();
@@ -42,7 +42,7 @@ public class DocumentSummarize {
     private String getDocContent(String docNum){
         String fileName="";
         InputStream file =getClass().getResourceAsStream("..//engine//docs//documentData.txt") ;
-        Scanner in = null;
+        Scanner in;
         try {
             in = new Scanner(file);
             while(in.hasNext())
@@ -60,7 +60,7 @@ public class DocumentSummarize {
         }
         File docFileDir= new File(Indexer.pathToCorpus+ "\\" +fileName);
         File[] docFile=docFileDir.listFiles();
-        String content= null;
+        String content;
         try {
             content = ReadFile.getContent(docFile[0]);
             int index=content.indexOf(docNum);
@@ -164,7 +164,6 @@ public class DocumentSummarize {
 
         PriorityQueue<Map.Entry<String,Integer>> pqChronology = new PriorityQueue<>((o1, o2) ->sentenceTerms.get(o1.getKey()).getKey()-sentenceTerms.get(o2.getKey()).getKey());
         for (Map.Entry<String,Integer> sentence:rankedSentences.entrySet()){
-           // sentenceTerms.get(alex)
             pqChronology.add(sentence);
         }
 

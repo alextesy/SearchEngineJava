@@ -172,6 +172,10 @@ public class Parse {
                                 token=nextTkn;
                                 nextTkn=stk.nextToken();
                             }
+                           // if(nextTkn.length()>1&&!Character.isUpperCase(nextTkn.charAt(0))&&!stopWords.contains(nextTkn.toLowerCase())) {
+                           //     stemStop(nextTkn, document, termIndex);
+                           //     termIndex++;
+                           // }
 
                         } else {
                             if(Term.Number.isNumber(token))

@@ -1,9 +1,12 @@
 package query;
 
 import engine.Document;
+import engine.Indexer;
+import engine.Stemmer;
 import engine.Term;
 import gui.EngineMenu.Stemming;
 
+import javax.print.Doc;
 import java.io.*;
 import java.util.*;
 
@@ -30,10 +33,17 @@ public class Ranker {
         for (Term term: queryTerms){
             Map<Document,List<Integer>> docDictionary = term.getDocDictionary();
             for (Map.Entry<Document,List<Integer>> termInDoc: docDictionary.entrySet()) {
+                double bm=bm25Similarity(termInDoc.getKey(),queryTerms);
+                double cossine=cosinSimilarity(termInDoc.getKey(),queryTerms);
+                double similarity = 0.8 * bm + 0.2 * cossine; //only numerator
+                if(similarity!=0)
+                    System.out.println("tal");
                 if(!docWeights.containsKey(termInDoc.getKey())) {
-                    double similarity = getSimilarity(termInDoc.getKey(),queryTerms); //only numerator
                     similarity = extend == true && queryTerms.get(1).equals(term) ? 0.3*similarity : similarity;
                     docWeights.put(termInDoc.getKey(),similarity);
+                }
+                else{
+                    docWeights.put(termInDoc.getKey(),docWeights.get(termInDoc.getKey())+similarity);
                 }
             }
         }
@@ -80,7 +90,7 @@ public class Ranker {
         List<String> rankedDocs=new ArrayList<>();
         int size=pq.size();
         for(int i=0;i<topNumb && i<size;i++){
-            rankedDocs.add(pq.peek().getKey().getFileName()+" "+pq.peek().getKey().getDocName());
+            rankedDocs.add(pq.peek().getKey().getDocName());
             pq.poll();
         }
         return rankedDocs;
@@ -91,7 +101,7 @@ public class Ranker {
     /**
      cosine implementation - term query weight - 1kg
       **/
-    private static double getSimilarity(Document document,List<Term> queryTerms) {
+    private static double cosinSimilarity(Document document,List<Term> queryTerms) {
         try{
             double termWeightInDoc=0;
             for (Term term: queryTerms){
@@ -107,6 +117,59 @@ public class Ranker {
             return 0;
         }
     }
+
+    private static double locationSimilarity(){
+        return 0;
+    }
+    private static double bm25Similarity(Document document , List<Term> queryTerms){
+        /* k = [1.2,2.0]
+        b = 0.5
+         */
+        try{
+            double k = 2;
+            double b = 0.5;
+            double N = 468370;
+            double bm25Sim = 0;
+            double avgD = 261.46614428763587;
+             for(Term term : queryTerms){
+                double tfD = term.getDocDictionary().get(document).size();
+                bm25Sim += termIDFBM25(term)*(tfD * (k+1)/(
+                        tfD + k*(1-b+b*(document.getDocLength()/
+                                        avgD))));
+            }
+            return bm25Sim;
+        }
+        catch (Exception e){
+            return 0;
+        }
+    }
+    private static double termIDFBM25(Term term){
+        double N = 468370;
+        double base = (N - term.getDocDictionary().size() + 0.5)/
+                (term.getDocDictionary().size() + 0.5);
+        return (Math.log(base) / Math.log(2));
+
+    }
+
+    public static double getAverageDocLength(String path){
+        try {
+            FileInputStream fs = new FileInputStream(path);
+            BufferedReader br = new BufferedReader(new InputStreamReader(fs));
+            String strLine;
+            int counter = 0;
+            double averageDocLength = 0;
+            while ((strLine = br.readLine()) != null) {
+                averageDocLength += Document.decryptDocFromStr(strLine).getDocLength();
+                counter += 1;
+            }
+            return averageDocLength/counter;
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+        return 0;
+    } /* 261.46614428763587 */
 
 
 
