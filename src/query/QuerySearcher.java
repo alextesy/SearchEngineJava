@@ -48,17 +48,14 @@ public class QuerySearcher {
     public Term findTerm(String str) {
         if (Indexer.Dictionary.containsKey(str)) {
             String pointer = (String) Indexer.Dictionary.get(str)[2];
-            if (pointer.charAt(0) == 'C') {
-                return Indexer.cacheTerms.get(str);
-            } else if (pointer.charAt(0) == 'P') {
-                try {
-                    RandomAccessFile raf = new RandomAccessFile(new File(Indexer.pathToPosting + "\\Hallelujah" + stemming.toString() + ".txt"), "r");
-                    raf.seek(Long.parseLong(pointer.substring(1)));
-                    return Term.decryptTermFromStr(raf.readLine());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            try {
+                RandomAccessFile raf = new RandomAccessFile(new File(Indexer.pathToPosting + "\\Hallelujah" + stemming.toString() + ".txt"), "r");
+                raf.seek(Long.parseLong(pointer.substring(1)));
+                return Term.decryptTermFromStr(raf.readLine());
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+
         }
         return null;
     }
@@ -218,7 +215,7 @@ public class QuerySearcher {
 
     public static void writeQueriesResult(String path) {
         try {
-            PrintWriter pw = new PrintWriter(new FileWriter("C:\\Users\\אלי\\Desktop\\doc\\queriesResult.txt"));
+            PrintWriter pw = new PrintWriter(new FileWriter("C:\\Users\\talbense\\Downloads\\doc\\queriesResult.txt"));
             Map<Integer, String> queriesDetails = readQueriesDoc(path);
             for (Map.Entry<Integer, String> query : queriesDetails.entrySet()) {
                 List<String> docs = new QuerySearcher(query.getValue(), false).rankQueryDoc();

@@ -15,7 +15,7 @@ public class Document {
     private String fileName;
     private int docLength;
     private int mostFrequentWord;
-    public double weight;
+    private double weight;
 
     private Document(String fileName, String docName) {
         this.docLength = 0;
@@ -58,7 +58,8 @@ public class Document {
 
     public static Document decryptDocFromStr(String str){
         String[] documentData = str.split("#");
-        return new Document(documentData[0],documentData[1],Integer.parseInt(documentData[2]),Integer.parseInt(documentData[3]),Double.parseDouble(documentData[4]));
+        return new Document(documentData[0]/*File Name*/,documentData[1]/*Document Name*/,Integer.parseInt(documentData[2])/*Document Length*/,
+                                 Integer.parseInt(documentData[3])/*Most Frequent Word*/,Double.parseDouble(documentData[4]/*Document weight*/));
     }
 
     public void updateDocWeight(Double termIDF) {
@@ -103,6 +104,13 @@ public class Document {
         return this.fileName.equals(document.fileName) && this.docName.equals(document.docName);
     }
 
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
 
     @Override
     public int hashCode() {

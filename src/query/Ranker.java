@@ -19,7 +19,7 @@ return list of most relevant docs by file and doc name for specific query.
 
 public class Ranker {
 
-    private static Map<String,Double> documentData = new HashMap<>();
+    private static Map<String,Document> documentData = new HashMap<>();
     private static Stemming lastStem = null;
 
 
@@ -36,8 +36,6 @@ public class Ranker {
                 double bm=bm25Similarity(termInDoc.getKey(),queryTerms);
                 double cossine=cosinSimilarity(termInDoc.getKey(),queryTerms);
                 double similarity = 0.8 * bm + 0.2 * cossine; //only numerator
-                if(similarity!=0)
-                    System.out.println("tal");
                 if(!docWeights.containsKey(termInDoc.getKey())) {
                     similarity = extend == true && queryTerms.get(1).equals(term) ? 0.3*similarity : similarity;
                     docWeights.put(termInDoc.getKey(),similarity);
@@ -46,6 +44,9 @@ public class Ranker {
                     docWeights.put(termInDoc.getKey(),docWeights.get(termInDoc.getKey())+similarity);
                 }
             }
+            /*
+            current rel doc - 82
+             */
         }
 
         return extend==false ? findTopDoc(docWeights,50) : findTopDoc(docWeights,70);
@@ -53,7 +54,7 @@ public class Ranker {
 
 
     /**
-    initiate map of documents and their weight. the map initialized depends stem param
+    initiate map of documents. the map initialized depends stem param
     **/
     private static Map<String,Document> initDocumentDataMap(Stemming stemming){
         if(lastStem==null || lastStem.isStem() != stemming.isStem()){
@@ -65,7 +66,7 @@ public class Ranker {
                 String line = br.readLine();
                 while (line != null) {
                     Document doc = Document.decryptDocFromStr(line);
-                    documentData.put(doc.getFileName()+doc.getDocName(),doc.weight);
+                    documentData.put(doc.getFileName()+doc.getDocName(),doc);
                     line = br.readLine();
 
                 }
@@ -109,7 +110,7 @@ public class Ranker {
                 double tf = freqInDoc / document.getMostFrequentWord();
                 termWeightInDoc += tf * term.getTermIDF();
             }
-            termWeightInDoc/= Math.pow(documentData.get(document.getFileName()+document.getDocName()),2)*Math.pow(queryTerms.size(),2);
+            termWeightInDoc/= Math.pow(documentData.get(document.getFileName()+document.getDocName()).getWeight(),2)*Math.pow(queryTerms.size(),2);
             return Math.sqrt(termWeightInDoc);
         }
         //TODO there are docs with weight 0 - read file bug probably
@@ -124,18 +125,24 @@ public class Ranker {
     private static double bm25Similarity(Document document , List<Term> queryTerms){
         /* k = [1.2,2.0]
         b = 0.5
+
+        IDF(Qi) * f(Qi,D) * (k + 1)
+        -------------------------------
+        f(Qi,D) + k ( 1 - b +b + |D|   )
+                    (            ---   )
+                    (           AvgDl  )
+
          */
         try{
             double k = 2;
             double b = 0.5;
-            double N = 468370;
             double bm25Sim = 0;
             double avgD = 261.46614428763587;
              for(Term term : queryTerms){
                 double tfD = term.getDocDictionary().get(document).size();
-                bm25Sim += termIDFBM25(term)*(tfD * (k+1)/(
-                        tfD + k*(1-b+b*(document.getDocLength()/
-                                        avgD))));
+                bm25Sim += (termIDFBM25(term)*tfD * (k+1))/(
+                                                             tfD + k*(1-b+b*(document.getDocLength()/
+                                                                              avgD )));
             }
             return bm25Sim;
         }
@@ -144,6 +151,12 @@ public class Ranker {
         }
     }
     private static double termIDFBM25(Term term){
+        /*
+             ( N - IDF + 0.5 )
+        LOG  (-------------  )
+             (  IDF + 0.5    )
+
+         */
         double N = 468370;
         double base = (N - term.getDocDictionary().size() + 0.5)/
                 (term.getDocDictionary().size() + 0.5);
