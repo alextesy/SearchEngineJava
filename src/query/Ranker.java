@@ -1,8 +1,6 @@
 package query;
 
 import engine.Document;
-import engine.Indexer;
-import engine.Stemmer;
 import engine.Term;
 import gui.EngineMenu.Stemming;
 
@@ -34,8 +32,11 @@ public class Ranker {
             Map<Document,List<Integer>> docDictionary = term.getDocDictionary();
             for (Map.Entry<Document,List<Integer>> termInDoc: docDictionary.entrySet()) {
                 double bm=bm25Similarity(termInDoc.getKey(),queryTerms);
-                double cossine=cosinSimilarity(termInDoc.getKey(),queryTerms);
-                double similarity = 0.8 * bm + 0.2 * cossine; //only numerator
+                //double cossine= cosimSimilarity(termInDoc.getKey(),queryTerms);
+                double loc = locationSimilarity(termInDoc.getKey(),queryTerms);
+                double avgDist=termDistance(termInDoc.getKey(),queryTerms);
+
+                double similarity = bm; //+0.5* loc  /* +  cossine */; //only numerator
                 if(!docWeights.containsKey(termInDoc.getKey())) {
                     similarity = extend == true && queryTerms.get(1).equals(term) ? 0.3*similarity : similarity;
                     docWeights.put(termInDoc.getKey(),similarity);
@@ -45,7 +46,7 @@ public class Ranker {
                 }
             }
             /*
-            current rel doc - 82
+            current rel doc - 113
              */
         }
 
@@ -66,7 +67,7 @@ public class Ranker {
                 String line = br.readLine();
                 while (line != null) {
                     Document doc = Document.decryptDocFromStr(line);
-                    documentData.put(doc.getFileName()+doc.getDocName(),doc);
+                    documentData.put(doc.getDocName(),doc);
                     line = br.readLine();
 
                 }
@@ -102,16 +103,19 @@ public class Ranker {
     /**
      cosine implementation - term query weight - 1kg
       **/
-    private static double cosinSimilarity(Document document,List<Term> queryTerms) {
+    private static double cosimSimilarity(Document document, List<Term> queryTerms) {
         try{
             double termWeightInDoc=0;
+            document = documentData.get(document.getDocName());
             for (Term term: queryTerms){
-                int freqInDoc = term.getDocDictionary().get(document).size();
-                double tf = freqInDoc / document.getMostFrequentWord();
-                termWeightInDoc += tf * term.getTermIDF();
+                if(term.getDocDictionary().get(document)!=null){
+                    int freqInDoc = term.getDocDictionary().get(document).size();
+                    double tf = (double)(freqInDoc) /(double) document.getMostFrequentWord();
+                    termWeightInDoc += tf * term.getTermIDF();
+                }
             }
-            termWeightInDoc/= Math.pow(documentData.get(document.getFileName()+document.getDocName()).getWeight(),2)*Math.pow(queryTerms.size(),2);
-            return Math.sqrt(termWeightInDoc);
+            termWeightInDoc/= Math.sqrt(Math.pow(documentData.get(document.getDocName()).getWeight(),2)*Math.pow(queryTerms.size(),2));
+            return termWeightInDoc;
         }
         //TODO there are docs with weight 0 - read file bug probably
         catch (Exception e ){
@@ -119,9 +123,73 @@ public class Ranker {
         }
     }
 
-    private static double locationSimilarity(){
-        return 0;
+    private static double locationSimilarity(Document document, List<Term> queryTerms){
+        /*
+        tf * (N - index(t))
+        ------------------
+               N
+         */
+        double locWeight=0;
+        for(Term term : queryTerms){
+            double termLoc = 0;
+            document = documentData.get(document.getDocName());
+            if(term.getDocDictionary().containsKey(document)){
+                double tf = term.getDocDictionary().get(document).size();
+                double N = document.getDocLength();
+                for(Integer index : term.getDocDictionary().get(document)){
+                    termLoc += (tf * (N-index))/N;
+                }
+                termLoc /= term.getDocDictionary().get(document).size();
+            }
+            locWeight += termLoc;
+
+        }
+
+        return locWeight/queryTerms.size();
     }
+    private static double termDistance(Document document,List<Term> queryTerms) {
+        document = documentData.get(document.getDocName());
+        List<Double> avgIndexList=new ArrayList<>();
+        for (Term term : queryTerms) {
+            if (term.getDocDictionary().containsKey(document)) {
+                List<Integer> indexList=term.getDocDictionary().get(document);
+                double avgDist=0;
+                for (Integer index:indexList){
+                    avgDist+=index;
+                }
+                avgDist/=indexList.size();
+                avgIndexList.add(avgDist);
+            }
+        }
+        double avgDistance=0;
+        double numOfPairs=0;
+        if(avgIndexList.size()>1) {
+            for (Iterator<Double> iterator = avgIndexList.iterator(); iterator.hasNext(); ) {
+                double avgIndex1 = iterator.next();
+                for (Double avgIndex2 : avgIndexList) {
+                    if (avgIndex1 != avgIndex2) {
+                        numOfPairs++;
+                        avgDistance += Math.abs(avgIndex1 - avgIndex2);
+                    }
+                }
+                iterator.remove();
+            }
+            avgDistance /= numOfPairs;
+        }
+        else
+            return 0;
+        return avgDistance;
+    }
+    public static double factorial(int number) {
+        long result = 1;
+
+        for (int factor = 2; factor <= number; factor++) {
+            result *= factor;
+        }
+
+        return result;
+    }
+
     private static double bm25Similarity(Document document , List<Term> queryTerms){
         /* k = [1.2,2.0]
         b = 0.5
@@ -134,15 +202,18 @@ public class Ranker {
 
          */
         try{
-            double k = 2;
-            double b = 0.5;
+            double k = 1.3;
+            double b = 0.75;
             double bm25Sim = 0;
             double avgD = 261.46614428763587;
+            document = documentData.get(document.getDocName());
              for(Term term : queryTerms){
-                double tfD = term.getDocDictionary().get(document).size();
-                bm25Sim += (termIDFBM25(term)*tfD * (k+1))/(
-                                                             tfD + k*(1-b+b*(document.getDocLength()/
-                                                                              avgD )));
+                if(term.getDocDictionary().get(document)!=null) {
+                    double tfD = term.getDocDictionary().get(document).size();
+                    bm25Sim += (termIDFBM25(term) * tfD * (k + 1)) / (
+                            tfD + k * (1 - b + b * (document.getDocLength() /
+                                    avgD)));
+                }
             }
             return bm25Sim;
         }

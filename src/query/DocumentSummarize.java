@@ -31,7 +31,6 @@ public class DocumentSummarize {
         termsData=new HashMap<>();
         getSentences();
         setSetntenceWeight();
-
     }
 
     /**

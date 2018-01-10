@@ -82,6 +82,22 @@ public class Term{
     public int getTermDF() {
         return this.docDictionary.size();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Term term = (Term) o;
+
+        return value.equals(term.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return value.hashCode();
+    }
+
     public double getTermIDF(){
 
         return Math.log(numOfDocs/getTermDF()) / Math.log(2);

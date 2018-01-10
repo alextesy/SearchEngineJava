@@ -215,7 +215,7 @@ public class QuerySearcher {
 
     public static void writeQueriesResult(String path) {
         try {
-            PrintWriter pw = new PrintWriter(new FileWriter("C:\\Users\\talbense\\Downloads\\doc\\queriesResult.txt"));
+            PrintWriter pw = new PrintWriter(new FileWriter("d:\\documents\\users\\talbense\\Documents\\doc\\queriesResult.txt"));
             Map<Integer, String> queriesDetails = readQueriesDoc(path);
             for (Map.Entry<Integer, String> query : queriesDetails.entrySet()) {
                 List<String> docs = new QuerySearcher(query.getValue(), false).rankQueryDoc();

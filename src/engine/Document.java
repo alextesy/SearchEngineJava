@@ -58,7 +58,7 @@ public class Document {
 
     public static Document decryptDocFromStr(String str){
         String[] documentData = str.split("#");
-        return new Document(documentData[0]/*File Name*/,documentData[1]/*Document Name*/,Integer.parseInt(documentData[2])/*Document Length*/,
+        return new Document(documentData[1]/*Document Name*/,documentData[0]/*File Name*/,Integer.parseInt(documentData[2])/*Document Length*/,
                                  Integer.parseInt(documentData[3])/*Most Frequent Word*/,Double.parseDouble(documentData[4]/*Document weight*/));
     }
 
