@@ -85,18 +85,18 @@ public class Parse {
                     dot=true;
                 }
                 if(!stk.hasMoreElements()) {
-                    stemStop(token,document,termIndex);
+                    stemStop(token,document);
                     return;
                 }
                 String nextTkn = removeComma(stk.nextToken());
                 String nextTknLow = nextTkn.toLowerCase();
                 if (nextTknLow.equals("percent") || nextTknLow.equals("percentage")) {
-                   stemStop(token + " percent", document, termIndex);
+                   stemStop(token + " percent", document);
                 }
                 else if (!dot&&Term.Month.isMonth(nextTkn)) {
                     ParseDDMONTH(token, nextTkn, stk);
                 } else { /* is simple number */
-                    stemStop(token, document, termIndex);
+                    stemStop(token, document);
                     parseTokens(nextTkn, stk);
                 }
             } else {
@@ -110,7 +110,7 @@ public class Parse {
                                 Double.parseDouble(token);
                                 token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
                             }
-                            stemStop(token + " percent", document, termIndex);
+                            stemStop(token + " percent", document);
                         }
                     } else {
                         token = token.substring(1, token.length());
@@ -119,7 +119,7 @@ public class Parse {
                                 Double.parseDouble(token);
                                 token = Double.parseDouble(new DecimalFormat("##.##").format(Double.parseDouble(token))) + "";
                             }
-                            stemStop(token + " dollars", document, termIndex);
+                            stemStop(token + " dollars", document);
                         }
                     }
 
@@ -135,7 +135,7 @@ public class Parse {
                     else{
                         if(token.equals(""))
                             return;
-                        stemStop(token.toLowerCase(), document, termIndex);
+                        stemStop(token.toLowerCase(), document);
                         parseTokens(nextTkn,stk);
                     }
                 }
@@ -146,33 +146,32 @@ public class Parse {
                         token=token.toLowerCase();
                         if (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))) {
                             if(Term.Number.isNumber(token))
-                                stemStop(Term.Number.getNumber(token).toString(),document,termIndex);
+                                stemStop(Term.Number.getNumber(token).toString(),document);
                             else
-                               stemStop(token, document, termIndex);
+                               stemStop(token, document);
                             boolean check = true;
                             while (nextTkn.length()>1&&Character.isUpperCase(nextTkn.charAt(0))&&!stopWords.contains(nextTkn.toLowerCase())) {
                                 String temp=nextTkn;
                                 nextTkn=removeComma(nextTkn).toLowerCase();
                                 nextTkn=removeDot(nextTkn);
                                 if(Term.Number.isNumber(nextTkn))
-                                    stemStop(Term.Number.getNumber(nextTkn).toString(),document,termIndex);
+                                    stemStop(Term.Number.getNumber(nextTkn).toString(),document);
                                 else
-                                    stemStop(nextTkn, document, termIndex);
-                                stemStop(token+" "+nextTkn,document,termIndex);
+                                    stemStop(nextTkn, document);
+                                stemStop(token+" "+nextTkn,document);
                                 if (!stk.hasMoreElements()||temp.charAt(temp.length()-1)==','||temp.charAt(temp.length()-1)=='.')break;
                                 token=nextTkn;
                                 nextTkn=stk.nextToken();
                             }
-                           // if(nextTkn.length()>1&&!Character.isUpperCase(nextTkn.charAt(0))&&!stopWords.contains(nextTkn.toLowerCase())) {
-                           //     stemStop(nextTkn, document, termIndex);
-                           //     termIndex++;
-                           // }
+                            if(nextTkn.length()>1&&!Character.isUpperCase(nextTkn.charAt(0))&&!stopWords.contains(nextTkn.toLowerCase())) {
+                                stemStop(nextTkn, document);
+                           }
 
                         } else {
                             if(Term.Number.isNumber(token))
-                                stemStop(Term.Number.getNumber(token).toString(), document, termIndex);
+                                stemStop(Term.Number.getNumber(token).toString(), document);
                             else {
-                               stemStop(token.toLowerCase(), document, termIndex);
+                               stemStop(token.toLowerCase(), document);
                             }
                             parseTokens(nextTkn, stk);
                         }
@@ -181,9 +180,9 @@ public class Parse {
                         if(token.equals(""))
                             return;
                         if(Term.Number.isNumber(token))
-                            stemStop(Term.Number.getNumber(token).toString(), document, termIndex);
+                            stemStop(Term.Number.getNumber(token).toString(), document);
                         else
-                            stemStop(token.toLowerCase(), document, termIndex);
+                            stemStop(token.toLowerCase(), document);
                     }
                 }
                 else if(patternTH.matcher(token).find()) {
@@ -193,7 +192,7 @@ public class Parse {
                         ParseDDMONTH(token,temp,stk);
                     }
                     else{
-                        stemStop(token, document, termIndex);
+                        stemStop(token, document);
                         parseTokens(temp,stk);
                     }
                 }
@@ -201,9 +200,9 @@ public class Parse {
                     if(token.equals(""))
                         return;
                     if(Term.Number.isNumber(token))
-                       stemStop(Term.Number.getNumber(token).toString(), document, termIndex);
+                       stemStop(Term.Number.getNumber(token).toString(), document);
                     else{
-                       stemStop(token.toLowerCase(), document, termIndex);
+                       stemStop(token.toLowerCase(), document);
                     }
                 }
             }
@@ -215,21 +214,21 @@ public class Parse {
         int day=Integer.parseInt(token);
         if(day>0&&day<32) {
             if(!stk.hasMoreElements()){
-                stemStop(token,document,termIndex);
+                stemStop(token,document);
                 return;
             }
             String nextNextoken = stk.nextToken();
             String year = yearCheck(nextNextoken);
             if (year != null) {//DD MONTH YY/DD MONTH YY->DD/MM/YYYY
-                stemStop(token + "/" + Term.Month.getMonth(nextTkn) + "/" + year, document, termIndex);
+                stemStop(token + "/" + Term.Month.getMonth(nextTkn) + "/" + year, document);
             } else {//DD/Month->DD/MM
-                stemStop(token + "/" + Term.Month.getMonth(nextTkn), document, termIndex);
+                stemStop(token + "/" + Term.Month.getMonth(nextTkn), document);
                 parseTokens(nextNextoken, stk);
             }
         }
         else{
 
-           stemStop(token, document, termIndex);
+           stemStop(token, document);
             parseTokens(nextTkn,stk);
         }
     }
@@ -239,14 +238,14 @@ public class Parse {
             String nextNextoken = stk.nextToken();
             String year = yearCheck(nextNextoken);
             if (year != null) {
-               stemStop(nextTkn+"/"+Term.Month.getMonth(token)+"/"+year,document,termIndex);
+               stemStop(nextTkn+"/"+Term.Month.getMonth(token)+"/"+year,document);
             } else {
-                stemStop(nextTkn+"/"+Term.Month.getMonth(token),document,termIndex);
+                stemStop(nextTkn+"/"+Term.Month.getMonth(token),document);
                 parseTokens(nextNextoken,stk);
             }
         }
         else{
-            stemStop(token.toLowerCase(), document, termIndex);
+            stemStop(token.toLowerCase(), document);
             parseTokens(nextTkn,stk);
         }
 
@@ -254,10 +253,10 @@ public class Parse {
     private void ParseMONTHYYYY(String token,String nextTkn,StringTokenizer stk){//token=month nextTkn=YEAR
         String year = yearCheck(nextTkn);
         if(year!=null) {
-            stemStop(Term.Month.getMonth(token) + "/" + year, document, termIndex);
+            stemStop(Term.Month.getMonth(token) + "/" + year, document);
         }
         else {
-            stemStop(token.toLowerCase(), document, termIndex);
+            stemStop(token.toLowerCase(), document);
             parseTokens(nextTkn,stk);
         }
 
@@ -280,7 +279,7 @@ public class Parse {
         }
         return null;
     }
-    public void stemStop(String value,Document document,int termIndex){
+    public void stemStop(String value,Document document){
         /**
          * Last step in parser, after the parser we eliminate stopwords and perform stepping if needed
          */
