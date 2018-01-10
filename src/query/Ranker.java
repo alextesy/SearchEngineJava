@@ -19,7 +19,7 @@ return list of most relevant docs by file and doc name for specific query.
 
 public class Ranker {
 
-    private static Map<String,Document> documentData = new HashMap<>();
+    private static Map<String,Double> documentData = new HashMap<>();
     private static Stemming lastStem = null;
 
 
@@ -29,22 +29,15 @@ public class Ranker {
 
     public static List<String> getRelevantDocs(List<Term> queryTerms, Stemming stemming, boolean extend) {
         initDocumentDataMap(stemming);
-        double bmMax=3776.56404138373;
-        double cossineMax=0.015730571601885127;
         Map<Document,Double> docWeights=new HashMap<>();
         for (Term term: queryTerms){
-            Map<Document,List<Integer>> docDictionary =term.getDocDictionary();
+            Map<Document,List<Integer>> docDictionary = term.getDocDictionary();
             for (Map.Entry<Document,List<Integer>> termInDoc: docDictionary.entrySet()) {
-
-                Document relevantDoc=documentData.get(termInDoc.getKey().getDocName());
-                double bm=bm25Similarity(relevantDoc,queryTerms);
-                //if(bm>bmMax)
-                //    bmMax=bm;
-                double cossine=cosinSimilarity(relevantDoc,queryTerms);
-                //if(cossine>cossineMax)
-                //    cossineMax=cossine;
-                double similarity =  0.5*bm+0.5*cossine; //only numerator
-
+                double bm=bm25Similarity(termInDoc.getKey(),queryTerms);
+                double cossine=cosinSimilarity(termInDoc.getKey(),queryTerms);
+                double similarity = 0.8 * bm + 0.2 * cossine; //only numerator
+                if(similarity!=0)
+                    System.out.println("tal");
                 if(!docWeights.containsKey(termInDoc.getKey())) {
                     similarity = extend == true && queryTerms.get(1).equals(term) ? 0.3*similarity : similarity;
                     docWeights.put(termInDoc.getKey(),similarity);
@@ -72,8 +65,9 @@ public class Ranker {
                 String line = br.readLine();
                 while (line != null) {
                     Document doc = Document.decryptDocFromStr(line);
-                    documentData.put(doc.getDocName(),doc);
+                    documentData.put(doc.getFileName()+doc.getDocName(),doc.weight);
                     line = br.readLine();
+
                 }
             }
             catch (IOException io){
@@ -111,21 +105,15 @@ public class Ranker {
         try{
             double termWeightInDoc=0;
             for (Term term: queryTerms){
-                double freqInDoc;
-                if(term.getDocDictionary().containsKey(document))
-                    freqInDoc = term.getDocDictionary().get(document).size();
-                else
-                    continue;
-
+                int freqInDoc = term.getDocDictionary().get(document).size();
                 double tf = freqInDoc / document.getMostFrequentWord();
                 termWeightInDoc += tf * term.getTermIDF();
             }
-            termWeightInDoc/= Math.pow(document.weight,2)*Math.pow(queryTerms.size(),2);
+            termWeightInDoc/= Math.pow(documentData.get(document.getFileName()+document.getDocName()),2)*Math.pow(queryTerms.size(),2);
             return Math.sqrt(termWeightInDoc);
         }
         //TODO there are docs with weight 0 - read file bug probably
         catch (Exception e ){
-            e.printStackTrace();
             return 0;
         }
     }
@@ -138,29 +126,20 @@ public class Ranker {
         b = 0.5
          */
         try{
-            double k = 1.2;
-            double b = 0.75;
+            double k = 2;
+            double b = 0.5;
             double N = 468370;
             double bm25Sim = 0;
             double avgD = 261.46614428763587;
-             for(int i=0;i<queryTerms.size();i++){
-                 Term term=queryTerms.get(i);
-                 List<Integer> size;
-                 if(term.getDocDictionary().containsKey(document))
-                    size=term.getDocDictionary().get(document);
-                 else
-                     continue;
-                double tfD = size.size();
-                double termIDF=termIDFBM25(term);
-
-                bm25Sim += termIDF*((tfD*(k+1)/tfD+k*(1-b+b*((double) document.getDocLength()/avgD))));
-
-
+             for(Term term : queryTerms){
+                double tfD = term.getDocDictionary().get(document).size();
+                bm25Sim += termIDFBM25(term)*(tfD * (k+1)/(
+                        tfD + k*(1-b+b*(document.getDocLength()/
+                                        avgD))));
             }
             return bm25Sim;
         }
         catch (Exception e){
-            e.printStackTrace();
             return 0;
         }
     }

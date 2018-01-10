@@ -58,7 +58,7 @@ public class Document {
 
     public static Document decryptDocFromStr(String str){
         String[] documentData = str.split("#");
-        return new Document(documentData[1],documentData[0],Integer.parseInt(documentData[2]),Integer.parseInt(documentData[3]),Double.parseDouble(documentData[4]));
+        return new Document(documentData[0],documentData[1],Integer.parseInt(documentData[2]),Integer.parseInt(documentData[3]),Double.parseDouble(documentData[4]));
     }
 
     public void updateDocWeight(Double termIDF) {
