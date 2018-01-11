@@ -297,10 +297,9 @@ public class Parse {
             }
             else
                 documentSummary.addSentenceTerm(stem(value));
-            termIndex++;
+            this.termIndex++;
 
         }
-
     }
 
     public static String removeComma(String s) {

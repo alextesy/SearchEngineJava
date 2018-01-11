@@ -3,15 +3,12 @@ package query;
 import engine.*;
 import gui.EngineMenu.Stemming;
 import java.io.*;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.Map.*;
 import java.util.stream.Collectors;
-
-import static javax.script.ScriptEngine.FILENAME;
 
 public class QuerySearcher {
     private List<Term> queryTerms;
@@ -38,7 +35,7 @@ public class QuerySearcher {
     public void addQueryTerm(String str) {
         Term term = findTerm(str);
         if(term!=null)
-        queryTerms.add(term);
+            queryTerms.add(term);
     }
 
 
@@ -61,7 +58,13 @@ public class QuerySearcher {
     }
 
     public List<String> rankQueryDoc() {
-        return Ranker.getRelevantDocs(queryTerms, stemming, extension);
+        Ranker.alpha = 109/124;
+        Ranker.beta = 124/124;
+        Ranker.lambda= 124/67;
+        Ranker.epsilon= 124/72;
+        List<String> strings =  Ranker.getRelevantDocs(queryTerms, stemming, extension);
+        //Ranker.experimentsFunc();
+        return strings;
     }
 
     public boolean isExtension() {
@@ -215,7 +218,7 @@ public class QuerySearcher {
 
     public static void writeQueriesResult(String path) {
         try {
-            PrintWriter pw = new PrintWriter(new FileWriter("d:\\documents\\users\\talbense\\Documents\\doc\\queriesResult.txt"));
+            PrintWriter pw = new PrintWriter(new FileWriter("C:\\Users\\אלי\\Desktop\\doc\\queriesResult.txt"));
             Map<Integer, String> queriesDetails = readQueriesDoc(path);
             for (Map.Entry<Integer, String> query : queriesDetails.entrySet()) {
                 List<String> docs = new QuerySearcher(query.getValue(), false).rankQueryDoc();

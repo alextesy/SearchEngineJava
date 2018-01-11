@@ -36,6 +36,7 @@ public class Indexer {
     public static void setStemming(Stemming toStem){
         stemming = toStem;
     }
+
     public static Map<String,Term> initCacheStrings() {
         Map<String,Term> termsSet = new HashMap<>();
         try (BufferedReader br = new BufferedReader(new InputStreamReader(Indexer.class.getResourceAsStream(("docs/cacheWords"+ stemming.toString() +".txt"))))) {
@@ -61,7 +62,11 @@ public class Indexer {
         /**
          * The Function iterates over the files in corpus and creates temporary posting files, after this it merges the temporary posting files into a Final posting file and creates dictionary and cache
          */
+
+        //PrintWriter pw = new PrintWriter(new File("docData" + stemming.toString() + ".txt" ));
         //termsIDF = readIDFDictionaryToMem("",stemming);
+
+
         long now=System.currentTimeMillis();
         File dir = new File(this.pathToCorpus);
         File[] directoryListing = dir.listFiles();
@@ -74,7 +79,7 @@ public class Indexer {
                 for (File child : directoryListing) {
                     if(!child.getName().equals("stop_words.txt")){
                         //if(counter == 5 ) break;
-                        currentSize+=ReadFile.readTextFile(child,stemming);
+                        currentSize+=ReadFile.readTextFile(child,stemming/*,pw*/);
                         if (currentSize > readFileSize) {
                             currentSize=0;
                             counter += 1;
@@ -95,6 +100,7 @@ public class Indexer {
 
 
 
+        //pw.close();
 
         mergeSortedFiles(postingFilesList,new File(pathToPosting + "\\Hallelujah" +stemming.toString()+ ".txt"),cmp);
 
@@ -276,11 +282,10 @@ public class Indexer {
         }
     }
     /* read the IDF file and returns dictionary with the IDF value per term*/
-    public static Map<String,Double> readIDFDictionaryToMem(String path,boolean stemming) {
+    public static Map<String,Double> readIDFDictionaryToMem(String path,Stemming  stemming) {
         try {
             Map<String, Double> idfDictionary = new HashMap<>();
-            String stemString = stemming == true ? "Stem" : "";
-            InputStream in = Indexer.class.getResourceAsStream(path + "docs/termsIDF" + stemString + ".txt");
+            InputStream in = Indexer.class.getResourceAsStream(path + "docs/termsIDF" + stemming.toString() + ".txt");
             BufferedReader br = new BufferedReader(new InputStreamReader(in));
             String line = br.readLine();
             while (line != null) {

@@ -1,15 +1,17 @@
 package engine;
 
+import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * The class represents a Document object
  */
 public class Document {
 
-    public static final HashMap<String,Document> corpusDocuments = new HashMap<>();
+    public static final Map<String,Document> corpusDocuments = new HashMap<>();
 
-
+    private Map<String,Double> termInDocWeights =  new HashMap<>();
 
     private String docName;
     private String fileName;
@@ -62,10 +64,6 @@ public class Document {
                                  Integer.parseInt(documentData[3])/*Most Frequent Word*/,Double.parseDouble(documentData[4]/*Document weight*/));
     }
 
-    public void updateDocWeight(Double termIDF) {
-       weight+= termIDF;
-    }
-
 
 
     public String getDocName() {
@@ -108,12 +106,28 @@ public class Document {
         return weight;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public void updateDocWeight(String term, double weight) {
+
+        if(termInDocWeights.containsKey(term)){
+            double formerWeight = termInDocWeights.remove(term);
+            termInDocWeights.put(term,formerWeight + weight);
+        }
+        else{
+            termInDocWeights.put(term,weight);
+        }
     }
 
     @Override
     public int hashCode() {
         return (fileName + docName).hashCode();
+    }
+
+    public void writeData(PrintWriter pw) {
+        for(double weight: termInDocWeights.values()){
+            this.weight += Math.pow(weight/(double)mostFrequentWord,2);
+        }
+        pw.println(encryptingDocToStr());
+        pw.flush();
+        termInDocWeights.clear();
     }
 }
