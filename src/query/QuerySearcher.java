@@ -58,12 +58,7 @@ public class QuerySearcher {
     }
 
     public List<String> rankQueryDoc() {
-        Ranker.alpha = 109/124;
-        Ranker.beta = 124/124;
-        Ranker.lambda= 124/67;
-        Ranker.epsilon= 124/72;
         List<String> strings =  Ranker.getRelevantDocs(queryTerms, stemming, extension);
-        //Ranker.experimentsFunc();
         return strings;
     }
 
@@ -218,6 +213,7 @@ public class QuerySearcher {
 
     public static void writeQueriesResult(String path) {
         try {
+
             PrintWriter pw = new PrintWriter(new FileWriter("C:\\Users\\אלי\\Desktop\\doc\\queriesResult.txt"));
             Map<Integer, String> queriesDetails = readQueriesDoc(path);
             for (Map.Entry<Integer, String> query : queriesDetails.entrySet()) {
@@ -227,7 +223,6 @@ public class QuerySearcher {
                     pw.println(query.getKey() + " 0 " + doc + " 1 42.38 mt");
                 }
             }
-
             pw.close();
         } catch (IOException e) {
             e.printStackTrace();

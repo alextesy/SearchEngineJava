@@ -63,7 +63,7 @@ public class Indexer {
          * The Function iterates over the files in corpus and creates temporary posting files, after this it merges the temporary posting files into a Final posting file and creates dictionary and cache
          */
 
-        //PrintWriter pw = new PrintWriter(new File("docData" + stemming.toString() + ".txt" ));
+        //PrintWriter pw = new PrintWriter(new File("documentData" + stemming.toString() + ".txt" ));
         //termsIDF = readIDFDictionaryToMem("",stemming);
 
 
