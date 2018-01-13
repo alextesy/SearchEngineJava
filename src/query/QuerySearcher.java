@@ -16,6 +16,8 @@ public class QuerySearcher {
     private Map<String, Integer> extensionTerms;
     private boolean extension;
 
+    public static Map<Integer,List<String>> queriesResult = null;
+
 
     public QuerySearcher(String query, boolean extension) {
         queryTerms = new ArrayList<>();
@@ -25,7 +27,7 @@ public class QuerySearcher {
         this.extension = extension;
         if (extension) {
             List<String> synonymTerms = queryExtension(query);
-            queryTerms.add(findTerm(synonymTerms.get(0)));
+            queryTerms.add(findTerm(synonymTerms.get(1)));
         }
     }
 
@@ -45,14 +47,20 @@ public class QuerySearcher {
     public Term findTerm(String str) {
         if (Indexer.Dictionary.containsKey(str)) {
             String pointer = (String) Indexer.Dictionary.get(str)[2];
-            try {
-                RandomAccessFile raf = new RandomAccessFile(new File(Indexer.pathToPosting + "\\Hallelujah" + stemming.toString() + ".txt"), "r");
-                raf.seek(Long.parseLong(pointer.substring(1)));
-                return Term.decryptTermFromStr(raf.readLine());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
 
+            if(pointer.startsWith("C") && extension){
+                return Indexer.cacheTerms.get(str);
+            }
+            else{
+
+                try {
+                    RandomAccessFile raf = new RandomAccessFile(new File(Indexer.pathToPosting + "\\Hallelujah" + stemming.toString() + ".txt"), "r");
+                    raf.seek(Long.parseLong(pointer.substring(1)));
+                    return Term.decryptTermFromStr(raf.readLine());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
         return null;
     }
@@ -201,7 +209,6 @@ public class QuerySearcher {
                     queriesDetails.put(qID, sCurrentLine.substring("<title>".length()));
             }
             fr.close();
-            queriesDetails = sortByKey(queriesDetails);
             return queriesDetails;
 
         } catch (IOException e) {
@@ -211,24 +218,33 @@ public class QuerySearcher {
         return null;
     }
 
-    public static void writeQueriesResult(String path) {
+    public static void addQueriesResult(String path) {
         try {
 
-            PrintWriter pw = new PrintWriter(new FileWriter("C:\\Users\\אלי\\Desktop\\doc\\queriesResult.txt"));
+            if (queriesResult == null) {
+                queriesResult = new HashMap<>();
+            } else
+                queriesResult.clear();
+
             Map<Integer, String> queriesDetails = readQueriesDoc(path);
             for (Map.Entry<Integer, String> query : queriesDetails.entrySet()) {
                 List<String> docs = new QuerySearcher(query.getValue(), false).rankQueryDoc();
-                docs = docs.parallelStream().sorted(String::compareTo).collect(Collectors.toCollection(ArrayList::new));
                 for (String doc : docs) {
-                    pw.println(query.getKey() + " 0 " + doc + " 1 42.38 mt");
+                    List<String> queryResult;
+                    if (queriesResult.containsKey(query.getKey()))
+                        queryResult = queriesResult.remove(query.getKey());
+                    else
+                        queryResult = new ArrayList();
+
+                    queryResult.add(doc);
+                    queriesResult.put(query.getKey(), queryResult);
+
                 }
             }
-            pw.close();
-        } catch (IOException e) {
+            queriesResult = sortByKey(queriesResult);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
-
-
 }

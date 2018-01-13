@@ -3,7 +3,6 @@ package query;
 import engine.Document;
 import engine.Term;
 import gui.EngineMenu.Stemming;
-import org.omg.CORBA.Object;
 
 import java.io.*;
 import java.util.*;
@@ -25,22 +24,20 @@ public class Ranker {
 
     public static double alpha;
     public static double beta;
-    public static double lambda;
-    public static double epsilon;
+    public static double gamma;
+    public static double delta;
 
 
     private Ranker(){
         throw new RuntimeException("class 'Ranker' not for initializing");
     }
 
+
     public static List<String> getRelevantDocs(List<Term> queryTerms, Stemming stemming, boolean extend) {
         initDocumentDataMap(stemming);
         List <Document> potentialRelDocs = new ArrayList();
 
-        Map<Document,Double> cosinWeight=new HashMap<>();
         Map<Document,Double> bm25Weight=new HashMap<>();
-
-        Map<Document,Double> general=new HashMap<>();
 
 
 
@@ -50,15 +47,16 @@ public class Ranker {
             Document document = documentData.get(potentialDoc.getDocName());
             double bm25 = 0.114*Math.exp(0.1821*bm25Similarity(document,queryTerms)) ;
             double cossin = cosinSimilarity(document,queryTerms) ;
-            double location = locationSimilarity(document,queryTerms);
-            double distance = termsDistance(document,queryTerms);
-            cosinWeight.put(document,cossin) ;
-            bm25Weight.put(document,(alpha *bm25 + beta *cossin +  lambda *location +  epsilon* distance));
+            //double location = locationSimilarity(document,queryTerms);
+            //double distance = termsDistance(document,queryTerms);
+
+            bm25Weight.put(document,alpha*bm25 +beta*cossin);
+
+
         }
 
-        return extend==false ? findTopDoc(bm25Weight,50) : findTopDoc(cosinWeight,70);
+        return extend==false ? findTopDoc(bm25Weight,50) : findTopDoc(bm25Weight,70);
     }
-
 
     /**
      initiate map of documents. the map initialized depends stem param
@@ -129,6 +127,7 @@ public class Ranker {
             return 0;
         }
     }
+
 
     private static double locationSimilarity(Document document, List<Term> queryTerms){
         /*
@@ -234,7 +233,7 @@ public class Ranker {
     public static void experimentsFunc(){
         try {
             Runtime runtime = Runtime.getRuntime();
-            Process p = runtime.exec("cmd /c C:\\Users\\אלי\\Desktop\\doc\\treceval.exe C:\\Users\\אלי\\Desktop\\doc\\qries.txt C:\\Users\\אלי\\Desktop\\doc\\queriesResult.txt");
+            Process p = runtime.exec("cmd /c C:\\Users\\אלי\\Desktop\\doc\\treceval.exe C:\\Users\\אלי\\Desktop\\doc\\qrels.txt C:\\Users\\אלי\\Desktop\\doc\\queriesResult.txt");
             BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
             String line;
             String rank = "";
@@ -244,7 +243,7 @@ public class Ranker {
                     rank = rank.substring("Rel_ret:".length());
                     break;
                 }
-            pw.println(rank+ " " + alpha + " " + beta + " " + lambda + " " + epsilon);
+            pw.println(rank+ " " + alpha + " " + beta + " " + gamma + " " + delta);
             pw.flush();
 
 

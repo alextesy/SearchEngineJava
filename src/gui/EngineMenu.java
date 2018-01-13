@@ -9,15 +9,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
 import java.util.List;
 
 import gui.DisplayScrollPanel.*;
+import javafx.stage.FileChooser;
 import javafx.util.Pair;
 import query.DocumentSummarize;
 import query.QuerySearcher;
@@ -55,11 +54,6 @@ public class EngineMenu {
         cachePanel = new DisplayCachePanel(this.engineFrame,false,null,3);
         pathsInitializing = new InitializationPathTable(this.engineFrame,false);
         performStemming = Stemming.True;
-        performStemming = Stemming.True;
-
-
-
-
 
     }
 
@@ -111,6 +105,7 @@ public class EngineMenu {
 
         JMenuItem createIndexFile = new JMenuItem("Create index");
         JMenuItem initializationFrame = new JMenuItem("Initial paths");
+        JMenuItem saveLastQueryResult = new JMenuItem("Save Query Result");
         JMenuItem saveCacheDictionary = new JMenuItem("Save cache/dictionary");
         JMenuItem openCacheDictionary = new JMenuItem("Open cache/dictionary");
         JMenuItem resetEnginePosting = new JMenuItem("Reset engine");
@@ -118,13 +113,45 @@ public class EngineMenu {
 
         fileMenu.add(createIndexFile);
         fileMenu.add(initializationFrame);
+        fileMenu.add(saveLastQueryResult);
         fileMenu.add(saveCacheDictionary);
         fileMenu.add(openCacheDictionary);
         fileMenu.add(resetEnginePosting);
         fileMenu.add(exitMenuItem);
 
         initializationFrame.addActionListener(e -> pathsInitializing.setVisible(true));
+        saveLastQueryResult.addActionListener(e -> {
+            if(QuerySearcher.queriesResult == null){
+                JOptionPane.showMessageDialog(engineFrame,"Should run query first");
+            }
+            else{
+                new Thread(() -> {
+                    saveLastQueryResult.setEnabled(false);
+                    JFileChooser savingQueryChooser = new JFileChooser();
+                    savingQueryChooser.setName("Save query result");
+                    int returnVal = savingQueryChooser.showSaveDialog(null);
+                    if (returnVal == JFileChooser.APPROVE_OPTION) {
+                        File savingQueryChoosed = savingQueryChooser.getSelectedFile();
+                        try{
+                            PrintWriter pw = new PrintWriter(new FileWriter(savingQueryChoosed));
+                            for(Map.Entry<Integer,List<String>> queryRes: QuerySearcher.queriesResult.entrySet()){
+                                for(String document : queryRes.getValue()){
+                                    pw.println(queryRes.getKey() + " 0 "+ document + " 1 42.38 mt");
+                                }
+                            }
+                            pw.close();
+                        }catch (IOException e1){
+                            e1.printStackTrace();
+                        }
 
+                    }
+                    saveLastQueryResult.setEnabled(true);
+                }).start();
+
+            }
+
+
+        });
         createIndexFile.addActionListener(e -> {
             try{
                 if(indexer!=null)
@@ -276,6 +303,13 @@ public class EngineMenu {
                         } catch (IOException e1) {
                         }
                     }
+                    engineFrame.remove(background);
+                    BufferedImage img = ImageIO.read(getClass().getResourceAsStream("imgs/img.png"));
+                    ReadFile.docNumberOfFiles=0;
+                    background.setIcon(new ImageIcon(img));
+                    engineFrame.add(background);
+                    engineFrame.validate();
+                    engineFrame.repaint();
                 }
             }
             catch (Exception e1 )
@@ -293,11 +327,34 @@ public class EngineMenu {
             engineFrame.remove(background);
             BufferedImage img = ImageIO.read(getClass().getResourceAsStream("imgs/img.png"));
             Graphics g = img.getGraphics();
-            g.setFont(g.getFont().deriveFont(15f));
-            g.drawString("Number of Documents: " + ReadFile.docNumberOfFiles,20,80);
-            g.drawString( "Index Size: " + indexer.getIndexSize() + " Bytes",20,105);
-            g.drawString("Cache Size: " + indexer.getCacheSize() + " Bytes",20,130);
-            g.drawString( "Running Time: " + indexer.getIndexRunningTime() + " seconds",20,155);
+            g.setFont(new Font("Arial",Font.BOLD,12));
+            g.setColor(Color.black);
+            g.drawString( "Running Time: " + indexer.getIndexRunningTime() + " seconds",230,320);
+            ReadFile.docNumberOfFiles=0;
+            g.dispose();
+
+            background.setIcon(new ImageIcon(img));
+            engineFrame.add(background);
+            engineFrame.validate();
+            engineFrame.repaint();
+
+
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private void drawQueryResultData(int docReturned,long runningTime){
+
+        try {
+            engineFrame.remove(background);
+            BufferedImage img = ImageIO.read(getClass().getResourceAsStream("imgs/img.png"));
+            Graphics g = img.getGraphics();
+            g.setFont(new Font("Arial",Font.BOLD,12));
+            g.setColor(Color.black);
+            g.drawString( "Document Returned: " + docReturned,230,300);
+            g.drawString( "Running Time: " + runningTime/(long)1000 + " seconds",230,320);
             ReadFile.docNumberOfFiles=0;
             g.dispose();
 
@@ -330,7 +387,7 @@ public class EngineMenu {
             JTextField queryText = new JTextField();
             queryText.setSize(165,25);
             queryText.setLocation(80,70);
-            queryText.setText("FBIS3-20471");
+            queryText.setText("");
             runQueryButton.setFont(new Font("Arial",Font.ITALIC,12));
 
 
@@ -398,10 +455,20 @@ public class EngineMenu {
                     JOptionPane.showMessageDialog(engineFrame,"Require just one word for extension");
                 else{
                     try{
+                        long start = System.currentTimeMillis();
                         List<String> docs = new QuerySearcher(queryText.getText(),toExtend).rankQueryDoc();
+                        if(QuerySearcher.queriesResult!=null)
+                            QuerySearcher.queriesResult.clear();
+                        else
+                            QuerySearcher.queriesResult = new HashMap<>();
+                        QuerySearcher.queriesResult.put(new Random().nextInt((1000- 100) + 1) + 100,docs);
+                        if(docs.size()==0)
+                            throw new RuntimeException("not found relevant docs");
+                        long finished = System.currentTimeMillis() - start;
                         DisplayQueryPanel dqp = new DisplayQueryPanel(engineFrame,false,queryText.getText(),docs,2);
                         dqp.redo();
                         dqp.setVisible(true);
+                        drawQueryResultData(docs.size(),finished);
                     }catch (RuntimeException e1){
                         JOptionPane.showMessageDialog(engineFrame,"Not found result for '" + queryText.getText() + "'");
 
@@ -450,13 +517,76 @@ public class EngineMenu {
         JMenu preferencesMenu = new JMenu("Preferences");
 
         JCheckBoxMenuItem performStemming = new JCheckBoxMenuItem("Perform Porter Stemming" , true);
+        JMenuItem runQueriesFile = new JMenuItem("Run Queries File");
+
         performStemming.addActionListener(e -> {
             boolean ram = this.performStemming.getRamStem();
             this.performStemming = performStemming.isSelected() ? Stemming.True : Stemming.False;
             this.performStemming.setRamStem(ram);
             Indexer.stemming = this.performStemming;
         });
+
+        runQueriesFile.addActionListener(e -> {
+            try{
+                if(pathsInitializing.getPostingDir() == null || pathsInitializing.getCorpusDir()==null)
+                    JOptionPane.showMessageDialog(engineFrame, "Has to initial posting and corpus dir");
+                else if(cache==null || dictionary==null)
+                    JOptionPane.showMessageDialog(engineFrame,"Has to upload cache/dictionary to RAM");
+                else if( cache != null && dictionary!=null && this.performStemming.isStem() != this.performStemming.getRamStem()){
+                    JOptionPane.showMessageDialog(engineFrame, "Current cache and dictionary not correlate to stem checkbox");
+                }
+                else if( new File(pathsInitializing.getPostingPath()+"\\Hallelujah" + this.performStemming.toString() + ".txt")== null)
+                    JOptionPane.showMessageDialog(engineFrame,"Non exist posting file at posting dir");
+                else{
+                    JFileChooser fc = new JFileChooser();
+                    if(fc.showOpenDialog(engineFrame) == JFileChooser.APPROVE_OPTION){
+                        File file = fc.getSelectedFile();
+                        new Thread(() -> {
+                            long start = System.currentTimeMillis();
+                            runQueriesFile.setEnabled(false);
+                            QuerySearcher.addQueriesResult(file.getPath());
+                            Map<Integer,List<String>> queriesResult = QuerySearcher.queriesResult;
+                            try{
+                                File outputFile = new File("tempQuery.txt");
+                                PrintWriter pw = new PrintWriter(new FileWriter(outputFile));
+                                for(Map.Entry<Integer,List<String>> query :queriesResult.entrySet()){
+                                    pw.println("Query ID: " + query.getKey() + '\n');
+                                    int counter =1;
+                                    for(String document : query.getValue()){
+                                        pw.println(counter +". "+ document );
+                                        counter+=1;
+                                    }
+                                    pw.println("------------------------");
+                                }
+                                pw.flush();
+                                java.awt.Desktop.getDesktop().edit(outputFile);
+                                runQueriesFile.setEnabled(true);
+                                drawQueryResultData(queriesResult.size()*50, System.currentTimeMillis()-start);
+                            }
+                            catch (IOException e2){
+                                e2.printStackTrace();
+                            }
+
+                        }).start();
+
+                    }
+
+                }
+            }
+
+            catch (Exception e2){
+                JOptionPane.showMessageDialog(engineFrame, "Incorrect queries file");
+            }
+
+        });
+
+
         preferencesMenu.add(performStemming);
+        preferencesMenu.add(runQueriesFile);
+
+
+
+
         return preferencesMenu;
     }
 

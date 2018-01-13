@@ -5,7 +5,11 @@ import gui.EngineMenu;
 
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 
 public class Test {
@@ -17,15 +21,28 @@ public class Test {
         Indexer.Dictionary = Indexer.readDictionary("C:\\Users\\אלי\\Desktop\\doc\\dictionary" + Indexer.stemming.toString() + ".txt");
         //Indexer.cacheTerms = Indexer.readCache("C:\Users\אלי\Desktop\doc\\cache" + Indexer.stemming.toString() + "txt");
         Ranker.pw = new PrintWriter(new FileWriter("C:\\Users\\אלי\\Desktop\\doc\\experiment2.txt"));
-         while (true){
-             Ranker.alpha =    (double)(new Random().nextInt(100))/200;
-             Ranker.beta  =    (double)(new Random().nextInt(100))/200;
-             Ranker.lambda =   (double)(new Random().nextInt(100))/200;
-             Ranker.epsilon  = (double)(new Random().nextInt(100))/200;
-             QuerySearcher.writeQueriesResult("C:\\Users\\אלי\\Desktop\\doc\\queries.txt");
-             Ranker.experimentsFunc();
+
+        while (true) {
+            Ranker.alpha = new Random().nextInt(200)/ (double) 100;
+            Ranker.beta = new Random().nextInt(200) / (double) 100;
+            Ranker.gamma = new Random().nextInt(100) / (double) 100;
+            Ranker.delta = new Random().nextInt(100) / (double) 100;
+
+            QuerySearcher.addQueriesResult("C:\\Users\\אלי\\Desktop\\doc\\queries.txt");
+            PrintWriter pww = new PrintWriter(new FileWriter("C:\\Users\\אלי\\Desktop\\doc\\queriesResult.txt"));
+            for (Map.Entry<Integer, List<String>> queryRes : QuerySearcher.queriesResult.entrySet()) {
+                List<String> sorted = queryRes.getValue().parallelStream().sorted(String::compareTo).collect(Collectors.toCollection(ArrayList::new));
+                for (String document : sorted) {
+                    pww.println(queryRes.getKey() + " 0 " + document + " 1 42.38 mt");
+                }
+            }
+            pww.close();
+            Ranker.experimentsFunc();
+            pww.flush();
         }
-
-
     }
+
+
+
+
 }
