@@ -48,7 +48,6 @@ public class EngineMenu {
     private boolean toSummary;
     private JTextArea documentSummaryText;
     private List<String> queryRelDocs;
-    DisplayQueryPanel queryPanel;
 
 
 
@@ -363,6 +362,7 @@ public class EngineMenu {
             ReadFile.docNumberOfFiles=0;
             g.dispose();
 
+
             background.setIcon(new ImageIcon(img));
             engineFrame.add(background);
             engineFrame.validate();
@@ -428,7 +428,27 @@ public class EngineMenu {
             resetQueryButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    Ranker.clear();
+                    if(queryRelDocs!=null)
+                        queryRelDocs.clear();
+                    try{
+                                engineFrame.remove(background);
+                                BufferedImage img = ImageIO.read(getClass().getResourceAsStream("imgs/img.png"));
+                                Graphics g = img.getGraphics();
+                                g.setFont(new Font("Arial",Font.BOLD,12));
+                                g.setColor(Color.black);
+                                ReadFile.docNumberOfFiles=0;
+                                g.dispose();
+
+
+                                background.setIcon(new ImageIcon(img));
+                                engineFrame.add(background);
+                                engineFrame.validate();
+                                engineFrame.repaint();
+                            }
+
+                            catch (IOException e3 ){
+                                e3.printStackTrace();
+                            }
                     documentSummaryText.append("");
                     if(savingQueryChoosed!=null){
                         if(new File(savingQueryChoosed.getPath()).isFile()) {
@@ -437,8 +457,8 @@ public class EngineMenu {
                             } catch (IOException e1) {
                             }
                         }
-                        queryRelDocs.clear();
-                        queryPanel.redo();
+
+
 
                     }
                 }
@@ -494,7 +514,7 @@ public class EngineMenu {
                         if(queryRelDocs.size()==0)
                             throw new RuntimeException("not found relevant docs");
                         long finished = System.currentTimeMillis() - start;
-                        queryPanel = new DisplayQueryPanel(engineFrame,false,queryText.getText(),queryRelDocs,2);
+                        DisplayQueryPanel queryPanel = new DisplayQueryPanel(engineFrame,false,queryText.getText(),queryRelDocs,2);
                         queryPanel.redo();
                         queryPanel.setVisible(true);
                         drawQueryResultData(queryRelDocs.size(),finished);

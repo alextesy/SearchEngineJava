@@ -20,7 +20,7 @@ public class Document {
     private double weight;
     private String headLine;
 
-    private Document(String fileName, String docName,String headLine) {
+    private Document(String fileName, String docName) {
         this.docLength = 0;
         this.mostFrequentWord = 0;
         this.docName = docName;
@@ -28,11 +28,8 @@ public class Document {
         this.headLine=headLine;
     }
 
-    public String getHeadLine() {
-        return headLine;
-    }
 
-    private Document(String docName, String fileName, int wordsSize, int mostFrequentWord, double weight, String headLine) {
+    private Document(String docName, String fileName, int wordsSize, int mostFrequentWord, double weight) {
         this.docName = docName;
         this.fileName = fileName;
         this.docLength = wordsSize;
@@ -41,12 +38,12 @@ public class Document {
         this.headLine=headLine;
     }
 
-    public static Document addDocument(String fileName, String docName,String headLine){
+    public static Document addDocument(String fileName, String docName){
         /**
          * Creates Document if its not already exists and add it to docDictionary
          */
         if(!corpusDocuments.containsKey(fileName+docName)){
-            Document document = new Document(fileName,docName,headLine);
+            Document document = new Document(fileName,docName);
             corpusDocuments.put(fileName+docName,document);
             return document;
         }
@@ -67,9 +64,8 @@ public class Document {
 
     public static Document decryptDocFromStr(String str){
         String[] documentData = str.split("#");
-        String header = documentData.length==5 ? "" : documentData[5];
         return new Document(documentData[1]/*Document Name*/,documentData[0]/*File Name*/,Integer.parseInt(documentData[2])/*Document Length*/,
-                                 Integer.parseInt(documentData[3])/*Most Frequent Word*/,Double.parseDouble(documentData[4])/*Document weight*/,header/*Document headline*/);
+                                 Integer.parseInt(documentData[3])/*Most Frequent Word*/,Double.parseDouble(documentData[4])/*Document weight*/);
     }
 
 

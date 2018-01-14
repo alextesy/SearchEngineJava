@@ -70,12 +70,10 @@ public class DocumentSummarize {
                 textCont= m.group();
             return textCont;
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("no such document");
         }
 
 
-
-        return "a";
     }
 
     /**

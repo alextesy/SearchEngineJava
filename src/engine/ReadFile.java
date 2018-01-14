@@ -13,7 +13,7 @@ public class ReadFile {
     public static int docNumberOfFiles=0;
     private ReadFile(){}
 
-    public static long readTextFile(File currentFile,Stemming stemming ,PrintWriter pw) {
+    public static long readTextFile(File currentFile,Stemming stemming /*,PrintWriter pw*/) {
         /**
          * divides the File into Documents and send them to parser
          */
@@ -30,17 +30,16 @@ public class ReadFile {
             Matcher m = pattern.matcher(content);
             Matcher mDocNum = patternDocN.matcher(content);
             while (m.find()&& mDocNum.find()) {
-                String headLine="";
                 String textCont = m.group();
                 String docNum = mDocNum.group();
                 String textContSub=docNum.substring(7,docNum.length()-8);
                 textContSub=textContSub.replace(" ","");
-                Document document = Document.addDocument(fileName,textContSub,headLine);
+                Document document = Document.addDocument(fileName,textContSub);
                 Parse parser = new Parse(textCont,document,stemming, null,null,"");
                 docNumberOfFiles+=1;
                 parser.Parse();
 
-                document.writeData(pw);
+                //document.writeData(pw);
             }
 
             return StringSizeEstimator.estimatedSizeOf(content);

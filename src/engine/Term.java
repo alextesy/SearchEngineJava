@@ -169,10 +169,9 @@ public class Term{
         String[] termData = str.split("#");
         Term term = new Term(termData[0]);
         term.termTDF = Integer.parseInt(termData[1]);
-        term.termTDF = Integer.parseInt(termData[1]);
         for (int i = 2; i < termData.length; i += 1) {
             String[] docData = termData[i].split("&");
-            Document doc = addDocument(docData[0], docData[1],null);
+            Document doc = addDocument(docData[0], docData[1]);
             String[] termIndex = docData[2].split("\\^");
             term.docDictionary.put(doc, new ArrayList<>());
             term.docDictionary.get(doc).add(Integer.parseInt(termIndex[0]));

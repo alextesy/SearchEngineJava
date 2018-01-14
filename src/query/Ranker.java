@@ -26,7 +26,6 @@ public class Ranker {
     public static double alpha=1.4;;
     public static double beta =0.85;
     public static double gamma=0.98;
-    public static Set<String> headLine=new HashSet<>();
 
     private Ranker(){
         throw new RuntimeException("class 'Ranker' not for initializing");
@@ -106,21 +105,6 @@ public class Ranker {
         }
         return rankedDocs;
     }
-
-    public static void addHeadline(String term){
-        headLine.add(term);
-    }
-    private static double headSimilarity(String headline,List<Term> queryTerms ){
-        new Parse(headline, null, Indexer.stemming, null, null,"Ranker").Parse();
-        double counter=1;
-        for (Term term:queryTerms){
-            if(headLine.contains(term.getValue()))
-                counter++;
-        }
-        headLine.clear();
-        return counter;
-    }
-
 
 
     /**
@@ -272,10 +256,6 @@ public class Ranker {
             e.printStackTrace();
         }
     }
-    public static void clear(){
-        documentData.clear();
-    }
-
 
 
 }

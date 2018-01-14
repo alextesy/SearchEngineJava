@@ -63,8 +63,8 @@ public class Indexer {
          * The Function iterates over the files in corpus and creates temporary posting files, after this it merges the temporary posting files into a Final posting file and creates dictionary and cache
          */
 
-        PrintWriter pw = new PrintWriter(new File("documentData" + stemming.toString() + ".txt" ));
-        termsIDF = readIDFDictionaryToMem("",stemming);
+        //PrintWriter pw = new PrintWriter(new File("documentData" + stemming.toString() + ".txt" ));
+        //termsIDF = readIDFDictionaryToMem("",stemming);
 
 
         long now=System.currentTimeMillis();
@@ -79,7 +79,7 @@ public class Indexer {
                 for (File child : directoryListing) {
                     if(!child.getName().equals("stop_words.txt")){
                         //if(counter == 1 ) break;
-                        currentSize+=ReadFile.readTextFile(child,stemming,pw);
+                        currentSize+=ReadFile.readTextFile(child,stemming/*,pw*/);
                         if (currentSize > readFileSize) {
                             currentSize=0;
                             counter += 1;
@@ -107,8 +107,8 @@ public class Indexer {
 
         //findCacheTerms();
         //writeDocumentIDF("",stemming,Dictionary);
-        writeDocumentData();
-        Document.corpusDocuments.clear();
+        //writeDocumentData();
+        //Document.corpusDocuments.clear();
 
         long then=System.currentTimeMillis();
         this.indexRunningTime = (then - now)/1000;
