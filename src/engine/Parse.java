@@ -287,20 +287,18 @@ public class Parse {
          * Last step in parser, after the parser we eliminate stopwords and perform stepping if needed
          */
         if (!stopWords.contains(value)) {
-            if (querySearcher == null && documentSummary==null&&!ranker.equals("Ranker")) {
+            if (querySearcher == null && documentSummary==null) {
                 Term.addTerm(stem(value), document, termIndex);
 
-            } else if (querySearcher!=null&&!ranker.equals("Ranker")){
+            } else if (querySearcher!=null){
                 if(!querySearcher.isExtension())
                     querySearcher.addQueryTerm(stem(value));
                 else{
                     querySearcher.addExtensionTerm(stem(value));
                 }
             }
-            else if(documentSummary!=null&&!ranker.equals("Ranker"))
+            else if(documentSummary!=null)
                 documentSummary.addSentenceTerm(stem(value));
-            else if (ranker.equals("Ranker"))
-                Ranker.addHeadline(stem(value));
             this.termIndex++;
 
         }

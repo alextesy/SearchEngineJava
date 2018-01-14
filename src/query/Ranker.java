@@ -23,10 +23,9 @@ public class Ranker {
 
     public static PrintWriter pw;
 
-    public static double alpha;
-    public static double beta;
-    public static double gamma;
-    public static double delta;
+    public static double alpha=1.4;;
+    public static double beta =0.85;
+    public static double gamma=0.98;
     public static Set<String> headLine=new HashSet<>();
 
     private Ranker(){
@@ -39,7 +38,6 @@ public class Ranker {
         List <Document> potentialRelDocs = new ArrayList();
 
         Map<Document,Double> bm25Weight=new HashMap<>();
-        Map<Document,Double> cossine = new HashMap<>();
 
 
         for(Term term : queryTerms)
@@ -50,11 +48,11 @@ public class Ranker {
             double bm25 = 0.114*Math.exp(0.1821*bm25Similarity(document,queryTerms)) ;
             double cossin = cosinSimilarity(document,queryTerms) ;
             double location = locationSimilarity(document,queryTerms);
-            double distance = termsDistance(document,queryTerms);
+            //double distance = termsDistance(document,queryTerms);
 
 
 
-            bm25Weight.put(document,((alpha*bm25 +beta*cossin+ gamma*location+distance*delta)));
+            bm25Weight.put(document,((alpha*bm25 +beta*cossin+ gamma*location)));
 
 
         }
@@ -264,7 +262,7 @@ public class Ranker {
                     rank = rank.substring("Rel_ret:".length());
                     break;
                 }
-            pw.println(rank+ " " + alpha + " " + beta + " " + gamma + " " + delta);
+            pw.println(rank+ " " + alpha + " " + beta + " " + gamma);
             pw.flush();
 
 
@@ -273,6 +271,9 @@ public class Ranker {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public static void clear(){
+        documentData.clear();
     }
 
 

@@ -20,6 +20,7 @@ import javafx.stage.FileChooser;
 import javafx.util.Pair;
 import query.DocumentSummarize;
 import query.QuerySearcher;
+import query.Ranker;
 
 public class EngineMenu {
 
@@ -37,6 +38,8 @@ public class EngineMenu {
     public Map<String,Term> cache = null;
     public Map<String,Object[]> dictionary =  null;
 
+    File savingQueryChoosed;
+
     JLabel background;
 
 
@@ -44,6 +47,8 @@ public class EngineMenu {
     private boolean toExtend;
     private boolean toSummary;
     private JTextArea documentSummaryText;
+    private List<String> queryRelDocs;
+    DisplayQueryPanel queryPanel;
 
 
 
@@ -67,7 +72,7 @@ public class EngineMenu {
 
 
         JScrollPane documentScrollPane = new JScrollPane();
-        this.documentSummaryText = new JTextArea("This engine as been built by Alex Kremiansky and Tal Ben Senior as a\n" +
+        this.documentSummaryText = new JTextArea("This engine as been built by Alex Kremiansky and Tal Ben Senior has a\n" +
                 "replacement for the old and lame search engine called Google,\nif you are pleased with out work - subscribe to out channel......\n" +
                 "or..... just give us an A grade, it could be a fair trade as well! ;)");
         this.documentSummaryText.setEditable(false);
@@ -131,7 +136,7 @@ public class EngineMenu {
                     savingQueryChooser.setName("Save query result");
                     int returnVal = savingQueryChooser.showSaveDialog(null);
                     if (returnVal == JFileChooser.APPROVE_OPTION) {
-                        File savingQueryChoosed = savingQueryChooser.getSelectedFile();
+                        savingQueryChoosed = savingQueryChooser.getSelectedFile();
                         try{
                             PrintWriter pw = new PrintWriter(new FileWriter(savingQueryChoosed));
                             for(Map.Entry<Integer,List<String>> queryRes: QuerySearcher.queriesResult.entrySet()){
@@ -384,6 +389,11 @@ public class EngineMenu {
             runQueryButton.setLocation(250,70);
             runQueryButton.setFont(new Font("Arial",Font.ITALIC,12));
 
+            JButton resetQueryButton = new JButton("Reset");
+            resetQueryButton.setSize(new Dimension(67,25));
+            resetQueryButton.setLocation(315,70);
+            resetQueryButton.setFont(new Font("Arial",Font.ITALIC,12));
+
             JTextField queryText = new JTextField();
             queryText.setSize(165,25);
             queryText.setLocation(80,70);
@@ -409,11 +419,30 @@ public class EngineMenu {
 
 
             this.background.add(runQueryButton);
+            this.background.add(resetQueryButton);
             this.background.add(queryText);
             this.background.add(extension);
             this.background.add(docSummary);
             this.engineFrame.add(this.background);
 
+            resetQueryButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    Ranker.clear();
+                    documentSummaryText.append("");
+                    if(savingQueryChoosed!=null){
+                        if(new File(savingQueryChoosed.getPath()).isFile()) {
+                            try {
+                                Files.delete(Paths.get(savingQueryChoosed.getPath()));
+                            } catch (IOException e1) {
+                            }
+                        }
+                        queryRelDocs.clear();
+                        queryPanel.redo();
+
+                    }
+                }
+            });
 
             extension.addActionListener(e -> {
                 toExtend = extension.isSelected() ? true : false;
@@ -456,19 +485,19 @@ public class EngineMenu {
                 else{
                     try{
                         long start = System.currentTimeMillis();
-                        List<String> docs = new QuerySearcher(queryText.getText(),toExtend).rankQueryDoc();
+                        queryRelDocs= new QuerySearcher(queryText.getText(),toExtend).rankQueryDoc();
                         if(QuerySearcher.queriesResult!=null)
                             QuerySearcher.queriesResult.clear();
                         else
                             QuerySearcher.queriesResult = new HashMap<>();
-                        QuerySearcher.queriesResult.put(new Random().nextInt((1000- 100) + 1) + 100,docs);
-                        if(docs.size()==0)
+                        QuerySearcher.queriesResult.put(new Random().nextInt((1000- 100) + 1) + 100,queryRelDocs);
+                        if(queryRelDocs.size()==0)
                             throw new RuntimeException("not found relevant docs");
                         long finished = System.currentTimeMillis() - start;
-                        DisplayQueryPanel dqp = new DisplayQueryPanel(engineFrame,false,queryText.getText(),docs,2);
-                        dqp.redo();
-                        dqp.setVisible(true);
-                        drawQueryResultData(docs.size(),finished);
+                        queryPanel = new DisplayQueryPanel(engineFrame,false,queryText.getText(),queryRelDocs,2);
+                        queryPanel.redo();
+                        queryPanel.setVisible(true);
+                        drawQueryResultData(queryRelDocs.size(),finished);
                     }catch (RuntimeException e1){
                         JOptionPane.showMessageDialog(engineFrame,"Not found result for '" + queryText.getText() + "'");
 

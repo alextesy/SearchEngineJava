@@ -24,9 +24,8 @@ public class Test {
 
         // while (true) {
         Ranker.alpha = 1.4;//(new Random().nextInt(150)+50) /  (double)100;
-        Ranker.beta = 0.85;//(new Random().nextInt(50)+50) /   (double)100;
+        Ranker.beta =  0.85;//(new Random().nextInt(50)+50) /   (double)100;
         Ranker.gamma = 0.98;// new Random().nextInt(100) /  (double)100;
-        Ranker.delta = 0;// new Random().nextInt(100) /  (double)100;
 
         QuerySearcher.addQueriesResult("d:\\documents\\users\\talbense\\Documents\\doc\\queries.txt");
         PrintWriter pww = new PrintWriter(new FileWriter("d:\\documents\\users\\talbense\\Documents\\doc\\queriesResult.txt"));
