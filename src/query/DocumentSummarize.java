@@ -87,7 +87,7 @@ public class DocumentSummarize {
             currentSentence=sentence;
             currentSentenceNum++;
             sentenceTerms.put(currentSentence,new Pair<>(currentSentenceNum,new ArrayList<>()));
-            new Parse(sentence, null, False, null,this).Parse();
+            new Parse(sentence, null, False, null,this,null).Parse();
         }
     }
 

@@ -4,6 +4,7 @@ package engine;
 import gui.EngineMenu.Stemming;
 import query.DocumentSummarize;
 import query.QuerySearcher;
+import query.Ranker;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,6 +27,7 @@ public class Parse {
     public static Pattern patternTH= Pattern.compile("([4-9]|[12][0-9]|[3][0])th");
     private QuerySearcher querySearcher;
     private DocumentSummarize documentSummary;
+    private String ranker;
 
 
     private static Collection<String> initStopWords() {
@@ -50,12 +52,13 @@ public class Parse {
         return token;
     }
 
-    public Parse(String content, Document document, Stemming stemming, QuerySearcher querySearcher, DocumentSummarize documentSummary){
+    public Parse(String content, Document document, Stemming stemming, QuerySearcher querySearcher, DocumentSummarize documentSummary,String ranker){
 
         this.docContent = content;
         this.document = document;
         this.termIndex = 0;
         this.stemming=stemming;
+        this.ranker=ranker;
         this.stemmer = stemming.isStem() ? new Stemmer() : null;
         this.querySearcher = querySearcher;
         this.documentSummary=documentSummary;
@@ -284,18 +287,20 @@ public class Parse {
          * Last step in parser, after the parser we eliminate stopwords and perform stepping if needed
          */
         if (!stopWords.contains(value)) {
-            if (querySearcher == null && documentSummary==null) {
+            if (querySearcher == null && documentSummary==null&&!ranker.equals("Ranker")) {
                 Term.addTerm(stem(value), document, termIndex);
 
-            } else if (querySearcher!=null){
+            } else if (querySearcher!=null&&!ranker.equals("Ranker")){
                 if(!querySearcher.isExtension())
                     querySearcher.addQueryTerm(stem(value));
                 else{
                     querySearcher.addExtensionTerm(stem(value));
                 }
             }
-            else
+            else if(documentSummary!=null&&!ranker.equals("Ranker"))
                 documentSummary.addSentenceTerm(stem(value));
+            else if (ranker.equals("Ranker"))
+                Ranker.addHeadline(stem(value));
             this.termIndex++;
 
         }

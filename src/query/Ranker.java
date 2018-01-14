@@ -1,13 +1,14 @@
 package query;
 
 import engine.Document;
+import engine.Indexer;
+import engine.Parse;
 import engine.Term;
 import gui.EngineMenu.Stemming;
 
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
-
 
 /**
  static class represent ranker functionality,
@@ -26,7 +27,7 @@ public class Ranker {
     public static double beta;
     public static double gamma;
     public static double delta;
-
+    public static Set<String> headLine=new HashSet<>();
 
     private Ranker(){
         throw new RuntimeException("class 'Ranker' not for initializing");
@@ -38,25 +39,31 @@ public class Ranker {
         List <Document> potentialRelDocs = new ArrayList();
 
         Map<Document,Double> bm25Weight=new HashMap<>();
-
+        Map<Document,Double> cossine = new HashMap<>();
 
 
         for(Term term : queryTerms)
             potentialRelDocs.addAll(new ArrayList(term.getDocDictionary().keySet()));
         for (Document potentialDoc : potentialRelDocs){
             Document document = documentData.get(potentialDoc.getDocName());
+
             double bm25 = 0.114*Math.exp(0.1821*bm25Similarity(document,queryTerms)) ;
             double cossin = cosinSimilarity(document,queryTerms) ;
-            //double location = locationSimilarity(document,queryTerms);
-            //double distance = termsDistance(document,queryTerms);
+            double location = locationSimilarity(document,queryTerms);
+            double distance = termsDistance(document,queryTerms);
 
-            bm25Weight.put(document,alpha*bm25 +beta*cossin);
+
+
+            bm25Weight.put(document,((alpha*bm25 +beta*cossin+ gamma*location+distance*delta)));
 
 
         }
 
         return extend==false ? findTopDoc(bm25Weight,50) : findTopDoc(bm25Weight,70);
     }
+
+
+
 
     /**
      initiate map of documents. the map initialized depends stem param
@@ -100,6 +107,20 @@ public class Ranker {
             pq.poll();
         }
         return rankedDocs;
+    }
+
+    public static void addHeadline(String term){
+        headLine.add(term);
+    }
+    private static double headSimilarity(String headline,List<Term> queryTerms ){
+        new Parse(headline, null, Indexer.stemming, null, null,"Ranker").Parse();
+        double counter=1;
+        for (Term term:queryTerms){
+            if(headLine.contains(term.getValue()))
+                counter++;
+        }
+        headLine.clear();
+        return counter;
     }
 
 
@@ -147,7 +168,7 @@ public class Ranker {
         }
 
         return /*termsDistance(document,queryTerms) * */((document.getDocLength() - firstTermInstanceIndex)
-                                                    / (double)document.getDocLength());
+                / (double)document.getDocLength());
     }
     private static double termsDistance(Document document, List<Term> queryTerms) {
         List<Integer> locations = new ArrayList<>();
@@ -187,7 +208,7 @@ public class Ranker {
                     double fD = term.getDocDictionary().get(document).size();
                     bm25Sim += (termIDFBM25(term) * fD * (k + 1)) / (
                             fD + k * (1 - b + b * (document.getDocLength() /
-                                                     avgD))) ;
+                                    avgD))) ;
                 }
             }
             return bm25Sim;
@@ -233,7 +254,7 @@ public class Ranker {
     public static void experimentsFunc(){
         try {
             Runtime runtime = Runtime.getRuntime();
-            Process p = runtime.exec("cmd /c C:\\Users\\אלי\\Desktop\\doc\\treceval.exe C:\\Users\\אלי\\Desktop\\doc\\qrels.txt C:\\Users\\אלי\\Desktop\\doc\\queriesResult.txt");
+            Process p = runtime.exec("cmd /c d:\\documents\\users\\talbense\\Documents\\doc\\treceval.exe d:\\documents\\users\\talbense\\Documents\\doc\\qrels.txt d:\\documents\\users\\talbense\\Documents\\doc\\queriesResult.txt");
             BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
             String line;
             String rank = "";
@@ -257,3 +278,4 @@ public class Ranker {
 
 
 }
+

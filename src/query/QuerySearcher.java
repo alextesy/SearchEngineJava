@@ -23,7 +23,7 @@ public class QuerySearcher {
         queryTerms = new ArrayList<>();
         stemming = Indexer.stemming;
         extensionTerms = new HashMap<>();
-        new Parse(query, null, stemming, this, null).Parse();
+        new Parse(query, null, stemming, this, null,"").Parse();
         this.extension = extension;
         if (extension) {
             List<String> synonymTerms = queryExtension(query);
@@ -56,7 +56,8 @@ public class QuerySearcher {
                 try {
                     RandomAccessFile raf = new RandomAccessFile(new File(Indexer.pathToPosting + "\\Hallelujah" + stemming.toString() + ".txt"), "r");
                     raf.seek(Long.parseLong(pointer.substring(1)));
-                    return Term.decryptTermFromStr(raf.readLine());
+                    Term term=Term.decryptTermFromStr(raf.readLine());
+                    return term;
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -94,7 +95,7 @@ public class QuerySearcher {
             while (p.find())
                 wikiContent.append(p.group(1));
             in.close();
-            new Parse(wikiContent.toString(), null, stemming, this, null).Parse();
+            new Parse(wikiContent.toString(), null, stemming, this, null,null).Parse();
             List<String> synonymTerms = sortMaxFrequentWord(extensionTerms);
             return synonymTerms;
         } catch (FileNotFoundException e1) {
